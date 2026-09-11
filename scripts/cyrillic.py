@@ -7,7 +7,7 @@ core is defined here; `shapes.render()` wraps it in the black outline.
 
 from __future__ import annotations
 
-from shapes import (
+from .shapes import (
     SAFE_X,
     SAFE_Y,
     Core,

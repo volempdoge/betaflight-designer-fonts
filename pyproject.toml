@@ -58,11 +58,11 @@ select = [
 ]
 
 [tool.ruff.lint.per-file-ignores]
-# These files are about letters and signs from other scripts. Characters that
-# look like Latin ones are the subject matter, not a typo.
-"cyrillic.py" = ["RUF001", "RUF002", "RUF003"]
-"greek.py" = ["RUF001", "RUF002", "RUF003"]
-"punctuation.py" = ["RUF001", "RUF002", "RUF003"]
+# These files are about letters and signs from other writing systems.
+# Characters that look like Latin ones are the subject matter, not a typo.
+"scripts/cyrillic.py" = ["RUF001", "RUF002", "RUF003"]
+"scripts/greek.py" = ["RUF001", "RUF002", "RUF003"]
+"scripts/punctuation.py" = ["RUF001", "RUF002", "RUF003"]
 "tests/test_cyrillic.py" = ["RUF001", "RUF002", "RUF003"]
 "tests/test_sets.py" = ["RUF001", "RUF002", "RUF003"]
 "tools/specimen.py" = ["RUF001", "RUF002", "RUF003"]
@@ -70,18 +70,7 @@ select = [
 
 [tool.mypy]
 python_version = "3.10"
-files = [
-    "bf2font.py",
-    "shapes.py",
-    "cyrillic.py",
-    "accents.py",
-    "greek.py",
-    "punctuation.py",
-    "blocks.py",
-    "symbols.py",
-    "tools",
-    "tests",
-]
+files = ["bf2font.py", "scripts", "tools", "tests"]
 mypy_path = "tests"
 warn_unused_ignores = true
 warn_redundant_casts = true

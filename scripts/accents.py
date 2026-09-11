@@ -12,7 +12,7 @@ all-capitals face would do anyway.
 
 from __future__ import annotations
 
-from shapes import (
+from .shapes import (
     SAFE_X,
     SAFE_Y,
     Core,

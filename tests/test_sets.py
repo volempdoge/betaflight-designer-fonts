@@ -12,10 +12,6 @@ from pathlib import Path
 import pytest
 from conftest import font_paths, rasterise
 
-import accents
-import blocks
-import greek
-import punctuation
 from bf2font import (
     CHAR_H,
     CHAR_W,
@@ -28,7 +24,8 @@ from bf2font import (
     parse_mcm,
     trace_contours,
 )
-from shapes import SAFE_X, SAFE_Y, WHITE, core_of, shift
+from scripts import accents, blocks, greek, punctuation
+from scripts.shapes import SAFE_X, SAFE_Y, WHITE, core_of, shift
 
 # blocks is the one set that runs to the cell wall on purpose: a frame has to
 # join up with the cell next to it.

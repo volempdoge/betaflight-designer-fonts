@@ -37,12 +37,7 @@ from fontTools.pens.t2CharStringPen import T2CharStringPen
 from fontTools.pens.ttGlyphPen import TTGlyphPen
 from PIL import Image
 
-import accents
-import blocks
-import cyrillic
-import greek
-import punctuation
-import symbols
+from scripts import accents, blocks, cyrillic, greek, punctuation, symbols
 
 # --- composed character sets -------------------------------------------------
 

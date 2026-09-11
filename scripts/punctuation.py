@@ -14,7 +14,7 @@ arrow. Those are redrawn here and the icons stay reachable through
 
 from __future__ import annotations
 
-from shapes import (
+from .shapes import (
     SAFE_X,
     SAFE_Y,
     Core,

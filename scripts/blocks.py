@@ -8,7 +8,7 @@ row of markers lines up with the text beside it.
 
 from __future__ import annotations
 
-from shapes import (
+from .shapes import (
     CHAR_H,
     CHAR_W,
     SAFE_X,

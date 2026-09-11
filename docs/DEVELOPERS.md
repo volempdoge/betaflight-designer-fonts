@@ -82,16 +82,17 @@ reversed when building `glyf`.
 
 The source font is 256 characters: ASCII and OSD icons. Everything else is
 drawn from the shapes that font already has, never from constants, so a heavy
-face gets heavy punctuation and a slanted face gets slanted accents.
+face gets heavy punctuation and a slanted face gets slanted accents. It all
+lives in `scripts/`; `bf2font.py` at the root is the only entry point.
 
 | Module | What it adds |
 | --- | --- |
-| `shapes.py` | the primitives: `Geometry`, `render`, `box`, `ring`, `line`, `chevron`, `triangle`, `wave` |
-| `cyrillic.py` | 37 Cyrillic capitals |
-| `accents.py` | 70 accented Latin capitals, plus Ð Đ Ø Ł Þ |
-| `greek.py` | 24 Greek capitals |
-| `punctuation.py` | dashes, quotes, angle quotes, maths, currency, and the four ASCII slots the source font spends on icons |
-| `blocks.py` | box drawing, half blocks, shades, markers |
+| `scripts/shapes.py` | the primitives: `Geometry`, `render`, `box`, `ring`, `line`, `chevron`, `triangle`, `wave` |
+| `scripts/cyrillic.py` | 37 Cyrillic capitals |
+| `scripts/accents.py` | 70 accented Latin capitals, plus Ð Đ Ø Ł Þ |
+| `scripts/greek.py` | 24 Greek capitals |
+| `scripts/punctuation.py` | dashes, quotes, angle quotes, maths, currency, and the four ASCII slots the source font spends on icons |
+| `scripts/blocks.py` | box drawing, half blocks, shades, markers |
 
 Each module exposes the same two entry points, which is all `bf2font.py` knows
 about it:
@@ -119,7 +120,8 @@ composed glyph has 10×16 to work in. Three rules fall out of that:
   bottom of the cell, so Ç Ę Ș lift by a row or two rather than lose the mark.
   It is the same trick the Cyrillic uses for the spur on Ц and Щ.
 - **Blocks run to the wall on purpose.** Box drawing has to join up with the
-  cell next to it, so `blocks.py` is the one set that ignores the border.
+  cell next to it, so `scripts/blocks.py` is the one set that ignores the
+  border.
 
 ### Characters that are spelled out
 
@@ -131,9 +133,9 @@ that ignores GSUB shows an A rather than a hole.
 
 ## Cyrillic
 
-`cyrillic.py` adds 37 capitals that Betaflight does not ship. They are not
-drawn from scratch: each one is assembled from that font's own Latin shapes, so
-the weight and proportions come along for free.
+`scripts/cyrillic.py` adds 37 capitals that Betaflight does not ship. They are
+not drawn from scratch: each one is assembled from that font's own Latin
+shapes, so the weight and proportions come along for free.
 
 - 14 letters are a Latin glyph as it stands (А В Е І К М Н О Р С Т Х У, and З
   from the digit three), 2 are one flipped left to right (И from N, Я from R).
@@ -213,13 +215,13 @@ glyph sideways.
   ℃ and ℉, the GPS minute and second marks as the prime and double prime. A
   drawn glyph always wins over an alias.
 - `$`, `~` and `` ` `` hold a checkered flag, a crosshair and an arrow in the
-  source font. `punctuation.py` draws the characters those codepoints are
-  named after; the icons keep their names and `U+E0xx` codepoints.
+  source font. `scripts/punctuation.py` draws the characters those codepoints
+  are named after; the icons keep their names and `U+E0xx` codepoints.
 
 ## Symbols and OpenType features
 
-`symbols.py` is the catalogue: every non-letter character of the source font,
-with a name, a group and any standard codepoint it deserves. Names follow
+`scripts/symbols.py` is the catalogue: every non-letter character of the source
+font, with a name, a group and any standard codepoint it deserves. Names follow
 `osd_symbols.h` in the Betaflight firmware where the drawing matches it, and
 what the glyph actually draws where it does not -- the bundled fonts predate
 some of the moves in that header, so `0x70` is still the on-time icon rather

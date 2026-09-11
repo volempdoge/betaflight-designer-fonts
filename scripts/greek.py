@@ -8,8 +8,8 @@ have to be drawn, out of the same stems and bars as everything else.
 
 from __future__ import annotations
 
-import cyrillic
-from shapes import (
+from . import cyrillic
+from .shapes import (
     SAFE_X,
     Core,
     Geometry,

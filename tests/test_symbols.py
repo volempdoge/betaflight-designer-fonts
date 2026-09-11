@@ -9,8 +9,8 @@ import uharfbuzz as hb
 from conftest import FONT_DIR
 from fontTools.ttLib import TTFont
 
-import symbols
 from bf2font import CHARS, PUA_BASE, Glyph, build_font, parse_mcm
+from scripts import symbols
 
 
 @pytest.fixture(scope="session")

@@ -18,8 +18,8 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-import symbols  # noqa: E402
 from bf2font import PUA_BASE, glyph_image, parse_mcm  # noqa: E402
+from scripts import symbols  # noqa: E402
 
 REFERENCE = "clarity"  # the face the reference images are cut from
 

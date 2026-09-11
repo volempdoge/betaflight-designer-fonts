@@ -7,10 +7,10 @@ from pathlib import Path
 import pytest
 from conftest import font_paths, rasterise
 
-import cyrillic
 from bf2font import CHAR_H, CHAR_W, Glyph, build_font, composed_glyphs, parse_mcm
-from cyrillic import compose
-from shapes import WHITE, Geometry, core_of, mirror, outline, runs
+from scripts import cyrillic
+from scripts.cyrillic import compose
+from scripts.shapes import WHITE, Geometry, core_of, mirror, outline, runs
 
 
 def latin_of(path: Path) -> dict[str, list[list[int]]]:
