@@ -9,21 +9,10 @@
 # ///
 """Convert Betaflight (MAX7456 ``.mcm``) OSD fonts into sliced PNGs and font files.
 
-The MAX7456 character memory stores 256 characters of 12x18 pixels, two bits per
-pixel, so every character is genuinely two-coloured:
-
-    0b00 -> black      0b10 -> white      0b01 / 0b11 -> transparent
-
-Both colours are preserved in the generated fonts by emitting COLR/CPAL colour
-glyphs (palette 0 = black, palette 1 = white).  Each character becomes:
-
-    base glyph   -> silhouette (black + white pixels), used by renderers that
-                    do not understand colour fonts
-    layer 0      -> the same silhouette, painted black
-    layer 1      -> the white pixels only, painted white, drawn on top
-
-Painting the white pixels on top of a full black silhouette avoids hairline
-seams between abutting black and white areas.
+Character memory holds 256 characters of 12x18 pixels, two bits per pixel:
+0b00 black, 0b10 white, 0b01/0b11 transparent. Both colours survive as COLR/CPAL
+glyphs -- base glyph is the silhouette, layer 0 paints it black, layer 1 paints
+the white pixels on top (which also hides hairline seams between them).
 
 Usage:
     uv run bf2font.py original_fonts/default.mcm
@@ -46,6 +35,8 @@ from fontTools.pens.t2CharStringPen import T2CharStringPen
 from fontTools.pens.ttGlyphPen import TTGlyphPen
 from PIL import Image
 
+import cyrillic
+
 # --- MAX7456 geometry --------------------------------------------------------
 
 CHAR_W = 12
@@ -65,9 +56,7 @@ ASCENT = UPM - DESCENT
 ADVANCE = CHAR_W * PX  # 1200
 
 PUA_BASE = 0xE000  # every character is also reachable at U+E000+index
-# fontTools stamps head.created from the clock unless SOURCE_DATE_EPOCH says
-# otherwise. Pinning it keeps repeated runs byte for byte identical, so a
-# regenerated output/ can be diffed against the committed one.
+# Pinned so head.created does not come from the clock: builds stay reproducible.
 SOURCE_DATE_EPOCH = "1761690259"
 VERSION = "1.000"
 COPYRIGHT = (
@@ -138,9 +127,7 @@ def parse_mcm(path: Path) -> list[Glyph]:
 # --- pixels -> outlines ------------------------------------------------------
 
 
-# Turn preference when several boundary edges leave the same vertex (which only
-# happens where two cells touch diagonally): take the sharpest right turn first
-# so the traced loops never cross each other.
+# Sharpest right turn first, so loops leaving a diagonal vertex never cross.
 def _turns(d: tuple[int, int]) -> list[tuple[int, int]]:
     dx, dy = d
     return [(dy, -dx), (dx, dy), (-dy, dx), (-dx, -dy)]  # right, straight, left, back
@@ -149,9 +136,8 @@ def _turns(d: tuple[int, int]) -> list[tuple[int, int]]:
 def trace_contours(cells: set[tuple[int, int]]) -> list[list[tuple[int, int]]]:
     """Trace a set of unit cells into closed polygons.
 
-    Boundary edges are emitted with the filled area on their left, so outer
-    contours come out counter-clockwise and holes clockwise -- the PostScript /
-    CFF convention, and correct under the non-zero fill rule either way.
+    Edges keep the fill on their left, so outer contours wind counter-clockwise
+    and holes clockwise -- the PostScript/CFF convention.
     """
     edges: dict[tuple[int, int], list[tuple[int, int]]] = {}
     for x, y in cells:
@@ -247,6 +233,19 @@ def glyph_name(index: int) -> str:
     return f"bf{index:02X}"
 
 
+def unicode_name(codepoint: int) -> str:
+    return f"uni{codepoint:04X}"
+
+
+def cyrillic_glyphs(glyphs: list[Glyph]) -> dict[int, Glyph]:
+    """Cyrillic capitals composed from this font's own Latin shapes."""
+    latin = {chr(i): glyphs[i].pixels for i in range(0x20, 0x7F)}
+    return {
+        codepoint: Glyph(index=codepoint, pixels=pixels)
+        for codepoint, pixels in cyrillic.glyphs(latin).items()
+    }
+
+
 def build_font(
     glyphs: list[Glyph],
     *,
@@ -256,44 +255,55 @@ def build_font(
     ascii_cmap: bool = True,
     fold_lowercase: bool = True,
     mode: str = "color",
+    with_cyrillic: bool = True,
 ) -> FontBuilder:
     """Build one font.
 
-    ``mode`` picks what a glyph contains: ``color`` gives the two-layer
-    COLR/CPAL font, while ``shadow`` (silhouette) and ``fill`` (white pixels)
-    are flat single-colour fonts meant to be stacked as two text layers in apps
-    that cannot read colour fonts. All three share their metrics, so stacked
-    layers line up exactly.
+    ``mode`` is ``color`` (two-layer COLR/CPAL) or the flat ``shadow``
+    (silhouette) / ``fill`` (white pixels) pair, stacked by apps with no colour
+    font support. All three share metrics, so the layers line up.
     """
     names = [glyph_name(g.index) for g in glyphs]
     order = [".notdef"]
     layers: dict[str, list[tuple[str, int]]] = {}
     outlines: dict[str, list[list[tuple[int, int]]]] = {".notdef": []}
 
-    for glyph, name in zip(glyphs, names, strict=True):
-        ink = glyph.ink()
+    def add(name: str, ink: set[tuple[int, int]], white: set[tuple[int, int]]) -> None:
         silhouette = to_font_units(trace_contours(ink))
-        white = to_font_units(trace_contours(glyph.cells(value=2)))
+        white_contours = to_font_units(trace_contours(white))
         order.append(name)
-        outlines[name] = white if mode == "fill" else silhouette
-        if mode != "color" or glyph.is_blank:
-            continue
-        order += [f"{name}.black", f"{name}.white"]
+        outlines[name] = white_contours if mode == "fill" else silhouette
+        if mode != "color" or not ink:
+            return
+        order.extend((f"{name}.black", f"{name}.white"))
         outlines[f"{name}.black"] = silhouette
-        outlines[f"{name}.white"] = white
+        outlines[f"{name}.white"] = white_contours
         layers[name] = [(f"{name}.black", 0), (f"{name}.white", 1)]
+
+    for glyph, name in zip(glyphs, names, strict=True):
+        add(name, glyph.ink(), glyph.cells(value=2))
+
+    extra = cyrillic_glyphs(glyphs) if with_cyrillic else {}
+    for codepoint, glyph in extra.items():
+        add(unicode_name(codepoint), glyph.ink(), glyph.cells(value=2))
 
     cmap: dict[int, str] = {}
     for glyph, name in zip(glyphs, names, strict=True):
         cmap[PUA_BASE + glyph.index] = name
         if ascii_cmap and 0x20 <= glyph.index <= 0x7E:
             cmap[glyph.index] = name
+    for codepoint in extra:
+        cmap[codepoint] = unicode_name(codepoint)
+    if fold_lowercase:
+        # The fonts have no lowercase at all, Cyrillic included.
+        for lower, upper in cyrillic.LOWERCASE.items():
+            if upper in extra:
+                cmap[lower] = unicode_name(upper)
     if ascii_cmap:
         cmap[0xA0] = cmap[0x20]
         if fold_lowercase:
-            # Betaflight has no lowercase: those slots hold arrows and symbols,
-            # so a-z is pointed at the uppercase glyphs and the symbols stay
-            # reachable through their U+E000+index codepoints.
+            # a-z slots hold symbols, so a-z maps to the capitals instead;
+            # the symbols stay reachable at U+E000+index.
             for index in range(ord("A"), ord("Z") + 1):
                 cmap[index + 0x20] = glyph_name(index)
 
@@ -397,6 +407,7 @@ def convert(
     no_ascii: bool,
     literal_ascii: bool,
     layer_fonts: bool,
+    with_cyrillic: bool,
     formats: list[str],
 ) -> None:
     glyphs = parse_mcm(source)
@@ -405,8 +416,7 @@ def convert(
     out = out_root / name
     png_dir, font_dir = out / "png", out / "fonts"
     png_dir.mkdir(parents=True, exist_ok=True)
-    # One directory per format keeps the listing readable: each font ships in
-    # up to three families (colour, Shadow, Fill) times four formats.
+    # One directory per format: up to three families times four formats.
     for fmt in formats:
         (font_dir / fmt).mkdir(parents=True, exist_ok=True)
 
@@ -422,6 +432,14 @@ def convert(
         glyph_image(glyph, scale).save(png_dir / f"{glyph.index:03d}.png")
     sheet_image(glyphs, scale).save(out / f"{name}_sheet.png")
 
+    extra = cyrillic_glyphs(glyphs) if with_cyrillic else {}
+    if extra:
+        cyr_dir = png_dir / "cyrillic"
+        cyr_dir.mkdir(exist_ok=True)
+        for codepoint, glyph in extra.items():
+            glyph_image(glyph, scale).save(cyr_dir / f"{codepoint:04X}.png")
+        sheet_image(list(extra.values()), scale).save(out / f"{name}_cyrillic.png")
+
     (out / f"{name}.json").write_text(
         json.dumps(
             {
@@ -432,6 +450,14 @@ def convert(
                 "families": [n for _, n in variants],
                 "ascii_cmap": ascii_cmap,
                 "lowercase_folded_to_uppercase": ascii_cmap and fold_lowercase,
+                "cyrillic": [
+                    {
+                        "codepoint": f"U+{cp:04X}",
+                        "letter": cyrillic.UPPERCASE[cp],
+                        "png": f"png/cyrillic/{cp:04X}.png",
+                    }
+                    for cp in sorted(extra)
+                ],
                 "characters": [
                     {
                         "index": g.index,
@@ -461,6 +487,7 @@ def convert(
                 mode=mode,
                 ascii_cmap=ascii_cmap,
                 fold_lowercase=fold_lowercase,
+                with_cyrillic=with_cyrillic,
             )
             fb.save(str(font_dir / "otf" / f"{stem}.otf"))
         if needs_ttf:
@@ -471,6 +498,7 @@ def convert(
                 mode=mode,
                 ascii_cmap=ascii_cmap,
                 fold_lowercase=fold_lowercase,
+                with_cyrillic=with_cyrillic,
             )
             if "ttf" in formats:
                 fb.font.flavor = None
@@ -481,8 +509,9 @@ def convert(
                     fb.save(str(font_dir / web / f"{stem}.{web}"))
 
     blanks = sum(g.is_blank for g in glyphs)
+    cyr = f" + {len(extra)} Cyrillic" if extra else ""
     print(
-        f"{source.name}: {CHARS - blanks}/{CHARS} characters -> {out} "
+        f"{source.name}: {CHARS - blanks}/{CHARS} characters{cyr} -> {out} "
         f"({', '.join(formats)})"
     )
 
@@ -523,6 +552,12 @@ def main(argv: list[str] | None = None) -> int:
         "onto the uppercase glyphs",
     )
     parser.add_argument(
+        "--no-cyrillic",
+        dest="with_cyrillic",
+        action="store_false",
+        help="skip the Cyrillic capitals composed from each font's own shapes",
+    )
+    parser.add_argument(
         "--no-layer-fonts",
         dest="layer_fonts",
         action="store_false",
@@ -551,6 +586,7 @@ def main(argv: list[str] | None = None) -> int:
             no_ascii=args.no_ascii_cmap,
             literal_ascii=args.literal_ascii,
             layer_fonts=args.layer_fonts,
+            with_cyrillic=args.with_cyrillic,
             formats=formats,
         )
     return 0

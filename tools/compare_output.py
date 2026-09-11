@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 """Compare two conversion output trees.
 
-Fonts and the JSON index have to match byte for byte, because builds are
-reproducible. PNGs cannot be compared that way: Pillow's platform wheels bundle
-different zlib-ng builds, so the deflate stream differs between macOS and Linux
-even when every pixel is identical. Those are compared as decoded pixels.
+Fonts and the JSON index must match byte for byte, since builds are reproducible.
+PNGs are compared as decoded pixels: Pillow's wheels deflate differently per
+platform even when every pixel is identical.
 """
 
 from __future__ import annotations

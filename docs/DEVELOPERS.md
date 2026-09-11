@@ -75,6 +75,35 @@ afterwards.
 TrueType's contour direction is the opposite of PostScript's, so contours are
 reversed when building `glyf`.
 
+## Cyrillic
+
+`cyrillic.py` adds 37 capitals that Betaflight does not ship. They are not
+drawn from scratch: each one is assembled from that font's own Latin shapes, so
+the weight and proportions come along for free.
+
+- 14 letters are a Latin glyph as it stands (А В Е І К М Н О Р С Т Х У, and З
+  from the digit three), 2 are one flipped left to right (И from N, Я from R).
+- The rest are built from parts the font already has: Г is the top bar plus a
+  stem, П adds the second stem, Ш the third, Щ and Ц a spur, Ф is О with a
+  stem through it, Ж is Х with the same.
+- Only the white core is composed; `outline()` derives the black outline.
+
+Three things the fonts force:
+
+- **Width.** Three stems and two gaps do not fit the Latin box in several
+  faces, so Ж Ш Щ Ю Ы get a wider one. Without it the stems merge into a blob.
+- **Slant.** betaflight is italic. Composition happens on a straightened copy
+  and the result is leant back, because parts taken from different letters
+  meet at the wrong offsets otherwise, and a mirrored letter would tip the
+  wrong way.
+- **Fallbacks.** Where a shape cannot work, a letter takes a second form: Ж
+  becomes three stems joined at the waist when the arms would swallow the
+  centre stem, and З is drawn rather than borrowed where digits are taller
+  than capitals.
+
+None of this reaches the `.mcm` files: 222 of the 256 slots are taken, so the
+alphabet does not fit, and the OSD cannot display it either.
+
 ## Colour glyphs
 
 Colour comes from `COLR` v0 / `CPAL`, with a two-entry palette: black and white.

@@ -6,12 +6,12 @@ The ten stock Betaflight OSD fonts, converted for use outside the goggles:
 installable **OTF** and **TTF**, web **WOFF** and **WOFF2**, and all 256
 characters as transparent **PNG** files.
 
-They are colour fonts, so the white glyph keeps its black outline and stays
-readable over any footage. Handy for FPV thumbnails, stream overlays, video
-titles and anything that should look like a real drone OSD.
+Colour fonts, so the white glyph keeps its black outline over any footage.
+Full Cyrillic. For FPV thumbnails, stream overlays, video titles and anything
+that should look like a real drone OSD.
 
-The sources are the MAX7456 `.mcm` fonts from betaflight-configurator.
-[`bf2font.py`](bf2font.py) converts any other `.mcm` font the same way.
+Source files are the MAX7456 `.mcm` fonts from betaflight-configurator.
+[`bf2font.py`](bf2font.py) converts any other `.mcm` the same way.
 
 ![Betaflight OSD fonts betaflight, bold, clarity, default, digital, extra large, impact, impact mini, large and vision, rendered as text](docs/preview.png)
 
@@ -32,6 +32,18 @@ Cap height is in OSD pixels, out of an 18 pixel character cell.
 | `large` | 10 | small letters with tall 15 pixel digits |
 | `digital` | 9 | short, full width blocks, like a segmented display |
 
+## Cyrillic
+
+Full Cyrillic, in every font, at the usual codepoints.
+Lowercase types as capitals, the same as Latin.
+
+Each font's Cyrillic matches that font: `clarity` keeps clarity's weight,
+`betaflight` keeps its slant.
+
+![Cyrillic in four of the fonts](docs/cyrillic.png)
+
+Font files only. The OSD itself cannot display Cyrillic.
+
 ## Download
 
 Everything is in the repo, no build step. Grab
@@ -50,38 +62,29 @@ Each format folder holds three families: the colour font, plus the flat
 
 ## The black outline is part of the font
 
-Betaflight characters are two-coloured, a white glyph with a black outline, so
-they stay readable over any footage. That is preserved here, so typing over
-video gives you the outline for free.
+Type over video and the outline is already there, no layer styles.
 
-Colour works in every modern browser and in normal macOS / Windows text.
-Design apps are uneven: **Figma does not support colour fonts at all**, and
-Adobe support varies by app and version. An app that cannot read them draws the
-character's silhouette in a single colour, so you get flat white letters with
-the right shape and no outline.
+Colour renders in every modern browser and in macOS and Windows text.
+**Figma does not support colour fonts**, and Adobe support varies by app and
+version. Without colour you get flat white letters, the right shape with no
+outline.
 
-### Figma, and other apps without colour fonts
+### Figma and other apps without colour fonts
 
-Use the **Shadow** and **Fill** families next to each one. They are flat
-single-colour fonts: `Shadow` is the whole character, `Fill` is only the white
-part. Stack two text layers with the same text, size and position, `Shadow`
-below in black and `Fill` above in white, and you get the OSD look with the
-text still editable. The three families share their metrics, so the layers line
-up exactly.
-
-The PNGs work too, they just are not type any more.
+Stack two text layers: `Shadow` in black below, `Fill` in white above, same
+text, size and position. All three families share their metrics, so they line
+up exactly and the text stays editable.
 
 ## Typing
 
-- `A-Z`, `0-9` and punctuation work as usual.
-- Lowercase letters give you the same uppercase glyphs, since Betaflight has no
-  lowercase.
-- Every character also sits at `U+E000 + index`, so character `0x01` is
-  `U+E001`. That is where the arrows, battery and signal icons, GPS and flight
-  mode symbols and the Betaflight logo tiles are. The sheet image and
-  `output/<font>/<font>.json` show what is where.
+- Latin, Cyrillic, digits and punctuation work as usual. Lowercase types as
+  capitals.
+- Every character also sits at `U+E000 + index`, so `0x01` is `U+E001`. That is
+  where the arrows, battery and signal icons, GPS and flight mode symbols and
+  the logo tiles live. The sheet image and `output/<font>/<font>.json` show
+  what is where.
 
-Prefer bitmaps? Drop the PNGs straight into the timeline or the canvas.
+Prefer bitmaps? Drop the PNGs onto the timeline or the canvas.
 
 ## Stand with Ukraine
 

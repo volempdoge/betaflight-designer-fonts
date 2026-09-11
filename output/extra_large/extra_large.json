@@ -13,6 +13,193 @@
   ],
   "ascii_cmap": true,
   "lowercase_folded_to_uppercase": true,
+  "cyrillic": [
+    {
+      "codepoint": "U+0401",
+      "letter": "\u0401",
+      "png": "png/cyrillic/0401.png"
+    },
+    {
+      "codepoint": "U+0404",
+      "letter": "\u0404",
+      "png": "png/cyrillic/0404.png"
+    },
+    {
+      "codepoint": "U+0406",
+      "letter": "\u0406",
+      "png": "png/cyrillic/0406.png"
+    },
+    {
+      "codepoint": "U+0407",
+      "letter": "\u0407",
+      "png": "png/cyrillic/0407.png"
+    },
+    {
+      "codepoint": "U+0410",
+      "letter": "\u0410",
+      "png": "png/cyrillic/0410.png"
+    },
+    {
+      "codepoint": "U+0411",
+      "letter": "\u0411",
+      "png": "png/cyrillic/0411.png"
+    },
+    {
+      "codepoint": "U+0412",
+      "letter": "\u0412",
+      "png": "png/cyrillic/0412.png"
+    },
+    {
+      "codepoint": "U+0413",
+      "letter": "\u0413",
+      "png": "png/cyrillic/0413.png"
+    },
+    {
+      "codepoint": "U+0414",
+      "letter": "\u0414",
+      "png": "png/cyrillic/0414.png"
+    },
+    {
+      "codepoint": "U+0415",
+      "letter": "\u0415",
+      "png": "png/cyrillic/0415.png"
+    },
+    {
+      "codepoint": "U+0416",
+      "letter": "\u0416",
+      "png": "png/cyrillic/0416.png"
+    },
+    {
+      "codepoint": "U+0417",
+      "letter": "\u0417",
+      "png": "png/cyrillic/0417.png"
+    },
+    {
+      "codepoint": "U+0418",
+      "letter": "\u0418",
+      "png": "png/cyrillic/0418.png"
+    },
+    {
+      "codepoint": "U+0419",
+      "letter": "\u0419",
+      "png": "png/cyrillic/0419.png"
+    },
+    {
+      "codepoint": "U+041A",
+      "letter": "\u041a",
+      "png": "png/cyrillic/041A.png"
+    },
+    {
+      "codepoint": "U+041B",
+      "letter": "\u041b",
+      "png": "png/cyrillic/041B.png"
+    },
+    {
+      "codepoint": "U+041C",
+      "letter": "\u041c",
+      "png": "png/cyrillic/041C.png"
+    },
+    {
+      "codepoint": "U+041D",
+      "letter": "\u041d",
+      "png": "png/cyrillic/041D.png"
+    },
+    {
+      "codepoint": "U+041E",
+      "letter": "\u041e",
+      "png": "png/cyrillic/041E.png"
+    },
+    {
+      "codepoint": "U+041F",
+      "letter": "\u041f",
+      "png": "png/cyrillic/041F.png"
+    },
+    {
+      "codepoint": "U+0420",
+      "letter": "\u0420",
+      "png": "png/cyrillic/0420.png"
+    },
+    {
+      "codepoint": "U+0421",
+      "letter": "\u0421",
+      "png": "png/cyrillic/0421.png"
+    },
+    {
+      "codepoint": "U+0422",
+      "letter": "\u0422",
+      "png": "png/cyrillic/0422.png"
+    },
+    {
+      "codepoint": "U+0423",
+      "letter": "\u0423",
+      "png": "png/cyrillic/0423.png"
+    },
+    {
+      "codepoint": "U+0424",
+      "letter": "\u0424",
+      "png": "png/cyrillic/0424.png"
+    },
+    {
+      "codepoint": "U+0425",
+      "letter": "\u0425",
+      "png": "png/cyrillic/0425.png"
+    },
+    {
+      "codepoint": "U+0426",
+      "letter": "\u0426",
+      "png": "png/cyrillic/0426.png"
+    },
+    {
+      "codepoint": "U+0427",
+      "letter": "\u0427",
+      "png": "png/cyrillic/0427.png"
+    },
+    {
+      "codepoint": "U+0428",
+      "letter": "\u0428",
+      "png": "png/cyrillic/0428.png"
+    },
+    {
+      "codepoint": "U+0429",
+      "letter": "\u0429",
+      "png": "png/cyrillic/0429.png"
+    },
+    {
+      "codepoint": "U+042A",
+      "letter": "\u042a",
+      "png": "png/cyrillic/042A.png"
+    },
+    {
+      "codepoint": "U+042B",
+      "letter": "\u042b",
+      "png": "png/cyrillic/042B.png"
+    },
+    {
+      "codepoint": "U+042C",
+      "letter": "\u042c",
+      "png": "png/cyrillic/042C.png"
+    },
+    {
+      "codepoint": "U+042D",
+      "letter": "\u042d",
+      "png": "png/cyrillic/042D.png"
+    },
+    {
+      "codepoint": "U+042E",
+      "letter": "\u042e",
+      "png": "png/cyrillic/042E.png"
+    },
+    {
+      "codepoint": "U+042F",
+      "letter": "\u042f",
+      "png": "png/cyrillic/042F.png"
+    },
+    {
+      "codepoint": "U+0490",
+      "letter": "\u0490",
+      "png": "png/cyrillic/0490.png"
+    }
+  ],
   "characters": [
     {
       "index": 0,
