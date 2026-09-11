@@ -124,13 +124,37 @@ glyph sideways.
   them on the raw slots. Either way the symbols stay reachable through their
   `U+E0xx` codepoints.
 
+## Working on the script
+
+```bash
+uv sync --group dev
+uv run pytest
+uv run ruff check . && uv run ruff format --check .
+uv run mypy
+```
+
+CI runs the same three on every push: lint (ruff and mypy), tests on Python 3.10
+and 3.14, and a build job that regenerates every bundled font and compares the
+result against the committed `output/` with `tools/compare_output.py`.
+
+Fonts and the JSON index are compared byte for byte, which works because
+`SOURCE_DATE_EPOCH` is pinned in the script and fontTools would otherwise stamp
+`head.created` from the clock. PNGs are compared as decoded pixels instead:
+Pillow's platform wheels bundle different zlib-ng builds, so the deflate stream
+differs between macOS and Linux even when every pixel is identical.
+
 ## Verifying a change
 
-The outlines are exactly invertible, so round-tripping is a real test:
-rasterise the traced contours with the non-zero winding rule at pixel centres
-and compare against the source bitmap. Both layers of all 256 characters across
-the ten bundled fonts come to 5120 outline sets.
+The outlines are exactly invertible, so round-tripping is the core test:
+`tests/conftest.py` rasterises the traced contours with the non-zero winding
+rule at pixel centres and compares against the source bitmap. The suite does
+that for both layers of all 256 characters across the ten bundled fonts, which
+is 5120 outline sets.
 
-Check rendering separately. Pillow's `ImageFont` with `embedded_color=True`
-rasterises `COLR`/`CPAL` through FreeType, which catches layer and palette
-mistakes that outline comparison cannot.
+The rest of the suite covers parsing, the character map, the metrics, and one
+regression that outline comparison alone would miss: `hmtx` left side bearings
+have to match `xMin`, otherwise TrueType shifts every glyph sideways.
+
+Rendering is the one thing tests do not cover. Pillow's `ImageFont` with
+`embedded_color=True` rasterises `COLR`/`CPAL` through FreeType, which is a
+quick way to eyeball layer and palette mistakes.

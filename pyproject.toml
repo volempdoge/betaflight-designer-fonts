@@ -26,5 +26,47 @@ dependencies = [
 [project.scripts]
 bf2font = "bf2font:main"
 
+[dependency-groups]
+dev = [
+    "pytest>=9.1",
+    "ruff>=0.16.7",
+    "mypy>=1.14",
+]
+
 [tool.uv]
 package = false
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle
+    "W",
+    "F",    # pyflakes
+    "I",    # import sorting
+    "N",    # naming
+    "UP",   # pyupgrade
+    "B",    # bugbear
+    "C4",   # comprehensions
+    "SIM",  # simplify
+    "PTH",  # use pathlib
+    "RET",  # returns
+    "RUF",
+]
+
+[tool.mypy]
+python_version = "3.10"
+files = ["bf2font.py", "tools", "tests"]
+mypy_path = "tests"
+warn_unused_ignores = true
+warn_redundant_casts = true
+warn_unreachable = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+addopts = "-q"

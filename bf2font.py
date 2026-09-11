@@ -34,6 +34,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 from dataclasses import dataclass
@@ -50,20 +51,24 @@ from PIL import Image
 CHAR_W = 12
 CHAR_H = 18
 CHARS = 256
-BYTES_PER_CHAR = 64          # 54 bytes of pixel data + 10 bytes of padding
+BYTES_PER_CHAR = 64  # 54 bytes of pixel data + 10 bytes of padding
 PIXEL_BYTES = CHAR_W * CHAR_H * 2 // 8  # 54
 
 BLACK, WHITE, TRANSPARENT = "black", "white", None
 
 # --- font metrics ------------------------------------------------------------
 
-PX = 100                      # font units per OSD pixel
-UPM = CHAR_H * PX             # 1800
-DESCENT = 400                 # cell sits from -400 up to +1400
+PX = 100  # font units per OSD pixel
+UPM = CHAR_H * PX  # 1800
+DESCENT = 400  # cell sits from -400 up to +1400
 ASCENT = UPM - DESCENT
-ADVANCE = CHAR_W * PX         # 1200
+ADVANCE = CHAR_W * PX  # 1200
 
-PUA_BASE = 0xE000             # every character is also reachable at U+E000+index
+PUA_BASE = 0xE000  # every character is also reachable at U+E000+index
+# fontTools stamps head.created from the clock unless SOURCE_DATE_EPOCH says
+# otherwise. Pinning it keeps repeated runs byte for byte identical, so a
+# regenerated output/ can be diffed against the committed one.
+SOURCE_DATE_EPOCH = "1761690259"
 VERSION = "1.000"
 COPYRIGHT = (
     "Original font data from betaflight/betaflight-configurator, "
@@ -82,7 +87,7 @@ LICENSE_TEXT = (
 @dataclass
 class Glyph:
     index: int
-    pixels: list[list[int]]   # [row][col] -> 0 black, 1/3 transparent, 2 white
+    pixels: list[list[int]]  # [row][col] -> 0 black, 1/3 transparent, 2 white
 
     def cells(self, *, value: int) -> set[tuple[int, int]]:
         """Cells of one colour, in y-up grid coordinates."""
@@ -132,6 +137,7 @@ def parse_mcm(path: Path) -> list[Glyph]:
 
 # --- pixels -> outlines ------------------------------------------------------
 
+
 # Turn preference when several boundary edges leave the same vertex (which only
 # happens where two cells touch diagonally): take the sharpest right turn first
 # so the traced loops never cross each other.
@@ -171,12 +177,8 @@ def trace_contours(cells: set[tuple[int, int]]) -> list[list[tuple[int, int]]]:
             if len(outgoing) == 1 or direction == (0, 0):
                 nxt = outgoing[0]
             else:
-                candidates = {
-                    (e[0] - point[0], e[1] - point[1]): e for e in outgoing
-                }
-                nxt = next(
-                    candidates[t] for t in _turns(direction) if t in candidates
-                )
+                candidates = {(e[0] - point[0], e[1] - point[1]): e for e in outgoing}
+                nxt = next(candidates[t] for t in _turns(direction) if t in candidates)
             outgoing.remove(nxt)
             if not outgoing:
                 del edges[point]
@@ -202,17 +204,11 @@ def _drop_collinear(contour: list[tuple[int, int]]) -> list[tuple[int, int]]:
     return out
 
 
-def to_font_units(contours, *, shrink: int = 0):
-    """Grid coordinates -> font units, optionally inset by `shrink` units.
-
-    The inset is applied by pushing every edge towards the interior, which keeps
-    the rectilinear shapes exact; it is only useful for debugging overlaps and
-    defaults to off.
-    """
-    del shrink
-    return [
-        [(x * PX, y * PX - DESCENT) for (x, y) in contour] for contour in contours
-    ]
+def to_font_units(
+    contours: list[list[tuple[int, int]]],
+) -> list[list[tuple[int, int]]]:
+    """Grid coordinates -> font units."""
+    return [[(x * PX, y * PX - DESCENT) for (x, y) in contour] for contour in contours]
 
 
 # --- PNG output --------------------------------------------------------------
@@ -223,11 +219,9 @@ TRANSPARENT_RGBA = (0, 0, 0, 0)
 
 def glyph_image(glyph: Glyph, scale: int) -> Image.Image:
     img = Image.new("RGBA", (CHAR_W, CHAR_H), TRANSPARENT_RGBA)
-    img.putdata(
-        [RGBA.get(v, TRANSPARENT_RGBA) for row in glyph.pixels for v in row]
-    )
+    img.putdata([RGBA.get(v, TRANSPARENT_RGBA) for row in glyph.pixels for v in row])
     if scale != 1:
-        img = img.resize((CHAR_W * scale, CHAR_H * scale), Image.NEAREST)
+        img = img.resize((CHAR_W * scale, CHAR_H * scale), Image.Resampling.NEAREST)
     return img
 
 
@@ -276,7 +270,7 @@ def build_font(
     layers: dict[str, list[tuple[str, int]]] = {}
     outlines: dict[str, list[list[tuple[int, int]]]] = {".notdef": []}
 
-    for glyph, name in zip(glyphs, names):
+    for glyph, name in zip(glyphs, names, strict=True):
         ink = glyph.ink()
         silhouette = to_font_units(trace_contours(ink))
         white = to_font_units(trace_contours(glyph.cells(value=2)))
@@ -290,7 +284,7 @@ def build_font(
         layers[name] = [(f"{name}.black", 0), (f"{name}.white", 1)]
 
     cmap: dict[int, str] = {}
-    for glyph, name in zip(glyphs, names):
+    for glyph, name in zip(glyphs, names, strict=True):
         cmap[PUA_BASE + glyph.index] = name
         if ascii_cmap and 0x20 <= glyph.index <= 0x7E:
             cmap[glyph.index] = name
@@ -366,18 +360,18 @@ def build_font(
         sCapHeight=13 * PX,
         sxHeight=9 * PX,
         achVendID="BFDF",
-        panose=dict(
-            bFamilyType=2,       # latin text
-            bSerifStyle=11,      # normal sans
-            bWeight=6,
-            bProportion=9,       # monospaced
-            bContrast=0,
-            bStrokeVariation=0,
-            bArmStyle=0,
-            bLetterForm=0,
-            bMidline=0,
-            bXHeight=0,
-        ),
+        panose={
+            "bFamilyType": 2,  # latin text
+            "bSerifStyle": 11,  # normal sans
+            "bWeight": 6,
+            "bProportion": 9,  # monospaced
+            "bContrast": 0,
+            "bStrokeVariation": 0,
+            "bArmStyle": 0,
+            "bLetterForm": 0,
+            "bMidline": 0,
+            "bXHeight": 0,
+        },
     )
     fb.setupPost(isFixedPitch=1)
     if mode == "color":
@@ -416,10 +410,7 @@ def convert(
     for fmt in formats:
         (font_dir / fmt).mkdir(parents=True, exist_ok=True)
 
-    cmap_opts = {
-        "ascii_cmap": not no_ascii,
-        "fold_lowercase": not literal_ascii,
-    }
+    ascii_cmap, fold_lowercase = not no_ascii, not literal_ascii
     variants = [("color", family_name)]
     if layer_fonts:
         variants += [
@@ -439,15 +430,15 @@ def convert(
                 "cell": {"width": CHAR_W, "height": CHAR_H},
                 "png_scale": scale,
                 "families": [n for _, n in variants],
-                "ascii_cmap": not no_ascii,
-                "lowercase_folded_to_uppercase": not no_ascii and not literal_ascii,
+                "ascii_cmap": ascii_cmap,
+                "lowercase_folded_to_uppercase": ascii_cmap and fold_lowercase,
                 "characters": [
                     {
                         "index": g.index,
                         "png": f"png/{g.index:03d}.png",
                         "codepoint": f"U+{PUA_BASE + g.index:04X}",
                         "ascii": chr(g.index)
-                        if not no_ascii and 0x21 <= g.index <= 0x7E
+                        if ascii_cmap and 0x21 <= g.index <= 0x7E
                         else None,
                         "blank": g.is_blank,
                     }
@@ -463,10 +454,24 @@ def convert(
     for mode, name_ in variants:
         stem = name_.replace(" ", "")
         if "otf" in formats:
-            fb = build_font(glyphs, family=name_, ttf=False, mode=mode, **cmap_opts)
+            fb = build_font(
+                glyphs,
+                family=name_,
+                ttf=False,
+                mode=mode,
+                ascii_cmap=ascii_cmap,
+                fold_lowercase=fold_lowercase,
+            )
             fb.save(str(font_dir / "otf" / f"{stem}.otf"))
         if needs_ttf:
-            fb = build_font(glyphs, family=name_, ttf=True, mode=mode, **cmap_opts)
+            fb = build_font(
+                glyphs,
+                family=name_,
+                ttf=True,
+                mode=mode,
+                ascii_cmap=ascii_cmap,
+                fold_lowercase=fold_lowercase,
+            )
             if "ttf" in formats:
                 fb.font.flavor = None
                 fb.save(str(font_dir / "ttf" / f"{stem}.ttf"))
@@ -525,6 +530,7 @@ def main(argv: list[str] | None = None) -> int:
         "cannot render colour fonts",
     )
     args = parser.parse_args(argv)
+    os.environ.setdefault("SOURCE_DATE_EPOCH", SOURCE_DATE_EPOCH)
 
     formats = [f.strip().lower() for f in args.formats.split(",") if f.strip()]
     unknown = set(formats) - {"otf", "ttf", "woff", "woff2"}

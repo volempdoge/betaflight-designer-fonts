@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      # setup-uv publishes no moving major tag since v8, so pin the exact one.
+      - uses: astral-sh/setup-uv@v10.1.0
+        with:
+          enable-cache: true
+      - run: uv sync --group dev --frozen
+      - name: ruff check
+        run: uv run ruff check --output-format=github .
+      - name: ruff format
+        run: uv run ruff format --check --diff .
+      - name: mypy
+        run: uv run mypy
+
+  test:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.14"]
+    steps:
+      - uses: actions/checkout@v7
+      # setup-uv publishes no moving major tag since v8, so pin the exact one.
+      - uses: astral-sh/setup-uv@v10.1.0
+        with:
+          enable-cache: true
+          python-version: ${{ matrix.python-version }}
+      - run: uv sync --group dev --frozen
+      - run: uv run pytest
+
+  build:
+    # The committed output/ is what people download, so prove the script still
+    # regenerates it from the .mcm sources on a clean machine.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      # setup-uv publishes no moving major tag since v8, so pin the exact one.
+      - uses: astral-sh/setup-uv@v10.1.0
+        with:
+          enable-cache: true
+      - run: uv sync --frozen --no-dev
+      - name: Convert every bundled font
+        run: uv run bf2font.py original_fonts/*.mcm -o build
+      - name: Check the result matches the committed output
+        # Fonts and JSON are compared byte for byte, PNGs by decoded pixels:
+        # Pillow's platform wheels bundle different zlib-ng builds.
+        run: uv run tools/compare_output.py build output
+      - uses: actions/upload-artifact@v7
+        with:
+          name: fonts
+          path: build
+          retention-days: 7
