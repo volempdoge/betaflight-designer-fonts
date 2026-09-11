@@ -1,0 +1,30 @@
+[project]
+name = "betaflight-designer-fonts"
+version = "1.0.0"
+description = "Convert Betaflight/MAX7456 .mcm OSD fonts into sliced PNGs and colour font files (OTF/TTF/WOFF/WOFF2)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+keywords = [
+    "betaflight",
+    "osd",
+    "font",
+    "fpv",
+    "max7456",
+    "mcm",
+    "opentype",
+    "color-font",
+    "colr",
+    "woff2",
+]
+dependencies = [
+    "fonttools>=4.53",
+    "brotli>=1.1",
+    "pillow>=10.3",
+]
+
+[project.scripts]
+bf2font = "bf2font:main"
+
+[tool.uv]
+package = false

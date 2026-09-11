@@ -1,0 +1,1810 @@
+{
+  "source": "default.mcm",
+  "family": "Betaflight OSD Default",
+  "cell": {
+    "width": 12,
+    "height": 18
+  },
+  "png_scale": 8,
+  "families": [
+    "Betaflight OSD Default",
+    "Betaflight OSD Default Shadow",
+    "Betaflight OSD Default Fill"
+  ],
+  "ascii_cmap": true,
+  "lowercase_folded_to_uppercase": true,
+  "characters": [
+    {
+      "index": 0,
+      "png": "png/000.png",
+      "codepoint": "U+E000",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 1,
+      "png": "png/001.png",
+      "codepoint": "U+E001",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 2,
+      "png": "png/002.png",
+      "codepoint": "U+E002",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 3,
+      "png": "png/003.png",
+      "codepoint": "U+E003",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 4,
+      "png": "png/004.png",
+      "codepoint": "U+E004",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 5,
+      "png": "png/005.png",
+      "codepoint": "U+E005",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 6,
+      "png": "png/006.png",
+      "codepoint": "U+E006",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 7,
+      "png": "png/007.png",
+      "codepoint": "U+E007",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 8,
+      "png": "png/008.png",
+      "codepoint": "U+E008",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 9,
+      "png": "png/009.png",
+      "codepoint": "U+E009",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 10,
+      "png": "png/010.png",
+      "codepoint": "U+E00A",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 11,
+      "png": "png/011.png",
+      "codepoint": "U+E00B",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 12,
+      "png": "png/012.png",
+      "codepoint": "U+E00C",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 13,
+      "png": "png/013.png",
+      "codepoint": "U+E00D",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 14,
+      "png": "png/014.png",
+      "codepoint": "U+E00E",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 15,
+      "png": "png/015.png",
+      "codepoint": "U+E00F",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 16,
+      "png": "png/016.png",
+      "codepoint": "U+E010",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 17,
+      "png": "png/017.png",
+      "codepoint": "U+E011",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 18,
+      "png": "png/018.png",
+      "codepoint": "U+E012",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 19,
+      "png": "png/019.png",
+      "codepoint": "U+E013",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 20,
+      "png": "png/020.png",
+      "codepoint": "U+E014",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 21,
+      "png": "png/021.png",
+      "codepoint": "U+E015",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 22,
+      "png": "png/022.png",
+      "codepoint": "U+E016",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 23,
+      "png": "png/023.png",
+      "codepoint": "U+E017",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 24,
+      "png": "png/024.png",
+      "codepoint": "U+E018",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 25,
+      "png": "png/025.png",
+      "codepoint": "U+E019",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 26,
+      "png": "png/026.png",
+      "codepoint": "U+E01A",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 27,
+      "png": "png/027.png",
+      "codepoint": "U+E01B",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 28,
+      "png": "png/028.png",
+      "codepoint": "U+E01C",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 29,
+      "png": "png/029.png",
+      "codepoint": "U+E01D",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 30,
+      "png": "png/030.png",
+      "codepoint": "U+E01E",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 31,
+      "png": "png/031.png",
+      "codepoint": "U+E01F",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 32,
+      "png": "png/032.png",
+      "codepoint": "U+E020",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 33,
+      "png": "png/033.png",
+      "codepoint": "U+E021",
+      "ascii": "!",
+      "blank": false
+    },
+    {
+      "index": 34,
+      "png": "png/034.png",
+      "codepoint": "U+E022",
+      "ascii": "\"",
+      "blank": false
+    },
+    {
+      "index": 35,
+      "png": "png/035.png",
+      "codepoint": "U+E023",
+      "ascii": "#",
+      "blank": false
+    },
+    {
+      "index": 36,
+      "png": "png/036.png",
+      "codepoint": "U+E024",
+      "ascii": "$",
+      "blank": false
+    },
+    {
+      "index": 37,
+      "png": "png/037.png",
+      "codepoint": "U+E025",
+      "ascii": "%",
+      "blank": false
+    },
+    {
+      "index": 38,
+      "png": "png/038.png",
+      "codepoint": "U+E026",
+      "ascii": "&",
+      "blank": false
+    },
+    {
+      "index": 39,
+      "png": "png/039.png",
+      "codepoint": "U+E027",
+      "ascii": "'",
+      "blank": false
+    },
+    {
+      "index": 40,
+      "png": "png/040.png",
+      "codepoint": "U+E028",
+      "ascii": "(",
+      "blank": false
+    },
+    {
+      "index": 41,
+      "png": "png/041.png",
+      "codepoint": "U+E029",
+      "ascii": ")",
+      "blank": false
+    },
+    {
+      "index": 42,
+      "png": "png/042.png",
+      "codepoint": "U+E02A",
+      "ascii": "*",
+      "blank": false
+    },
+    {
+      "index": 43,
+      "png": "png/043.png",
+      "codepoint": "U+E02B",
+      "ascii": "+",
+      "blank": false
+    },
+    {
+      "index": 44,
+      "png": "png/044.png",
+      "codepoint": "U+E02C",
+      "ascii": ",",
+      "blank": false
+    },
+    {
+      "index": 45,
+      "png": "png/045.png",
+      "codepoint": "U+E02D",
+      "ascii": "-",
+      "blank": false
+    },
+    {
+      "index": 46,
+      "png": "png/046.png",
+      "codepoint": "U+E02E",
+      "ascii": ".",
+      "blank": false
+    },
+    {
+      "index": 47,
+      "png": "png/047.png",
+      "codepoint": "U+E02F",
+      "ascii": "/",
+      "blank": false
+    },
+    {
+      "index": 48,
+      "png": "png/048.png",
+      "codepoint": "U+E030",
+      "ascii": "0",
+      "blank": false
+    },
+    {
+      "index": 49,
+      "png": "png/049.png",
+      "codepoint": "U+E031",
+      "ascii": "1",
+      "blank": false
+    },
+    {
+      "index": 50,
+      "png": "png/050.png",
+      "codepoint": "U+E032",
+      "ascii": "2",
+      "blank": false
+    },
+    {
+      "index": 51,
+      "png": "png/051.png",
+      "codepoint": "U+E033",
+      "ascii": "3",
+      "blank": false
+    },
+    {
+      "index": 52,
+      "png": "png/052.png",
+      "codepoint": "U+E034",
+      "ascii": "4",
+      "blank": false
+    },
+    {
+      "index": 53,
+      "png": "png/053.png",
+      "codepoint": "U+E035",
+      "ascii": "5",
+      "blank": false
+    },
+    {
+      "index": 54,
+      "png": "png/054.png",
+      "codepoint": "U+E036",
+      "ascii": "6",
+      "blank": false
+    },
+    {
+      "index": 55,
+      "png": "png/055.png",
+      "codepoint": "U+E037",
+      "ascii": "7",
+      "blank": false
+    },
+    {
+      "index": 56,
+      "png": "png/056.png",
+      "codepoint": "U+E038",
+      "ascii": "8",
+      "blank": false
+    },
+    {
+      "index": 57,
+      "png": "png/057.png",
+      "codepoint": "U+E039",
+      "ascii": "9",
+      "blank": false
+    },
+    {
+      "index": 58,
+      "png": "png/058.png",
+      "codepoint": "U+E03A",
+      "ascii": ":",
+      "blank": false
+    },
+    {
+      "index": 59,
+      "png": "png/059.png",
+      "codepoint": "U+E03B",
+      "ascii": ";",
+      "blank": false
+    },
+    {
+      "index": 60,
+      "png": "png/060.png",
+      "codepoint": "U+E03C",
+      "ascii": "<",
+      "blank": false
+    },
+    {
+      "index": 61,
+      "png": "png/061.png",
+      "codepoint": "U+E03D",
+      "ascii": "=",
+      "blank": false
+    },
+    {
+      "index": 62,
+      "png": "png/062.png",
+      "codepoint": "U+E03E",
+      "ascii": ">",
+      "blank": false
+    },
+    {
+      "index": 63,
+      "png": "png/063.png",
+      "codepoint": "U+E03F",
+      "ascii": "?",
+      "blank": false
+    },
+    {
+      "index": 64,
+      "png": "png/064.png",
+      "codepoint": "U+E040",
+      "ascii": "@",
+      "blank": false
+    },
+    {
+      "index": 65,
+      "png": "png/065.png",
+      "codepoint": "U+E041",
+      "ascii": "A",
+      "blank": false
+    },
+    {
+      "index": 66,
+      "png": "png/066.png",
+      "codepoint": "U+E042",
+      "ascii": "B",
+      "blank": false
+    },
+    {
+      "index": 67,
+      "png": "png/067.png",
+      "codepoint": "U+E043",
+      "ascii": "C",
+      "blank": false
+    },
+    {
+      "index": 68,
+      "png": "png/068.png",
+      "codepoint": "U+E044",
+      "ascii": "D",
+      "blank": false
+    },
+    {
+      "index": 69,
+      "png": "png/069.png",
+      "codepoint": "U+E045",
+      "ascii": "E",
+      "blank": false
+    },
+    {
+      "index": 70,
+      "png": "png/070.png",
+      "codepoint": "U+E046",
+      "ascii": "F",
+      "blank": false
+    },
+    {
+      "index": 71,
+      "png": "png/071.png",
+      "codepoint": "U+E047",
+      "ascii": "G",
+      "blank": false
+    },
+    {
+      "index": 72,
+      "png": "png/072.png",
+      "codepoint": "U+E048",
+      "ascii": "H",
+      "blank": false
+    },
+    {
+      "index": 73,
+      "png": "png/073.png",
+      "codepoint": "U+E049",
+      "ascii": "I",
+      "blank": false
+    },
+    {
+      "index": 74,
+      "png": "png/074.png",
+      "codepoint": "U+E04A",
+      "ascii": "J",
+      "blank": false
+    },
+    {
+      "index": 75,
+      "png": "png/075.png",
+      "codepoint": "U+E04B",
+      "ascii": "K",
+      "blank": false
+    },
+    {
+      "index": 76,
+      "png": "png/076.png",
+      "codepoint": "U+E04C",
+      "ascii": "L",
+      "blank": false
+    },
+    {
+      "index": 77,
+      "png": "png/077.png",
+      "codepoint": "U+E04D",
+      "ascii": "M",
+      "blank": false
+    },
+    {
+      "index": 78,
+      "png": "png/078.png",
+      "codepoint": "U+E04E",
+      "ascii": "N",
+      "blank": false
+    },
+    {
+      "index": 79,
+      "png": "png/079.png",
+      "codepoint": "U+E04F",
+      "ascii": "O",
+      "blank": false
+    },
+    {
+      "index": 80,
+      "png": "png/080.png",
+      "codepoint": "U+E050",
+      "ascii": "P",
+      "blank": false
+    },
+    {
+      "index": 81,
+      "png": "png/081.png",
+      "codepoint": "U+E051",
+      "ascii": "Q",
+      "blank": false
+    },
+    {
+      "index": 82,
+      "png": "png/082.png",
+      "codepoint": "U+E052",
+      "ascii": "R",
+      "blank": false
+    },
+    {
+      "index": 83,
+      "png": "png/083.png",
+      "codepoint": "U+E053",
+      "ascii": "S",
+      "blank": false
+    },
+    {
+      "index": 84,
+      "png": "png/084.png",
+      "codepoint": "U+E054",
+      "ascii": "T",
+      "blank": false
+    },
+    {
+      "index": 85,
+      "png": "png/085.png",
+      "codepoint": "U+E055",
+      "ascii": "U",
+      "blank": false
+    },
+    {
+      "index": 86,
+      "png": "png/086.png",
+      "codepoint": "U+E056",
+      "ascii": "V",
+      "blank": false
+    },
+    {
+      "index": 87,
+      "png": "png/087.png",
+      "codepoint": "U+E057",
+      "ascii": "W",
+      "blank": false
+    },
+    {
+      "index": 88,
+      "png": "png/088.png",
+      "codepoint": "U+E058",
+      "ascii": "X",
+      "blank": false
+    },
+    {
+      "index": 89,
+      "png": "png/089.png",
+      "codepoint": "U+E059",
+      "ascii": "Y",
+      "blank": false
+    },
+    {
+      "index": 90,
+      "png": "png/090.png",
+      "codepoint": "U+E05A",
+      "ascii": "Z",
+      "blank": false
+    },
+    {
+      "index": 91,
+      "png": "png/091.png",
+      "codepoint": "U+E05B",
+      "ascii": "[",
+      "blank": false
+    },
+    {
+      "index": 92,
+      "png": "png/092.png",
+      "codepoint": "U+E05C",
+      "ascii": "\\",
+      "blank": false
+    },
+    {
+      "index": 93,
+      "png": "png/093.png",
+      "codepoint": "U+E05D",
+      "ascii": "]",
+      "blank": false
+    },
+    {
+      "index": 94,
+      "png": "png/094.png",
+      "codepoint": "U+E05E",
+      "ascii": "^",
+      "blank": false
+    },
+    {
+      "index": 95,
+      "png": "png/095.png",
+      "codepoint": "U+E05F",
+      "ascii": "_",
+      "blank": false
+    },
+    {
+      "index": 96,
+      "png": "png/096.png",
+      "codepoint": "U+E060",
+      "ascii": "`",
+      "blank": false
+    },
+    {
+      "index": 97,
+      "png": "png/097.png",
+      "codepoint": "U+E061",
+      "ascii": "a",
+      "blank": false
+    },
+    {
+      "index": 98,
+      "png": "png/098.png",
+      "codepoint": "U+E062",
+      "ascii": "b",
+      "blank": false
+    },
+    {
+      "index": 99,
+      "png": "png/099.png",
+      "codepoint": "U+E063",
+      "ascii": "c",
+      "blank": false
+    },
+    {
+      "index": 100,
+      "png": "png/100.png",
+      "codepoint": "U+E064",
+      "ascii": "d",
+      "blank": false
+    },
+    {
+      "index": 101,
+      "png": "png/101.png",
+      "codepoint": "U+E065",
+      "ascii": "e",
+      "blank": false
+    },
+    {
+      "index": 102,
+      "png": "png/102.png",
+      "codepoint": "U+E066",
+      "ascii": "f",
+      "blank": false
+    },
+    {
+      "index": 103,
+      "png": "png/103.png",
+      "codepoint": "U+E067",
+      "ascii": "g",
+      "blank": false
+    },
+    {
+      "index": 104,
+      "png": "png/104.png",
+      "codepoint": "U+E068",
+      "ascii": "h",
+      "blank": false
+    },
+    {
+      "index": 105,
+      "png": "png/105.png",
+      "codepoint": "U+E069",
+      "ascii": "i",
+      "blank": false
+    },
+    {
+      "index": 106,
+      "png": "png/106.png",
+      "codepoint": "U+E06A",
+      "ascii": "j",
+      "blank": false
+    },
+    {
+      "index": 107,
+      "png": "png/107.png",
+      "codepoint": "U+E06B",
+      "ascii": "k",
+      "blank": false
+    },
+    {
+      "index": 108,
+      "png": "png/108.png",
+      "codepoint": "U+E06C",
+      "ascii": "l",
+      "blank": false
+    },
+    {
+      "index": 109,
+      "png": "png/109.png",
+      "codepoint": "U+E06D",
+      "ascii": "m",
+      "blank": false
+    },
+    {
+      "index": 110,
+      "png": "png/110.png",
+      "codepoint": "U+E06E",
+      "ascii": "n",
+      "blank": false
+    },
+    {
+      "index": 111,
+      "png": "png/111.png",
+      "codepoint": "U+E06F",
+      "ascii": "o",
+      "blank": false
+    },
+    {
+      "index": 112,
+      "png": "png/112.png",
+      "codepoint": "U+E070",
+      "ascii": "p",
+      "blank": false
+    },
+    {
+      "index": 113,
+      "png": "png/113.png",
+      "codepoint": "U+E071",
+      "ascii": "q",
+      "blank": false
+    },
+    {
+      "index": 114,
+      "png": "png/114.png",
+      "codepoint": "U+E072",
+      "ascii": "r",
+      "blank": false
+    },
+    {
+      "index": 115,
+      "png": "png/115.png",
+      "codepoint": "U+E073",
+      "ascii": "s",
+      "blank": false
+    },
+    {
+      "index": 116,
+      "png": "png/116.png",
+      "codepoint": "U+E074",
+      "ascii": "t",
+      "blank": false
+    },
+    {
+      "index": 117,
+      "png": "png/117.png",
+      "codepoint": "U+E075",
+      "ascii": "u",
+      "blank": false
+    },
+    {
+      "index": 118,
+      "png": "png/118.png",
+      "codepoint": "U+E076",
+      "ascii": "v",
+      "blank": false
+    },
+    {
+      "index": 119,
+      "png": "png/119.png",
+      "codepoint": "U+E077",
+      "ascii": "w",
+      "blank": false
+    },
+    {
+      "index": 120,
+      "png": "png/120.png",
+      "codepoint": "U+E078",
+      "ascii": "x",
+      "blank": false
+    },
+    {
+      "index": 121,
+      "png": "png/121.png",
+      "codepoint": "U+E079",
+      "ascii": "y",
+      "blank": false
+    },
+    {
+      "index": 122,
+      "png": "png/122.png",
+      "codepoint": "U+E07A",
+      "ascii": "z",
+      "blank": false
+    },
+    {
+      "index": 123,
+      "png": "png/123.png",
+      "codepoint": "U+E07B",
+      "ascii": "{",
+      "blank": true
+    },
+    {
+      "index": 124,
+      "png": "png/124.png",
+      "codepoint": "U+E07C",
+      "ascii": "|",
+      "blank": false
+    },
+    {
+      "index": 125,
+      "png": "png/125.png",
+      "codepoint": "U+E07D",
+      "ascii": "}",
+      "blank": true
+    },
+    {
+      "index": 126,
+      "png": "png/126.png",
+      "codepoint": "U+E07E",
+      "ascii": "~",
+      "blank": false
+    },
+    {
+      "index": 127,
+      "png": "png/127.png",
+      "codepoint": "U+E07F",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 128,
+      "png": "png/128.png",
+      "codepoint": "U+E080",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 129,
+      "png": "png/129.png",
+      "codepoint": "U+E081",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 130,
+      "png": "png/130.png",
+      "codepoint": "U+E082",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 131,
+      "png": "png/131.png",
+      "codepoint": "U+E083",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 132,
+      "png": "png/132.png",
+      "codepoint": "U+E084",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 133,
+      "png": "png/133.png",
+      "codepoint": "U+E085",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 134,
+      "png": "png/134.png",
+      "codepoint": "U+E086",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 135,
+      "png": "png/135.png",
+      "codepoint": "U+E087",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 136,
+      "png": "png/136.png",
+      "codepoint": "U+E088",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 137,
+      "png": "png/137.png",
+      "codepoint": "U+E089",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 138,
+      "png": "png/138.png",
+      "codepoint": "U+E08A",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 139,
+      "png": "png/139.png",
+      "codepoint": "U+E08B",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 140,
+      "png": "png/140.png",
+      "codepoint": "U+E08C",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 141,
+      "png": "png/141.png",
+      "codepoint": "U+E08D",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 142,
+      "png": "png/142.png",
+      "codepoint": "U+E08E",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 143,
+      "png": "png/143.png",
+      "codepoint": "U+E08F",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 144,
+      "png": "png/144.png",
+      "codepoint": "U+E090",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 145,
+      "png": "png/145.png",
+      "codepoint": "U+E091",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 146,
+      "png": "png/146.png",
+      "codepoint": "U+E092",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 147,
+      "png": "png/147.png",
+      "codepoint": "U+E093",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 148,
+      "png": "png/148.png",
+      "codepoint": "U+E094",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 149,
+      "png": "png/149.png",
+      "codepoint": "U+E095",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 150,
+      "png": "png/150.png",
+      "codepoint": "U+E096",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 151,
+      "png": "png/151.png",
+      "codepoint": "U+E097",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 152,
+      "png": "png/152.png",
+      "codepoint": "U+E098",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 153,
+      "png": "png/153.png",
+      "codepoint": "U+E099",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 154,
+      "png": "png/154.png",
+      "codepoint": "U+E09A",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 155,
+      "png": "png/155.png",
+      "codepoint": "U+E09B",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 156,
+      "png": "png/156.png",
+      "codepoint": "U+E09C",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 157,
+      "png": "png/157.png",
+      "codepoint": "U+E09D",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 158,
+      "png": "png/158.png",
+      "codepoint": "U+E09E",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 159,
+      "png": "png/159.png",
+      "codepoint": "U+E09F",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 160,
+      "png": "png/160.png",
+      "codepoint": "U+E0A0",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 161,
+      "png": "png/161.png",
+      "codepoint": "U+E0A1",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 162,
+      "png": "png/162.png",
+      "codepoint": "U+E0A2",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 163,
+      "png": "png/163.png",
+      "codepoint": "U+E0A3",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 164,
+      "png": "png/164.png",
+      "codepoint": "U+E0A4",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 165,
+      "png": "png/165.png",
+      "codepoint": "U+E0A5",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 166,
+      "png": "png/166.png",
+      "codepoint": "U+E0A6",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 167,
+      "png": "png/167.png",
+      "codepoint": "U+E0A7",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 168,
+      "png": "png/168.png",
+      "codepoint": "U+E0A8",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 169,
+      "png": "png/169.png",
+      "codepoint": "U+E0A9",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 170,
+      "png": "png/170.png",
+      "codepoint": "U+E0AA",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 171,
+      "png": "png/171.png",
+      "codepoint": "U+E0AB",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 172,
+      "png": "png/172.png",
+      "codepoint": "U+E0AC",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 173,
+      "png": "png/173.png",
+      "codepoint": "U+E0AD",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 174,
+      "png": "png/174.png",
+      "codepoint": "U+E0AE",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 175,
+      "png": "png/175.png",
+      "codepoint": "U+E0AF",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 176,
+      "png": "png/176.png",
+      "codepoint": "U+E0B0",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 177,
+      "png": "png/177.png",
+      "codepoint": "U+E0B1",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 178,
+      "png": "png/178.png",
+      "codepoint": "U+E0B2",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 179,
+      "png": "png/179.png",
+      "codepoint": "U+E0B3",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 180,
+      "png": "png/180.png",
+      "codepoint": "U+E0B4",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 181,
+      "png": "png/181.png",
+      "codepoint": "U+E0B5",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 182,
+      "png": "png/182.png",
+      "codepoint": "U+E0B6",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 183,
+      "png": "png/183.png",
+      "codepoint": "U+E0B7",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 184,
+      "png": "png/184.png",
+      "codepoint": "U+E0B8",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 185,
+      "png": "png/185.png",
+      "codepoint": "U+E0B9",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 186,
+      "png": "png/186.png",
+      "codepoint": "U+E0BA",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 187,
+      "png": "png/187.png",
+      "codepoint": "U+E0BB",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 188,
+      "png": "png/188.png",
+      "codepoint": "U+E0BC",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 189,
+      "png": "png/189.png",
+      "codepoint": "U+E0BD",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 190,
+      "png": "png/190.png",
+      "codepoint": "U+E0BE",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 191,
+      "png": "png/191.png",
+      "codepoint": "U+E0BF",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 192,
+      "png": "png/192.png",
+      "codepoint": "U+E0C0",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 193,
+      "png": "png/193.png",
+      "codepoint": "U+E0C1",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 194,
+      "png": "png/194.png",
+      "codepoint": "U+E0C2",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 195,
+      "png": "png/195.png",
+      "codepoint": "U+E0C3",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 196,
+      "png": "png/196.png",
+      "codepoint": "U+E0C4",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 197,
+      "png": "png/197.png",
+      "codepoint": "U+E0C5",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 198,
+      "png": "png/198.png",
+      "codepoint": "U+E0C6",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 199,
+      "png": "png/199.png",
+      "codepoint": "U+E0C7",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 200,
+      "png": "png/200.png",
+      "codepoint": "U+E0C8",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 201,
+      "png": "png/201.png",
+      "codepoint": "U+E0C9",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 202,
+      "png": "png/202.png",
+      "codepoint": "U+E0CA",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 203,
+      "png": "png/203.png",
+      "codepoint": "U+E0CB",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 204,
+      "png": "png/204.png",
+      "codepoint": "U+E0CC",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 205,
+      "png": "png/205.png",
+      "codepoint": "U+E0CD",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 206,
+      "png": "png/206.png",
+      "codepoint": "U+E0CE",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 207,
+      "png": "png/207.png",
+      "codepoint": "U+E0CF",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 208,
+      "png": "png/208.png",
+      "codepoint": "U+E0D0",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 209,
+      "png": "png/209.png",
+      "codepoint": "U+E0D1",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 210,
+      "png": "png/210.png",
+      "codepoint": "U+E0D2",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 211,
+      "png": "png/211.png",
+      "codepoint": "U+E0D3",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 212,
+      "png": "png/212.png",
+      "codepoint": "U+E0D4",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 213,
+      "png": "png/213.png",
+      "codepoint": "U+E0D5",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 214,
+      "png": "png/214.png",
+      "codepoint": "U+E0D6",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 215,
+      "png": "png/215.png",
+      "codepoint": "U+E0D7",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 216,
+      "png": "png/216.png",
+      "codepoint": "U+E0D8",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 217,
+      "png": "png/217.png",
+      "codepoint": "U+E0D9",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 218,
+      "png": "png/218.png",
+      "codepoint": "U+E0DA",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 219,
+      "png": "png/219.png",
+      "codepoint": "U+E0DB",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 220,
+      "png": "png/220.png",
+      "codepoint": "U+E0DC",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 221,
+      "png": "png/221.png",
+      "codepoint": "U+E0DD",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 222,
+      "png": "png/222.png",
+      "codepoint": "U+E0DE",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 223,
+      "png": "png/223.png",
+      "codepoint": "U+E0DF",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 224,
+      "png": "png/224.png",
+      "codepoint": "U+E0E0",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 225,
+      "png": "png/225.png",
+      "codepoint": "U+E0E1",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 226,
+      "png": "png/226.png",
+      "codepoint": "U+E0E2",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 227,
+      "png": "png/227.png",
+      "codepoint": "U+E0E3",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 228,
+      "png": "png/228.png",
+      "codepoint": "U+E0E4",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 229,
+      "png": "png/229.png",
+      "codepoint": "U+E0E5",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 230,
+      "png": "png/230.png",
+      "codepoint": "U+E0E6",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 231,
+      "png": "png/231.png",
+      "codepoint": "U+E0E7",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 232,
+      "png": "png/232.png",
+      "codepoint": "U+E0E8",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 233,
+      "png": "png/233.png",
+      "codepoint": "U+E0E9",
+      "ascii": null,
+      "blank": true
+    },
+    {
+      "index": 234,
+      "png": "png/234.png",
+      "codepoint": "U+E0EA",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 235,
+      "png": "png/235.png",
+      "codepoint": "U+E0EB",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 236,
+      "png": "png/236.png",
+      "codepoint": "U+E0EC",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 237,
+      "png": "png/237.png",
+      "codepoint": "U+E0ED",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 238,
+      "png": "png/238.png",
+      "codepoint": "U+E0EE",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 239,
+      "png": "png/239.png",
+      "codepoint": "U+E0EF",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 240,
+      "png": "png/240.png",
+      "codepoint": "U+E0F0",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 241,
+      "png": "png/241.png",
+      "codepoint": "U+E0F1",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 242,
+      "png": "png/242.png",
+      "codepoint": "U+E0F2",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 243,
+      "png": "png/243.png",
+      "codepoint": "U+E0F3",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 244,
+      "png": "png/244.png",
+      "codepoint": "U+E0F4",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 245,
+      "png": "png/245.png",
+      "codepoint": "U+E0F5",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 246,
+      "png": "png/246.png",
+      "codepoint": "U+E0F6",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 247,
+      "png": "png/247.png",
+      "codepoint": "U+E0F7",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 248,
+      "png": "png/248.png",
+      "codepoint": "U+E0F8",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 249,
+      "png": "png/249.png",
+      "codepoint": "U+E0F9",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 250,
+      "png": "png/250.png",
+      "codepoint": "U+E0FA",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 251,
+      "png": "png/251.png",
+      "codepoint": "U+E0FB",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 252,
+      "png": "png/252.png",
+      "codepoint": "U+E0FC",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 253,
+      "png": "png/253.png",
+      "codepoint": "U+E0FD",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 254,
+      "png": "png/254.png",
+      "codepoint": "U+E0FE",
+      "ascii": null,
+      "blank": false
+    },
+    {
+      "index": 255,
+      "png": "png/255.png",
+      "codepoint": "U+E0FF",
+      "ascii": null,
+      "blank": true
+    }
+  ]
+}
