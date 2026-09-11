@@ -8,8 +8,9 @@ import pytest
 from conftest import font_paths, rasterise
 
 import cyrillic
-from bf2font import CHAR_H, CHAR_W, Glyph, build_font, cyrillic_glyphs, parse_mcm
-from cyrillic import Geometry, compose, outline, runs
+from bf2font import CHAR_H, CHAR_W, Glyph, build_font, composed_glyphs, parse_mcm
+from cyrillic import compose
+from shapes import WHITE, Geometry, core_of, mirror, outline, runs
 
 
 def latin_of(path: Path) -> dict[str, list[list[int]]]:
@@ -36,11 +37,11 @@ def test_every_font_composes_every_letter(path: Path) -> None:
     for codepoint, px in made.items():
         letter = cyrillic.UPPERCASE[codepoint]
         assert len(px) == CHAR_H and all(len(r) == CHAR_W for r in px), letter
-        assert any(v == cyrillic.WHITE for row in px for v in row), f"{letter} is blank"
+        assert any(v == WHITE for row in px for v in row), f"{letter} is blank"
 
 
 def touches_edge(px: list[list[int]]) -> bool:
-    return cyrillic.WHITE in (
+    return WHITE in (
         [px[0][x] for x in range(CHAR_W)]
         + [px[CHAR_H - 1][x] for x in range(CHAR_W)]
         + [row[0] for row in px]
@@ -119,20 +120,20 @@ def test_outline_hugs_the_core(clarity: dict[str, list[list[int]]]) -> None:
 def test_reused_letters_are_the_font_s_own(clarity: dict[str, list[list[int]]]) -> None:
     made = compose(clarity)
     for cyr, lat in cyrillic.SAME_AS_LATIN.items():
-        assert made[cyr] == cyrillic.core_of(clarity[lat]), cyr
+        assert made[cyr] == core_of(clarity[lat]), cyr
 
 
 def test_mirrored_letters_are_reflections(clarity: dict[str, list[list[int]]]) -> None:
     made = compose(clarity)
     for cyr, lat in cyrillic.MIRRORED.items():
-        assert made[cyr] == cyrillic.mirror(cyrillic.core_of(clarity[lat])), cyr
-        assert made[cyr] != cyrillic.core_of(clarity[lat]), f"{cyr} is symmetric?"
+        assert made[cyr] == mirror(core_of(clarity[lat])), cyr
+        assert made[cyr] != core_of(clarity[lat]), f"{cyr} is symmetric?"
 
 
 def test_glyphs_vectorise_losslessly() -> None:
     """The composed bitmaps must survive the outline tracer like any other."""
     glyphs = parse_mcm(Path("original_fonts/clarity.mcm"))
-    for glyph in cyrillic_glyphs(glyphs).values():
+    for glyph in composed_glyphs(glyphs, ("cyrillic",)).values():
         for cells in (glyph.ink(), glyph.cells(value=2)):
             from bf2font import trace_contours
 
@@ -146,20 +147,19 @@ def test_font_carries_the_letters_at_their_real_codepoints() -> None:
     assert cmap[0x0410] == "uni0410", "А"
     assert cmap[0x0490] == "uni0490", "Ґ"
     assert cmap[0x0430] == cmap[0x0410], "lowercase folds onto the capital"
-    assert len(font["COLR"].ColorLayers) == 222 + 37
+    non_blank = sum(not g.is_blank for g in glyphs)
+    assert len(font["COLR"].ColorLayers) > non_blank + len(cyrillic.UPPERCASE)
 
 
 def test_cyrillic_can_be_turned_off() -> None:
     glyphs = parse_mcm(Path("original_fonts/clarity.mcm"))
-    cmap = build_font(
-        glyphs, family="T", ttf=True, with_cyrillic=False
-    ).font.getBestCmap()
+    cmap = build_font(glyphs, family="T", ttf=True, sets=()).font.getBestCmap()
     assert 0x0410 not in cmap
 
 
 def test_composed_glyphs_are_ordinary_glyphs() -> None:
     glyphs = parse_mcm(Path("original_fonts/clarity.mcm"))
-    made = cyrillic_glyphs(glyphs)
+    made = composed_glyphs(glyphs, ("cyrillic",))
     assert all(isinstance(g, Glyph) for g in made.values())
     assert not any(g.is_blank for g in made.values())
 
@@ -202,9 +202,9 @@ def test_mirrored_letters_are_actually_reversed(path: Path, cyr: str, lat: str) 
     rows, quietly leaving Я identical to R.
     """
     latin = latin_of(path)
-    source = cyrillic.core_of(latin[lat])
+    source = core_of(latin[lat])
     made = compose(latin)[cyr]
-    if source == cyrillic.mirror(source):
+    if source == mirror(source):
         assert made == source, f"{lat} reads the same backwards; {cyr} should match"
     else:
         assert made != source, f"{cyr} came out identical to {lat}"

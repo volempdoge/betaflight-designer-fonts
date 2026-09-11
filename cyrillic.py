@@ -1,21 +1,29 @@
 """Cyrillic capitals drawn in the Betaflight OSD idiom.
 
-A glyph is a white core wrapped in a black outline that, across all ten bundled
-fonts, sits between the 4- and 8-neighbour dilation of the core. `outline()`
-reproduces that, so a new letter only has to define its white core.
+Each letter is composed from the shapes the font already has: its own stems,
+bars, stroke weight and slant, measured by `shapes.Geometry`. Only the white
+core is defined here; `shapes.render()` wraps it in the black outline.
 """
 
 from __future__ import annotations
 
-from collections.abc import Iterable
-
-CHAR_W, CHAR_H = 12, 18
-
-Cell = tuple[int, int]  # (x, row), row 0 at the top
-Pixels = list[list[int]]  # 0 black, 1 transparent, 2 white
-Core = set[Cell]
-
-BLACK, TRANSPARENT, WHITE = 0, 1, 2
+from shapes import (
+    SAFE_X,
+    SAFE_Y,
+    Core,
+    Geometry,
+    Pixels,
+    core_of,
+    interior_stem,
+    lean_core,
+    mirror,
+    mirror_rows,
+    needed_splay,
+    render,
+    runs,
+    slope,
+    splay,
+)
 
 # Codepoint -> the letter's key in the composed set.
 UPPERCASE = {
@@ -84,240 +92,6 @@ SAME_AS_LATIN = {
 }
 # Letters that are a Latin glyph flipped left to right.
 MIRRORED = {"И": "N", "Я": "R"}
-
-
-def inside(cell: Cell) -> bool:
-    return 0 <= cell[0] < CHAR_W and 0 <= cell[1] < CHAR_H
-
-
-def outline(core: Core) -> Core:
-    ring = {
-        (x + dx, y + dy)
-        for x, y in core
-        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
-        if inside((x + dx, y + dy))
-    }
-    for x, y in core:
-        for dx in (-1, 1):
-            for dy in (-1, 1):
-                corner = (x + dx, y + dy)
-                square = all(c not in core for c in ((x + dx, y), (x, y + dy), corner))
-                # A chamfer steps diagonally; a stroke terminal does not.
-                terminal = (x + dx, y - dy) not in core and (x - dx, y + dy) not in core
-                if inside(corner) and square and terminal:
-                    ring.add(corner)
-    return ring - core
-
-
-def render(core: Core) -> Pixels:
-    black = outline(core)
-    return [
-        [
-            WHITE if (x, y) in core else BLACK if (x, y) in black else TRANSPARENT
-            for x in range(CHAR_W)
-        ]
-        for y in range(CHAR_H)
-    ]
-
-
-def core_of(px: Pixels, value: int = WHITE) -> Core:
-    return {(x, y) for y, row in enumerate(px) for x, v in enumerate(row) if v == value}
-
-
-def mirror(core: Core) -> Core:
-    lo, hi = min(x for x, _ in core), max(x for x, _ in core)
-    return {(lo + hi - x, y) for x, y in core}
-
-
-def shift(core: Core, dx: int = 0, dy: int = 0) -> Core:
-    return {(x + dx, y + dy) for x, y in core}
-
-
-SAFE_X = (1, CHAR_W - 2)
-SAFE_Y = (1, CHAR_H - 2)
-
-
-def splay(core: Core, gap: int) -> Core:
-    """Push the halves of a glyph apart, keeping crossing runs joined.
-
-    For a centre stem inside a Latin shape too narrow to take one (Ф, Ж).
-    """
-    lo, hi = min(x for x, _ in core), max(x for x, _ in core)
-    gap = min(gap, lo - SAFE_X[0], SAFE_X[1] - hi)
-    if gap <= 0:
-        return core
-    mid = (lo + hi + 1) / 2
-    out: Core = set()
-    for y in {y for _, y in core}:
-        xs = [x for x, yy in core if yy == y]
-        out |= {(x - gap if x < mid else x + gap, y) for x in xs}
-        for run in runs(xs):
-            if run[0] < mid <= run[-1]:
-                out |= {(x, y) for x in range(run[0] - gap, run[-1] + gap + 1)}
-    return out
-
-
-def mirror_rows(core: Core, g: Geometry) -> Core:
-    """Flip a letter left to right, then put the font's own slant back.
-
-    A plain mirror reverses the slant; undoing that row by row from the measured
-    slant avoids the rounding damage straightening would cause.
-    """
-    lo, hi = min(x for x, _ in core), max(x for x, _ in core)
-    flipped = {(lo + hi - x, y) for x, y in core}
-    if not g.slant:
-        return flipped
-    return {(x + 2 * g.at(y) - g.slant, y) for x, y in flipped}
-
-
-def interior_stem(core: Core, weight: int) -> Core:
-    """A stem down the middle of a shape, taken row by row.
-
-    So the stem inside Ф and Ж follows the host's slant with no model of it.
-    """
-    stem: Core = set()
-    for y in {y for _, y in core}:
-        parts = runs([x for x, yy in core if yy == y])
-        lo, hi = (
-            (parts[0][-1] + 1, parts[-1][0] - 1)
-            if len(parts) >= 2
-            else (parts[0][0], parts[0][-1])
-        )
-        start = (lo + hi + 1 - weight) // 2
-        stem |= {(start + i, y) for i in range(weight)}
-    return stem
-
-
-def needed_splay(core: Core, weight: int) -> int:
-    """How far to open a shape so a stem of `weight` fits with a gap each side."""
-    worst = 0
-    for y in {y for _, y in core}:
-        parts = runs([x for x, yy in core if yy == y])
-        if len(parts) >= 2:
-            gap = parts[-1][0] - parts[0][-1] - 1
-            worst = max(worst, -(-(weight + 2 - gap) // 2))
-    return max(0, worst)
-
-
-def runs(xs: Iterable[int]) -> list[list[int]]:
-    out: list[list[int]] = []
-    for x in sorted(xs):
-        if out and x == out[-1][-1] + 1:
-            out[-1].append(x)
-        else:
-            out.append([x])
-    return out
-
-
-class Geometry:
-    """Stroke weight, stem columns and bar rows, measured off a font itself."""
-
-    def __init__(self, latin: dict[str, Pixels]) -> None:
-        self.latin = latin
-        h = self.core("H")
-        self.top = min(y for _, y in h)
-        self.bottom = max(y for _, y in h)
-        stems = runs({x for x, y in h if y == self.bottom})
-        self.left, self.right = stems[0], stems[-1]
-        self.weight = len(self.left)
-        e = self.core("E")
-        rows = sorted({y for _, y in e})
-        width = {y: sum(1 for _, yy in e if yy == y) for y in rows}
-        bars = [y for y in rows if width[y] > self.weight + 1]
-        self.top_bar = [y for y in bars if y <= self.top + 2]
-        self.bottom_bar = [y for y in bars if y >= self.bottom - 2]
-        self.mid_bar = [y for y in bars if y not in self.top_bar + self.bottom_bar]
-        self.middle = self.mid_bar or [(self.top + self.bottom) // 2]
-        # Three-stem letters (Ж Ш Щ Ю Ы) need a box holding 3 stems and 2 gaps.
-        lead = {y: min(x for x, yy in h if yy == y) for y in {y for _, y in h}}
-        self.slant = lead[self.top] - lead[self.bottom]
-        self.step = {y: lead[y] - lead[self.bottom] for y in lead}
-        need = 3 * self.weight + 2
-        box = max(need, self.right[-1] - self.left[0] + 1)
-        box = min(box, CHAR_W - 2 - abs(self.slant))
-        x0 = max(1, (CHAR_W - box - self.slant) // 2)
-        self.wide_left = list(range(x0, x0 + self.weight))
-        self.wide_right = list(range(x0 + box - self.weight, x0 + box))
-        inner = (self.wide_left[-1] + self.wide_right[0] + 1) // 2
-        self.centre = list(
-            range(inner - self.weight // 2, inner - self.weight // 2 + self.weight)
-        )
-
-    def core(self, ch: str) -> Core:
-        return core_of(self.latin[ch])
-
-    def rows(self, ch: str, ys: list[int]) -> Core:
-        return {(x, y) for x, y in self.core(ch) if y in ys}
-
-    def cols(self, ch: str, xs: list[int]) -> Core:
-        return {(x, y) for x, y in self.core(ch) if x in xs}
-
-    def at(self, y: int) -> int:
-        """The measured slant offset on row `y`, clamped to the cap box."""
-        return self.step[min(max(y, self.top), self.bottom)]
-
-    def lean(self, y: int) -> int:
-        """How far a stem has shifted at row `y`, for a slanted font."""
-        if not self.slant:
-            return 0
-        span = max(1, self.bottom - self.top)
-        return round(
-            self.slant * (self.bottom - min(max(y, self.top), self.bottom)) / span
-        )
-
-    def stem(
-        self, xs: list[int], top: int | None = None, bottom: int | None = None
-    ) -> Core:
-        lo = self.top if top is None else top
-        hi = self.bottom if bottom is None else bottom
-        return {(x + self.lean(y), y) for x in xs for y in range(lo, hi + 1)}
-
-    def bar(self, which: str, x0: int | None = None, x1: int | None = None) -> Core:
-        ys = {"top": self.top_bar, "mid": self.middle, "bottom": self.bottom_bar}[which]
-        if x0 is None and x1 is None:
-            return self.rows("E", ys)
-        lo = self.left[0] if x0 is None else x0
-        hi = self.right[-1] if x1 is None else x1
-        return {(x, y) for x in range(lo, hi + 1) for y in ys}
-
-    def marks(self, xs: list[int]) -> Core:
-        """Dots or ticks sitting above the cap line."""
-        return {
-            (x + self.lean(self.top), y)
-            for x in xs
-            for y in range(self.top - 2, self.top)
-        }
-
-
-def slope(latin: dict[str, Pixels], sign: int) -> dict[str, Pixels]:
-    """Straighten a slanted font, or lean an upright one back over.
-
-    Parts lifted from several letters meet at the wrong offsets in a slanted
-    face, so composition happens upright and the result is leant back after.
-    """
-    g = Geometry(latin)
-    if not g.slant:
-        return latin
-    out: dict[str, Pixels] = {}
-    for ch, px in latin.items():
-        rows: Pixels = [[TRANSPARENT] * CHAR_W for _ in range(CHAR_H)]
-        for y, row in enumerate(px):
-            shift_by = sign * (g.slant - g.lean(y))
-            for x, v in enumerate(row):
-                if v != TRANSPARENT and 0 <= x + shift_by < CHAR_W:
-                    rows[y][x + shift_by] = v
-        out[ch] = rows
-    return out
-
-
-def lean_core(core: Core, g: Geometry) -> Core:
-    """Put the slant back on a core composed upright, keeping it in the cell."""
-    if not g.slant:
-        return core
-    leaned = {(x - (g.slant - g.lean(y)), y) for x, y in core}
-    lo, hi = min(x for x, _ in leaned), max(x for x, _ in leaned)
-    nudge = max(0, SAFE_X[0] - lo) - max(0, hi - SAFE_X[1])
-    return {(x + nudge, y) for x, y in leaned}
 
 
 def phi(bowl: Core, weight: int) -> Core:
@@ -528,7 +302,12 @@ def compose(
     return out
 
 
+def cores(latin: dict[str, Pixels]) -> dict[int, Core]:
+    """Codepoint -> white core, the shape every other set is keyed by."""
+    made = compose(latin)
+    return {cp: made[letter] for cp, letter in UPPERCASE.items()}
+
+
 def glyphs(latin: dict[str, Pixels]) -> dict[int, Pixels]:
     """Codepoint -> pixels, ready to hand to the font builder."""
-    made = compose(latin)
-    return {cp: render(made[letter]) for cp, letter in UPPERCASE.items()}
+    return {cp: render(core) for cp, core in cores(latin).items()}

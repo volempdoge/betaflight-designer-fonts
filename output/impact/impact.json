@@ -13,191 +13,3062 @@
   ],
   "ascii_cmap": true,
   "lowercase_folded_to_uppercase": true,
-  "cyrillic": [
+  "sets": {
+    "cyrillic": [
+      {
+        "codepoint": "U+0401",
+        "character": "Ё",
+        "png": "png/cyrillic/0401.png"
+      },
+      {
+        "codepoint": "U+0404",
+        "character": "Є",
+        "png": "png/cyrillic/0404.png"
+      },
+      {
+        "codepoint": "U+0406",
+        "character": "І",
+        "png": "png/cyrillic/0406.png"
+      },
+      {
+        "codepoint": "U+0407",
+        "character": "Ї",
+        "png": "png/cyrillic/0407.png"
+      },
+      {
+        "codepoint": "U+0410",
+        "character": "А",
+        "png": "png/cyrillic/0410.png"
+      },
+      {
+        "codepoint": "U+0411",
+        "character": "Б",
+        "png": "png/cyrillic/0411.png"
+      },
+      {
+        "codepoint": "U+0412",
+        "character": "В",
+        "png": "png/cyrillic/0412.png"
+      },
+      {
+        "codepoint": "U+0413",
+        "character": "Г",
+        "png": "png/cyrillic/0413.png"
+      },
+      {
+        "codepoint": "U+0414",
+        "character": "Д",
+        "png": "png/cyrillic/0414.png"
+      },
+      {
+        "codepoint": "U+0415",
+        "character": "Е",
+        "png": "png/cyrillic/0415.png"
+      },
+      {
+        "codepoint": "U+0416",
+        "character": "Ж",
+        "png": "png/cyrillic/0416.png"
+      },
+      {
+        "codepoint": "U+0417",
+        "character": "З",
+        "png": "png/cyrillic/0417.png"
+      },
+      {
+        "codepoint": "U+0418",
+        "character": "И",
+        "png": "png/cyrillic/0418.png"
+      },
+      {
+        "codepoint": "U+0419",
+        "character": "Й",
+        "png": "png/cyrillic/0419.png"
+      },
+      {
+        "codepoint": "U+041A",
+        "character": "К",
+        "png": "png/cyrillic/041A.png"
+      },
+      {
+        "codepoint": "U+041B",
+        "character": "Л",
+        "png": "png/cyrillic/041B.png"
+      },
+      {
+        "codepoint": "U+041C",
+        "character": "М",
+        "png": "png/cyrillic/041C.png"
+      },
+      {
+        "codepoint": "U+041D",
+        "character": "Н",
+        "png": "png/cyrillic/041D.png"
+      },
+      {
+        "codepoint": "U+041E",
+        "character": "О",
+        "png": "png/cyrillic/041E.png"
+      },
+      {
+        "codepoint": "U+041F",
+        "character": "П",
+        "png": "png/cyrillic/041F.png"
+      },
+      {
+        "codepoint": "U+0420",
+        "character": "Р",
+        "png": "png/cyrillic/0420.png"
+      },
+      {
+        "codepoint": "U+0421",
+        "character": "С",
+        "png": "png/cyrillic/0421.png"
+      },
+      {
+        "codepoint": "U+0422",
+        "character": "Т",
+        "png": "png/cyrillic/0422.png"
+      },
+      {
+        "codepoint": "U+0423",
+        "character": "У",
+        "png": "png/cyrillic/0423.png"
+      },
+      {
+        "codepoint": "U+0424",
+        "character": "Ф",
+        "png": "png/cyrillic/0424.png"
+      },
+      {
+        "codepoint": "U+0425",
+        "character": "Х",
+        "png": "png/cyrillic/0425.png"
+      },
+      {
+        "codepoint": "U+0426",
+        "character": "Ц",
+        "png": "png/cyrillic/0426.png"
+      },
+      {
+        "codepoint": "U+0427",
+        "character": "Ч",
+        "png": "png/cyrillic/0427.png"
+      },
+      {
+        "codepoint": "U+0428",
+        "character": "Ш",
+        "png": "png/cyrillic/0428.png"
+      },
+      {
+        "codepoint": "U+0429",
+        "character": "Щ",
+        "png": "png/cyrillic/0429.png"
+      },
+      {
+        "codepoint": "U+042A",
+        "character": "Ъ",
+        "png": "png/cyrillic/042A.png"
+      },
+      {
+        "codepoint": "U+042B",
+        "character": "Ы",
+        "png": "png/cyrillic/042B.png"
+      },
+      {
+        "codepoint": "U+042C",
+        "character": "Ь",
+        "png": "png/cyrillic/042C.png"
+      },
+      {
+        "codepoint": "U+042D",
+        "character": "Э",
+        "png": "png/cyrillic/042D.png"
+      },
+      {
+        "codepoint": "U+042E",
+        "character": "Ю",
+        "png": "png/cyrillic/042E.png"
+      },
+      {
+        "codepoint": "U+042F",
+        "character": "Я",
+        "png": "png/cyrillic/042F.png"
+      },
+      {
+        "codepoint": "U+0490",
+        "character": "Ґ",
+        "png": "png/cyrillic/0490.png"
+      }
+    ],
+    "accents": [
+      {
+        "codepoint": "U+00C0",
+        "character": "À",
+        "png": "png/accents/00C0.png"
+      },
+      {
+        "codepoint": "U+00C1",
+        "character": "Á",
+        "png": "png/accents/00C1.png"
+      },
+      {
+        "codepoint": "U+00C2",
+        "character": "Â",
+        "png": "png/accents/00C2.png"
+      },
+      {
+        "codepoint": "U+00C3",
+        "character": "Ã",
+        "png": "png/accents/00C3.png"
+      },
+      {
+        "codepoint": "U+00C4",
+        "character": "Ä",
+        "png": "png/accents/00C4.png"
+      },
+      {
+        "codepoint": "U+00C5",
+        "character": "Å",
+        "png": "png/accents/00C5.png"
+      },
+      {
+        "codepoint": "U+00C7",
+        "character": "Ç",
+        "png": "png/accents/00C7.png"
+      },
+      {
+        "codepoint": "U+00C8",
+        "character": "È",
+        "png": "png/accents/00C8.png"
+      },
+      {
+        "codepoint": "U+00C9",
+        "character": "É",
+        "png": "png/accents/00C9.png"
+      },
+      {
+        "codepoint": "U+00CA",
+        "character": "Ê",
+        "png": "png/accents/00CA.png"
+      },
+      {
+        "codepoint": "U+00CB",
+        "character": "Ë",
+        "png": "png/accents/00CB.png"
+      },
+      {
+        "codepoint": "U+00CC",
+        "character": "Ì",
+        "png": "png/accents/00CC.png"
+      },
+      {
+        "codepoint": "U+00CD",
+        "character": "Í",
+        "png": "png/accents/00CD.png"
+      },
+      {
+        "codepoint": "U+00CE",
+        "character": "Î",
+        "png": "png/accents/00CE.png"
+      },
+      {
+        "codepoint": "U+00CF",
+        "character": "Ï",
+        "png": "png/accents/00CF.png"
+      },
+      {
+        "codepoint": "U+00D0",
+        "character": "Ð",
+        "png": "png/accents/00D0.png"
+      },
+      {
+        "codepoint": "U+00D1",
+        "character": "Ñ",
+        "png": "png/accents/00D1.png"
+      },
+      {
+        "codepoint": "U+00D2",
+        "character": "Ò",
+        "png": "png/accents/00D2.png"
+      },
+      {
+        "codepoint": "U+00D3",
+        "character": "Ó",
+        "png": "png/accents/00D3.png"
+      },
+      {
+        "codepoint": "U+00D4",
+        "character": "Ô",
+        "png": "png/accents/00D4.png"
+      },
+      {
+        "codepoint": "U+00D5",
+        "character": "Õ",
+        "png": "png/accents/00D5.png"
+      },
+      {
+        "codepoint": "U+00D6",
+        "character": "Ö",
+        "png": "png/accents/00D6.png"
+      },
+      {
+        "codepoint": "U+00D8",
+        "character": "Ø",
+        "png": "png/accents/00D8.png"
+      },
+      {
+        "codepoint": "U+00D9",
+        "character": "Ù",
+        "png": "png/accents/00D9.png"
+      },
+      {
+        "codepoint": "U+00DA",
+        "character": "Ú",
+        "png": "png/accents/00DA.png"
+      },
+      {
+        "codepoint": "U+00DB",
+        "character": "Û",
+        "png": "png/accents/00DB.png"
+      },
+      {
+        "codepoint": "U+00DC",
+        "character": "Ü",
+        "png": "png/accents/00DC.png"
+      },
+      {
+        "codepoint": "U+00DD",
+        "character": "Ý",
+        "png": "png/accents/00DD.png"
+      },
+      {
+        "codepoint": "U+00DE",
+        "character": "Þ",
+        "png": "png/accents/00DE.png"
+      },
+      {
+        "codepoint": "U+0100",
+        "character": "Ā",
+        "png": "png/accents/0100.png"
+      },
+      {
+        "codepoint": "U+0102",
+        "character": "Ă",
+        "png": "png/accents/0102.png"
+      },
+      {
+        "codepoint": "U+0104",
+        "character": "Ą",
+        "png": "png/accents/0104.png"
+      },
+      {
+        "codepoint": "U+0106",
+        "character": "Ć",
+        "png": "png/accents/0106.png"
+      },
+      {
+        "codepoint": "U+010C",
+        "character": "Č",
+        "png": "png/accents/010C.png"
+      },
+      {
+        "codepoint": "U+010E",
+        "character": "Ď",
+        "png": "png/accents/010E.png"
+      },
+      {
+        "codepoint": "U+0110",
+        "character": "Đ",
+        "png": "png/accents/0110.png"
+      },
+      {
+        "codepoint": "U+0112",
+        "character": "Ē",
+        "png": "png/accents/0112.png"
+      },
+      {
+        "codepoint": "U+0116",
+        "character": "Ė",
+        "png": "png/accents/0116.png"
+      },
+      {
+        "codepoint": "U+0118",
+        "character": "Ę",
+        "png": "png/accents/0118.png"
+      },
+      {
+        "codepoint": "U+011A",
+        "character": "Ě",
+        "png": "png/accents/011A.png"
+      },
+      {
+        "codepoint": "U+011E",
+        "character": "Ğ",
+        "png": "png/accents/011E.png"
+      },
+      {
+        "codepoint": "U+0122",
+        "character": "Ģ",
+        "png": "png/accents/0122.png"
+      },
+      {
+        "codepoint": "U+012A",
+        "character": "Ī",
+        "png": "png/accents/012A.png"
+      },
+      {
+        "codepoint": "U+012E",
+        "character": "Į",
+        "png": "png/accents/012E.png"
+      },
+      {
+        "codepoint": "U+0130",
+        "character": "İ",
+        "png": "png/accents/0130.png"
+      },
+      {
+        "codepoint": "U+0136",
+        "character": "Ķ",
+        "png": "png/accents/0136.png"
+      },
+      {
+        "codepoint": "U+0139",
+        "character": "Ĺ",
+        "png": "png/accents/0139.png"
+      },
+      {
+        "codepoint": "U+013B",
+        "character": "Ļ",
+        "png": "png/accents/013B.png"
+      },
+      {
+        "codepoint": "U+013D",
+        "character": "Ľ",
+        "png": "png/accents/013D.png"
+      },
+      {
+        "codepoint": "U+0141",
+        "character": "Ł",
+        "png": "png/accents/0141.png"
+      },
+      {
+        "codepoint": "U+0143",
+        "character": "Ń",
+        "png": "png/accents/0143.png"
+      },
+      {
+        "codepoint": "U+0145",
+        "character": "Ņ",
+        "png": "png/accents/0145.png"
+      },
+      {
+        "codepoint": "U+0147",
+        "character": "Ň",
+        "png": "png/accents/0147.png"
+      },
+      {
+        "codepoint": "U+014C",
+        "character": "Ō",
+        "png": "png/accents/014C.png"
+      },
+      {
+        "codepoint": "U+0150",
+        "character": "Ő",
+        "png": "png/accents/0150.png"
+      },
+      {
+        "codepoint": "U+0154",
+        "character": "Ŕ",
+        "png": "png/accents/0154.png"
+      },
+      {
+        "codepoint": "U+0158",
+        "character": "Ř",
+        "png": "png/accents/0158.png"
+      },
+      {
+        "codepoint": "U+015A",
+        "character": "Ś",
+        "png": "png/accents/015A.png"
+      },
+      {
+        "codepoint": "U+015E",
+        "character": "Ş",
+        "png": "png/accents/015E.png"
+      },
+      {
+        "codepoint": "U+0160",
+        "character": "Š",
+        "png": "png/accents/0160.png"
+      },
+      {
+        "codepoint": "U+0162",
+        "character": "Ţ",
+        "png": "png/accents/0162.png"
+      },
+      {
+        "codepoint": "U+0164",
+        "character": "Ť",
+        "png": "png/accents/0164.png"
+      },
+      {
+        "codepoint": "U+016A",
+        "character": "Ū",
+        "png": "png/accents/016A.png"
+      },
+      {
+        "codepoint": "U+016E",
+        "character": "Ů",
+        "png": "png/accents/016E.png"
+      },
+      {
+        "codepoint": "U+0170",
+        "character": "Ű",
+        "png": "png/accents/0170.png"
+      },
+      {
+        "codepoint": "U+0172",
+        "character": "Ų",
+        "png": "png/accents/0172.png"
+      },
+      {
+        "codepoint": "U+0178",
+        "character": "Ÿ",
+        "png": "png/accents/0178.png"
+      },
+      {
+        "codepoint": "U+0179",
+        "character": "Ź",
+        "png": "png/accents/0179.png"
+      },
+      {
+        "codepoint": "U+017B",
+        "character": "Ż",
+        "png": "png/accents/017B.png"
+      },
+      {
+        "codepoint": "U+017D",
+        "character": "Ž",
+        "png": "png/accents/017D.png"
+      },
+      {
+        "codepoint": "U+0218",
+        "character": "Ș",
+        "png": "png/accents/0218.png"
+      },
+      {
+        "codepoint": "U+021A",
+        "character": "Ț",
+        "png": "png/accents/021A.png"
+      }
+    ],
+    "greek": [
+      {
+        "codepoint": "U+0391",
+        "character": "Α",
+        "png": "png/greek/0391.png"
+      },
+      {
+        "codepoint": "U+0392",
+        "character": "Β",
+        "png": "png/greek/0392.png"
+      },
+      {
+        "codepoint": "U+0393",
+        "character": "Γ",
+        "png": "png/greek/0393.png"
+      },
+      {
+        "codepoint": "U+0394",
+        "character": "Δ",
+        "png": "png/greek/0394.png"
+      },
+      {
+        "codepoint": "U+0395",
+        "character": "Ε",
+        "png": "png/greek/0395.png"
+      },
+      {
+        "codepoint": "U+0396",
+        "character": "Ζ",
+        "png": "png/greek/0396.png"
+      },
+      {
+        "codepoint": "U+0397",
+        "character": "Η",
+        "png": "png/greek/0397.png"
+      },
+      {
+        "codepoint": "U+0398",
+        "character": "Θ",
+        "png": "png/greek/0398.png"
+      },
+      {
+        "codepoint": "U+0399",
+        "character": "Ι",
+        "png": "png/greek/0399.png"
+      },
+      {
+        "codepoint": "U+039A",
+        "character": "Κ",
+        "png": "png/greek/039A.png"
+      },
+      {
+        "codepoint": "U+039B",
+        "character": "Λ",
+        "png": "png/greek/039B.png"
+      },
+      {
+        "codepoint": "U+039C",
+        "character": "Μ",
+        "png": "png/greek/039C.png"
+      },
+      {
+        "codepoint": "U+039D",
+        "character": "Ν",
+        "png": "png/greek/039D.png"
+      },
+      {
+        "codepoint": "U+039E",
+        "character": "Ξ",
+        "png": "png/greek/039E.png"
+      },
+      {
+        "codepoint": "U+039F",
+        "character": "Ο",
+        "png": "png/greek/039F.png"
+      },
+      {
+        "codepoint": "U+03A0",
+        "character": "Π",
+        "png": "png/greek/03A0.png"
+      },
+      {
+        "codepoint": "U+03A1",
+        "character": "Ρ",
+        "png": "png/greek/03A1.png"
+      },
+      {
+        "codepoint": "U+03A3",
+        "character": "Σ",
+        "png": "png/greek/03A3.png"
+      },
+      {
+        "codepoint": "U+03A4",
+        "character": "Τ",
+        "png": "png/greek/03A4.png"
+      },
+      {
+        "codepoint": "U+03A5",
+        "character": "Υ",
+        "png": "png/greek/03A5.png"
+      },
+      {
+        "codepoint": "U+03A6",
+        "character": "Φ",
+        "png": "png/greek/03A6.png"
+      },
+      {
+        "codepoint": "U+03A7",
+        "character": "Χ",
+        "png": "png/greek/03A7.png"
+      },
+      {
+        "codepoint": "U+03A8",
+        "character": "Ψ",
+        "png": "png/greek/03A8.png"
+      },
+      {
+        "codepoint": "U+03A9",
+        "character": "Ω",
+        "png": "png/greek/03A9.png"
+      }
+    ],
+    "punctuation": [
+      {
+        "codepoint": "U+0024",
+        "character": "$",
+        "png": "png/punctuation/0024.png"
+      },
+      {
+        "codepoint": "U+0060",
+        "character": "`",
+        "png": "png/punctuation/0060.png"
+      },
+      {
+        "codepoint": "U+007B",
+        "character": "{",
+        "png": "png/punctuation/007B.png"
+      },
+      {
+        "codepoint": "U+007D",
+        "character": "}",
+        "png": "png/punctuation/007D.png"
+      },
+      {
+        "codepoint": "U+007E",
+        "character": "~",
+        "png": "png/punctuation/007E.png"
+      },
+      {
+        "codepoint": "U+00A1",
+        "character": "¡",
+        "png": "png/punctuation/00A1.png"
+      },
+      {
+        "codepoint": "U+00A2",
+        "character": "¢",
+        "png": "png/punctuation/00A2.png"
+      },
+      {
+        "codepoint": "U+00A3",
+        "character": "£",
+        "png": "png/punctuation/00A3.png"
+      },
+      {
+        "codepoint": "U+00A5",
+        "character": "¥",
+        "png": "png/punctuation/00A5.png"
+      },
+      {
+        "codepoint": "U+00AB",
+        "character": "«",
+        "png": "png/punctuation/00AB.png"
+      },
+      {
+        "codepoint": "U+00B0",
+        "character": "°",
+        "png": "png/punctuation/00B0.png"
+      },
+      {
+        "codepoint": "U+00B1",
+        "character": "±",
+        "png": "png/punctuation/00B1.png"
+      },
+      {
+        "codepoint": "U+00B5",
+        "character": "µ",
+        "png": "png/punctuation/00B5.png"
+      },
+      {
+        "codepoint": "U+00B7",
+        "character": "·",
+        "png": "png/punctuation/00B7.png"
+      },
+      {
+        "codepoint": "U+00BB",
+        "character": "»",
+        "png": "png/punctuation/00BB.png"
+      },
+      {
+        "codepoint": "U+00BF",
+        "character": "¿",
+        "png": "png/punctuation/00BF.png"
+      },
+      {
+        "codepoint": "U+00D7",
+        "character": "×",
+        "png": "png/punctuation/00D7.png"
+      },
+      {
+        "codepoint": "U+00F7",
+        "character": "÷",
+        "png": "png/punctuation/00F7.png"
+      },
+      {
+        "codepoint": "U+2013",
+        "character": "–",
+        "png": "png/punctuation/2013.png"
+      },
+      {
+        "codepoint": "U+2014",
+        "character": "—",
+        "png": "png/punctuation/2014.png"
+      },
+      {
+        "codepoint": "U+2018",
+        "character": "‘",
+        "png": "png/punctuation/2018.png"
+      },
+      {
+        "codepoint": "U+2019",
+        "character": "’",
+        "png": "png/punctuation/2019.png"
+      },
+      {
+        "codepoint": "U+201A",
+        "character": "‚",
+        "png": "png/punctuation/201A.png"
+      },
+      {
+        "codepoint": "U+201C",
+        "character": "“",
+        "png": "png/punctuation/201C.png"
+      },
+      {
+        "codepoint": "U+201D",
+        "character": "”",
+        "png": "png/punctuation/201D.png"
+      },
+      {
+        "codepoint": "U+201E",
+        "character": "„",
+        "png": "png/punctuation/201E.png"
+      },
+      {
+        "codepoint": "U+2022",
+        "character": "•",
+        "png": "png/punctuation/2022.png"
+      },
+      {
+        "codepoint": "U+2026",
+        "character": "…",
+        "png": "png/punctuation/2026.png"
+      },
+      {
+        "codepoint": "U+2039",
+        "character": "‹",
+        "png": "png/punctuation/2039.png"
+      },
+      {
+        "codepoint": "U+203A",
+        "character": "›",
+        "png": "png/punctuation/203A.png"
+      },
+      {
+        "codepoint": "U+20A0",
+        "character": "₠",
+        "png": "png/punctuation/20A0.png"
+      },
+      {
+        "codepoint": "U+20AC",
+        "character": "€",
+        "png": "png/punctuation/20AC.png"
+      },
+      {
+        "codepoint": "U+20B4",
+        "character": "₴",
+        "png": "png/punctuation/20B4.png"
+      },
+      {
+        "codepoint": "U+20BD",
+        "character": "₽",
+        "png": "png/punctuation/20BD.png"
+      },
+      {
+        "codepoint": "U+2212",
+        "character": "−",
+        "png": "png/punctuation/2212.png"
+      },
+      {
+        "codepoint": "U+221E",
+        "character": "∞",
+        "png": "png/punctuation/221E.png"
+      },
+      {
+        "codepoint": "U+2248",
+        "character": "≈",
+        "png": "png/punctuation/2248.png"
+      },
+      {
+        "codepoint": "U+2260",
+        "character": "≠",
+        "png": "png/punctuation/2260.png"
+      },
+      {
+        "codepoint": "U+2264",
+        "character": "≤",
+        "png": "png/punctuation/2264.png"
+      },
+      {
+        "codepoint": "U+2265",
+        "character": "≥",
+        "png": "png/punctuation/2265.png"
+      }
+    ],
+    "blocks": [
+      {
+        "codepoint": "U+2500",
+        "character": "─",
+        "png": "png/blocks/2500.png"
+      },
+      {
+        "codepoint": "U+2502",
+        "character": "│",
+        "png": "png/blocks/2502.png"
+      },
+      {
+        "codepoint": "U+250C",
+        "character": "┌",
+        "png": "png/blocks/250C.png"
+      },
+      {
+        "codepoint": "U+2510",
+        "character": "┐",
+        "png": "png/blocks/2510.png"
+      },
+      {
+        "codepoint": "U+2514",
+        "character": "└",
+        "png": "png/blocks/2514.png"
+      },
+      {
+        "codepoint": "U+2518",
+        "character": "┘",
+        "png": "png/blocks/2518.png"
+      },
+      {
+        "codepoint": "U+251C",
+        "character": "├",
+        "png": "png/blocks/251C.png"
+      },
+      {
+        "codepoint": "U+2524",
+        "character": "┤",
+        "png": "png/blocks/2524.png"
+      },
+      {
+        "codepoint": "U+252C",
+        "character": "┬",
+        "png": "png/blocks/252C.png"
+      },
+      {
+        "codepoint": "U+2534",
+        "character": "┴",
+        "png": "png/blocks/2534.png"
+      },
+      {
+        "codepoint": "U+253C",
+        "character": "┼",
+        "png": "png/blocks/253C.png"
+      },
+      {
+        "codepoint": "U+2550",
+        "character": "═",
+        "png": "png/blocks/2550.png"
+      },
+      {
+        "codepoint": "U+2551",
+        "character": "║",
+        "png": "png/blocks/2551.png"
+      },
+      {
+        "codepoint": "U+2554",
+        "character": "╔",
+        "png": "png/blocks/2554.png"
+      },
+      {
+        "codepoint": "U+2557",
+        "character": "╗",
+        "png": "png/blocks/2557.png"
+      },
+      {
+        "codepoint": "U+255A",
+        "character": "╚",
+        "png": "png/blocks/255A.png"
+      },
+      {
+        "codepoint": "U+255D",
+        "character": "╝",
+        "png": "png/blocks/255D.png"
+      },
+      {
+        "codepoint": "U+2560",
+        "character": "╠",
+        "png": "png/blocks/2560.png"
+      },
+      {
+        "codepoint": "U+2563",
+        "character": "╣",
+        "png": "png/blocks/2563.png"
+      },
+      {
+        "codepoint": "U+2566",
+        "character": "╦",
+        "png": "png/blocks/2566.png"
+      },
+      {
+        "codepoint": "U+2569",
+        "character": "╩",
+        "png": "png/blocks/2569.png"
+      },
+      {
+        "codepoint": "U+256C",
+        "character": "╬",
+        "png": "png/blocks/256C.png"
+      },
+      {
+        "codepoint": "U+2580",
+        "character": "▀",
+        "png": "png/blocks/2580.png"
+      },
+      {
+        "codepoint": "U+2584",
+        "character": "▄",
+        "png": "png/blocks/2584.png"
+      },
+      {
+        "codepoint": "U+2588",
+        "character": "█",
+        "png": "png/blocks/2588.png"
+      },
+      {
+        "codepoint": "U+258C",
+        "character": "▌",
+        "png": "png/blocks/258C.png"
+      },
+      {
+        "codepoint": "U+2590",
+        "character": "▐",
+        "png": "png/blocks/2590.png"
+      },
+      {
+        "codepoint": "U+2591",
+        "character": "░",
+        "png": "png/blocks/2591.png"
+      },
+      {
+        "codepoint": "U+2592",
+        "character": "▒",
+        "png": "png/blocks/2592.png"
+      },
+      {
+        "codepoint": "U+2593",
+        "character": "▓",
+        "png": "png/blocks/2593.png"
+      },
+      {
+        "codepoint": "U+25A0",
+        "character": "■",
+        "png": "png/blocks/25A0.png"
+      },
+      {
+        "codepoint": "U+25A1",
+        "character": "□",
+        "png": "png/blocks/25A1.png"
+      },
+      {
+        "codepoint": "U+25B2",
+        "character": "▲",
+        "png": "png/blocks/25B2.png"
+      },
+      {
+        "codepoint": "U+25B6",
+        "character": "▶",
+        "png": "png/blocks/25B6.png"
+      },
+      {
+        "codepoint": "U+25BC",
+        "character": "▼",
+        "png": "png/blocks/25BC.png"
+      },
+      {
+        "codepoint": "U+25C0",
+        "character": "◀",
+        "png": "png/blocks/25C0.png"
+      },
+      {
+        "codepoint": "U+25C6",
+        "character": "◆",
+        "png": "png/blocks/25C6.png"
+      },
+      {
+        "codepoint": "U+25C7",
+        "character": "◇",
+        "png": "png/blocks/25C7.png"
+      },
+      {
+        "codepoint": "U+25CB",
+        "character": "○",
+        "png": "png/blocks/25CB.png"
+      },
+      {
+        "codepoint": "U+25CF",
+        "character": "●",
+        "png": "png/blocks/25CF.png"
+      },
+      {
+        "codepoint": "U+2605",
+        "character": "★",
+        "png": "png/blocks/2605.png"
+      },
+      {
+        "codepoint": "U+2606",
+        "character": "☆",
+        "png": "png/blocks/2606.png"
+      },
+      {
+        "codepoint": "U+2713",
+        "character": "✓",
+        "png": "png/blocks/2713.png"
+      },
+      {
+        "codepoint": "U+2717",
+        "character": "✗",
+        "png": "png/blocks/2717.png"
+      }
+    ]
+  },
+  "spelled": {
+    "U+00A9": "(C)",
+    "U+00AE": "(R)",
+    "U+00BC": "1/4",
+    "U+00BD": "1/2",
+    "U+00BE": "3/4",
+    "U+00C6": "AE",
+    "U+00DF": "SS",
+    "U+00E6": "AE",
+    "U+0132": "IJ",
+    "U+0133": "IJ",
+    "U+0152": "OE",
+    "U+0153": "OE",
+    "U+1E9E": "SS",
+    "U+2116": "N°",
+    "U+2122": "TM",
+    "U+2153": "1/3",
+    "U+2154": "2/3"
+  },
+  "symbols": [
     {
-      "codepoint": "U+0401",
-      "letter": "\u0401",
-      "png": "png/cyrillic/0401.png"
+      "index": 1,
+      "name": "rssi",
+      "group": "telemetry",
+      "label": "RSSI bars",
+      "ligature": ":rssi:",
+      "codepoint": "U+E001",
+      "unicode": [
+        "U+1F4F6"
+      ],
+      "png": "png/001.png"
     },
     {
-      "codepoint": "U+0404",
-      "letter": "\u0404",
-      "png": "png/cyrillic/0404.png"
+      "index": 2,
+      "name": "ah_right",
+      "group": "horizon",
+      "label": "artificial horizon, right marker",
+      "ligature": ":ah_right:",
+      "codepoint": "U+E002",
+      "unicode": [],
+      "png": "png/002.png"
     },
     {
-      "codepoint": "U+0406",
-      "letter": "\u0406",
-      "png": "png/cyrillic/0406.png"
+      "index": 3,
+      "name": "ah_left",
+      "group": "horizon",
+      "label": "artificial horizon, left marker",
+      "ligature": ":ah_left:",
+      "codepoint": "U+E003",
+      "unicode": [],
+      "png": "png/003.png"
     },
     {
-      "codepoint": "U+0407",
-      "letter": "\u0407",
-      "png": "png/cyrillic/0407.png"
+      "index": 4,
+      "name": "throttle",
+      "group": "telemetry",
+      "label": "throttle",
+      "ligature": ":throttle:",
+      "codepoint": "U+E004",
+      "unicode": [],
+      "png": "png/004.png"
     },
     {
-      "codepoint": "U+0410",
-      "letter": "\u0410",
-      "png": "png/cyrillic/0410.png"
+      "index": 5,
+      "name": "over_home",
+      "group": "navigation",
+      "label": "directly over home",
+      "ligature": ":over_home:",
+      "codepoint": "U+E005",
+      "unicode": [],
+      "png": "png/005.png"
     },
     {
-      "codepoint": "U+0411",
-      "letter": "\u0411",
-      "png": "png/cyrillic/0411.png"
+      "index": 6,
+      "name": "volt",
+      "group": "power",
+      "label": "volts",
+      "ligature": ":volt:",
+      "codepoint": "U+E006",
+      "unicode": [],
+      "png": "png/006.png"
     },
     {
-      "codepoint": "U+0412",
-      "letter": "\u0412",
-      "png": "png/cyrillic/0412.png"
+      "index": 7,
+      "name": "mah",
+      "group": "power",
+      "label": "milliamp hours",
+      "ligature": ":mah:",
+      "codepoint": "U+E007",
+      "unicode": [],
+      "png": "png/007.png"
     },
     {
-      "codepoint": "U+0413",
-      "letter": "\u0413",
-      "png": "png/cyrillic/0413.png"
+      "index": 8,
+      "name": "stick_high",
+      "group": "sticks",
+      "label": "stick overlay, high",
+      "ligature": ":stick_high:",
+      "codepoint": "U+E008",
+      "unicode": [],
+      "png": "png/008.png"
     },
     {
-      "codepoint": "U+0414",
-      "letter": "\u0414",
-      "png": "png/cyrillic/0414.png"
+      "index": 9,
+      "name": "stick_mid",
+      "group": "sticks",
+      "label": "stick overlay, middle",
+      "ligature": ":stick_mid:",
+      "codepoint": "U+E009",
+      "unicode": [],
+      "png": "png/009.png"
     },
     {
-      "codepoint": "U+0415",
-      "letter": "\u0415",
-      "png": "png/cyrillic/0415.png"
+      "index": 10,
+      "name": "stick_low",
+      "group": "sticks",
+      "label": "stick overlay, low",
+      "ligature": ":stick_low:",
+      "codepoint": "U+E00A",
+      "unicode": [],
+      "png": "png/010.png"
     },
     {
-      "codepoint": "U+0416",
-      "letter": "\u0416",
-      "png": "png/cyrillic/0416.png"
+      "index": 11,
+      "name": "stick_centre",
+      "group": "sticks",
+      "label": "stick overlay, centre",
+      "ligature": ":stick_centre:",
+      "codepoint": "U+E00B",
+      "unicode": [],
+      "png": "png/011.png"
     },
     {
-      "codepoint": "U+0417",
-      "letter": "\u0417",
-      "png": "png/cyrillic/0417.png"
+      "index": 12,
+      "name": "metres",
+      "group": "units",
+      "label": "metres",
+      "ligature": ":metres:",
+      "codepoint": "U+E00C",
+      "unicode": [],
+      "png": "png/012.png"
     },
     {
-      "codepoint": "U+0418",
-      "letter": "\u0418",
-      "png": "png/cyrillic/0418.png"
+      "index": 13,
+      "name": "fahrenheit",
+      "group": "units",
+      "label": "degrees Fahrenheit",
+      "ligature": ":fahrenheit:",
+      "codepoint": "U+E00D",
+      "unicode": [
+        "U+2109"
+      ],
+      "png": "png/013.png"
     },
     {
-      "codepoint": "U+0419",
-      "letter": "\u0419",
-      "png": "png/cyrillic/0419.png"
+      "index": 14,
+      "name": "celsius",
+      "group": "units",
+      "label": "degrees Celsius",
+      "ligature": ":celsius:",
+      "codepoint": "U+E00E",
+      "unicode": [
+        "U+2103"
+      ],
+      "png": "png/014.png"
     },
     {
-      "codepoint": "U+041A",
-      "letter": "\u041a",
-      "png": "png/cyrillic/041A.png"
+      "index": 15,
+      "name": "feet",
+      "group": "units",
+      "label": "feet",
+      "ligature": ":feet:",
+      "codepoint": "U+E00F",
+      "unicode": [],
+      "png": "png/015.png"
     },
     {
-      "codepoint": "U+041B",
-      "letter": "\u041b",
-      "png": "png/cyrillic/041B.png"
+      "index": 16,
+      "name": "blackbox",
+      "group": "status",
+      "label": "blackbox logging",
+      "ligature": ":blackbox:",
+      "codepoint": "U+E010",
+      "unicode": [],
+      "png": "png/016.png"
     },
     {
-      "codepoint": "U+041C",
-      "letter": "\u041c",
-      "png": "png/cyrillic/041C.png"
+      "index": 17,
+      "name": "home",
+      "group": "navigation",
+      "label": "home",
+      "ligature": ":home:",
+      "codepoint": "U+E011",
+      "unicode": [
+        "U+2302"
+      ],
+      "png": "png/017.png"
     },
     {
-      "codepoint": "U+041D",
-      "letter": "\u041d",
-      "png": "png/cyrillic/041D.png"
+      "index": 18,
+      "name": "rpm",
+      "group": "telemetry",
+      "label": "rotations per minute",
+      "ligature": ":rpm:",
+      "codepoint": "U+E012",
+      "unicode": [],
+      "png": "png/018.png"
     },
     {
-      "codepoint": "U+041E",
-      "letter": "\u041e",
-      "png": "png/cyrillic/041E.png"
+      "index": 19,
+      "name": "ah_decoration",
+      "group": "horizon",
+      "label": "attitude ladder tick",
+      "ligature": ":ah_decoration:",
+      "codepoint": "U+E013",
+      "unicode": [],
+      "png": "png/019.png"
     },
     {
-      "codepoint": "U+041F",
-      "letter": "\u041f",
-      "png": "png/cyrillic/041F.png"
+      "index": 20,
+      "name": "roll",
+      "group": "telemetry",
+      "label": "roll",
+      "ligature": ":roll:",
+      "codepoint": "U+E014",
+      "unicode": [],
+      "png": "png/020.png"
     },
     {
-      "codepoint": "U+0420",
-      "letter": "\u0420",
-      "png": "png/cyrillic/0420.png"
+      "index": 21,
+      "name": "pitch",
+      "group": "telemetry",
+      "label": "pitch",
+      "ligature": ":pitch:",
+      "codepoint": "U+E015",
+      "unicode": [],
+      "png": "png/021.png"
     },
     {
-      "codepoint": "U+0421",
-      "letter": "\u0421",
-      "png": "png/cyrillic/0421.png"
+      "index": 22,
+      "name": "stick_vertical",
+      "group": "sticks",
+      "label": "stick overlay, vertical rule",
+      "ligature": ":stick_vertical:",
+      "codepoint": "U+E016",
+      "unicode": [],
+      "png": "png/022.png"
     },
     {
-      "codepoint": "U+0422",
-      "letter": "\u0422",
-      "png": "png/cyrillic/0422.png"
+      "index": 23,
+      "name": "stick_horizontal",
+      "group": "sticks",
+      "label": "stick overlay, horizontal rule",
+      "ligature": ":stick_horizontal:",
+      "codepoint": "U+E017",
+      "unicode": [],
+      "png": "png/023.png"
     },
     {
-      "codepoint": "U+0423",
-      "letter": "\u0423",
-      "png": "png/cyrillic/0423.png"
+      "index": 24,
+      "name": "heading_n",
+      "group": "navigation",
+      "label": "heading north",
+      "ligature": ":heading_n:",
+      "codepoint": "U+E018",
+      "unicode": [],
+      "png": "png/024.png"
     },
     {
-      "codepoint": "U+0424",
-      "letter": "\u0424",
-      "png": "png/cyrillic/0424.png"
+      "index": 25,
+      "name": "heading_s",
+      "group": "navigation",
+      "label": "heading south",
+      "ligature": ":heading_s:",
+      "codepoint": "U+E019",
+      "unicode": [],
+      "png": "png/025.png"
     },
     {
-      "codepoint": "U+0425",
-      "letter": "\u0425",
-      "png": "png/cyrillic/0425.png"
+      "index": 26,
+      "name": "heading_e",
+      "group": "navigation",
+      "label": "heading east",
+      "ligature": ":heading_e:",
+      "codepoint": "U+E01A",
+      "unicode": [],
+      "png": "png/026.png"
     },
     {
-      "codepoint": "U+0426",
-      "letter": "\u0426",
-      "png": "png/cyrillic/0426.png"
+      "index": 27,
+      "name": "heading_w",
+      "group": "navigation",
+      "label": "heading west",
+      "ligature": ":heading_w:",
+      "codepoint": "U+E01B",
+      "unicode": [],
+      "png": "png/027.png"
     },
     {
-      "codepoint": "U+0427",
-      "letter": "\u0427",
-      "png": "png/cyrillic/0427.png"
+      "index": 28,
+      "name": "heading_divider",
+      "group": "navigation",
+      "label": "heading tape divider",
+      "ligature": ":heading_divider:",
+      "codepoint": "U+E01C",
+      "unicode": [],
+      "png": "png/028.png"
     },
     {
-      "codepoint": "U+0428",
-      "letter": "\u0428",
-      "png": "png/cyrillic/0428.png"
+      "index": 29,
+      "name": "heading_line",
+      "group": "navigation",
+      "label": "heading tape line",
+      "ligature": ":heading_line:",
+      "codepoint": "U+E01D",
+      "unicode": [],
+      "png": "png/029.png"
     },
     {
-      "codepoint": "U+0429",
-      "letter": "\u0429",
-      "png": "png/cyrillic/0429.png"
+      "index": 30,
+      "name": "sat_left",
+      "group": "navigation",
+      "label": "satellite dish, left half",
+      "ligature": ":sat_left:",
+      "codepoint": "U+E01E",
+      "unicode": [],
+      "png": "png/030.png"
     },
     {
-      "codepoint": "U+042A",
-      "letter": "\u042a",
-      "png": "png/cyrillic/042A.png"
+      "index": 31,
+      "name": "sat_right",
+      "group": "navigation",
+      "label": "satellite dish, right half",
+      "ligature": ":sat_right:",
+      "codepoint": "U+E01F",
+      "unicode": [],
+      "png": "png/031.png"
     },
     {
-      "codepoint": "U+042B",
-      "letter": "\u042b",
-      "png": "png/cyrillic/042B.png"
+      "index": 36,
+      "name": "flag",
+      "group": "status",
+      "label": "checkered flag",
+      "ligature": ":flag:",
+      "codepoint": "U+E024",
+      "unicode": [
+        "U+1F3C1"
+      ],
+      "png": "png/036.png"
     },
     {
-      "codepoint": "U+042C",
-      "letter": "\u042c",
-      "png": "png/cyrillic/042C.png"
+      "index": 96,
+      "name": "arrow_s",
+      "group": "arrows",
+      "label": "arrow, south",
+      "ligature": ":arrow_s:",
+      "codepoint": "U+E060",
+      "unicode": [
+        "U+2193"
+      ],
+      "png": "png/096.png"
     },
     {
-      "codepoint": "U+042D",
-      "letter": "\u042d",
-      "png": "png/cyrillic/042D.png"
+      "index": 97,
+      "name": "arrow_sse",
+      "group": "arrows",
+      "label": "arrow, south south east",
+      "ligature": ":arrow_sse:",
+      "codepoint": "U+E061",
+      "unicode": [],
+      "png": "png/097.png"
     },
     {
-      "codepoint": "U+042E",
-      "letter": "\u042e",
-      "png": "png/cyrillic/042E.png"
+      "index": 98,
+      "name": "arrow_se",
+      "group": "arrows",
+      "label": "arrow, south east",
+      "ligature": ":arrow_se:",
+      "codepoint": "U+E062",
+      "unicode": [
+        "U+2198"
+      ],
+      "png": "png/098.png"
     },
     {
-      "codepoint": "U+042F",
-      "letter": "\u042f",
-      "png": "png/cyrillic/042F.png"
+      "index": 99,
+      "name": "arrow_ese",
+      "group": "arrows",
+      "label": "arrow, east south east",
+      "ligature": ":arrow_ese:",
+      "codepoint": "U+E063",
+      "unicode": [],
+      "png": "png/099.png"
     },
     {
-      "codepoint": "U+0490",
-      "letter": "\u0490",
-      "png": "png/cyrillic/0490.png"
+      "index": 100,
+      "name": "arrow_e",
+      "group": "arrows",
+      "label": "arrow, east",
+      "ligature": ":arrow_e:",
+      "codepoint": "U+E064",
+      "unicode": [
+        "U+2192"
+      ],
+      "png": "png/100.png"
+    },
+    {
+      "index": 101,
+      "name": "arrow_ene",
+      "group": "arrows",
+      "label": "arrow, east north east",
+      "ligature": ":arrow_ene:",
+      "codepoint": "U+E065",
+      "unicode": [],
+      "png": "png/101.png"
+    },
+    {
+      "index": 102,
+      "name": "arrow_ne",
+      "group": "arrows",
+      "label": "arrow, north east",
+      "ligature": ":arrow_ne:",
+      "codepoint": "U+E066",
+      "unicode": [
+        "U+2197"
+      ],
+      "png": "png/102.png"
+    },
+    {
+      "index": 103,
+      "name": "arrow_nne",
+      "group": "arrows",
+      "label": "arrow, north north east",
+      "ligature": ":arrow_nne:",
+      "codepoint": "U+E067",
+      "unicode": [],
+      "png": "png/103.png"
+    },
+    {
+      "index": 104,
+      "name": "arrow_n",
+      "group": "arrows",
+      "label": "arrow, north",
+      "ligature": ":arrow_n:",
+      "codepoint": "U+E068",
+      "unicode": [
+        "U+2191"
+      ],
+      "png": "png/104.png"
+    },
+    {
+      "index": 105,
+      "name": "arrow_nnw",
+      "group": "arrows",
+      "label": "arrow, north north west",
+      "ligature": ":arrow_nnw:",
+      "codepoint": "U+E069",
+      "unicode": [],
+      "png": "png/105.png"
+    },
+    {
+      "index": 106,
+      "name": "arrow_nw",
+      "group": "arrows",
+      "label": "arrow, north west",
+      "ligature": ":arrow_nw:",
+      "codepoint": "U+E06A",
+      "unicode": [
+        "U+2196"
+      ],
+      "png": "png/106.png"
+    },
+    {
+      "index": 107,
+      "name": "arrow_wnw",
+      "group": "arrows",
+      "label": "arrow, west north west",
+      "ligature": ":arrow_wnw:",
+      "codepoint": "U+E06B",
+      "unicode": [],
+      "png": "png/107.png"
+    },
+    {
+      "index": 108,
+      "name": "arrow_w",
+      "group": "arrows",
+      "label": "arrow, west",
+      "ligature": ":arrow_w:",
+      "codepoint": "U+E06C",
+      "unicode": [
+        "U+2190"
+      ],
+      "png": "png/108.png"
+    },
+    {
+      "index": 109,
+      "name": "arrow_wsw",
+      "group": "arrows",
+      "label": "arrow, west south west",
+      "ligature": ":arrow_wsw:",
+      "codepoint": "U+E06D",
+      "unicode": [],
+      "png": "png/109.png"
+    },
+    {
+      "index": 110,
+      "name": "arrow_sw",
+      "group": "arrows",
+      "label": "arrow, south west",
+      "ligature": ":arrow_sw:",
+      "codepoint": "U+E06E",
+      "unicode": [
+        "U+2199"
+      ],
+      "png": "png/110.png"
+    },
+    {
+      "index": 111,
+      "name": "arrow_ssw",
+      "group": "arrows",
+      "label": "arrow, south south west",
+      "ligature": ":arrow_ssw:",
+      "codepoint": "U+E06F",
+      "unicode": [],
+      "png": "png/111.png"
+    },
+    {
+      "index": 112,
+      "name": "on_hours",
+      "group": "time",
+      "label": "time since power on, hours",
+      "ligature": ":on_hours:",
+      "codepoint": "U+E070",
+      "unicode": [],
+      "png": "png/112.png"
+    },
+    {
+      "index": 113,
+      "name": "fly_hours",
+      "group": "time",
+      "label": "time since arming, hours",
+      "ligature": ":fly_hours:",
+      "codepoint": "U+E071",
+      "unicode": [],
+      "png": "png/113.png"
+    },
+    {
+      "index": 114,
+      "name": "ah_corner_left",
+      "group": "horizon",
+      "label": "horizon centre, left",
+      "ligature": ":ah_corner_left:",
+      "codepoint": "U+E072",
+      "unicode": [],
+      "png": "png/114.png"
+    },
+    {
+      "index": 115,
+      "name": "ah_corner_right",
+      "group": "horizon",
+      "label": "horizon centre, right",
+      "ligature": ":ah_corner_right:",
+      "codepoint": "U+E073",
+      "unicode": [],
+      "png": "png/115.png"
+    },
+    {
+      "index": 116,
+      "name": "ah_corner_low",
+      "group": "horizon",
+      "label": "horizon centre, lower",
+      "ligature": ":ah_corner_low:",
+      "codepoint": "U+E074",
+      "unicode": [],
+      "png": "png/116.png"
+    },
+    {
+      "index": 117,
+      "name": "arrow_small_up",
+      "group": "arrows",
+      "label": "small arrow, up",
+      "ligature": ":arrow_small_up:",
+      "codepoint": "U+E075",
+      "unicode": [
+        "U+25B4"
+      ],
+      "png": "png/117.png"
+    },
+    {
+      "index": 118,
+      "name": "arrow_small_down",
+      "group": "arrows",
+      "label": "small arrow, down",
+      "ligature": ":arrow_small_down:",
+      "codepoint": "U+E076",
+      "unicode": [
+        "U+25BE"
+      ],
+      "png": "png/118.png"
+    },
+    {
+      "index": 119,
+      "name": "arrow_small_right",
+      "group": "arrows",
+      "label": "small arrow, right",
+      "ligature": ":arrow_small_right:",
+      "codepoint": "U+E077",
+      "unicode": [
+        "U+25B8"
+      ],
+      "png": "png/119.png"
+    },
+    {
+      "index": 120,
+      "name": "arrow_small_left",
+      "group": "arrows",
+      "label": "small arrow, left",
+      "ligature": ":arrow_small_left:",
+      "codepoint": "U+E078",
+      "unicode": [
+        "U+25C2"
+      ],
+      "png": "png/120.png"
+    },
+    {
+      "index": 121,
+      "name": "prev_lap",
+      "group": "time",
+      "label": "previous lap",
+      "ligature": ":prev_lap:",
+      "codepoint": "U+E079",
+      "unicode": [],
+      "png": "png/121.png"
+    },
+    {
+      "index": 122,
+      "name": "temperature",
+      "group": "telemetry",
+      "label": "temperature",
+      "ligature": ":temperature:",
+      "codepoint": "U+E07A",
+      "unicode": [
+        "U+1F321"
+      ],
+      "png": "png/122.png"
+    },
+    {
+      "index": 124,
+      "name": "ladder",
+      "group": "horizon",
+      "label": "altitude ladder rule",
+      "ligature": ":ladder:",
+      "codepoint": "U+E07C",
+      "unicode": [],
+      "png": "png/124.png"
+    },
+    {
+      "index": 126,
+      "name": "crosshair",
+      "group": "horizon",
+      "label": "crosshair",
+      "ligature": ":crosshair:",
+      "codepoint": "U+E07E",
+      "unicode": [
+        "U+2316"
+      ],
+      "png": "png/126.png"
+    },
+    {
+      "index": 127,
+      "name": "altitude",
+      "group": "telemetry",
+      "label": "altitude",
+      "ligature": ":altitude:",
+      "codepoint": "U+E07F",
+      "unicode": [],
+      "png": "png/127.png"
+    },
+    {
+      "index": 128,
+      "name": "ah_bar_0",
+      "group": "horizon",
+      "label": "attitude ladder rung 0",
+      "ligature": ":ah_bar_0:",
+      "codepoint": "U+E080",
+      "unicode": [],
+      "png": "png/128.png"
+    },
+    {
+      "index": 129,
+      "name": "ah_bar_1",
+      "group": "horizon",
+      "label": "attitude ladder rung 1",
+      "ligature": ":ah_bar_1:",
+      "codepoint": "U+E081",
+      "unicode": [],
+      "png": "png/129.png"
+    },
+    {
+      "index": 130,
+      "name": "ah_bar_2",
+      "group": "horizon",
+      "label": "attitude ladder rung 2",
+      "ligature": ":ah_bar_2:",
+      "codepoint": "U+E082",
+      "unicode": [],
+      "png": "png/130.png"
+    },
+    {
+      "index": 131,
+      "name": "ah_bar_3",
+      "group": "horizon",
+      "label": "attitude ladder rung 3",
+      "ligature": ":ah_bar_3:",
+      "codepoint": "U+E083",
+      "unicode": [],
+      "png": "png/131.png"
+    },
+    {
+      "index": 132,
+      "name": "ah_bar_4",
+      "group": "horizon",
+      "label": "attitude ladder rung 4",
+      "ligature": ":ah_bar_4:",
+      "codepoint": "U+E084",
+      "unicode": [],
+      "png": "png/132.png"
+    },
+    {
+      "index": 133,
+      "name": "ah_bar_5",
+      "group": "horizon",
+      "label": "attitude ladder rung 5",
+      "ligature": ":ah_bar_5:",
+      "codepoint": "U+E085",
+      "unicode": [],
+      "png": "png/133.png"
+    },
+    {
+      "index": 134,
+      "name": "ah_bar_6",
+      "group": "horizon",
+      "label": "attitude ladder rung 6",
+      "ligature": ":ah_bar_6:",
+      "codepoint": "U+E086",
+      "unicode": [],
+      "png": "png/134.png"
+    },
+    {
+      "index": 135,
+      "name": "ah_bar_7",
+      "group": "horizon",
+      "label": "attitude ladder rung 7",
+      "ligature": ":ah_bar_7:",
+      "codepoint": "U+E087",
+      "unicode": [],
+      "png": "png/135.png"
+    },
+    {
+      "index": 136,
+      "name": "ah_bar_8",
+      "group": "horizon",
+      "label": "attitude ladder rung 8",
+      "ligature": ":ah_bar_8:",
+      "codepoint": "U+E088",
+      "unicode": [],
+      "png": "png/136.png"
+    },
+    {
+      "index": 137,
+      "name": "latitude",
+      "group": "navigation",
+      "label": "latitude",
+      "ligature": ":latitude:",
+      "codepoint": "U+E089",
+      "unicode": [],
+      "png": "png/137.png"
+    },
+    {
+      "index": 138,
+      "name": "progress_start",
+      "group": "progress",
+      "label": "progress bar, left cap",
+      "ligature": ":progress_start:",
+      "codepoint": "U+E08A",
+      "unicode": [],
+      "png": "png/138.png"
+    },
+    {
+      "index": 139,
+      "name": "progress_full",
+      "group": "progress",
+      "label": "progress bar, filled",
+      "ligature": ":progress_full:",
+      "codepoint": "U+E08B",
+      "unicode": [],
+      "png": "png/139.png"
+    },
+    {
+      "index": 140,
+      "name": "progress_half",
+      "group": "progress",
+      "label": "progress bar, half filled",
+      "ligature": ":progress_half:",
+      "codepoint": "U+E08C",
+      "unicode": [],
+      "png": "png/140.png"
+    },
+    {
+      "index": 141,
+      "name": "progress_empty",
+      "group": "progress",
+      "label": "progress bar, empty",
+      "ligature": ":progress_empty:",
+      "codepoint": "U+E08D",
+      "unicode": [],
+      "png": "png/141.png"
+    },
+    {
+      "index": 142,
+      "name": "progress_end",
+      "group": "progress",
+      "label": "progress bar, right cap",
+      "ligature": ":progress_end:",
+      "codepoint": "U+E08E",
+      "unicode": [],
+      "png": "png/142.png"
+    },
+    {
+      "index": 143,
+      "name": "progress_close",
+      "group": "progress",
+      "label": "progress bar, closed end",
+      "ligature": ":progress_close:",
+      "codepoint": "U+E08F",
+      "unicode": [],
+      "png": "png/143.png"
+    },
+    {
+      "index": 144,
+      "name": "batt_full",
+      "group": "power",
+      "label": "battery, full",
+      "ligature": ":batt_full:",
+      "codepoint": "U+E090",
+      "unicode": [],
+      "png": "png/144.png"
+    },
+    {
+      "index": 145,
+      "name": "batt_5",
+      "group": "power",
+      "label": "battery, 5 of 6",
+      "ligature": ":batt_5:",
+      "codepoint": "U+E091",
+      "unicode": [],
+      "png": "png/145.png"
+    },
+    {
+      "index": 146,
+      "name": "batt_4",
+      "group": "power",
+      "label": "battery, 4 of 6",
+      "ligature": ":batt_4:",
+      "codepoint": "U+E092",
+      "unicode": [],
+      "png": "png/146.png"
+    },
+    {
+      "index": 147,
+      "name": "batt_3",
+      "group": "power",
+      "label": "battery, 3 of 6",
+      "ligature": ":batt_3:",
+      "codepoint": "U+E093",
+      "unicode": [],
+      "png": "png/147.png"
+    },
+    {
+      "index": 148,
+      "name": "batt_2",
+      "group": "power",
+      "label": "battery, 2 of 6",
+      "ligature": ":batt_2:",
+      "codepoint": "U+E094",
+      "unicode": [],
+      "png": "png/148.png"
+    },
+    {
+      "index": 149,
+      "name": "batt_1",
+      "group": "power",
+      "label": "battery, 1 of 6",
+      "ligature": ":batt_1:",
+      "codepoint": "U+E095",
+      "unicode": [],
+      "png": "png/149.png"
+    },
+    {
+      "index": 150,
+      "name": "batt_empty",
+      "group": "power",
+      "label": "battery, empty",
+      "ligature": ":batt_empty:",
+      "codepoint": "U+E096",
+      "unicode": [],
+      "png": "png/150.png"
+    },
+    {
+      "index": 151,
+      "name": "battery",
+      "group": "power",
+      "label": "battery",
+      "ligature": ":battery:",
+      "codepoint": "U+E097",
+      "unicode": [
+        "U+1F50B"
+      ],
+      "png": "png/151.png"
+    },
+    {
+      "index": 152,
+      "name": "longitude",
+      "group": "navigation",
+      "label": "longitude",
+      "ligature": ":longitude:",
+      "codepoint": "U+E098",
+      "unicode": [],
+      "png": "png/152.png"
+    },
+    {
+      "index": 153,
+      "name": "ft_per_s",
+      "group": "units",
+      "label": "feet per second",
+      "ligature": ":ft_per_s:",
+      "codepoint": "U+E099",
+      "unicode": [],
+      "png": "png/153.png"
+    },
+    {
+      "index": 154,
+      "name": "amp",
+      "group": "power",
+      "label": "amps",
+      "ligature": ":amp:",
+      "codepoint": "U+E09A",
+      "unicode": [],
+      "png": "png/154.png"
+    },
+    {
+      "index": 155,
+      "name": "on_minutes",
+      "group": "time",
+      "label": "time since power on, minutes",
+      "ligature": ":on_minutes:",
+      "codepoint": "U+E09B",
+      "unicode": [],
+      "png": "png/155.png"
+    },
+    {
+      "index": 156,
+      "name": "fly_minutes",
+      "group": "time",
+      "label": "time since arming, minutes",
+      "ligature": ":fly_minutes:",
+      "codepoint": "U+E09C",
+      "unicode": [],
+      "png": "png/156.png"
+    },
+    {
+      "index": 157,
+      "name": "mph",
+      "group": "units",
+      "label": "miles per hour",
+      "ligature": ":mph:",
+      "codepoint": "U+E09D",
+      "unicode": [],
+      "png": "png/157.png"
+    },
+    {
+      "index": 158,
+      "name": "kph",
+      "group": "units",
+      "label": "kilometres per hour",
+      "ligature": ":kph:",
+      "codepoint": "U+E09E",
+      "unicode": [],
+      "png": "png/158.png"
+    },
+    {
+      "index": 159,
+      "name": "m_per_s",
+      "group": "units",
+      "label": "metres per second",
+      "ligature": ":m_per_s:",
+      "codepoint": "U+E09F",
+      "unicode": [],
+      "png": "png/159.png"
+    },
+    {
+      "index": 160,
+      "name": "logo_00",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 1",
+      "ligature": ":logo_00:",
+      "codepoint": "U+E0A0",
+      "unicode": [],
+      "png": "png/160.png"
+    },
+    {
+      "index": 161,
+      "name": "logo_01",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 2",
+      "ligature": ":logo_01:",
+      "codepoint": "U+E0A1",
+      "unicode": [],
+      "png": "png/161.png"
+    },
+    {
+      "index": 162,
+      "name": "logo_02",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 3",
+      "ligature": ":logo_02:",
+      "codepoint": "U+E0A2",
+      "unicode": [],
+      "png": "png/162.png"
+    },
+    {
+      "index": 163,
+      "name": "logo_03",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 4",
+      "ligature": ":logo_03:",
+      "codepoint": "U+E0A3",
+      "unicode": [],
+      "png": "png/163.png"
+    },
+    {
+      "index": 164,
+      "name": "logo_04",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 5",
+      "ligature": ":logo_04:",
+      "codepoint": "U+E0A4",
+      "unicode": [],
+      "png": "png/164.png"
+    },
+    {
+      "index": 165,
+      "name": "logo_05",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 6",
+      "ligature": ":logo_05:",
+      "codepoint": "U+E0A5",
+      "unicode": [],
+      "png": "png/165.png"
+    },
+    {
+      "index": 166,
+      "name": "logo_06",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 7",
+      "ligature": ":logo_06:",
+      "codepoint": "U+E0A6",
+      "unicode": [],
+      "png": "png/166.png"
+    },
+    {
+      "index": 167,
+      "name": "logo_07",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 8",
+      "ligature": ":logo_07:",
+      "codepoint": "U+E0A7",
+      "unicode": [],
+      "png": "png/167.png"
+    },
+    {
+      "index": 168,
+      "name": "logo_08",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 9",
+      "ligature": ":logo_08:",
+      "codepoint": "U+E0A8",
+      "unicode": [],
+      "png": "png/168.png"
+    },
+    {
+      "index": 169,
+      "name": "logo_09",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 10",
+      "ligature": ":logo_09:",
+      "codepoint": "U+E0A9",
+      "unicode": [],
+      "png": "png/169.png"
+    },
+    {
+      "index": 170,
+      "name": "logo_10",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 11",
+      "ligature": ":logo_10:",
+      "codepoint": "U+E0AA",
+      "unicode": [],
+      "png": "png/170.png"
+    },
+    {
+      "index": 171,
+      "name": "logo_11",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 12",
+      "ligature": ":logo_11:",
+      "codepoint": "U+E0AB",
+      "unicode": [],
+      "png": "png/171.png"
+    },
+    {
+      "index": 172,
+      "name": "logo_12",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 13",
+      "ligature": ":logo_12:",
+      "codepoint": "U+E0AC",
+      "unicode": [],
+      "png": "png/172.png"
+    },
+    {
+      "index": 173,
+      "name": "logo_13",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 14",
+      "ligature": ":logo_13:",
+      "codepoint": "U+E0AD",
+      "unicode": [],
+      "png": "png/173.png"
+    },
+    {
+      "index": 174,
+      "name": "logo_14",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 15",
+      "ligature": ":logo_14:",
+      "codepoint": "U+E0AE",
+      "unicode": [],
+      "png": "png/174.png"
+    },
+    {
+      "index": 175,
+      "name": "logo_15",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 16",
+      "ligature": ":logo_15:",
+      "codepoint": "U+E0AF",
+      "unicode": [],
+      "png": "png/175.png"
+    },
+    {
+      "index": 176,
+      "name": "logo_16",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 17",
+      "ligature": ":logo_16:",
+      "codepoint": "U+E0B0",
+      "unicode": [],
+      "png": "png/176.png"
+    },
+    {
+      "index": 177,
+      "name": "logo_17",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 18",
+      "ligature": ":logo_17:",
+      "codepoint": "U+E0B1",
+      "unicode": [],
+      "png": "png/177.png"
+    },
+    {
+      "index": 178,
+      "name": "logo_18",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 19",
+      "ligature": ":logo_18:",
+      "codepoint": "U+E0B2",
+      "unicode": [],
+      "png": "png/178.png"
+    },
+    {
+      "index": 179,
+      "name": "logo_19",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 20",
+      "ligature": ":logo_19:",
+      "codepoint": "U+E0B3",
+      "unicode": [],
+      "png": "png/179.png"
+    },
+    {
+      "index": 180,
+      "name": "logo_20",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 21",
+      "ligature": ":logo_20:",
+      "codepoint": "U+E0B4",
+      "unicode": [],
+      "png": "png/180.png"
+    },
+    {
+      "index": 181,
+      "name": "logo_21",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 22",
+      "ligature": ":logo_21:",
+      "codepoint": "U+E0B5",
+      "unicode": [],
+      "png": "png/181.png"
+    },
+    {
+      "index": 182,
+      "name": "logo_22",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 23",
+      "ligature": ":logo_22:",
+      "codepoint": "U+E0B6",
+      "unicode": [],
+      "png": "png/182.png"
+    },
+    {
+      "index": 183,
+      "name": "logo_23",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 1 column 24",
+      "ligature": ":logo_23:",
+      "codepoint": "U+E0B7",
+      "unicode": [],
+      "png": "png/183.png"
+    },
+    {
+      "index": 184,
+      "name": "logo_24",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 1",
+      "ligature": ":logo_24:",
+      "codepoint": "U+E0B8",
+      "unicode": [],
+      "png": "png/184.png"
+    },
+    {
+      "index": 185,
+      "name": "logo_25",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 2",
+      "ligature": ":logo_25:",
+      "codepoint": "U+E0B9",
+      "unicode": [],
+      "png": "png/185.png"
+    },
+    {
+      "index": 186,
+      "name": "logo_26",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 3",
+      "ligature": ":logo_26:",
+      "codepoint": "U+E0BA",
+      "unicode": [],
+      "png": "png/186.png"
+    },
+    {
+      "index": 187,
+      "name": "logo_27",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 4",
+      "ligature": ":logo_27:",
+      "codepoint": "U+E0BB",
+      "unicode": [],
+      "png": "png/187.png"
+    },
+    {
+      "index": 188,
+      "name": "logo_28",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 5",
+      "ligature": ":logo_28:",
+      "codepoint": "U+E0BC",
+      "unicode": [],
+      "png": "png/188.png"
+    },
+    {
+      "index": 189,
+      "name": "logo_29",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 6",
+      "ligature": ":logo_29:",
+      "codepoint": "U+E0BD",
+      "unicode": [],
+      "png": "png/189.png"
+    },
+    {
+      "index": 190,
+      "name": "logo_30",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 7",
+      "ligature": ":logo_30:",
+      "codepoint": "U+E0BE",
+      "unicode": [],
+      "png": "png/190.png"
+    },
+    {
+      "index": 191,
+      "name": "logo_31",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 8",
+      "ligature": ":logo_31:",
+      "codepoint": "U+E0BF",
+      "unicode": [],
+      "png": "png/191.png"
+    },
+    {
+      "index": 192,
+      "name": "logo_32",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 9",
+      "ligature": ":logo_32:",
+      "codepoint": "U+E0C0",
+      "unicode": [],
+      "png": "png/192.png"
+    },
+    {
+      "index": 193,
+      "name": "logo_33",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 10",
+      "ligature": ":logo_33:",
+      "codepoint": "U+E0C1",
+      "unicode": [],
+      "png": "png/193.png"
+    },
+    {
+      "index": 194,
+      "name": "logo_34",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 11",
+      "ligature": ":logo_34:",
+      "codepoint": "U+E0C2",
+      "unicode": [],
+      "png": "png/194.png"
+    },
+    {
+      "index": 195,
+      "name": "logo_35",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 12",
+      "ligature": ":logo_35:",
+      "codepoint": "U+E0C3",
+      "unicode": [],
+      "png": "png/195.png"
+    },
+    {
+      "index": 196,
+      "name": "logo_36",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 13",
+      "ligature": ":logo_36:",
+      "codepoint": "U+E0C4",
+      "unicode": [],
+      "png": "png/196.png"
+    },
+    {
+      "index": 197,
+      "name": "logo_37",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 14",
+      "ligature": ":logo_37:",
+      "codepoint": "U+E0C5",
+      "unicode": [],
+      "png": "png/197.png"
+    },
+    {
+      "index": 198,
+      "name": "logo_38",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 15",
+      "ligature": ":logo_38:",
+      "codepoint": "U+E0C6",
+      "unicode": [],
+      "png": "png/198.png"
+    },
+    {
+      "index": 199,
+      "name": "logo_39",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 16",
+      "ligature": ":logo_39:",
+      "codepoint": "U+E0C7",
+      "unicode": [],
+      "png": "png/199.png"
+    },
+    {
+      "index": 200,
+      "name": "logo_40",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 17",
+      "ligature": ":logo_40:",
+      "codepoint": "U+E0C8",
+      "unicode": [],
+      "png": "png/200.png"
+    },
+    {
+      "index": 201,
+      "name": "logo_41",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 18",
+      "ligature": ":logo_41:",
+      "codepoint": "U+E0C9",
+      "unicode": [],
+      "png": "png/201.png"
+    },
+    {
+      "index": 202,
+      "name": "logo_42",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 19",
+      "ligature": ":logo_42:",
+      "codepoint": "U+E0CA",
+      "unicode": [],
+      "png": "png/202.png"
+    },
+    {
+      "index": 203,
+      "name": "logo_43",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 20",
+      "ligature": ":logo_43:",
+      "codepoint": "U+E0CB",
+      "unicode": [],
+      "png": "png/203.png"
+    },
+    {
+      "index": 204,
+      "name": "logo_44",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 21",
+      "ligature": ":logo_44:",
+      "codepoint": "U+E0CC",
+      "unicode": [],
+      "png": "png/204.png"
+    },
+    {
+      "index": 205,
+      "name": "logo_45",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 22",
+      "ligature": ":logo_45:",
+      "codepoint": "U+E0CD",
+      "unicode": [],
+      "png": "png/205.png"
+    },
+    {
+      "index": 206,
+      "name": "logo_46",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 23",
+      "ligature": ":logo_46:",
+      "codepoint": "U+E0CE",
+      "unicode": [],
+      "png": "png/206.png"
+    },
+    {
+      "index": 207,
+      "name": "logo_47",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 2 column 24",
+      "ligature": ":logo_47:",
+      "codepoint": "U+E0CF",
+      "unicode": [],
+      "png": "png/207.png"
+    },
+    {
+      "index": 208,
+      "name": "logo_48",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 1",
+      "ligature": ":logo_48:",
+      "codepoint": "U+E0D0",
+      "unicode": [],
+      "png": "png/208.png"
+    },
+    {
+      "index": 209,
+      "name": "logo_49",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 2",
+      "ligature": ":logo_49:",
+      "codepoint": "U+E0D1",
+      "unicode": [],
+      "png": "png/209.png"
+    },
+    {
+      "index": 210,
+      "name": "logo_50",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 3",
+      "ligature": ":logo_50:",
+      "codepoint": "U+E0D2",
+      "unicode": [],
+      "png": "png/210.png"
+    },
+    {
+      "index": 211,
+      "name": "logo_51",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 4",
+      "ligature": ":logo_51:",
+      "codepoint": "U+E0D3",
+      "unicode": [],
+      "png": "png/211.png"
+    },
+    {
+      "index": 212,
+      "name": "logo_52",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 5",
+      "ligature": ":logo_52:",
+      "codepoint": "U+E0D4",
+      "unicode": [],
+      "png": "png/212.png"
+    },
+    {
+      "index": 213,
+      "name": "logo_53",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 6",
+      "ligature": ":logo_53:",
+      "codepoint": "U+E0D5",
+      "unicode": [],
+      "png": "png/213.png"
+    },
+    {
+      "index": 214,
+      "name": "logo_54",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 7",
+      "ligature": ":logo_54:",
+      "codepoint": "U+E0D6",
+      "unicode": [],
+      "png": "png/214.png"
+    },
+    {
+      "index": 215,
+      "name": "logo_55",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 8",
+      "ligature": ":logo_55:",
+      "codepoint": "U+E0D7",
+      "unicode": [],
+      "png": "png/215.png"
+    },
+    {
+      "index": 216,
+      "name": "logo_56",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 9",
+      "ligature": ":logo_56:",
+      "codepoint": "U+E0D8",
+      "unicode": [],
+      "png": "png/216.png"
+    },
+    {
+      "index": 217,
+      "name": "logo_57",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 10",
+      "ligature": ":logo_57:",
+      "codepoint": "U+E0D9",
+      "unicode": [],
+      "png": "png/217.png"
+    },
+    {
+      "index": 218,
+      "name": "logo_58",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 11",
+      "ligature": ":logo_58:",
+      "codepoint": "U+E0DA",
+      "unicode": [],
+      "png": "png/218.png"
+    },
+    {
+      "index": 219,
+      "name": "logo_59",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 12",
+      "ligature": ":logo_59:",
+      "codepoint": "U+E0DB",
+      "unicode": [],
+      "png": "png/219.png"
+    },
+    {
+      "index": 220,
+      "name": "logo_60",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 13",
+      "ligature": ":logo_60:",
+      "codepoint": "U+E0DC",
+      "unicode": [],
+      "png": "png/220.png"
+    },
+    {
+      "index": 221,
+      "name": "logo_61",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 14",
+      "ligature": ":logo_61:",
+      "codepoint": "U+E0DD",
+      "unicode": [],
+      "png": "png/221.png"
+    },
+    {
+      "index": 222,
+      "name": "logo_62",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 15",
+      "ligature": ":logo_62:",
+      "codepoint": "U+E0DE",
+      "unicode": [],
+      "png": "png/222.png"
+    },
+    {
+      "index": 223,
+      "name": "logo_63",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 16",
+      "ligature": ":logo_63:",
+      "codepoint": "U+E0DF",
+      "unicode": [],
+      "png": "png/223.png"
+    },
+    {
+      "index": 224,
+      "name": "logo_64",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 17",
+      "ligature": ":logo_64:",
+      "codepoint": "U+E0E0",
+      "unicode": [],
+      "png": "png/224.png"
+    },
+    {
+      "index": 225,
+      "name": "logo_65",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 18",
+      "ligature": ":logo_65:",
+      "codepoint": "U+E0E1",
+      "unicode": [],
+      "png": "png/225.png"
+    },
+    {
+      "index": 226,
+      "name": "logo_66",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 19",
+      "ligature": ":logo_66:",
+      "codepoint": "U+E0E2",
+      "unicode": [],
+      "png": "png/226.png"
+    },
+    {
+      "index": 227,
+      "name": "logo_67",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 20",
+      "ligature": ":logo_67:",
+      "codepoint": "U+E0E3",
+      "unicode": [],
+      "png": "png/227.png"
+    },
+    {
+      "index": 228,
+      "name": "logo_68",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 21",
+      "ligature": ":logo_68:",
+      "codepoint": "U+E0E4",
+      "unicode": [],
+      "png": "png/228.png"
+    },
+    {
+      "index": 229,
+      "name": "logo_69",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 22",
+      "ligature": ":logo_69:",
+      "codepoint": "U+E0E5",
+      "unicode": [],
+      "png": "png/229.png"
+    },
+    {
+      "index": 230,
+      "name": "logo_70",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 23",
+      "ligature": ":logo_70:",
+      "codepoint": "U+E0E6",
+      "unicode": [],
+      "png": "png/230.png"
+    },
+    {
+      "index": 231,
+      "name": "logo_71",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 3 column 24",
+      "ligature": ":logo_71:",
+      "codepoint": "U+E0E7",
+      "unicode": [],
+      "png": "png/231.png"
+    },
+    {
+      "index": 232,
+      "name": "logo_72",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 1",
+      "ligature": ":logo_72:",
+      "codepoint": "U+E0E8",
+      "unicode": [],
+      "png": "png/232.png"
+    },
+    {
+      "index": 233,
+      "name": "logo_73",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 2",
+      "ligature": ":logo_73:",
+      "codepoint": "U+E0E9",
+      "unicode": [],
+      "png": "png/233.png"
+    },
+    {
+      "index": 234,
+      "name": "logo_74",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 3",
+      "ligature": ":logo_74:",
+      "codepoint": "U+E0EA",
+      "unicode": [],
+      "png": "png/234.png"
+    },
+    {
+      "index": 235,
+      "name": "logo_75",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 4",
+      "ligature": ":logo_75:",
+      "codepoint": "U+E0EB",
+      "unicode": [],
+      "png": "png/235.png"
+    },
+    {
+      "index": 236,
+      "name": "logo_76",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 5",
+      "ligature": ":logo_76:",
+      "codepoint": "U+E0EC",
+      "unicode": [],
+      "png": "png/236.png"
+    },
+    {
+      "index": 237,
+      "name": "logo_77",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 6",
+      "ligature": ":logo_77:",
+      "codepoint": "U+E0ED",
+      "unicode": [],
+      "png": "png/237.png"
+    },
+    {
+      "index": 238,
+      "name": "logo_78",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 7",
+      "ligature": ":logo_78:",
+      "codepoint": "U+E0EE",
+      "unicode": [],
+      "png": "png/238.png"
+    },
+    {
+      "index": 239,
+      "name": "logo_79",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 8",
+      "ligature": ":logo_79:",
+      "codepoint": "U+E0EF",
+      "unicode": [],
+      "png": "png/239.png"
+    },
+    {
+      "index": 240,
+      "name": "logo_80",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 9",
+      "ligature": ":logo_80:",
+      "codepoint": "U+E0F0",
+      "unicode": [],
+      "png": "png/240.png"
+    },
+    {
+      "index": 241,
+      "name": "logo_81",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 10",
+      "ligature": ":logo_81:",
+      "codepoint": "U+E0F1",
+      "unicode": [],
+      "png": "png/241.png"
+    },
+    {
+      "index": 242,
+      "name": "logo_82",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 11",
+      "ligature": ":logo_82:",
+      "codepoint": "U+E0F2",
+      "unicode": [],
+      "png": "png/242.png"
+    },
+    {
+      "index": 243,
+      "name": "logo_83",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 12",
+      "ligature": ":logo_83:",
+      "codepoint": "U+E0F3",
+      "unicode": [],
+      "png": "png/243.png"
+    },
+    {
+      "index": 244,
+      "name": "logo_84",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 13",
+      "ligature": ":logo_84:",
+      "codepoint": "U+E0F4",
+      "unicode": [],
+      "png": "png/244.png"
+    },
+    {
+      "index": 245,
+      "name": "logo_85",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 14",
+      "ligature": ":logo_85:",
+      "codepoint": "U+E0F5",
+      "unicode": [],
+      "png": "png/245.png"
+    },
+    {
+      "index": 246,
+      "name": "logo_86",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 15",
+      "ligature": ":logo_86:",
+      "codepoint": "U+E0F6",
+      "unicode": [],
+      "png": "png/246.png"
+    },
+    {
+      "index": 247,
+      "name": "logo_87",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 16",
+      "ligature": ":logo_87:",
+      "codepoint": "U+E0F7",
+      "unicode": [],
+      "png": "png/247.png"
+    },
+    {
+      "index": 248,
+      "name": "logo_88",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 17",
+      "ligature": ":logo_88:",
+      "codepoint": "U+E0F8",
+      "unicode": [],
+      "png": "png/248.png"
+    },
+    {
+      "index": 249,
+      "name": "logo_89",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 18",
+      "ligature": ":logo_89:",
+      "codepoint": "U+E0F9",
+      "unicode": [],
+      "png": "png/249.png"
+    },
+    {
+      "index": 250,
+      "name": "logo_90",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 19",
+      "ligature": ":logo_90:",
+      "codepoint": "U+E0FA",
+      "unicode": [],
+      "png": "png/250.png"
+    },
+    {
+      "index": 251,
+      "name": "logo_91",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 20",
+      "ligature": ":logo_91:",
+      "codepoint": "U+E0FB",
+      "unicode": [],
+      "png": "png/251.png"
+    },
+    {
+      "index": 252,
+      "name": "logo_92",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 21",
+      "ligature": ":logo_92:",
+      "codepoint": "U+E0FC",
+      "unicode": [],
+      "png": "png/252.png"
+    },
+    {
+      "index": 253,
+      "name": "logo_93",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 22",
+      "ligature": ":logo_93:",
+      "codepoint": "U+E0FD",
+      "unicode": [],
+      "png": "png/253.png"
+    },
+    {
+      "index": 254,
+      "name": "logo_94",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 23",
+      "ligature": ":logo_94:",
+      "codepoint": "U+E0FE",
+      "unicode": [],
+      "png": "png/254.png"
+    },
+    {
+      "index": 255,
+      "name": "logo_95",
+      "group": "logo",
+      "label": "Betaflight logo tile, row 4 column 24",
+      "ligature": ":logo_95:",
+      "codepoint": "U+E0FF",
+      "unicode": [],
+      "png": "png/255.png"
     }
   ],
   "characters": [

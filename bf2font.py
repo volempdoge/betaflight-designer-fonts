@@ -26,16 +26,53 @@ import json
 import os
 import re
 import sys
+from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 
 from fontTools.colorLib.builder import buildCOLR, buildCPAL
+from fontTools.feaLib.builder import addOpenTypeFeaturesFromString
 from fontTools.fontBuilder import FontBuilder
 from fontTools.pens.t2CharStringPen import T2CharStringPen
 from fontTools.pens.ttGlyphPen import TTGlyphPen
 from PIL import Image
 
+import accents
+import blocks
 import cyrillic
+import greek
+import punctuation
+import symbols
+
+# --- composed character sets -------------------------------------------------
+
+# Everything beyond the 256 characters of the source font, drawn from the
+# font's own shapes. Order matters only for reporting.
+SETS = {
+    "cyrillic": cyrillic,
+    "accents": accents,
+    "greek": greek,
+    "punctuation": punctuation,
+    "blocks": blocks,
+}
+DEFAULT_SETS = tuple(SETS)
+
+
+def folds(sets: Sequence[str] = DEFAULT_SETS) -> dict[int, str]:
+    """Codepoint -> the characters it is spelled with, across the named sets."""
+    out: dict[int, str] = {}
+    for name in sets:
+        out.update(getattr(SETS[name], "FOLDS", {}))
+    return out
+
+
+def lowercase(sets: Sequence[str] = DEFAULT_SETS) -> dict[int, int]:
+    """Lowercase codepoint -> its capital. Blocks and the like have none."""
+    out: dict[int, int] = {}
+    for name in sets:
+        out.update(getattr(SETS[name], "LOWERCASE", {}))
+    return out
+
 
 # --- MAX7456 geometry --------------------------------------------------------
 
@@ -237,13 +274,21 @@ def unicode_name(codepoint: int) -> str:
     return f"uni{codepoint:04X}"
 
 
-def cyrillic_glyphs(glyphs: list[Glyph]) -> dict[int, Glyph]:
-    """Cyrillic capitals composed from this font's own Latin shapes."""
-    latin = {chr(i): glyphs[i].pixels for i in range(0x20, 0x7F)}
-    return {
-        codepoint: Glyph(index=codepoint, pixels=pixels)
-        for codepoint, pixels in cyrillic.glyphs(latin).items()
-    }
+def latin_shapes(glyphs: list[Glyph]) -> dict[str, list[list[int]]]:
+    """The font's own ASCII, keyed by character, for the composed sets."""
+    return {chr(i): glyphs[i].pixels for i in range(0x20, 0x7F)}
+
+
+def composed_glyphs(
+    glyphs: list[Glyph], sets: Sequence[str] = DEFAULT_SETS
+) -> dict[int, Glyph]:
+    """Every glyph the named sets compose from this font's own shapes."""
+    latin = latin_shapes(glyphs)
+    out: dict[int, Glyph] = {}
+    for name in sets:
+        for codepoint, pixels in SETS[name].glyphs(latin).items():
+            out[codepoint] = Glyph(index=codepoint, pixels=pixels)
+    return out
 
 
 def build_font(
@@ -255,7 +300,7 @@ def build_font(
     ascii_cmap: bool = True,
     fold_lowercase: bool = True,
     mode: str = "color",
-    with_cyrillic: bool = True,
+    sets: Sequence[str] = DEFAULT_SETS,
 ) -> FontBuilder:
     """Build one font.
 
@@ -283,7 +328,7 @@ def build_font(
     for glyph, name in zip(glyphs, names, strict=True):
         add(name, glyph.ink(), glyph.cells(value=2))
 
-    extra = cyrillic_glyphs(glyphs) if with_cyrillic else {}
+    extra = composed_glyphs(glyphs, sets)
     for codepoint, glyph in extra.items():
         add(unicode_name(codepoint), glyph.ink(), glyph.cells(value=2))
 
@@ -292,13 +337,21 @@ def build_font(
         cmap[PUA_BASE + glyph.index] = name
         if ascii_cmap and 0x20 <= glyph.index <= 0x7E:
             cmap[glyph.index] = name
+    if ascii_cmap:
+        # Icons that are also a standard character -- the compass arrows, the
+        # home symbol, degrees Celsius. A drawn glyph wins over an icon, so
+        # these go in before the composed sets.
+        for codepoint, index in symbols.ALIASES.items():
+            cmap[codepoint] = glyph_name(index)
     for codepoint in extra:
         cmap[codepoint] = unicode_name(codepoint)
     if fold_lowercase:
-        # The fonts have no lowercase at all, Cyrillic included.
-        for lower, upper in cyrillic.LOWERCASE.items():
+        # The fonts have no lowercase at all, in any script.
+        for lower, upper in lowercase(sets).items():
             if upper in extra:
                 cmap[lower] = unicode_name(upper)
+            elif ascii_cmap and 0x20 <= upper <= 0x7E:
+                cmap[lower] = glyph_name(upper)
     if ascii_cmap:
         cmap[0xA0] = cmap[0x20]
         if fold_lowercase:
@@ -306,6 +359,19 @@ def build_font(
             # the symbols stay reachable at U+E000+index.
             for index in range(ord("A"), ord("Z") + 1):
                 cmap[index + 0x20] = glyph_name(index)
+
+    # Characters that are spelled out rather than drawn: the codepoint carries
+    # a copy of the first letter's shape, and GSUB expands it to the rest.
+    spelled = folds(sets) if ascii_cmap else {}
+    spelled = {
+        codepoint: text
+        for codepoint, text in spelled.items()
+        if all(ord(ch) in cmap for ch in text)
+    }
+    for codepoint, text in spelled.items():
+        stand_in = extra.get(ord(text[0])) or glyphs[ord(text[0])]
+        add(unicode_name(codepoint), stand_in.ink(), stand_in.cells(value=2))
+        cmap[codepoint] = unicode_name(codepoint)
 
     fb = FontBuilder(UPM, isTTF=ttf)
     fb.setupGlyphOrder(order)
@@ -387,7 +453,42 @@ def build_font(
     if mode == "color":
         fb.font["COLR"] = buildCOLR(layers)
         fb.font["CPAL"] = buildCPAL([[(0, 0, 0, 1), (1, 1, 1, 1)]])
+    feature_text = features(cmap, spelled) if ascii_cmap else ""
+    if feature_text:
+        addOpenTypeFeaturesFromString(fb.font, feature_text)
     return fb
+
+
+def features(cmap: dict[int, str], spelled: dict[int, str]) -> str:
+    """The OpenType features: icon ligatures, and the spelled-out characters.
+
+    `liga` is on by default in every renderer that reads OpenType at all, which
+    is what makes `:battery:` work by just typing it. `ccmp` runs earlier and
+    is what turns one codepoint into several glyphs.
+    """
+
+    def run(text: str) -> str | None:
+        if any(ord(ch) not in cmap for ch in text):
+            return None
+        return " ".join(cmap[ord(ch)] for ch in text)
+
+    rules = []
+    for token, index in symbols.ligatures().items():
+        components = run(token)
+        if components:
+            rules.append(f"    sub {components} by {glyph_name(index)};")
+    spellings = []
+    for codepoint, text in spelled.items():
+        components = run(text)
+        if components:
+            spellings.append(f"    sub {unicode_name(codepoint)} by {components};")
+
+    blocks_out = []
+    if spellings:
+        blocks_out.append("feature ccmp {\n" + "\n".join(spellings) + "\n} ccmp;\n")
+    if rules:
+        blocks_out.append("feature liga {\n" + "\n".join(rules) + "\n} liga;\n")
+    return "\n".join(blocks_out)
 
 
 # --- driver ------------------------------------------------------------------
@@ -407,7 +508,7 @@ def convert(
     no_ascii: bool,
     literal_ascii: bool,
     layer_fonts: bool,
-    with_cyrillic: bool,
+    sets: Sequence[str],
     formats: list[str],
 ) -> None:
     glyphs = parse_mcm(source)
@@ -432,13 +533,14 @@ def convert(
         glyph_image(glyph, scale).save(png_dir / f"{glyph.index:03d}.png")
     sheet_image(glyphs, scale).save(out / f"{name}_sheet.png")
 
-    extra = cyrillic_glyphs(glyphs) if with_cyrillic else {}
-    if extra:
-        cyr_dir = png_dir / "cyrillic"
-        cyr_dir.mkdir(exist_ok=True)
-        for codepoint, glyph in extra.items():
-            glyph_image(glyph, scale).save(cyr_dir / f"{codepoint:04X}.png")
-        sheet_image(list(extra.values()), scale).save(out / f"{name}_cyrillic.png")
+    composed = {set_name: composed_glyphs(glyphs, (set_name,)) for set_name in sets}
+    for set_name, made in composed.items():
+        set_dir = png_dir / set_name
+        set_dir.mkdir(exist_ok=True)
+        for codepoint, glyph in made.items():
+            glyph_image(glyph, scale).save(set_dir / f"{codepoint:04X}.png")
+        by_codepoint = [made[cp] for cp in sorted(made)]
+        sheet_image(by_codepoint, scale).save(out / f"{name}_{set_name}.png")
 
     (out / f"{name}.json").write_text(
         json.dumps(
@@ -450,13 +552,32 @@ def convert(
                 "families": [n for _, n in variants],
                 "ascii_cmap": ascii_cmap,
                 "lowercase_folded_to_uppercase": ascii_cmap and fold_lowercase,
-                "cyrillic": [
+                "sets": {
+                    set_name: [
+                        {
+                            "codepoint": f"U+{cp:04X}",
+                            "character": chr(cp),
+                            "png": f"png/{set_name}/{cp:04X}.png",
+                        }
+                        for cp in sorted(made)
+                    ]
+                    for set_name, made in composed.items()
+                },
+                "spelled": {
+                    f"U+{cp:04X}": text for cp, text in sorted(folds(sets).items())
+                },
+                "symbols": [
                     {
-                        "codepoint": f"U+{cp:04X}",
-                        "letter": cyrillic.UPPERCASE[cp],
-                        "png": f"png/cyrillic/{cp:04X}.png",
+                        "index": symbol.index,
+                        "name": symbol.name,
+                        "group": symbol.group,
+                        "label": symbol.label,
+                        "ligature": f":{symbol.name}:",
+                        "codepoint": f"U+{PUA_BASE + symbol.index:04X}",
+                        "unicode": [f"U+{cp:04X}" for cp in symbol.unicode],
+                        "png": f"png/{symbol.index:03d}.png",
                     }
-                    for cp in sorted(extra)
+                    for symbol in symbols.SYMBOLS
                 ],
                 "characters": [
                     {
@@ -472,6 +593,7 @@ def convert(
                 ],
             },
             indent=2,
+            ensure_ascii=False,
         )
         + "\n"
     )
@@ -487,7 +609,7 @@ def convert(
                 mode=mode,
                 ascii_cmap=ascii_cmap,
                 fold_lowercase=fold_lowercase,
-                with_cyrillic=with_cyrillic,
+                sets=sets,
             )
             fb.save(str(font_dir / "otf" / f"{stem}.otf"))
         if needs_ttf:
@@ -498,7 +620,7 @@ def convert(
                 mode=mode,
                 ascii_cmap=ascii_cmap,
                 fold_lowercase=fold_lowercase,
-                with_cyrillic=with_cyrillic,
+                sets=sets,
             )
             if "ttf" in formats:
                 fb.font.flavor = None
@@ -509,9 +631,10 @@ def convert(
                     fb.save(str(font_dir / web / f"{stem}.{web}"))
 
     blanks = sum(g.is_blank for g in glyphs)
-    cyr = f" + {len(extra)} Cyrillic" if extra else ""
+    added = sum(len(made) for made in composed.values())
+    extra = f" + {added} composed" if added else ""
     print(
-        f"{source.name}: {CHARS - blanks}/{CHARS} characters{cyr} -> {out} "
+        f"{source.name}: {CHARS - blanks}/{CHARS} characters{extra} -> {out} "
         f"({', '.join(formats)})"
     )
 
@@ -552,10 +675,11 @@ def main(argv: list[str] | None = None) -> int:
         "onto the uppercase glyphs",
     )
     parser.add_argument(
-        "--no-cyrillic",
-        dest="with_cyrillic",
-        action="store_false",
-        help="skip the Cyrillic capitals composed from each font's own shapes",
+        "--sets",
+        default=",".join(DEFAULT_SETS),
+        help="comma separated subset of "
+        f"{','.join(DEFAULT_SETS)} -- the character sets composed from each "
+        "font's own shapes (default: all of them, empty for none)",
     )
     parser.add_argument(
         "--no-layer-fonts",
@@ -571,6 +695,10 @@ def main(argv: list[str] | None = None) -> int:
     unknown = set(formats) - {"otf", "ttf", "woff", "woff2"}
     if unknown:
         parser.error(f"unknown format(s): {', '.join(sorted(unknown))}")
+    sets = [s.strip().lower() for s in args.sets.split(",") if s.strip()]
+    unknown = set(sets) - set(DEFAULT_SETS)
+    if unknown:
+        parser.error(f"unknown character set(s): {', '.join(sorted(unknown))}")
     if args.scale < 1:
         parser.error("--scale must be >= 1")
     if args.family and len(args.sources) > 1:
@@ -586,7 +714,7 @@ def main(argv: list[str] | None = None) -> int:
             no_ascii=args.no_ascii_cmap,
             literal_ascii=args.literal_ascii,
             layer_fonts=args.layer_fonts,
-            with_cyrillic=args.with_cyrillic,
+            sets=sets,
             formats=formats,
         )
     return 0

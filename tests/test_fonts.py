@@ -7,7 +7,6 @@ from conftest import FONT_DIR
 from fontTools.pens.boundsPen import BoundsPen
 from fontTools.ttLib import TTFont
 
-import cyrillic
 from bf2font import (
     ADVANCE,
     ASCENT,
@@ -16,6 +15,8 @@ from bf2font import (
     UPM,
     Glyph,
     build_font,
+    composed_glyphs,
+    folds,
     parse_mcm,
 )
 
@@ -43,6 +44,10 @@ def make(
     ).font
 
 
+def composed(glyphs: list[Glyph]) -> dict[int, Glyph]:
+    return composed_glyphs(glyphs)
+
+
 @pytest.fixture(scope="session")
 def colour_ttf(glyphs: list[Glyph]) -> TTFont:
     return make(glyphs)
@@ -55,7 +60,8 @@ def test_colour_font_has_two_layers_per_character(
     font = make(glyphs, ttf=ttf)
     assert font["COLR"].version == 0
     non_blank = sum(not g.is_blank for g in glyphs)
-    assert len(font["COLR"].ColorLayers) == non_blank + len(cyrillic.UPPERCASE)
+    drawn = len(composed(glyphs)) + len(folds())
+    assert len(font["COLR"].ColorLayers) == non_blank + drawn
     layers = font["COLR"].ColorLayers["bf41"]
     assert [(layer.name, layer.colorID) for layer in layers] == [
         ("bf41.black", 0),
@@ -120,12 +126,9 @@ def test_character_map(colour_ttf: TTFont) -> None:
     cmap = colour_ttf.getBestCmap()
     assert cmap[0x41] == "bf41", "A is typed normally"
     assert cmap[PUA_BASE + 0x01] == "bf01", "symbols live in the private use area"
-    assert len(cmap) == (
-        256  # every character at U+E000 + index
-        + (0x7E - 0x20 + 1)  # ASCII, lowercase folded onto the capitals
-        + 1  # no-break space
-        + 2 * len(cyrillic.UPPERCASE)  # Cyrillic capitals and their lowercase
-    )
+    for codepoint in composed(colour_ttf_glyphs := parse_mcm(FONT_DIR / "default.mcm")):
+        assert codepoint in cmap, hex(codepoint)
+    assert len(cmap) > 256 + len(composed(colour_ttf_glyphs))
 
 
 def test_lowercase_folds_onto_uppercase(colour_ttf: TTFont) -> None:
