@@ -4,6 +4,7 @@
 // The pages this writes are still client-rendered. prerender.mjs runs next and
 // replaces each index.html with the fully rendered markup.
 
+import { execFileSync } from "node:child_process";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
@@ -68,7 +69,26 @@ function page(source, locale) {
   return html.replace("</head>", `${headTags(locale)}\n</head>`);
 }
 
+// <lastmod> is only worth sending if it is true: a date that moves on every
+// build tells a crawler nothing and gets discounted. Take it from the last
+// commit that touched the page source rather than from the clock, and leave
+// the tag out entirely when there is no git history to ask (a tarball, or a
+// shallow clone whose one commit did not touch these files).
+function lastModified() {
+  try {
+    const iso = execFileSync("git", ["log", "-1", "--format=%cI", "--", "index.dc.html", "support.js"], {
+      cwd: HERE,
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    return iso || null;
+  } catch {
+    return null;
+  }
+}
+
 function sitemap() {
+  const lastmod = lastModified();
   const entries = LOCALES.map((locale) => {
     const alts = LOCALES.map(
       (l) => `    <xhtml:link rel="alternate" hreflang="${l.hreflang}" href="${localeUrl(l)}"/>`,
@@ -80,6 +100,7 @@ function sitemap() {
       "  <url>",
       `    <loc>${localeUrl(locale)}</loc>`,
       ...alts,
+      ...(lastmod ? [`    <lastmod>${lastmod}</lastmod>`] : []),
       "    <changefreq>monthly</changefreq>",
       `    <priority>${locale.dir ? "0.8" : "1.0"}</priority>`,
       "  </url>",
@@ -116,10 +137,8 @@ async function copyRuntimeAssets() {
     }
   }
 
-  // The favicon.
-  const icon = join("output", "clarity", "png", "035.png");
-  await mkdir(join(DIST, dirname(icon)), { recursive: true });
-  await cp(join(ROOT, icon), join(DIST, icon));
+  // The favicon is a square cut of the same glyph, made by tools/favicon.py and
+  // committed to assets/ -- the 12x18 cell it comes from would be stretched.
 }
 
 async function copyPublicRoot() {

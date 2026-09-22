@@ -26,6 +26,11 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
+        with:
+          # The sitemap's <lastmod> is the date of the last commit that touched
+          # the page source. A shallow clone has only one commit to attribute
+          # it to, which would make the date the last push instead.
+          fetch-depth: 0
       - uses: actions/setup-node@v6
         with:
           node-version: "22"
