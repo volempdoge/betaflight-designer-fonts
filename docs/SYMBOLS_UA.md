@@ -1,4 +1,4 @@
-[← README](../README_UA.md) · [In English](SYMBOLS.md)
+[← README](../README_UA.md) · [Нотатки для розробників](DEVELOPERS_UA.md) · [In English](SYMBOLS.md)
 
 # Символи OSD
 

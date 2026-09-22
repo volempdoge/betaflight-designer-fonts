@@ -36,7 +36,13 @@ SETS_SPECIMEN = [
 
 def font_files(name: str, weight: str) -> Path:
     family = f"Betaflight OSD {title_from_stem(name)}".replace(" ", "")
-    return ROOT / "output" / name / "fonts" / "ttf" / f"{family}{weight}.ttf"
+    path = ROOT / "output" / name / "fonts" / "ttf" / f"{family}{weight}.ttf"
+    if not path.exists():
+        raise SystemExit(
+            f"{path} is missing -- build the fonts first:\n"
+            "  uv run bf2font.py original_fonts/*.mcm"
+        )
+    return path
 
 
 def render(lines: list[tuple[str, str]], size: int = SIZE) -> Image.Image:

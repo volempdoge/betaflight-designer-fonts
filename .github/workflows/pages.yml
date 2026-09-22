@@ -1,0 +1,66 @@
+name: Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "site/**"
+      - "output/**"
+      - ".github/workflows/pages.yml"
+  pull_request:
+    paths:
+      - "site/**"
+      - "output/**"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - name: Install
+        working-directory: site
+        run: npm ci
+      # npm no longer runs package install scripts unprompted, and puppeteer
+      # fetches its browser from one. Ask for it explicitly instead.
+      - name: Install Chrome for Testing
+        working-directory: site
+        run: npx puppeteer browsers install chrome
+      # The landing page is client-rendered: nothing is in the markup until
+      # React and Babel come off a CDN and the component compiles. This runs a
+      # real browser over each language and bakes the result into index.html,
+      # leaving the scripts in place so the page still hydrates.
+      - name: Build and prerender
+        working-directory: site
+        run: npm run build
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site/dist
+
+  deploy:
+    # Pull requests build to prove the prerender still works; only main ships.
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-24.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - id: deploy
+        uses: actions/deploy-pages@v4

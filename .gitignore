@@ -7,3 +7,10 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+
+# site build
+site/node_modules/
+site/dist/
+
+# local rebuild of output/, as the CI reproducibility check does it
+/build/

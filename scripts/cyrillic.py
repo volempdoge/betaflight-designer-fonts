@@ -13,6 +13,7 @@ from .shapes import (
     Core,
     Geometry,
     Pixels,
+    clip,
     core_of,
     interior_stem,
     lean_core,
@@ -305,7 +306,7 @@ def compose(
 def cores(latin: dict[str, Pixels]) -> dict[int, Core]:
     """Codepoint -> white core, the shape every other set is keyed by."""
     made = compose(latin)
-    return {cp: made[letter] for cp, letter in UPPERCASE.items()}
+    return {cp: clip(made[letter]) for cp, letter in UPPERCASE.items()}
 
 
 def glyphs(latin: dict[str, Pixels]) -> dict[int, Pixels]:

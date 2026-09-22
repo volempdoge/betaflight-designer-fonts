@@ -108,6 +108,30 @@ def test_characters_have_the_names_unicode_gives_them(name: str) -> None:
         assert unicodedata.name(chr(codepoint)).lower() == description
 
 
+def test_accents_sit_on_the_codepoint_they_describe() -> None:
+    """accents keys by bare codepoint, so a typo has no character to read."""
+    accents = SETS["accents"]
+    for codepoint, (base, mark) in accents.COMPOSED.items():
+        want = f"LATIN CAPITAL LETTER {base} WITH {mark.upper().replace('_', ' ')}"
+        # Unicode spells a few marks longer than we need to ("RING ABOVE").
+        assert unicodedata.name(chr(codepoint)).startswith(want), (
+            f"U+{codepoint:04X} is not {base} with {mark}"
+        )
+    for codepoint in accents.STRUCK:
+        assert unicodedata.name(chr(codepoint)).startswith("LATIN CAPITAL LETTER")
+
+
+def test_cyrillic_and_greek_sit_on_the_codepoint_they_name() -> None:
+    """Same guard for the two sets keyed by letter rather than by name."""
+    for codepoint, letter in SETS["cyrillic"].UPPERCASE.items():
+        assert chr(codepoint) == letter, f"U+{codepoint:04X} is not {letter}"
+    greek = SETS["greek"]
+    for codepoint in (*greek.AS_LATIN, *greek.AS_CYRILLIC, *greek.DRAWN):
+        assert unicodedata.name(chr(codepoint)).startswith("GREEK CAPITAL LETTER"), (
+            f"U+{codepoint:04X} is not a Greek capital"
+        )
+
+
 @pytest.mark.parametrize("path", font_paths(), ids=lambda p: p.stem)
 def test_glyphs_vectorise_losslessly(path: Path) -> None:
     """Composed bitmaps must survive the outline tracer like any other."""

@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays</title>
+<meta name="description" content="Ten Betaflight OSD fonts as colour OTF, TTF, WOFF and WOFF2, plus every character as a transparent PNG. Cyrillic, Greek and accented Latin included. Free under GPL 3.0.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Volodymyr Myronenko">
+<meta name="theme-color" content="#000000">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Betaflight OSD Fonts">
+<meta property="og:title" content="Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays">
+<meta property="og:description" content="Ten Betaflight OSD fonts as colour OTF, TTF, WOFF and WOFF2, plus every character as a transparent PNG. Cyrillic, Greek and accented Latin included.">
+<meta property="og:image" content="assets/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:alt" content="Betaflight OSD Fonts — OSD type over FPV footage, with the OTF, TTF, WOFF, WOFF2 and PNG formats listed">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays">
+<meta name="twitter:description" content="Ten Betaflight OSD fonts as colour OTF, TTF, WOFF and WOFF2, plus every character as a transparent PNG.">
+<meta name="twitter:image" content="assets/og-card.jpg">
+<link rel="icon" type="image/png" href="output/clarity/png/035.png">
+<link rel="preload" as="font" type="font/woff2" href="output/clarity/fonts/woff2/BetaflightOSDClarity.woff2" crossorigin="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&amp;family=Archivo:wght@400;600;700&amp;family=Space+Mono:wght@400;700&amp;family=Noto+Sans+JP:wght@400;700&amp;family=Noto+Sans+SC:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'OSD ExtraLarge'; src: url('output/extra_large/fonts/woff2/BetaflightOSDExtraLarge.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Clarity'; src: url('output/clarity/fonts/woff2/BetaflightOSDClarity.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Bold'; src: url('output/bold/fonts/woff2/BetaflightOSDBold.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Impact'; src: url('output/impact/fonts/woff2/BetaflightOSDImpact.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Vision'; src: url('output/vision/fonts/woff2/BetaflightOSDVision.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Betaflight'; src: url('output/betaflight/fonts/woff2/BetaflightOSDBetaflight.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD ImpactMini'; src: url('output/impact_mini/fonts/woff2/BetaflightOSDImpactMini.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Default'; src: url('output/default/fonts/woff2/BetaflightOSDDefault.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Large'; src: url('output/large/fonts/woff2/BetaflightOSDLarge.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Digital'; src: url('output/digital/fonts/woff2/BetaflightOSDDigital.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD ExtraLarge Shadow'; src: url('output/extra_large/fonts/woff2/BetaflightOSDExtraLargeShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD ExtraLarge Fill'; src: url('output/extra_large/fonts/woff2/BetaflightOSDExtraLargeFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Clarity Shadow'; src: url('output/clarity/fonts/woff2/BetaflightOSDClarityShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Clarity Fill'; src: url('output/clarity/fonts/woff2/BetaflightOSDClarityFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Bold Shadow'; src: url('output/bold/fonts/woff2/BetaflightOSDBoldShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Bold Fill'; src: url('output/bold/fonts/woff2/BetaflightOSDBoldFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Impact Shadow'; src: url('output/impact/fonts/woff2/BetaflightOSDImpactShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Impact Fill'; src: url('output/impact/fonts/woff2/BetaflightOSDImpactFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Vision Shadow'; src: url('output/vision/fonts/woff2/BetaflightOSDVisionShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Vision Fill'; src: url('output/vision/fonts/woff2/BetaflightOSDVisionFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Betaflight Shadow'; src: url('output/betaflight/fonts/woff2/BetaflightOSDBetaflightShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Betaflight Fill'; src: url('output/betaflight/fonts/woff2/BetaflightOSDBetaflightFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD ImpactMini Shadow'; src: url('output/impact_mini/fonts/woff2/BetaflightOSDImpactMiniShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD ImpactMini Fill'; src: url('output/impact_mini/fonts/woff2/BetaflightOSDImpactMiniFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Default Shadow'; src: url('output/default/fonts/woff2/BetaflightOSDDefaultShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Default Fill'; src: url('output/default/fonts/woff2/BetaflightOSDDefaultFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Large Shadow'; src: url('output/large/fonts/woff2/BetaflightOSDLargeShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Large Fill'; src: url('output/large/fonts/woff2/BetaflightOSDLargeFill.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Digital Shadow'; src: url('output/digital/fonts/woff2/BetaflightOSDDigitalShadow.woff2') format('woff2'); font-display: swap; }
+  @font-face { font-family: 'OSD Digital Fill'; src: url('output/digital/fonts/woff2/BetaflightOSDDigitalFill.woff2') format('woff2'); font-display: swap; }
+  @keyframes bf-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes bf-swapA { from { opacity: 0.25; filter: blur(5px) } to { opacity: 1; filter: blur(0) } }
+  @keyframes bf-swapB { from { opacity: 0.25; filter: blur(5px) } to { opacity: 1; filter: blur(0) } }
+  @keyframes bf-fadeA { from { opacity: 0; filter: blur(7px) } to { opacity: 1; filter: blur(0) } }
+  @keyframes bf-fadeB { from { opacity: 0; filter: blur(7px) } to { opacity: 1; filter: blur(0) } }
+  @keyframes bf-outA { from { opacity: 1; filter: blur(0) } to { opacity: 0; filter: blur(9px) } }
+  @keyframes bf-outB { from { opacity: 1; filter: blur(0) } to { opacity: 0; filter: blur(9px) } }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  html, body { margin: 0; padding: 0; background: #ffffff; }
+  body { font-family: 'Archivo', 'Noto Sans JP', 'Noto Sans SC', system-ui, sans-serif; color: #000000; -webkit-font-smoothing: antialiased; }
+  a { color: #b20d30; text-decoration: none; }
+  a:hover { color: #000000; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+  input, button { font-family: 'Space Mono', ui-monospace, monospace; font-size: 13px; color: #000; background: #fff; border: 1px solid #000; border-radius: 0; padding: 11px 12px; outline: none; }
+  input:focus { box-shadow: inset 0 0 0 2px #b20d30; }
+  input[type=range] { padding: 0; border: 0; height: 22px; -webkit-appearance: none; appearance: none; accent-color: #b20d30; background: linear-gradient(#000, #000) center center / 100% 3px no-repeat; }
+  input[type=range]::-webkit-slider-runnable-track { height: 3px; background: transparent; }
+  input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; border-radius: 0; width: 16px; height: 22px; margin-top: -10px; background: #b20d30; border: 1px solid #000; }
+  input[type=range]::-moz-range-track { height: 3px; background: transparent; }
+  input[type=range]::-moz-range-thumb { width: 16px; height: 20px; border-radius: 0; background: #b20d30; border: 1px solid #000; }
+  input[type=range]:focus { box-shadow: none; }
+  button { cursor: pointer; }
+  @media (max-width: 759px) { input[type=text] { font-size: 16px; } }
+  a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid #b20d30; outline-offset: 2px; }
+  input[type=range]:focus-visible { outline: 2px solid #b20d30; outline-offset: 4px; }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 1ms !important; animation-iteration-count: 1 !important; transition-duration: 1ms !important; }
+    html { scroll-behavior: auto !important; }
+  }
+</style>
+</helmet>
+
+<div style="width: 100%; margin: 0; opacity: {{ pageOp }}; transition: opacity 420ms ease">
+
+  <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+    <header style="position: sticky; top: 0; z-index: 200; display: flex; flex-wrap: nowrap; align-items: center; gap: 12px; padding: 9px clamp(12px, 2vw, 34px); background: #000000; color: #ffffff">
+      <div style="display: flex; align-items: center; gap: 8px; flex: 0 1 auto; min-width: 0; overflow: hidden; color: #fff">
+        <span style="font-family: 'OSD Clarity', monospace; font-size: 27px; line-height: 1; flex: 0 0 auto">#</span>
+        <span style="font-family: 'OSD Clarity', monospace; font-size: {{ ui.markFs }}; line-height: 1.25; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ ui.mark }}</span>
+      </div>
+      <div ref="{{ navRef }}" onScroll="{{ onNavScroll }}" style="display: flex; align-items: center; gap: 10px; flex: 0 1 auto; min-width: 0; margin-left: auto; overflow-x: auto; overflow-y: hidden; white-space: nowrap; scrollbar-width: none; mask-image: {{ navMask }}">
+        <nav style="display: flex; align-items: stretch; gap: 1px; background: #74776b; flex: 0 0 auto">
+          <a href="#pick" title="{{ t.nTry }}" aria-label="{{ t.nTry }}" style="background: #000; padding: 6px 8px; display: inline-flex; align-items: center; gap: 6px; line-height: 1; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff" style-hover="background: #e8e3d3; color: #000; text-decoration: none">{{ t.nTry }}</a>
+          <a href="#sym" title="{{ t.nSym }}" aria-label="{{ t.nSym }}" style="background: #000; padding: 6px 8px; display: inline-flex; align-items: center; gap: 6px; line-height: 1; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff" style-hover="background: #e8e3d3; color: #000; text-decoration: none">{{ t.nSym }}</a>
+          <a href="#sets" title="{{ t.nSets }}" aria-label="{{ t.nSets }}" style="background: #000; padding: 6px 8px; display: inline-flex; align-items: center; gap: 6px; line-height: 1; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff" style-hover="background: #e8e3d3; color: #000; text-decoration: none">{{ t.nSets }}</a>
+          <a href="#about" title="{{ t.nAbout }}" aria-label="{{ t.nAbout }}" style="background: #000; padding: 6px 8px; display: inline-flex; align-items: center; gap: 6px; line-height: 1; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff" style-hover="background: #e8e3d3; color: #000; text-decoration: none">{{ t.nAbout }}</a>
+          <a href="https://github.com/volempdoge/betaflight-designer-fonts" title="{{ t.nRepo }}" aria-label="{{ t.nRepo }}" style="background: #b20d30; padding: 6px 8px; display: inline-flex; align-items: center; gap: 6px; line-height: 1; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fff" style-hover="background: #e8e3d3; color: #000; text-decoration: none">{{ t.nRepo }}</a>
+        </nav>
+        <div style="display: flex; align-items: stretch; gap: 1px; background: #74776b; flex: 0 0 auto">
+          <sc-for list="{{ langs }}" as="l" hint-placeholder-count="6">
+            <button onClick="{{ l.pick }}" style="display: flex; align-items: center; justify-content: center; line-height: 1; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.06em; padding: 7px 8px; border: 0; background: {{ l.bg }}; color: {{ l.fg }}" style-hover="background: #e8e3d3; color: #000">{{ l.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </header>
+  </sc-if>
+
+  <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+    <header style="position: sticky; top: 0; z-index: 200; background: #000000; color: #ffffff">
+      <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 7px 10px 7px 14px">
+        <div style="display: flex; align-items: center; gap: 7px; min-width: 0; color: #fff">
+          <span style="font-family: 'OSD Clarity', monospace; font-size: 18px; line-height: 1; flex: 0 0 auto">#</span>
+          <span style="font-family: 'OSD Clarity', monospace; font-size: 18px; line-height: 1.25; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ ui.mark }}</span>
+        </div>
+        <button onClick="{{ onMenu }}" aria-label="{{ t.menu }}" aria-expanded="{{ menuOpen }}" style="position: relative; width: 48px; height: 48px; padding: 0; border: 0; flex: 0 0 auto; background: {{ menuBg }}; transition: background 180ms ease">
+          <span style="position: absolute; left: 13px; top: 50%; width: 22px; height: 2px; background: #fff; transform: {{ burger.a }}; transition: transform 240ms cubic-bezier(.2,.9,.3,1)"></span>
+          <span style="position: absolute; left: 13px; top: 50%; width: 22px; height: 2px; background: #fff; opacity: {{ burger.o }}; transform: {{ burger.b }}; transition: opacity 140ms ease, transform 240ms cubic-bezier(.2,.9,.3,1)"></span>
+          <span style="position: absolute; left: 13px; top: 50%; width: 22px; height: 2px; background: #fff; transform: {{ burger.c }}; transition: transform 240ms cubic-bezier(.2,.9,.3,1)"></span>
+        </button>
+      </div>
+      <div aria-hidden="{{ menu.hidden }}" style="position: absolute; left: 0; right: 0; top: 100%; z-index: 190; display: flex; flex-direction: column; gap: 1px; background: #74776b; padding-top: 1px; box-shadow: 0 14px 30px rgba(0,0,0,0.3); transform: {{ menu.tf }}; opacity: {{ menu.o }}; pointer-events: {{ menu.pe }}; transition: transform 300ms cubic-bezier(.2,.9,.25,1), opacity 220ms ease">
+          <a href="#pick" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px; background: #000; padding: 16px 14px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; transform: {{ menu.itf }}; opacity: {{ menu.o }}; transition: transform 300ms cubic-bezier(.2,.9,.25,1) 0ms, opacity 240ms ease 0ms">{{ t.nTry }}</a>
+          <a href="#sym" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px; background: #000; padding: 16px 14px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; transform: {{ menu.itf }}; opacity: {{ menu.o }}; transition: transform 300ms cubic-bezier(.2,.9,.25,1) 40ms, opacity 240ms ease 40ms">{{ t.nSym }}</a>
+          <a href="#sets" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px; background: #000; padding: 16px 14px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; transform: {{ menu.itf }}; opacity: {{ menu.o }}; transition: transform 300ms cubic-bezier(.2,.9,.25,1) 80ms, opacity 240ms ease 80ms">{{ t.nSets }}</a>
+          <a href="#about" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px; background: #000; padding: 16px 14px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; transform: {{ menu.itf }}; opacity: {{ menu.o }}; transition: transform 300ms cubic-bezier(.2,.9,.25,1) 120ms, opacity 240ms ease 120ms">{{ t.nAbout }}</a>
+          <a href="https://github.com/volempdoge/betaflight-designer-fonts" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 12px; background: #b20d30; padding: 16px 14px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fff; transform: {{ menu.itf }}; opacity: {{ menu.o }}; transition: transform 300ms cubic-bezier(.2,.9,.25,1) 160ms, opacity 240ms ease 160ms">{{ t.nRepo }}</a>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #74776b; transform: {{ menu.itf }}; opacity: {{ menu.o }}; transition: transform 300ms cubic-bezier(.2,.9,.25,1) 200ms, opacity 240ms ease 200ms">
+          <sc-for list="{{ langs }}" as="l" hint-placeholder-count="6">
+            <button onClick="{{ l.pickClose }}" style="display: flex; align-items: center; justify-content: center; height: 48px; border: 0; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; background: {{ l.bg }}; color: {{ l.fg }}" style-hover="background: #e8e3d3; color: #000">{{ l.label }}</button>
+          </sc-for>
+        </div>
+      </div>
+    </header>
+  </sc-if>
+
+  <main>
+
+  <section style="display: grid; grid-template-columns: {{ ui.hero }}; border-bottom: 1px solid #000">
+    <div style="padding: clamp(28px, 5vw, 56px) clamp(16px, 2.4vw, 34px) clamp(26px, 4vw, 46px); min-width: 0">
+      <h1 style="font-family: 'Space Mono', 'Noto Sans JP', 'Noto Sans SC', ui-monospace, monospace; font-size: clamp(30px, 3.6vw, 54px); line-height: 1.04; letter-spacing: -0.02em; margin: 0; text-wrap: balance; overflow-wrap: break-word; color: #000">{{ t.ht }}</h1>
+      <p style="font-size: 16px; line-height: 1.7; max-width: 54ch; margin: 22px 0 0; text-wrap: pretty; color: #000">{{ t.hb }}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px">
+        <a href="https://github.com/volempdoge/betaflight-designer-fonts/archive/refs/heads/main.zip" style="flex: {{ ui.ctaFlex }}; display: inline-flex; align-items: center; justify-content: center; gap: 9px; background: #b20d30; color: #fff; padding: 16px 22px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase" style-hover="background: #000; color: #e8e3d3; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↓</span>{{ t.c1 }}</a>
+        <a href="#pick" style="flex: {{ ui.ctaFlex }}; display: inline-flex; align-items: center; justify-content: center; gap: 9px; background: #fff; color: #000; border: 1px solid #000; padding: 16px 22px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase" style-hover="background: #e8e3d3; color: #000; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 0.9em; line-height: 1">▶</span>{{ t.c2 }}</a>
+      </div>
+    </div>
+
+    <div style="display: flex; flex-direction: column; border-left: {{ ui.vSep }}; border-top: {{ ui.hSep }}; min-width: 0; background: #000">
+      <div style="position: relative; flex: 1 1 auto; min-height: {{ ui.heroMin }}; overflow: hidden; background: #1a1a18">
+        <div style="position: absolute; inset: -4%; background-image: {{ frameBg }}; background-size: cover; background-position: center; filter: blur(7px) saturate(1.05) brightness(0.92)"></div>
+        <div style="position: absolute; inset: 0; font-family: {{ current.css }}; font-size: {{ ui.osdFs }}; animation: {{ osdAnim }}">
+        <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+          <div style="position: absolute; top: 6%; left: 4%; display: flex; flex-direction: column; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.rssi }}">{{ osd.rssi }}</span>
+            <span ref="{{ osdRef.thr }}">{{ osd.thr }}</span>
+          </div>
+          <div style="position: absolute; top: 6%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.batt }}">{{ osd.batt }}</span>
+            <span ref="{{ osdRef.amps }}">{{ osd.amps }}</span>
+            <span ref="{{ osdRef.home }}">{{ osd.home }}</span>
+          </div>
+          <div style="position: absolute; top: 6%; right: 4%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.timer }}">{{ osd.timer }}</span>
+            <span ref="{{ osdRef.lap }}">{{ osd.lap }}</span>
+          </div>
+          <div style="position: absolute; top: 50%; left: 4%; transform: translateY(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.alt }}">{{ osd.alt }}</div>
+          <div style="position: absolute; top: 50%; right: 4%; transform: translateY(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.speed }}">{{ osd.speed }}</div>
+          <div style="position: absolute; top: 64%; left: 50%; transform: translateX(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.warn }}">{{ osd.warn }}</div>
+          <div style="position: absolute; bottom: 6%; left: 4%; display: flex; flex-direction: column; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span>{{ osd.mode }}</span>
+            <span>{{ osd.air }}</span>
+            <span ref="{{ osdRef.mah }}">{{ osd.mah }}</span>
+          </div>
+          <div style="position: absolute; bottom: 6%; right: 4%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.sats }}">{{ osd.sats }}</span>
+            <span ref="{{ osdRef.lat }}">{{ osd.lat }}</span>
+            <span ref="{{ osdRef.lon }}">{{ osd.lon }}</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; top: 6%; left: 5%; display: flex; flex-direction: column; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.rssi }}">{{ osd.rssi }}</span>
+            <span ref="{{ osdRef.thr }}">{{ osd.thr }}</span>
+          </div>
+          <div style="position: absolute; top: 6%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.batt }}">{{ osd.batt }}</span>
+            <span ref="{{ osdRef.home }}">{{ osd.home }}</span>
+          </div>
+          <div style="position: absolute; top: 6%; right: 5%; display: flex; flex-direction: column; align-items: flex-end; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.timer }}">{{ osd.timer }}</span>
+            <span ref="{{ osdRef.lap }}">{{ osd.lap }}</span>
+          </div>
+          <div style="position: absolute; top: 50%; left: 5%; transform: translateY(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.alt }}">{{ osd.alt }}</div>
+          <div style="position: absolute; top: 50%; right: 5%; transform: translateY(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.speed }}">{{ osd.speed }}</div>
+          <div style="position: absolute; top: 62%; left: 50%; transform: translateX(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.warn }}">{{ osd.warn }}</div>
+          <div style="position: absolute; bottom: 6%; left: 5%; display: flex; flex-direction: column; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span>{{ osd.mode }}</span>
+            <span>{{ osd.air }}</span>
+            <span ref="{{ osdRef.mah }}">{{ osd.mah }}</span>
+          </div>
+          <div style="position: absolute; bottom: 6%; right: 5%; display: flex; flex-direction: column; align-items: flex-end; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.sats }}">{{ osd.sats }}</span>
+            <span ref="{{ osdRef.lat }}">{{ osd.lat }}</span>
+            <span ref="{{ osdRef.lon }}">{{ osd.lon }}</span>
+          </div>
+        </sc-if>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; white-space: nowrap">{{ osd.cross }}</div>
+        </div>
+        <sc-if value="{{ pv.hasPrev }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; inset: 0; font-family: {{ pv.prevCss }}; font-size: {{ ui.osdFs }}; animation: {{ pv.outAnim }}">
+        <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+          <div style="position: absolute; top: 6%; left: 4%; display: flex; flex-direction: column; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.rssi }}">{{ osd.rssi }}</span>
+            <span ref="{{ osdRef.thr }}">{{ osd.thr }}</span>
+          </div>
+          <div style="position: absolute; top: 6%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.batt }}">{{ osd.batt }}</span>
+            <span ref="{{ osdRef.amps }}">{{ osd.amps }}</span>
+            <span ref="{{ osdRef.home }}">{{ osd.home }}</span>
+          </div>
+          <div style="position: absolute; top: 6%; right: 4%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.timer }}">{{ osd.timer }}</span>
+            <span ref="{{ osdRef.lap }}">{{ osd.lap }}</span>
+          </div>
+          <div style="position: absolute; top: 50%; left: 4%; transform: translateY(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.alt }}">{{ osd.alt }}</div>
+          <div style="position: absolute; top: 50%; right: 4%; transform: translateY(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.speed }}">{{ osd.speed }}</div>
+          <div style="position: absolute; top: 64%; left: 50%; transform: translateX(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.warn }}">{{ osd.warn }}</div>
+          <div style="position: absolute; bottom: 6%; left: 4%; display: flex; flex-direction: column; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span>{{ osd.mode }}</span>
+            <span>{{ osd.air }}</span>
+            <span ref="{{ osdRef.mah }}">{{ osd.mah }}</span>
+          </div>
+          <div style="position: absolute; bottom: 6%; right: 4%; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.sats }}">{{ osd.sats }}</span>
+            <span ref="{{ osdRef.lat }}">{{ osd.lat }}</span>
+            <span ref="{{ osdRef.lon }}">{{ osd.lon }}</span>
+          </div>
+        </sc-if>
+        <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; top: 6%; left: 5%; display: flex; flex-direction: column; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.rssi }}">{{ osd.rssi }}</span>
+            <span ref="{{ osdRef.thr }}">{{ osd.thr }}</span>
+          </div>
+          <div style="position: absolute; top: 6%; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.batt }}">{{ osd.batt }}</span>
+            <span ref="{{ osdRef.home }}">{{ osd.home }}</span>
+          </div>
+          <div style="position: absolute; top: 6%; right: 5%; display: flex; flex-direction: column; align-items: flex-end; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.timer }}">{{ osd.timer }}</span>
+            <span ref="{{ osdRef.lap }}">{{ osd.lap }}</span>
+          </div>
+          <div style="position: absolute; top: 50%; left: 5%; transform: translateY(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.alt }}">{{ osd.alt }}</div>
+          <div style="position: absolute; top: 50%; right: 5%; transform: translateY(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.speed }}">{{ osd.speed }}</div>
+          <div style="position: absolute; top: 62%; left: 50%; transform: translateX(-50%); white-space: nowrap; color: #fff" ref="{{ osdRef.warn }}">{{ osd.warn }}</div>
+          <div style="position: absolute; bottom: 6%; left: 5%; display: flex; flex-direction: column; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span>{{ osd.mode }}</span>
+            <span>{{ osd.air }}</span>
+            <span ref="{{ osdRef.mah }}">{{ osd.mah }}</span>
+          </div>
+          <div style="position: absolute; bottom: 6%; right: 5%; display: flex; flex-direction: column; align-items: flex-end; gap: 3px; line-height: 1.35; white-space: nowrap; color: #fff">
+            <span ref="{{ osdRef.sats }}">{{ osd.sats }}</span>
+            <span ref="{{ osdRef.lat }}">{{ osd.lat }}</span>
+            <span ref="{{ osdRef.lon }}">{{ osd.lon }}</span>
+          </div>
+        </sc-if>
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; white-space: nowrap">{{ osd.cross }}</div>
+        </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #000; border-bottom: 1px solid #000; overflow: hidden; padding: 12px 0">
+    <div style="display: inline-flex; width: max-content; white-space: nowrap; will-change: transform; animation: bf-marquee 42s linear infinite; color: #fff">
+      <div style="font-family: 'OSD Clarity', monospace; font-size: 27px; line-height: 1.4; padding-right: 28px">{{ ribbon }}</div>
+      <div style="font-family: 'OSD Clarity', monospace; font-size: 27px; line-height: 1.4; padding-right: 28px">{{ ribbon }}</div>
+    </div>
+  </section>
+
+  <section id="pick" aria-labelledby="h-pick" style="scroll-margin-top: 58px; border-bottom: 1px solid #000">
+    <div style="display: flex; align-items: baseline; gap: 14px; padding: clamp(22px, 3vw, 36px) clamp(16px, 2.4vw, 34px) 16px">
+      <h2 id="h-pick" style="font-family: 'Space Mono', 'Noto Sans JP', 'Noto Sans SC', ui-monospace, monospace; font-size: {{ ui.h2 }}; line-height: 1.1; margin: 0; letter-spacing: -0.01em; color: #000">{{ t.p_t }}</h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: {{ ui.ctrl }}; gap: 14px; padding: 0 clamp(16px, 2.4vw, 34px) 20px; align-items: end; position: relative; z-index: 20">
+      <div data-dd="font" style="display: flex; flex-direction: column; gap: 7px; min-width: 0; position: relative">
+        <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_font }}</span>
+        <button onClick="{{ ddFont.toggle }}" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; height: 52px; padding: 0 12px; text-align: left; background: {{ ddFont.btnBg }}" style-hover="background: #e8e3d3">
+          <span style="display: grid; font-size: 27px; line-height: 1; min-width: 0; color: #000">
+            <span style="grid-area: 1 / 1; font-family: {{ current.css }}; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; animation: {{ osdAnim }}">{{ ddFont.value }}</span>
+            <sc-if value="{{ pv.hasPrev }}" hint-placeholder-val="{{ false }}"><span style="grid-area: 1 / 1; font-family: {{ pv.prevCss }}; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; animation: {{ pv.outAnim }}">{{ pv.prevKey }}</span></sc-if>
+          </span>
+          <span style="color: #b20d30; flex: 0 0 auto">{{ ddFont.caret }}</span>
+        </button>
+        <sc-if value="{{ ddFont.open }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; top: 100%; left: 0; right: 0; z-index: 30; background: #fff; border: 1px solid #000; border-top: 0; max-height: 340px; overflow-y: auto">
+            <sc-for list="{{ ddFont.items }}" as="it" hint-placeholder-count="10">
+              <button onClick="{{ it.pick }}" style="width: 100%; text-align: left; border: 0; border-bottom: 1px solid #74776b; padding: 10px 10px; font-family: {{ it.css }}; font-size: 27px; line-height: 1.3; display: flex; align-items: center; gap: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; background: {{ it.bg }}; color: {{ it.fg }}" style-hover="background: #e8e3d3; color: #000"><span style="flex: 0 0 10px; font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1">{{ it.mark }}</span><span style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; background: {{ it.tbg }}">{{ it.label }}</span></button>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+      <label style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+        <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_text }}</span>
+        <input type="text" value="{{ text }}" onChange="{{ onText }}" placeholder="FPV" style="width: 100%; height: 52px; padding: 0 12px; text-transform: uppercase; font-weight: 700">
+      </label>
+      <label style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+        <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start; white-space: nowrap; max-width: 100%; overflow: hidden; text-overflow: ellipsis">{{ t.p_size }} · {{ size }}px · {{ sizeMult }}</span>
+        <div style="display: flex; align-items: center; height: 52px; padding: 0 12px; border: 1px solid #000">
+          <input type="range" min="18" max="{{ ui.sizeMax }}" step="18" value="{{ size }}" onChange="{{ onSize }}" style="width: 100%; display: block">
+        </div>
+      </label>
+      <div style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+        <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_adv }}</span>
+        <button onClick="{{ onAdv }}" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; height: 52px; padding: 0 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: {{ advBg }}" style-hover="background: #e8e3d3">
+          <span>{{ advLabel }}</span>
+          <span style="color: #b20d30; flex: 0 0 auto">{{ advCaret }}</span>
+        </button>
+      </div>
+    </div>
+
+    <sc-if value="{{ adv.open }}" hint-placeholder-val="{{ false }}">
+      <div style="display: flex; flex-direction: column; gap: 22px; padding: 20px clamp(16px, 2.4vw, 34px) 24px; border-top: 1px solid #000; border-bottom: 1px solid #000; background: #f7f6f2">
+
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <div style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #b20d30">{{ t.gSpace }}</div>
+          <div style="display: grid; grid-template-columns: {{ ui.adv }}; gap: 14px; align-items: end">
+            <label style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_ls }} · {{ adv.ls }}px</span>
+              <div style="display: flex; align-items: center; height: 48px; padding: 0 12px; border: 1px solid #000; background: #fff">
+                <input type="range" min="-8" max="80" step="1" value="{{ adv.ls }}" onChange="{{ adv.onLs }}" style="width: 100%; display: block">
+              </div>
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_lh }} · {{ adv.lh }}</span>
+              <div style="display: flex; align-items: center; height: 48px; padding: 0 12px; border: 1px solid #000; background: #fff">
+                <input type="range" min="0.8" max="2.4" step="0.1" value="{{ adv.lh }}" onChange="{{ adv.onLh }}" style="width: 100%; display: block">
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <div style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #b20d30">{{ t.gShape }}</div>
+          <div style="display: grid; grid-template-columns: {{ ui.adv }}; gap: 14px; align-items: end">
+            <label style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_w }} · {{ adv.sx }}%</span>
+              <div style="display: flex; align-items: center; height: 48px; padding: 0 12px; border: 1px solid #000; background: #fff">
+                <input type="range" min="60" max="180" step="5" value="{{ adv.sx }}" onChange="{{ adv.onSx }}" style="width: 100%; display: block">
+              </div>
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_h }} · {{ adv.sy }}%</span>
+              <div style="display: flex; align-items: center; height: 48px; padding: 0 12px; border: 1px solid #000; background: #fff">
+                <input type="range" min="60" max="180" step="5" value="{{ adv.sy }}" onChange="{{ adv.onSy }}" style="width: 100%; display: block">
+              </div>
+            </label>
+            <label style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_sk }} · {{ adv.sk }}°</span>
+              <div style="display: flex; align-items: center; height: 48px; padding: 0 12px; border: 1px solid #000; background: #fff">
+                <input type="range" min="-20" max="20" step="1" value="{{ adv.sk }}" onChange="{{ adv.onSk }}" style="width: 100%; display: block">
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <div style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #b20d30">{{ t.gColor }}</div>
+          <div style="display: grid; grid-template-columns: {{ ui.adv }}; gap: 14px; align-items: start">
+            <div style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257">{{ t.p_fg }}</span>
+              <div style="display: flex; align-items: center; gap: 10px; height: 48px">
+                <sc-for list="{{ adv.fgs }}" as="sw" hint-placeholder-count="4">
+                  <button onClick="{{ sw.pick }}" title="{{ sw.value }}" style="width: 36px; height: 36px; padding: 0; border: 1px solid #000; outline: {{ sw.ring }}; outline-offset: 2px; background: {{ sw.value }}"></button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257">{{ t.p_ol }}</span>
+              <div style="display: flex; align-items: center; gap: 10px; height: 48px">
+                <sc-for list="{{ adv.outlines }}" as="sw" hint-placeholder-count="4">
+                  <button onClick="{{ sw.pick }}" title="{{ sw.value }}" style="width: 36px; height: 36px; padding: 0; border: 1px solid #000; outline: {{ sw.ring }}; outline-offset: 2px; background: {{ sw.value }}"></button>
+                </sc-for>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257">{{ t.p_bg }}</span>
+              <div style="display: flex; align-items: center; gap: 10px; height: 48px; flex-wrap: wrap">
+                <sc-for list="{{ adv.bgs }}" as="sw" hint-placeholder-count="5">
+                  <button onClick="{{ sw.pick }}" title="{{ sw.title }}" style="width: 36px; height: 36px; padding: 0; border: 1px solid #000; outline: {{ sw.ring }}; outline-offset: 2px; background: {{ sw.value }}; background-image: {{ sw.image }}; background-size: cover; background-position: center"></button>
+                </sc-for>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </sc-if>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 8px 18px; align-items: baseline; padding: 13px clamp(16px, 2.4vw, 34px); background: #000; border-top: 1px solid #000">
+      <span style="font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #e8e3d3">{{ current.key }}</span>
+      <span style="font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.06em; color: #74776b; white-space: nowrap">{{ t.p_cap }} {{ current.cap }}/18 px</span>
+      <span style="font-size: 12px; color: #74776b">{{ current.note }}</span>
+    </div>
+    <div style="position: relative; overflow: hidden; background: {{ adv.bg }}">
+      <sc-if value="{{ adv.footage }}" hint-placeholder-val="{{ false }}">
+        <div style="position: absolute; inset: -4%; background-image: {{ frameBg }}; background-size: cover; background-position: center; filter: blur(7px) brightness(0.92)"></div>
+      </sc-if>
+      <div style="position: relative; padding: clamp(22px, 3vw, 36px) clamp(16px, 2.4vw, 34px) clamp(24px, 3.2vw, 38px)">
+        <div style="display: grid; font-size: {{ pv.fs }}px; line-height: {{ adv.lh }}; letter-spacing: {{ adv.ls }}px; transform: {{ adv.tf }}; transform-origin: left center">
+          <div style="grid-area: 1 / 1; display: grid; animation: {{ pv.anim }}">
+            <div style="grid-area: 1 / 1; font-family: {{ current.shadow }}; color: {{ pv.ol }}; overflow-wrap: anywhere; word-break: break-word">{{ text }}</div>
+            <div style="grid-area: 1 / 1; font-family: {{ current.fill }}; color: {{ pv.fg }}; overflow-wrap: anywhere; word-break: break-word">{{ text }}</div>
+          </div>
+          <sc-if value="{{ pv.hasPrev }}" hint-placeholder-val="{{ false }}">
+            <div style="grid-area: 1 / 1; display: grid; animation: {{ pv.outAnim }}">
+              <div style="grid-area: 1 / 1; font-family: {{ pv.prevShadow }}; color: {{ pv.olSolid }}; overflow-wrap: anywhere; word-break: break-word">{{ text }}</div>
+              <div style="grid-area: 1 / 1; font-family: {{ pv.prevFill }}; color: {{ pv.fgSolid }}; overflow-wrap: anywhere; word-break: break-word">{{ text }}</div>
+            </div>
+          </sc-if>
+        </div>
+        <div style="display: grid; font-size: {{ ui.charset }}; line-height: 1.6; margin-top: 20px">
+          <div style="grid-area: 1 / 1; display: grid; animation: {{ pv.anim }}">
+            <div style="grid-area: 1 / 1; font-family: {{ current.shadow }}; color: {{ pv.ol }}; overflow-wrap: anywhere; word-break: break-word">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 .,:;!?()-/&gt;&lt;</div>
+            <div style="grid-area: 1 / 1; font-family: {{ current.fill }}; color: {{ pv.fg }}; overflow-wrap: anywhere; word-break: break-word">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 .,:;!?()-/&gt;&lt;</div>
+          </div>
+          <sc-if value="{{ pv.hasPrev }}" hint-placeholder-val="{{ false }}">
+            <div style="grid-area: 1 / 1; display: grid; animation: {{ pv.outAnim }}">
+              <div style="grid-area: 1 / 1; font-family: {{ pv.prevShadow }}; color: {{ pv.olSolid }}; overflow-wrap: anywhere; word-break: break-word">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 .,:;!?()-/&gt;&lt;</div>
+              <div style="grid-area: 1 / 1; font-family: {{ pv.prevFill }}; color: {{ pv.fgSolid }}; overflow-wrap: anywhere; word-break: break-word">ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 .,:;!?()-/&gt;&lt;</div>
+            </div>
+          </sc-if>
+        </div>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: {{ ui.ctrl }}; gap: 14px; padding: 22px clamp(16px, 2.4vw, 34px); align-items: end; border-top: 1px solid #000; position: relative; z-index: 15">
+      <div data-dd="fam" style="display: flex; flex-direction: column; gap: 7px; min-width: 0; position: relative">
+        <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_fam }}</span>
+        <button onClick="{{ ddFam.toggle }}" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; height: 52px; text-align: left; background: {{ ddFam.btnBg }}" style-hover="background: #e8e3d3">
+          <span style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ ddFam.value }}</span>
+          <span style="color: #b20d30; flex: 0 0 auto">{{ ddFam.caret }}</span>
+        </button>
+        <sc-if value="{{ ddFam.open }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; top: 100%; left: 0; right: 0; z-index: 30; background: #fff; border: 1px solid #000; border-top: 0">
+            <sc-for list="{{ ddFam.items }}" as="it" hint-placeholder-count="3">
+              <button onClick="{{ it.pick }}" style="display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; border: 0; border-bottom: 1px solid #74776b; padding: 14px 12px; font-size: 12px; background: {{ it.bg }}; color: {{ it.fg }}" style-hover="background: #e8e3d3; color: #000"><span style="flex: 0 0 10px; font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1">{{ it.mark }}</span><span>{{ it.label }}</span></button>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+      <div data-dd="fmt" style="display: flex; flex-direction: column; gap: 7px; min-width: 0; position: relative">
+        <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.p_fmt }}</span>
+        <button onClick="{{ ddFmt.toggle }}" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; height: 52px; text-align: left; background: {{ ddFmt.btnBg }}" style-hover="background: #e8e3d3">
+          <span style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ ddFmt.value }}</span>
+          <span style="color: #b20d30; flex: 0 0 auto">{{ ddFmt.caret }}</span>
+        </button>
+        <sc-if value="{{ ddFmt.open }}" hint-placeholder-val="{{ false }}">
+          <div style="position: absolute; top: 100%; left: 0; right: 0; z-index: 30; background: #fff; border: 1px solid #000; border-top: 0">
+            <sc-for list="{{ ddFmt.items }}" as="it" hint-placeholder-count="4">
+              <button onClick="{{ it.pick }}" style="display: flex; align-items: center; gap: 10px; width: 100%; text-align: left; border: 0; border-bottom: 1px solid #74776b; padding: 14px 12px; font-size: 12px; background: {{ it.bg }}; color: {{ it.fg }}" style-hover="background: #e8e3d3; color: #000"><span style="flex: 0 0 10px; font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1">{{ it.mark }}</span><span>{{ it.label }}</span></button>
+            </sc-for>
+          </div>
+        </sc-if>
+      </div>
+      <a href="{{ downloadHref }}" download="" onClick="{{ onGrabFont }}" style="display: flex; align-items: center; justify-content: center; gap: 9px; height: 52px; background: #b20d30; color: #fff; padding: 0 18px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap" style-hover="background: #000; color: #e8e3d3; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">{{ dlMark }}</span>{{ t.p_dl }}</a>
+      <div style="display: flex; flex-direction: column; justify-content: center; gap: 5px; min-height: 52px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.04em; min-width: 0">
+        <span style="color: #5f6257; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ downloadName }}</span>
+        <a href="{{ current.folder }}" style="display: inline-flex; align-items: center; gap: 6px; min-height: {{ ui.tap }}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>{{ t.p_all }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="sym" aria-labelledby="h-sym" style="scroll-margin-top: 58px; border-bottom: 1px solid #000">
+    <div style="display: flex; align-items: baseline; gap: 14px; padding: clamp(22px, 3vw, 36px) clamp(16px, 2.4vw, 34px) 14px">
+      <h2 style="font-family: 'Space Mono', 'Noto Sans JP', 'Noto Sans SC', ui-monospace, monospace; font-size: {{ ui.h2 }}; line-height: 1.1; margin: 0; letter-spacing: -0.01em; color: #000" id="h-sym">{{ t.s_t }}</h2>
+    </div>
+    <p style="font-size: 14px; line-height: 1.75; margin: 0 clamp(16px, 2.4vw, 34px) 24px; max-width: 78ch; text-wrap: pretty; color: #000">{{ t.s_b }}</p>
+
+    <div style="display: grid; grid-template-columns: {{ ui.symLayout }}; gap: 1px; background: #000; border-top: 1px solid #000">
+
+      <div style="background: #f7f6f2; min-width: 0; padding: 18px clamp(16px, 2vw, 24px) 24px">
+        <div style="display: grid; grid-template-columns: {{ ui.symTop }}; gap: 10px; align-items: end; position: relative; z-index: 20">
+          <div data-dd="grp" style="display: flex; flex-direction: column; gap: 7px; min-width: 0; position: relative">
+            <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.s_group }}</span>
+            <button onClick="{{ ddGrp.toggle }}" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%; height: 50px; padding: 0 12px; text-align: left; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: {{ ddGrp.btnBg }}" style-hover="background: #e8e3d3">
+              <span style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ ddGrp.value }}</span>
+              <span style="color: #b20d30; flex: 0 0 auto">{{ ddGrp.caret }}</span>
+            </button>
+            <sc-if value="{{ ddGrp.open }}" hint-placeholder-val="{{ false }}">
+              <div style="position: absolute; top: 100%; left: 0; right: 0; z-index: 30; background: #fff; border: 1px solid #000; border-top: 0; max-height: 330px; overflow-y: auto">
+                <sc-for list="{{ ddGrp.items }}" as="it" hint-placeholder-count="11">
+                  <button onClick="{{ it.pick }}" style="display: flex; align-items: center; gap: 10px; width: 100%; min-height: 46px; text-align: left; border: 0; border-bottom: 1px solid #74776b; padding: 11px 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; background: {{ it.bg }}; color: {{ it.fg }}" style-hover="background: #e8e3d3; color: #000"><span style="flex: 0 0 10px; font-family: 'Space Mono', monospace; font-size: 11px; line-height: 1">{{ it.mark }}</span><span style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ it.label }}</span><span style="margin-left: auto; flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 10px; letter-spacing: 0.06em; color: {{ it.nc }}">{{ it.n }}</span></button>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+          <button onClick="{{ onSearch }}" title="{{ t.s_search }}" aria-label="{{ t.s_search }}" style="display: flex; align-items: center; justify-content: center; gap: 9px; height: 50px; padding: 0 16px; border: 1px solid #000; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; white-space: nowrap; background: {{ searchBg }}; color: {{ searchFg }}" style-hover="background: #e8e3d3; color: #000"><span style="position: relative; flex: 0 0 auto; width: 13px; height: 13px"><span style="position: absolute; left: 0; top: 0; width: 9px; height: 9px; border: 1.5px solid currentColor; border-radius: 50%"></span><span style="position: absolute; right: 0; bottom: 1px; width: 6px; height: 2px; background: currentColor; transform: rotate(45deg); transform-origin: right center"></span></span>{{ t.s_find }}</button>
+        </div>
+
+        <sc-if value="{{ searchOpen }}" hint-placeholder-val="{{ false }}">
+          <label style="display: flex; flex-direction: column; gap: 7px; min-width: 0; max-width: 420px; margin-top: 14px">
+            <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #5f6257; align-self: flex-start">{{ t.s_search }}</span>
+            <input type="text" value="{{ symq }}" onChange="{{ onSymq }}" placeholder=":battery:" style="width: 100%; height: 48px; padding: 0 12px; background: #fff">
+          </label>
+        </sc-if>
+
+        <sc-if value="{{ symEmpty }}" hint-placeholder-val="{{ false }}">
+          <div style="padding: 22px 0 2px; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.04em; color: #5f6257">{{ t.s_nores }}</div>
+        </sc-if>
+
+        <div ref="{{ symRef }}" style="display: grid; grid-template-columns: {{ ui.symCols }}; gap: 1px; background: #f7f6f2; border: 1px solid #000; margin-top: 16px">
+          <sc-for list="{{ symbols }}" as="s" hint-placeholder-count="20">
+            <button onClick="{{ s.pick }}" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border: 0; padding: 14px 6px; min-width: 0; background: {{ s.bg }}" style-hover="outline: 3px solid #b20d30; outline-offset: -3px">
+              <span style="display: grid; font-size: 27px; line-height: 1; color: #fff">
+                <span style="grid-area: 1 / 1; font-family: {{ current.css }}; animation: {{ osdAnim }}">{{ s.ch }}</span>
+                <sc-if value="{{ pv.hasPrev }}" hint-placeholder-val="{{ false }}"><span style="grid-area: 1 / 1; font-family: {{ pv.prevCss }}; animation: {{ pv.outAnim }}">{{ s.ch }}</span></sc-if>
+              </span>
+              <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl2 }}; letter-spacing: 0.02em; color: {{ s.nameColor }}; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ s.name }}</span>
+            </button>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ showMore }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ onMore }}" style="display: flex; align-items: center; justify-content: center; gap: 10px; width: 100%; min-height: 50px; margin-top: 1px; border: 1px solid #000; border-top: 0; background: #fff; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase" style-hover="background: #000; color: #fff">{{ t.s_more }}<span style="color: #b20d30">+{{ symRest }}</span></button>
+        </sc-if>
+
+        <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; flex-direction: column; gap: 1px; background: #74776b; border: 1px solid #000; margin-top: 18px; font-family: 'Space Mono', monospace; font-size: 12px; letter-spacing: 0.04em">
+            <a href="{{ current.symbols }}" style="display: flex; align-items: center; gap: 9px; min-height: 48px; padding: 0 14px; background: #fff"><span style="flex: 0 0 auto; font-size: 1em; line-height: 1">↗</span>{{ t.s_ref }}</a>
+            <a href="{{ current.sheet }}" style="display: flex; align-items: center; gap: 9px; min-height: 48px; padding: 0 14px; background: #fff"><span style="flex: 0 0 auto; font-size: 1em; line-height: 1">↗</span>{{ t.g_sheet2 }}</a>
+            <a href="{{ current.json }}" style="display: flex; align-items: center; gap: 9px; min-height: 48px; padding: 0 14px; background: #fff"><span style="flex: 0 0 auto; font-size: 1em; line-height: 1">↗</span>{{ t.s_json }}</a>
+          </div>
+        </sc-if>
+
+      </div>
+
+      <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+      <div style="background: #fff; min-width: 0">
+        <div ref="{{ glyphRef }}" style="position: {{ ui.stick }}; top: 58px">
+          <div style="display: flex; align-items: center; justify-content: center; background: {{ sel.ground }}; padding: 22px; min-height: {{ ui.bigMin }}">
+            <span style="display: grid; font-size: {{ ui.bigFs }}; line-height: 1; color: #fff">
+              <span style="grid-area: 1 / 1; font-family: {{ current.css }}; animation: {{ osdAnim }}">{{ sel.ch }}</span>
+              <sc-if value="{{ pv.hasPrev }}" hint-placeholder-val="{{ false }}"><span style="grid-area: 1 / 1; font-family: {{ pv.prevCss }}; animation: {{ pv.outAnim }}">{{ sel.ch }}</span></sc-if>
+            </span>
+          </div>
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 13px 16px; border-bottom: 1px solid #74776b; font-family: 'Space Mono', monospace">
+            <span style="font-size: 13px; font-weight: 700; color: {{ sel.nameColor }}; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ sel.name }}</span>
+            <span style="font-size: 11px; color: #b20d30; white-space: nowrap">{{ sel.cp }}</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: #74776b; border-bottom: 1px solid #74776b">
+            <div style="background: #fff; padding: 11px 16px; min-width: 0">
+              <div style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl2 }}; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5f6257; margin-bottom: 5px">{{ t.g_idx }}</div>
+              <div style="font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700">{{ sel.dec }} · {{ sel.hex }}</div>
+            </div>
+            <div style="background: #fff; padding: 11px 16px; min-width: 0">
+              <div style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl2 }}; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5f6257; margin-bottom: 5px">{{ t.g_type }}</div>
+              <div style="font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; color: {{ sel.typeColor }}">{{ sel.typeAs }}</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 8px; padding: 14px 16px 16px">
+            <button onClick="{{ onCopy }}" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: {{ copyBg }}; color: {{ copyFg }}; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 16px" style-hover="background: #e8e3d3; color: #000"><span style="position: relative; flex: 0 0 auto; width: 13px; height: 13px"><span style="position: absolute; left: 0; top: 0; width: 9px; height: 9px; border: 1.5px solid currentColor"></span><span style="position: absolute; right: 0; bottom: 0; width: 9px; height: 9px; border: 1.5px solid currentColor; background: inherit"></span></span><span>{{ copyLabel }}</span></button>
+            <sc-if value="{{ hasName }}" hint-placeholder-val="{{ true }}">
+              <button onClick="{{ onCopyName }}" style="display: flex; align-items: center; justify-content: center; gap: 10px; background: #fff; color: #000; border: 1px solid #000; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; padding: 14px 16px" style-hover="background: #000; color: #fff"><span style="position: relative; flex: 0 0 auto; width: 13px; height: 13px"><span style="position: absolute; left: 0; top: 0; width: 9px; height: 9px; border: 1.5px solid currentColor"></span><span style="position: absolute; right: 0; bottom: 0; width: 9px; height: 9px; border: 1.5px solid currentColor; background: inherit"></span></span><span>{{ copyNameLabel }}</span></button>
+            </sc-if>
+            <a href="{{ sel.pngHref }}" download="" onClick="{{ onGrabPng }}" style="display: flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid #000; color: #000; padding: 14px 16px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase" style-hover="background: #000; color: #fff; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↓</span><span style="min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ t.g_png }} {{ sel.pngName }}</span></a>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 7px; padding: 0 16px 18px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.04em">
+            <a href="{{ current.symbols }}" style="display: inline-flex; align-items: center; gap: 6px; min-height: {{ ui.tap }}"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>{{ t.s_ref }}</a>
+            <a href="{{ current.sheet }}" style="display: inline-flex; align-items: center; gap: 6px; min-height: {{ ui.tap }}"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>{{ t.g_sheet2 }}</a>
+            <a href="{{ current.json }}" style="display: inline-flex; align-items: center; gap: 6px; min-height: {{ ui.tap }}"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>{{ t.s_json }}</a>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+  </section>
+
+  <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+    <div aria-hidden="{{ sheetHidden }}" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 180; background: #000; border-top: 1px solid #74776b; box-shadow: 0 -8px 24px rgba(0,0,0,0.35); transform: {{ sheetTf }}; opacity: {{ sheetOp }}; pointer-events: {{ sheetPe }}; transition: transform 320ms cubic-bezier(.2,.9,.25,1), opacity 200ms ease">
+      <div style="display: flex; align-items: center; gap: 13px; padding: 10px 14px 11px">
+        <span style="display: grid; flex: 0 0 auto; font-size: 40px; line-height: 1; color: #fff; background: {{ sel.chip }}; padding: {{ sel.chipPad }}">
+          <span style="grid-area: 1 / 1; font-family: {{ current.css }}; animation: {{ osdAnim }}">{{ sel.ch }}</span>
+          <sc-if value="{{ pv.hasPrev }}" hint-placeholder-val="{{ false }}"><span style="grid-area: 1 / 1; font-family: {{ pv.prevCss }}; animation: {{ pv.outAnim }}">{{ sel.ch }}</span></sc-if>
+        </span>
+        <div style="display: flex; flex-direction: column; gap: 4px; flex: 1 1 auto; min-width: 0; font-family: 'Space Mono', monospace">
+          <span style="font-size: 13px; font-weight: 700; color: #fff; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ sel.name }}</span>
+          <span style="font-size: 10px; letter-spacing: 0.06em; color: #9a9d90; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap">{{ sel.dec }} · {{ sel.cp }} · {{ sel.typeAs }}</span>
+        </div>
+      </div>
+      <div style="display: grid; grid-template-columns: {{ sheetCols }}; gap: 1px; background: #74776b">
+        <button onClick="{{ onCopy }}" style="min-height: 54px; padding: 10px 6px; border: 0; text-align: center; line-height: 1.3; white-space: normal; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: {{ copyBg }}; color: {{ copyFg }}">{{ copyLabel }}</button>
+        <sc-if value="{{ hasName }}" hint-placeholder-val="{{ true }}">
+          <button onClick="{{ onCopyName }}" style="min-height: 54px; padding: 10px 6px; border: 0; text-align: center; line-height: 1.3; white-space: normal; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; background: #fff; color: #000">{{ copyNameLabel }}</button>
+        </sc-if>
+        <a href="{{ sel.pngHref }}" download="" onClick="{{ onGrabPng }}" style="display: flex; align-items: center; justify-content: center; gap: 7px; min-height: 54px; padding: 10px 6px; background: #b20d30; color: #fff; text-align: center; line-height: 1.3; font-family: 'Space Mono', monospace; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase" style-hover="text-decoration: none"><span style="flex: 0 0 auto; font-size: 1em; line-height: 1">↓</span>{{ t.g_png }}</a>
+      </div>
+    </div>
+  </sc-if>
+
+  <section id="sets" aria-labelledby="h-sets" style="scroll-margin-top: 58px; border-bottom: 1px solid #000">
+    <div style="display: flex; align-items: baseline; gap: 14px; padding: clamp(22px, 3vw, 36px) clamp(16px, 2.4vw, 34px) 14px">
+      <h2 style="font-family: 'Space Mono', 'Noto Sans JP', 'Noto Sans SC', ui-monospace, monospace; font-size: {{ ui.h2 }}; line-height: 1.1; margin: 0; letter-spacing: -0.01em; color: #000" id="h-sets">{{ t.x_t }}</h2>
+    </div>
+    <p style="font-size: 14px; line-height: 1.75; margin: 0 clamp(16px, 2.4vw, 34px) 24px; max-width: 78ch; text-wrap: pretty; color: #000">{{ t.x_b }}</p>
+
+    <div style="display: grid; grid-template-columns: {{ ui.half }}; border-top: 1px solid #000">
+      <sc-for list="{{ sets }}" as="s" hint-placeholder-count="6">
+        <div style="display: flex; flex-direction: column; min-width: 0; border-right: {{ ui.vSep }}; border-bottom: 1px solid #000">
+          <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 10px; padding: 11px 18px; border-bottom: 1px solid #000; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase">
+            <span>{{ s.label }}</span>
+            <span style="color: #b20d30">{{ s.num }}</span>
+          </div>
+          <div style="display: flex; align-items: center; flex: 1 1 auto; padding: 20px 18px; background: #000; transition: background 160ms ease" style-hover="background: #b20d30">
+            <div style="display: grid; width: 100%; font-size: {{ ui.setFs }}; line-height: 1.6; color: #fff">
+              <div style="grid-area: 1 / 1; font-family: {{ current.css }}; overflow-wrap: anywhere; animation: {{ osdAnim }}">{{ s.s }}</div>
+              <sc-if value="{{ pv.hasPrev }}" hint-placeholder-val="{{ false }}"><div style="grid-area: 1 / 1; font-family: {{ pv.prevCss }}; overflow-wrap: anywhere; animation: {{ pv.outAnim }}">{{ s.s }}</div></sc-if>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+
+  </section>
+
+  <section aria-labelledby="h-colr" style="border-bottom: 1px solid #000">
+    <div style="display: flex; align-items: baseline; gap: 14px; padding: clamp(22px, 3vw, 36px) clamp(16px, 2.4vw, 34px) 14px">
+      <h2 style="font-family: 'Space Mono', 'Noto Sans JP', 'Noto Sans SC', ui-monospace, monospace; font-size: {{ ui.h2 }}; line-height: 1.1; margin: 0; letter-spacing: -0.01em; color: #000" id="h-colr">{{ t.o_t }}</h2>
+    </div>
+    <p style="font-size: 14px; line-height: 1.75; margin: 0 clamp(16px, 2.4vw, 34px) 24px; max-width: 74ch; text-wrap: pretty; color: #000">{{ t.o_b }}</p>
+    <div style="display: grid; grid-template-columns: {{ ui.third }}; border-top: 1px solid #000">
+      <div style="border-right: {{ ui.vSep }}; border-bottom: {{ ui.hSep }}; min-width: 0; display: flex; flex-direction: column">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid #000; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase">
+          <span>{{ t.o_dColour }}</span>
+        </div>
+        <div style="position: relative; height: {{ ui.demoH }}; overflow: hidden; background: #1a1a18">
+          <div style="position: absolute; inset: -6%; background-image: {{ frameBg }}; background-size: cover; background-position: center; filter: blur(7px) brightness(0.92)"></div>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'OSD Clarity', monospace; font-size: 54px; color: #fff">OSD</div>
+        </div>
+        <p style="margin: 0; padding: 16px 18px 20px; font-size: 13px; line-height: 1.7">{{ t.o_1 }}</p>
+      </div>
+
+      <div style="border-right: {{ ui.vSep }}; border-bottom: {{ ui.hSep }}; min-width: 0; display: flex; flex-direction: column">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid #000; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase">
+          <span>{{ t.o_dFlat }}</span>
+        </div>
+        <div style="position: relative; height: {{ ui.demoH }}; overflow: hidden; background: #1a1a18">
+          <div style="position: absolute; inset: -6%; background-image: {{ frameBg }}; background-size: cover; background-position: center; filter: blur(7px) brightness(0.92)"></div>
+          <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-family: 'OSD Clarity Shadow', monospace; font-size: 54px; color: #fff">OSD</div>
+        </div>
+        <p style="margin: 0; padding: 16px 18px 20px; font-size: 13px; line-height: 1.7">{{ t.o_2 }}</p>
+      </div>
+
+      <div style="min-width: 0; display: flex; flex-direction: column; background: #e8e3d3">
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 12px 18px; border-bottom: 1px solid #000; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase">
+          <span>{{ t.o_dStack }}</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; height: {{ ui.demoH }}; border-bottom: 1px solid #000">
+          <div style="position: relative; border-right: 1px solid #000; background: #74776b; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; overflow: hidden">
+            <div style="font-family: 'OSD Clarity Shadow', monospace; font-size: 36px; color: #000">OSD</div>
+            <div style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl2 }}; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #000">{{ t.o_dShadow }}</div>
+            <div style="font-family: 'OSD Clarity Fill', monospace; font-size: 36px; color: #fff; margin-top: 6px">OSD</div>
+            <div style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl2 }}; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #000">{{ t.o_dFill }}</div>
+          </div>
+          <div style="position: relative; background: #1a1a18; overflow: hidden">
+            <div style="position: absolute; inset: -6%; background-image: {{ frameBg }}; background-size: cover; background-position: center; filter: blur(7px) brightness(0.92)"></div>
+            <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center">
+              <span style="display: grid; font-size: 36px; line-height: 1.1">
+                <span style="grid-area: 1 / 1; font-family: 'OSD Clarity Shadow', monospace; color: #000">OSD</span>
+                <span style="grid-area: 1 / 1; font-family: 'OSD Clarity Fill', monospace; color: #fff">OSD</span>
+              </span>
+            </div>
+            <div style="position: absolute; bottom: 8px; left: 0; right: 0; text-align: center; font-family: 'Space Mono', monospace; font-size: {{ ui.lbl2 }}; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #e8e3d3">{{ t.o_dResult }}</div>
+          </div>
+        </div>
+        <p style="margin: 0; padding: 16px 18px 20px; font-size: 13px; line-height: 1.7">{{ t.o_3 }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="h-about" style="scroll-margin-top: 58px; display: grid; grid-template-columns: {{ ui.half }}">
+    <div style="padding: clamp(22px, 3vw, 36px) clamp(16px, 2.4vw, 34px) clamp(26px, 4vw, 40px); border-right: {{ ui.vSep }}; min-width: 0">
+      <h2 style="font-family: 'Space Mono', 'Noto Sans JP', 'Noto Sans SC', ui-monospace, monospace; font-size: {{ ui.h2 }}; line-height: 1.1; margin: 0 0 16px; letter-spacing: -0.01em; color: #000" id="h-about">{{ t.a_t }}</h2>
+      <p style="font-size: 15px; line-height: 1.7; margin: 0 0 20px; max-width: 52ch; color: #000">{{ t.a_b2 }}</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px">
+        <a href="https://github.com/volempdoge/betaflight-designer-fonts" style="flex: {{ ui.ctaFlex }}; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid #000; padding: 14px 16px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #000" style-hover="background: #000; color: #fff; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>{{ t.nRepo }}</a>
+        <a href="https://github.com/volempdoge/betaflight-designer-fonts/blob/main/docs/DEVELOPERS.md" style="flex: {{ ui.ctaFlex }}; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid #000; padding: 14px 16px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #000" style-hover="background: #000; color: #fff; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>{{ t.a_dev }}</a>
+      </div>
+      <p style="font-size: 12px; line-height: 1.7; color: #5f6257; margin: 24px 0 0; max-width: 62ch"><a href="https://github.com/betaflight/betaflight-configurator">betaflight/betaflight-configurator ↗</a> {{ t.a_l }}</p>
+    </div>
+    <div style="background: #b20d30; color: #fff; padding: clamp(22px, 3vw, 36px) clamp(16px, 2.4vw, 34px) clamp(26px, 4vw, 40px); min-width: 0">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px">
+        <div style="width: 42px; height: 28px; border: 1px solid #000; display: flex; flex-direction: column; overflow: hidden; flex: 0 0 auto">
+          <div style="flex: 1 1 50%; background: #0057b7"></div>
+          <div style="flex: 1 1 50%; background: #ffd700"></div>
+        </div>
+        <div style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff">{{ t.u_t }}</div>
+      </div>
+      <p style="font-size: 14px; line-height: 1.7; margin: 0 0 20px; max-width: 40ch; color: #fff">{{ t.u_b }}</p>
+      <div style="display: flex; flex-direction: column; gap: 8px; align-items: stretch">
+        <a href="https://savelife.in.ua/donate/" style="background: #e8e3d3; color: #000; padding: 13px 15px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; display: flex; align-items: center; gap: 10px" style-hover="background: #fff; color: #000; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>savelife.in.ua</a>
+        <a href="https://prytulafoundation.org" style="background: #e8e3d3; color: #000; padding: 13px 15px; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; display: flex; align-items: center; gap: 10px" style-hover="background: #fff; color: #000; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>prytulafoundation.org</a>
+      </div>
+    </div>
+  </section>
+
+  </main>
+
+  <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
+    <footer style="display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; align-items: center; background: #000; color: #74776b; padding: 18px clamp(16px, 2.4vw, 34px); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.06em">
+      <span>GNU GPL v3.0</span>
+      <span style="color: #fff">Created by Volodymyr Myronenko · <a href="https://github.com/volempdoge" style="color: #e8e3d3; display: inline-flex; align-items: center; gap: 5px"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>@volempdoge</a></span>
+    </footer>
+  </sc-if>
+  <sc-if value="{{ m }}" hint-placeholder-val="{{ false }}">
+    <footer style="background: #000; color: #74776b; font-family: 'Space Mono', monospace">
+      <div style="display: flex; align-items: center; gap: 8px; padding: 26px 16px 18px; color: #fff">
+        <span style="font-family: 'OSD Clarity', monospace; font-size: 22px; line-height: 1; flex: 0 0 auto">#</span>
+        <span style="font-family: 'OSD Clarity', monospace; font-size: 22px; line-height: 1.2">BF FONTS</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 1px; background: #74776b">
+        <a href="https://github.com/volempdoge/betaflight-designer-fonts" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; padding: 0 16px; background: #000; color: #e8e3d3; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">{{ t.nRepo }}<span style="flex: 0 0 auto; color: #b20d30">↗</span></a>
+        <a href="https://github.com/volempdoge" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; padding: 0 16px; background: #000; color: #e8e3d3; font-size: 12px; font-weight: 700; letter-spacing: 0.08em">@volempdoge<span style="flex: 0 0 auto; color: #b20d30">↗</span></a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 7px; padding: 20px 16px 28px; font-size: 11px; line-height: 1.5; letter-spacing: 0.06em">
+        <span style="color: #fff">Created by Volodymyr Myronenko</span>
+        <span>GNU GPL v3.0</span>
+      </div>
+    </footer>
+  </sc-if>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;en&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ua&quot;,&quot;es&quot;,&quot;fr&quot;,&quot;zh&quot;,&quot;jp&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;defaultFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;clarity&quot;,&quot;options&quot;:[&quot;extra_large&quot;,&quot;clarity&quot;,&quot;bold&quot;,&quot;impact&quot;,&quot;vision&quot;,&quot;betaflight&quot;,&quot;impact_mini&quot;,&quot;default&quot;,&quot;large&quot;,&quot;digital&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;demoText&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;I LOVE FPV&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;defaultSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:72,&quot;min&quot;:18,&quot;max&quot;:180,&quot;step&quot;:18,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;}}">
+const REPO = "https://github.com/volempdoge/betaflight-designer-fonts";
+
+// Six languages, six URLs. Both paths below stay site-relative so the prerender
+// build can retarget them per language directory, and both are resolved once at
+// boot: switching language rewrites the address with history.replaceState, and a
+// bare relative URL would afterwards be measured from the new directory.
+const FRAME_SRC = "assets/fpv-frame.webp";
+const OG_SRC = "assets/og-card.jpg";
+const siteUrl = (path) => {
+  try { return new URL(path, document.baseURI).href; } catch (e) { return path; }
+};
+const FRAME_BG = "url('" + siteUrl(FRAME_SRC) + "')";
+const OG_IMAGE = siteUrl(OG_SRC);
+
+// Language code to directory. "" is the root, which serves English.
+const LANG_DIR = { en: "", ua: "uk", es: "es", fr: "fr", zh: "zh", jp: "ja" };
+const langPath = (code) => {
+  let dir = window.location.pathname.replace(/[^/]*$/, "");
+  for (const k in LANG_DIR) {
+    const seg = LANG_DIR[k] ? LANG_DIR[k] + "/" : "";
+    if (seg && dir.length > seg.length && dir.slice(-seg.length) === seg) {
+      dir = dir.slice(0, -seg.length);
+      break;
+    }
+  }
+  return dir + (LANG_DIR[code] ? LANG_DIR[code] + "/" : "");
+};
+// The switch happens in place, so the address is rewritten to match rather than
+// reloaded. applySeo then writes the canonical from the same, updated pathname.
+const pushLangUrl = (code) => {
+  try {
+    if (window.location.protocol.indexOf("http") !== 0) return;
+    if (!window.history || !window.history.replaceState) return;
+    window.history.replaceState(null, "", langPath(code) + window.location.search + window.location.hash);
+  } catch (e) {}
+};
+const FX_WIDE = (c) => c.charCodeAt(0) > 0x2e80;
+const FX_LETTER = (c) => /[\p{L}\p{N}]/u.test(c);
+const FX_NARROW = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const fxPools = (a, b) => {
+  const wide = [], narrow = [];
+  const src = a + b;
+  for (let i = 0; i < src.length; i++) {
+    const c = src[i];
+    if (!FX_LETTER(c)) continue;
+    (FX_WIDE(c) ? wide : narrow).push(c);
+  }
+  return {
+    wide: wide.length ? wide.join("") : b,
+    narrow: narrow.length ? narrow.join("") : FX_NARROW
+  };
+};
+// Intermediate frames keep the final string's length, spaces, punctuation and
+// per-character width class, so line breaks never move while the text resolves.
+const fxMix = (a, b, p, pools) => {
+  const len = b.length;
+  const settled = Math.floor(len * Math.min(1, p * 1.3));
+  let out = "";
+  for (let i = 0; i < len; i++) {
+    const ch = b[i];
+    if (i < settled || !FX_LETTER(ch)) { out += ch; continue; }
+    const pool = FX_WIDE(ch) ? pools.wide : pools.narrow;
+    out += pool[(i * 31 + Math.floor(p * 991) * 7 + len) % pool.length];
+  }
+  return out;
+};
+const fxDict = (from, to, p) => {
+  const out = {};
+  for (const k in to) {
+    const v = to[k];
+    out[k] = (typeof v === "string" && k !== "label" && typeof from[k] === "string") ? fxMix(from[k], v, p, fxPools(from[k], v)) : v;
+  }
+  return out;
+};
+const RAW = "https://raw.githubusercontent.com/volempdoge/betaflight-designer-fonts/main";
+const FMT = ["otf", "ttf", "woff", "woff2"];
+const KEYS = [
+  { key: "extra_large", camel: "ExtraLarge", cap: 16 },
+  { key: "clarity", camel: "Clarity", cap: 15 },
+  { key: "bold", camel: "Bold", cap: 12 },
+  { key: "impact", camel: "Impact", cap: 12 },
+  { key: "vision", camel: "Vision", cap: 12 },
+  { key: "betaflight", camel: "Betaflight", cap: 10 },
+  { key: "impact_mini", camel: "ImpactMini", cap: 10 },
+  { key: "default", camel: "Default", cap: 10 },
+  { key: "large", camel: "Large", cap: 10 },
+  { key: "digital", camel: "Digital", cap: 9 }
+];
+const SETS = [
+  { t: "x_cyr", n: "37", s: "АБВГҐДЕЁЄЖЗИІЇЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ" },
+  { t: "x_acc", n: "70", s: "ÄÖÜ ÁÉÍÓÚ ÀÈÊ ÅØ ÑÇ ŁĄĆĘŃŚŹŻ ČŠŽŘĎŤŇĚŮ ĂÎȘȚ ĞİŞ ÐÞ" },
+  { t: "x_grk", n: "24", s: "ΑΒΓΔΕΖΗΘΙΚΛΜΝΞΟΠΡΣΤΥΦΧΨΩ" },
+  { t: "x_pun", n: "", s: "– — … « » ‹ › “ ” ‘ ’ „ • · ¿ ¡ ° ′ ″ § { } $ ~" },
+  { t: "x_math", n: "", s: "± × ÷ − ≠ ≈ ≤ ≥ ∞ µ € £ ¥ ¢ ₴ ₽" },
+  { t: "x_blk", n: "", s: "─ │ ┼ ═ ║ ╬ █ ▓ ▒ ░ ▲ ▼ ◀ ▶ ● ○ ◆ ■ ★ ✓ ✗" }
+];
+const SYM_GROUPS = [
+  { g: "gr_arr", items: [[104, "arrow_n"], [103, "arrow_nne"], [102, "arrow_ne"], [101, "arrow_ene"], [100, "arrow_e"], [99, "arrow_ese"], [98, "arrow_se"], [97, "arrow_sse"], [96, "arrow_s"], [111, "arrow_ssw"], [110, "arrow_sw"], [109, "arrow_wsw"], [108, "arrow_w"], [107, "arrow_wnw"], [106, "arrow_nw"], [105, "arrow_nnw"], [117, "arrow_small_up"], [118, "arrow_small_down"], [119, "arrow_small_right"], [120, "arrow_small_left"]] },
+  { g: "gr_batt", items: [[151, "battery"], [144, "batt_full"], [145, "batt_5"], [146, "batt_4"], [147, "batt_3"], [148, "batt_2"], [149, "batt_1"], [150, "batt_empty"], [6, "volt"], [154, "amp"], [7, "mah"]] },
+  { g: "gr_tel", items: [[1, "rssi"], [4, "throttle"], [18, "rpm"], [20, "roll"], [21, "pitch"], [122, "temperature"], [127, "altitude"]] },
+  { g: "gr_gps", items: [[17, "home"], [5, "over_home"], [24, "heading_n"], [25, "heading_s"], [26, "heading_e"], [27, "heading_w"], [28, "heading_divider"], [29, "heading_line"], [30, "sat_left"], [31, "sat_right"], [137, "latitude"], [152, "longitude"]] },
+  { g: "gr_ah", items: [[126, "crosshair"], [124, "ladder"], [2, "ah_right"], [3, "ah_left"], [19, "ah_decoration"], [114, "ah_corner_left"], [115, "ah_corner_right"], [116, "ah_corner_low"], [128, "ah_bar_0"], [129, "ah_bar_1"], [130, "ah_bar_2"], [131, "ah_bar_3"], [132, "ah_bar_4"], [133, "ah_bar_5"], [134, "ah_bar_6"], [135, "ah_bar_7"], [136, "ah_bar_8"]] },
+  { g: "gr_unit", items: [[12, "metres"], [15, "feet"], [14, "celsius"], [13, "fahrenheit"], [158, "kph"], [157, "mph"], [159, "m_per_s"], [153, "ft_per_s"]] },
+  { g: "gr_time", items: [[112, "on_hours"], [155, "on_minutes"], [113, "fly_hours"], [156, "fly_minutes"], [121, "prev_lap"]] },
+  { g: "gr_prog", items: [[138, "progress_start"], [139, "progress_full"], [140, "progress_half"], [141, "progress_empty"], [142, "progress_end"], [143, "progress_close"]] },
+  { g: "gr_stick", items: [[8, "stick_high"], [9, "stick_mid"], [10, "stick_low"], [11, "stick_centre"], [22, "stick_vertical"], [23, "stick_horizontal"]] },
+  { g: "gr_stat", items: [[16, "blackbox"], [36, "flag"]] },
+  { g: "gr_logo", items: Array.apply(null, { length: 96 }).map((x, i) => [160 + i, "logo_" + ("0" + i).slice(-2)]) }
+];
+const ALIAS = { 13: "℉", 14: "℃", 17: "⌂", 96: "↓", 98: "↘", 100: "→", 102: "↗", 104: "↑", 106: "↖", 108: "←", 110: "↙", 117: "▴", 118: "▾", 119: "▸", 120: "◂", 126: "⌖" };
+const NAME = {};
+const GRP = {};
+SYM_GROUPS.forEach((g) => g.items.forEach((p) => { NAME[p[0]] = p[1]; GRP[p[0]] = g.g; }));
+const PUA = (i) => String.fromCharCode(0xe000 + i);
+const pad3 = (n) => ("00" + n).slice(-3);
+const hex2 = (n) => "0x" + ("0" + n.toString(16).toUpperCase()).slice(-2);
+
+const L = {
+  en: {
+    seoTitle: "Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays", seoDesc: "Ten Betaflight OSD fonts as colour OTF, TTF, WOFF and WOFF2, plus every character as a transparent PNG. Cyrillic, Greek and accented Latin included. Free under GPL 3.0.",
+    label: "EN", menu: "Menu",
+    nTry: "Try it", nSym: "Symbols", nAbout: "About", nRepo: "GitHub",
+    ht: "Betaflight OSD type, out of the goggles.",
+    hb: "Install the OTF or TTF, drop the WOFF and WOFF2 into a page, or take any of the 256 characters as a transparent PNG. These are colour fonts, so every white glyph carries its own black outline and stays readable over any footage. Full Cyrillic, Greek and accented Latin come with them, composed from each font’s own shapes.",
+    c1: "Download all (.zip)", c2: "Pick a font",
+    p_t: "Pick a font", p_font: "Font", p_text: "Sample text", p_size: "Size", p_cap: "Cap height",
+    p_adv: "Text options", p_show: "Show", p_hide: "Hide",
+    gSpace: "Spacing", gShape: "Shape", gColor: "Colour",
+    p_ls: "Letter spacing", p_lh: "Line height", p_w: "Width", p_h: "Height", p_sk: "Slant",
+    p_fg: "Text colour", p_ol: "Outline colour", p_bg: "Background",
+    p_fam: "Family", p_fmt: "Format", p_dl: "Download", p_all: "All files for this font",
+    fam1: "Colour", fam2: "Shadow (flat)", fam3: "Fill (flat)",
+    s_t: "Not just letters",
+    s_b: "Every character also lives at U+E000 plus its index, which is where the arrows, the battery and signal icons, the GPS and flight mode marks and the logo tiles are.",
+    s_json: "Index map (JSON)",
+    s_sheet: "Every character also ships as its own transparent PNG, ready to drop on a timeline or a canvas.",
+    g_hint: "Tap any character", g_idx: "Index", g_cp: "Codepoint", g_type: "Types as",
+    g_none: "symbol only", g_copy: "Copy character", g_copied: "Copied", g_png: "PNG",
+    g_sheet2: "Full 16×16 sheet",
+    o_t: "The black outline is part of the font",
+    o_b: "Betaflight characters come in two colours, a white glyph with a black outline, so text over video already has its outline and needs no extra effects.",
+    o_dColour: "Colour font", o_dFlat: "Without COLR support", o_dShadow: "Shadow in black", o_dFill: "Fill in white", o_dStack: "Two layers together", o_dResult: "Still editable",
+    o_l1: "Works", o_l2: "Depends on the app", o_l3: "Workaround",
+    o_1: "Every modern browser, and ordinary text on macOS and Windows.",
+    o_2: "Figma has no colour font support at all, and in Adobe it changes from app to app and from version to version.",
+    o_3: "Put Shadow under Fill. They share metrics, so the layers land together and the text stays editable.",
+    a_t: "About",
+    a_b2: "The conversion script, the fonts and the docs all live in the repository. Issues and pull requests are welcome.",
+    a_dev: "Developer docs",
+    a_l: "is where the original .mcm fonts come from, distributed under the GNU General Public License v3.0. Following that licence, this repository and everything in it is GPL 3.0 as well.",
+    u_t: "Stand with Ukraine", u_b: "A reminder to donate and support Ukraine.",
+    nSets: "Sets",
+    x_t: "Everything else the OSD never had",
+    x_b: "The source fonts are only ASCII and icons, so this is not a port: Cyrillic, Greek, accented Latin, punctuation and maths were drawn as new characters, each one from the shapes the font already has, so a heavy face gets heavy punctuation and a slanted face gets slanted accents.",
+    x_cyr: "Cyrillic", x_acc: "Accented Latin", x_grk: "Greek", x_pun: "Punctuation", x_math: "Maths and currency", x_blk: "Blocks",
+    x_note: "Lowercase types as capitals here too. The OSD itself cannot show any of this, but the font files can.",
+    x_spellL: "Spelled out",
+    x_spell: "A few characters are spelled out rather than squeezed into one 12 pixel cell, which is what an all-capitals face would do anyway.",
+    s_search: "Find a symbol by name", s_find: "Find", s_group: "Group", s_more: "Show more", s_nores: "No symbol by that name",
+    s_name: "Name", s_ref: "Full symbol reference",
+    s_lig: "Type the name between colons and the icon appears, in any app with OpenType ligatures: browsers, macOS and Windows text, Adobe and Affinity.",
+    g_copyName: "Copy the name",
+    gr_arr: "Arrows", gr_batt: "Battery", gr_tel: "Telemetry", gr_gps: "GPS", gr_ah: "Horizon", gr_unit: "Units", gr_time: "Time", gr_prog: "Progress", gr_stick: "Sticks", gr_stat: "Status", gr_logo: "Logo",
+    notes: { extra_large: "The biggest one, fills the whole cell", clarity: "Large and clean with high contrast", bold: "Heavy and narrow", impact: "Heavy and a bit wider", vision: "The size of impact with its own letterforms", betaflight: "Slanted, the branded look", impact_mini: "A compact take on impact", default: "The thin stock font, smallest of all", large: "Small letters with tall digits", digital: "Wide blocks like a segment display" }
+  },
+  ua: {
+    seoTitle: "Шрифти Betaflight OSD — OTF, TTF, WOFF і PNG для FPV", seoDesc: "Десять шрифтів Betaflight OSD у кольорових OTF, TTF, WOFF і WOFF2, а кожен символ ще й прозорим PNG. З повною кирилицею, грекою та діакритикою. Безкоштовно, GPL 3.0.",
+    label: "UA", menu: "Меню",
+    nTry: "Спробувати", nSym: "Символи", nAbout: "Про проєкт", nRepo: "GitHub",
+    ht: "Betaflight OSD type, out of the goggles.",
+    hb: "OTF і TTF можна встановити, WOFF і WOFF2 підключити на сторінку, а будь-який з 256 символів узяти прозорим PNG. Шрифти кольорові, тож біла літера несе власний чорний контур і не губиться на жодному кадрі. Разом з ними йдуть повна кирилиця, грека й латиниця з діакритикою, складені з форм того самого шрифту.",
+    c1: "Завантажити все (.zip)", c2: "Вибрати шрифт",
+    p_t: "Вибери шрифт", p_font: "Шрифт", p_text: "Зразок тексту", p_size: "Кегль", p_cap: "Висота великих літер",
+    p_adv: "Налаштування тексту", p_show: "Показати", p_hide: "Згорнути",
+    gSpace: "Відступи", gShape: "Форма", gColor: "Колір",
+    p_ls: "Трекінг", p_lh: "Інтерліньяж", p_w: "Ширина", p_h: "Висота", p_sk: "Нахил",
+    p_fg: "Колір літер", p_ol: "Колір контуру", p_bg: "Тло",
+    p_fam: "Гарнітура", p_fmt: "Формат", p_dl: "Завантажити", p_all: "Усі файли цього шрифту",
+    fam1: "Кольорова", fam2: "Shadow (плоска)", fam3: "Fill (плоска)",
+    s_t: "Не лише літери",
+    s_b: "Кожен символ ще лежить за адресою U+E000 плюс індекс, і саме там стрілки, іконки батареї та сигналу, позначки GPS і режимів польоту, плитки логотипа.",
+    s_json: "Таблиця індексів (JSON)",
+    s_sheet: "Кожен символ є ще й окремим прозорим PNG, який можна одразу кинути на таймлайн або на полотно.",
+    g_hint: "Торкніться будь-якого символу", g_idx: "Індекс", g_cp: "Кодова точка", g_type: "Набирається як",
+    g_none: "лише символ", g_copy: "Копіювати символ", g_copied: "Скопійовано", g_png: "PNG",
+    g_sheet2: "Аркуш 16×16",
+    o_t: "Чорний контур уже всередині шрифту",
+    o_b: "Символи Betaflight двоколірні, біла літера з чорним контуром, тому текст поверх відео одразу має обведення й не потребує жодних ефектів.",
+    o_dColour: "Кольоровий шрифт", o_dFlat: "Без підтримки COLR", o_dShadow: "Чорна Shadow", o_dFill: "Біла Fill", o_dStack: "Два шари разом", o_dResult: "Текст редагується",
+    o_l1: "Працює", o_l2: "Залежить від програми", o_l3: "Що робити",
+    o_1: "Усі сучасні браузери, а також звичайний текст у macOS і Windows.",
+    o_2: "Figma кольорових шрифтів не підтримує зовсім, а в Adobe усе змінюється від програми до програми й від версії до версії.",
+    o_3: "Покладіть Shadow під Fill. Метрики спільні, тож шари сходяться точно, а текст лишається редагованим.",
+    a_t: "Про проєкт",
+    a_b2: "Скрипт конвертації, шрифти й документація лежать у репозиторії. Питання та pull request'и вітаються.",
+    a_dev: "Документація для розробників",
+    a_l: "звідти взяті оригінальні .mcm шрифти, які поширюються за GNU General Public License v3.0. За умовами тієї самої ліцензії цей репозиторій і все в ньому теж під GPL 3.0.",
+    u_t: "Підтримай Україну", u_b: "Нагадування зробити донат на підтримку України.",
+    nSets: "Набори",
+    x_t: "Усе інше, чого в OSD ніколи не було",
+    x_b: "Оригінальні шрифти складаються лише з ASCII та іконок, тож це не просто порт: кирилицю, греку, діакритику, пунктуацію й математику намальовано як нові символи, і кожен з форм самого шрифту. Тому жирна гарнітура отримує жирну пунктуацію, а похила отримує похилі акценти.",
+    x_cyr: "Кирилиця", x_acc: "Латиниця з діакритикою", x_grk: "Грека", x_pun: "Пунктуація", x_math: "Математика й валюти", x_blk: "Блоки",
+    x_note: "Малі літери тут теж набираються великими. Сам OSD цього не покаже, а файли шрифтів покажуть.",
+    x_spellL: "Розкладені на літери",
+    x_spell: "Кілька символів розкладено на літери, замість втискати їх в одну клітинку 12 пікселів. Гарнітура з одних капітелей однаково зробила б так само.",
+    s_search: "Знайти символ за назвою", s_find: "Пошук", s_group: "Група", s_more: "Показати більше", s_nores: "Такої назви немає",
+    s_name: "Назва", s_ref: "Повний перелік символів",
+    s_lig: "Напишіть назву між двокрапками — і зʼявиться іконка, у будь-якій програмі з лігатурами OpenType: браузери, текст у macOS і Windows, Adobe та Affinity.",
+    g_copyName: "Копіювати назву",
+    gr_arr: "Стрілки", gr_batt: "Батарея", gr_tel: "Телеметрія", gr_gps: "GPS", gr_ah: "Горизонт", gr_unit: "Одиниці", gr_time: "Час", gr_prog: "Прогрес", gr_stick: "Стіки", gr_stat: "Статус", gr_logo: "Логотип",
+    notes: { extra_large: "Найбільший, заповнює всю клітинку", clarity: "Великий і чистий, високий контраст", bold: "Жирний і вузький", impact: "Жирний і трохи ширший", vision: "Розмір як в impact, але інші літери", betaflight: "Похилий, брендовий вигляд", impact_mini: "Компактна версія impact", default: "Тонкий стоковий, найменший з усіх", large: "Дрібні літери й високі цифри", digital: "Широкі блоки, як сегментний дисплей" }
+  },
+  es: {
+    seoTitle: "Fuentes Betaflight OSD — OTF, TTF, WOFF y PNG para FPV", seoDesc: "Diez fuentes Betaflight OSD en OTF, TTF, WOFF y WOFF2 de color, y cada carácter como PNG con transparencia. Con cirílico, griego y latín acentuado. Gratis, GPL 3.0.",
+    label: "ES", menu: "Menú",
+    nTry: "Probar", nSym: "Símbolos", nAbout: "Proyecto", nRepo: "GitHub",
+    ht: "Betaflight OSD type, out of the goggles.",
+    hb: "El OTF y el TTF se instalan, el WOFF y el WOFF2 van en una página y cualquiera de los 256 caracteres se puede tomar como PNG con transparencia. Son fuentes de color, así que cada glifo blanco lleva su propio contorno negro y se lee sobre cualquier imagen. Vienen además el cirílico completo, el griego y el latín con acentos, compuestos con las formas de cada fuente.",
+    c1: "Descargar todo (.zip)", c2: "Elegir fuente",
+    p_t: "Elige una fuente", p_font: "Fuente", p_text: "Texto de prueba", p_size: "Cuerpo", p_cap: "Altura de mayúsculas",
+    p_adv: "Ajustes de texto", p_show: "Mostrar", p_hide: "Ocultar",
+    gSpace: "Espaciado", gShape: "Forma", gColor: "Color",
+    p_ls: "Tracking", p_lh: "Interlineado", p_w: "Ancho", p_h: "Alto", p_sk: "Inclinación",
+    p_fg: "Color de letra", p_ol: "Color del contorno", p_bg: "Fondo",
+    p_fam: "Familia", p_fmt: "Formato", p_dl: "Descargar", p_all: "Todos los archivos de esta fuente",
+    fam1: "Color", fam2: "Shadow (plana)", fam3: "Fill (plana)",
+    s_t: "No solo letras",
+    s_b: "Cada carácter está además en U+E000 más su índice, y ahí viven las flechas, los iconos de batería y señal, las marcas de GPS y modo de vuelo y las piezas del logotipo.",
+    s_json: "Tabla de índices (JSON)",
+    s_sheet: "Cada carácter viene también como PNG con transparencia, listo para la línea de tiempo o el lienzo.",
+    g_hint: "Pulsa cualquier carácter", g_idx: "Índice", g_cp: "Punto de código", g_type: "Se escribe con",
+    g_none: "solo símbolo", g_copy: "Copiar carácter", g_copied: "Copiado", g_png: "PNG",
+    g_sheet2: "Hoja 16×16 completa",
+    o_t: "El contorno negro ya viene dentro de la fuente",
+    o_b: "Los caracteres de Betaflight son de dos colores, un glifo blanco con contorno negro, así que el texto sobre vídeo ya trae su contorno y no necesita efectos añadidos.",
+    o_dColour: "Fuente de color", o_dFlat: "Sin soporte COLR", o_dShadow: "Shadow en negro", o_dFill: "Fill en blanco", o_dStack: "Las dos capas juntas", o_dResult: "El texto sigue editable",
+    o_l1: "Funciona", o_l2: "Según la app", o_l3: "Qué hacer",
+    o_1: "Todos los navegadores modernos y el texto normal de macOS y Windows.",
+    o_2: "Figma no admite fuentes de color en absoluto y en Adobe cambia de una app a otra y de una versión a otra.",
+    o_3: "Pon Shadow debajo y Fill encima. Comparten métricas, así que las capas casan y el texto sigue editable.",
+    a_t: "Proyecto",
+    a_b2: "El script de conversión, las fuentes y la documentación están en el repositorio. Se agradecen issues y pull requests.",
+    a_dev: "Documentación técnica",
+    a_l: "de ahí salen las fuentes .mcm originales, distribuidas bajo la GNU General Public License v3.0. Siguiendo esa misma licencia, este repositorio y todo su contenido son GPL 3.0 también.",
+    u_t: "Apoya a Ucrania", u_b: "Un recordatorio para donar y apoyar a Ucrania.",
+    nSets: "Juegos",
+    x_t: "Todo lo que el OSD nunca tuvo",
+    x_b: "Las fuentes de origen solo traen ASCII e iconos, así que esto no es un port: el cirílico, el griego, el latín con acentos, la puntuación y las matemáticas se dibujaron como caracteres nuevos, cada uno con las formas que ya tiene la fuente, así que una letra gruesa recibe puntuación gruesa y una inclinada recibe acentos inclinados.",
+    x_cyr: "Cirílico", x_acc: "Latín con acentos", x_grk: "Griego", x_pun: "Puntuación", x_math: "Matemáticas y divisas", x_blk: "Bloques",
+    x_note: "Aquí también las minúsculas dan mayúsculas. El OSD no puede mostrar nada de esto; los archivos de fuente sí.",
+    x_spellL: "Se escriben con letras",
+    x_spell: "Unos pocos caracteres se escriben con letras en lugar de apretarse en una celda de 12 píxeles, que es lo que haría de todos modos una letra de solo mayúsculas.",
+    s_search: "Busca un símbolo por su nombre", s_find: "Buscar", s_group: "Grupo", s_more: "Ver más", s_nores: "Ningún símbolo con ese nombre",
+    s_name: "Nombre", s_ref: "Referencia completa de símbolos",
+    s_lig: "Escribe el nombre entre dos puntos y aparece el icono, en cualquier app con ligaduras OpenType: navegadores, el texto de macOS y Windows, Adobe y Affinity.",
+    g_copyName: "Copiar el nombre",
+    gr_arr: "Flechas", gr_batt: "Batería", gr_tel: "Telemetría", gr_gps: "GPS", gr_ah: "Horizonte", gr_unit: "Unidades", gr_time: "Tiempo", gr_prog: "Progreso", gr_stick: "Sticks", gr_stat: "Estado", gr_logo: "Logotipo",
+    notes: { extra_large: "La más grande, llena toda la celda", clarity: "Grande y limpia, con mucho contraste", bold: "Gruesa y estrecha", impact: "Gruesa y algo más ancha", vision: "Del tamaño de impact con su propio dibujo", betaflight: "Inclinada, la imagen de la marca", impact_mini: "Una versión compacta de impact", default: "La fina de serie, la más ligera", large: "Letras pequeñas y cifras altas", digital: "Bloques anchos como un display de segmentos" }
+  },
+  fr: {
+    seoTitle: "Polices Betaflight OSD — OTF, TTF, WOFF et PNG pour le FPV", seoDesc: "Dix polices Betaflight OSD en OTF, TTF, WOFF et WOFF2 couleur, et chaque caractère en PNG transparent. Cyrillique, grec et latin accentué inclus. Gratuit, GPL 3.0.",
+    label: "FR", menu: "Menu",
+    nTry: "Essayer", nSym: "Symboles", nAbout: "Le projet", nRepo: "GitHub",
+    ht: "Betaflight OSD type, out of the goggles.",
+    hb: "L'OTF et le TTF s'installent, le WOFF et le WOFF2 se posent sur une page, et chacun des 256 caractères existe en PNG transparent. Ce sont des polices en couleur, donc chaque glyphe blanc porte son propre contour noir et reste lisible sur n'importe quelle image. S'y ajoutent le cyrillique complet, le grec et le latin accentué, composés à partir des formes propres à chaque police.",
+    c1: "Tout télécharger (.zip)", c2: "Choisir une police",
+    p_t: "Choisissez une police", p_font: "Police", p_text: "Texte d'essai", p_size: "Corps", p_cap: "Hauteur de capitale",
+    p_adv: "Réglages du texte", p_show: "Afficher", p_hide: "Masquer",
+    gSpace: "Espacement", gShape: "Forme", gColor: "Couleur",
+    p_ls: "Approche", p_lh: "Interligne", p_w: "Largeur", p_h: "Hauteur", p_sk: "Inclinaison",
+    p_fg: "Couleur des lettres", p_ol: "Couleur du contour", p_bg: "Fond",
+    p_fam: "Famille", p_fmt: "Format", p_dl: "Télécharger", p_all: "Tous les fichiers de cette police",
+    fam1: "Couleur", fam2: "Shadow (plat)", fam3: "Fill (plat)",
+    s_t: "Pas que des lettres",
+    s_b: "Chaque caractère se trouve aussi à U+E000 plus son index, et c'est là que sont les flèches, les icônes de batterie et de signal, les repères GPS et modes de vol, et les tuiles du logo.",
+    s_json: "Table des index (JSON)",
+    s_sheet: "Chaque caractère existe aussi en PNG transparent, prêt à poser sur la timeline ou le canevas.",
+    g_hint: "Touchez un caractère", g_idx: "Index", g_cp: "Point de code", g_type: "Se tape avec",
+    g_none: "symbole seul", g_copy: "Copier le caractère", g_copied: "Copié", g_png: "PNG",
+    g_sheet2: "Planche 16×16 complète",
+    o_t: "Le contour noir est déjà dans la police",
+    o_b: "Les caractères Betaflight sont bicolores, un glyphe blanc avec un contour noir, donc du texte posé sur une vidéo a déjà son contour et n'a besoin d'aucun effet.",
+    o_dColour: "Police en couleur", o_dFlat: "Sans support COLR", o_dShadow: "Shadow en noir", o_dFill: "Fill en blanc", o_dStack: "Les deux calques ensemble", o_dResult: "Le texte reste modifiable",
+    o_l1: "Fonctionne", o_l2: "Selon l'appli", o_l3: "La solution",
+    o_1: "Tous les navigateurs récents, et le texte courant sous macOS et Windows.",
+    o_2: "Figma ne gère pas du tout les polices en couleur, et chez Adobe cela change d'une appli et d'une version à l'autre.",
+    o_3: "Placez Shadow dessous et Fill dessus. Les métriques sont les mêmes, les calques tombent juste et le texte reste éditable.",
+    a_t: "Le projet",
+    a_b2: "Le script de conversion, les polices et la doc sont dans le dépôt. Les issues et les pull requests sont bienvenues.",
+    a_dev: "Docs développeur",
+    a_l: "d'où viennent les polices .mcm d'origine, distribuées sous GNU General Public License v3.0. Au titre de cette même licence, ce dépôt et tout son contenu sont aussi en GPL 3.0.",
+    u_t: "Soutenez l'Ukraine", u_b: "Un rappel pour faire un don et soutenir l'Ukraine.",
+    nSets: "Jeux",
+    x_t: "Tout ce que l'OSD n'a jamais eu",
+    x_b: "Les polices d'origine n'ont que de l'ASCII et des icônes, ce n'est donc pas un simple port : le cyrillique, le grec, le latin accentué, la ponctuation et les maths ont été dessinés comme de nouveaux caractères, chacun à partir des formes que la police possède déjà, si bien qu'une graisse épaisse reçoit une ponctuation épaisse et qu'une police penchée reçoit des accents penchés.",
+    x_cyr: "Cyrillique", x_acc: "Latin accentué", x_grk: "Grec", x_pun: "Ponctuation", x_math: "Maths et devises", x_blk: "Blocs",
+    x_note: "Ici aussi les minuscules donnent des capitales. L'OSD lui-même ne peut rien afficher de tout ça ; les fichiers de police, oui.",
+    x_spellL: "Écrits en lettres",
+    x_spell: "Quelques caractères s'écrivent en lettres au lieu d'être tassés dans une cellule de 12 pixels, ce qu'une police tout en capitales ferait de toute façon.",
+    s_search: "Chercher un symbole par son nom", s_find: "Chercher", s_group: "Groupe", s_more: "Voir plus", s_nores: "Aucun symbole de ce nom",
+    s_name: "Nom", s_ref: "Référence complète des symboles",
+    s_lig: "Tapez le nom entre deux-points et l'icône apparaît, dans toute appli gérant les ligatures OpenType : les navigateurs, le texte de macOS et Windows, Adobe et Affinity.",
+    g_copyName: "Copier le nom",
+    gr_arr: "Flèches", gr_batt: "Batterie", gr_tel: "Télémétrie", gr_gps: "GPS", gr_ah: "Horizon", gr_unit: "Unités", gr_time: "Temps", gr_prog: "Progression", gr_stick: "Manches", gr_stat: "État", gr_logo: "Logo",
+    notes: { extra_large: "La plus grande, elle remplit la cellule", clarity: "Grande et nette, très contrastée", bold: "Grasse et étroite", impact: "Grasse et un peu plus large", vision: "La taille d'impact avec son propre dessin", betaflight: "Inclinée, l'allure de la marque", impact_mini: "Une version compacte d'impact", default: "La fine d'origine, la plus légère", large: "Petites lettres et chiffres hauts", digital: "Blocs larges comme un afficheur à segments" }
+  },
+  zh: {
+    seoTitle: "Betaflight OSD 字体 — OTF、TTF、WOFF 与 PNG", seoDesc: "十款 Betaflight OSD 彩色字体，提供 OTF、TTF、WOFF 和 WOFF2，每个字符还有透明 PNG。附完整西里尔字母、希腊字母与带重音拉丁字母。免费，GPL 3.0。",
+    label: "中文", menu: "菜单",
+    nTry: "试用", nSym: "符号", nAbout: "关于", nRepo: "GitHub",
+    ht: "Betaflight OSD type, out of the goggles.",
+    hb: "OTF 和 TTF 可以直接安装，WOFF 与 WOFF2 用在网页上，256 个字符里的任何一个都能拿到透明 PNG。这些都是彩色字体，白色字形自带黑色描边，压在任何画面上都看得清。还附带完整的西里尔字母、希腊字母和带重音的拉丁字母，都用各款字体自己的形状拼出来。",
+    c1: "打包下载 (.zip)", c2: "挑一款字体",
+    p_t: "挑一款字体", p_font: "字体", p_text: "示例文字", p_size: "字号", p_cap: "大写高度",
+    p_adv: "文字设置", p_show: "展开", p_hide: "收起",
+    gSpace: "间距", gShape: "形状", gColor: "颜色",
+    p_ls: "字距", p_lh: "行高", p_w: "宽度", p_h: "高度", p_sk: "倾斜",
+    p_fg: "文字颜色", p_ol: "描边颜色", p_bg: "背景",
+    p_fam: "字族", p_fmt: "格式", p_dl: "下载", p_all: "这款字体的所有文件",
+    fam1: "彩色", fam2: "Shadow（单色）", fam3: "Fill（单色）",
+    s_t: "不只是字母",
+    s_b: "每个字符还位于 U+E000 加上索引的位置，箭头、电池与信号图标、GPS 和飞行模式符号以及 logo 拼块都在那里。",
+    s_json: "索引对照表（JSON）",
+    s_sheet: "每个字符还单独提供透明 PNG，可以直接拖进时间线或画布。",
+    g_hint: "点任意字符看详情", g_idx: "索引", g_cp: "码位", g_type: "可直接输入",
+    g_none: "只有符号", g_copy: "复制字符", g_copied: "已复制", g_png: "PNG",
+    g_sheet2: "完整 16×16 图集",
+    o_t: "黑色描边本来就在字体里",
+    o_b: "Betaflight 的字符是双色的，白色字形配黑色描边，所以压在视频上的文字自带描边，不用再加任何效果。",
+    o_dColour: "彩色字体", o_dFlat: "不支持 COLR 时", o_dShadow: "黑色的 Shadow", o_dFill: "白色的 Fill", o_dStack: "两层叠在一起", o_dResult: "文字还能改",
+    o_l1: "可用", o_l2: "看软件", o_l3: "解决办法",
+    o_1: "所有现代浏览器，以及 macOS 和 Windows 的普通文本。",
+    o_2: "Figma 完全不支持彩色字体，Adobe 则因软件和版本而异。",
+    o_3: "把 Shadow 放在下层，Fill 放在上层。两者度量一致，图层会严丝合缝，文字也照样能改。",
+    a_t: "关于",
+    a_b2: "转换脚本、字体和文档都在仓库里。欢迎提 issue 和 pull request。",
+    a_dev: "开发者文档",
+    a_l: "原始的 .mcm 字体来自这里，按 GNU General Public License v3.0 分发。依照同一份许可，本仓库及其中的一切也是 GPL 3.0。",
+    u_t: "支持乌克兰", u_b: "提醒一下，请捐款支援乌克兰。",
+    nSets: "字符集",
+    x_t: "OSD 从来没有的那些字符",
+    x_b: "原始字体只有 ASCII 和图标，所以这不只是移植：西里尔字母、希腊字母、带重音的拉丁字母、标点和数学符号都是新画的字符，每一个都取自字体本身已有的形状，所以粗的字面得到粗的标点，斜的字面得到斜的重音。",
+    x_cyr: "西里尔字母", x_acc: "带重音的拉丁字母", x_grk: "希腊字母", x_pun: "标点", x_math: "数学与货币", x_blk: "方块与制表符",
+    x_note: "这里小写同样会得到大写。OSD 本身显示不了这些，但字体文件可以。",
+    x_spellL: "拼写形式",
+    x_spell: "少数字符是拼出来的，而不是硬塞进一个 12 像素的字符格，全大写的字面本来也会这么处理。",
+    s_search: "按名字找符号", s_find: "搜索", s_group: "分组", s_more: "显示更多", s_nores: "没有这个名字的符号",
+    s_name: "名字", s_ref: "完整符号对照表",
+    s_lig: "把名字写在两个冒号之间，图标就出来了：只要支持 OpenType 连字的程序都行，浏览器、macOS 与 Windows 的文本、Adobe 和 Affinity。",
+    g_copyName: "复制名字",
+    gr_arr: "箭头", gr_batt: "电池", gr_tel: "遥测", gr_gps: "GPS", gr_ah: "地平仪", gr_unit: "单位", gr_time: "时间", gr_prog: "进度条", gr_stick: "摇杆", gr_stat: "状态", gr_logo: "标志",
+    notes: { extra_large: "最大的一款，占满整个字符格", clarity: "大而清晰，对比很强", bold: "粗而窄", impact: "粗而稍宽", vision: "与 impact 同尺寸，字形不同", betaflight: "斜体，品牌的样子", impact_mini: "impact 的紧凑版", default: "原厂细体，最省空间", large: "字母小，数字高", digital: "宽块状，像分段显示器" }
+  },
+  jp: {
+    seoTitle: "Betaflight OSD フォント — OTF, TTF, WOFF, PNG", seoDesc: "Betaflight OSD のカラーフォント 10 種を OTF・TTF・WOFF・WOFF2 で、全文字を透過 PNG でも配布。キリル文字・ギリシャ文字・アクセント付きラテン文字つき。無料、GPL 3.0。",
+    label: "日本語", menu: "メニュー",
+    nTry: "試す", nSym: "記号", nAbout: "このプロジェクト", nRepo: "GitHub",
+    ht: "Betaflight OSD type, out of the goggles.",
+    hb: "OTF と TTF はそのままインストールでき、WOFF と WOFF2 は Web に置けます。256 文字のどれでも透過 PNG で取り出せます。カラーフォントなので白い字形が黒い縁取りを自分で持っていて、どんな映像の上でも読めます。さらに完全なキリル文字、ギリシャ文字、アクセント付きラテン文字が付いていて、どれもそのフォント自身の形から組み立てられています。",
+    c1: "まとめてダウンロード (.zip)", c2: "フォントを選ぶ",
+    p_t: "フォントを選ぶ", p_font: "フォント", p_text: "サンプル文字", p_size: "サイズ", p_cap: "キャップハイト",
+    p_adv: "文字の設定", p_show: "開く", p_hide: "閉じる",
+    gSpace: "アキ", gShape: "かたち", gColor: "色",
+    p_ls: "字送り", p_lh: "行送り", p_w: "幅", p_h: "高さ", p_sk: "傾き",
+    p_fg: "文字の色", p_ol: "縁の色", p_bg: "背景",
+    p_fam: "ファミリー", p_fmt: "フォーマット", p_dl: "ダウンロード", p_all: "このフォントの全ファイル",
+    fam1: "カラー", fam2: "Shadow（単色）", fam3: "Fill（単色）",
+    s_t: "アルファベットだけではありません",
+    s_b: "Betaflight に小文字はないので、小文字を打っても同じ大文字になります。どの文字も U+E000 に索引を足した位置にもあり、矢印、バッテリーや信号のアイコン、GPS とフライトモードの記号、ロゴのタイルはそこにあります。",
+    s_json: "インデックス対応表（JSON）",
+    s_sheet: "各文字は透過 PNG 単体でも入っているので、タイムラインやカンバスにそのまま置けます。",
+    g_hint: "文字をタップすると詳細", g_idx: "インデックス", g_cp: "コードポイント", g_type: "入力できる文字",
+    g_none: "記号のみ", g_copy: "文字をコピー", g_copied: "コピーしました", g_png: "PNG",
+    g_sheet2: "16×16 シート全体",
+    o_t: "黒い縁取りは最初からフォントの中にあります",
+    o_b: "Betaflight の文字は白い字形と黒い縁取りの 2 色なので、映像の上に置いたテキストには最初から縁取りが付いていて、効果を足す必要がありません。",
+    o_dColour: "カラーフォント", o_dFlat: "COLR 非対応のとき", o_dShadow: "黒の Shadow", o_dFill: "白の Fill", o_dStack: "2 層を重ねる", o_dResult: "文字はそのまま編集できます",
+    o_l1: "使える", o_l2: "アプリ次第", o_l3: "対処法",
+    o_1: "最近のブラウザすべて、macOS と Windows の通常テキストでも使えます。",
+    o_2: "Figma はカラーフォントにまったく対応しておらず、Adobe はアプリごとバージョンごとに変わります。",
+    o_3: "Shadow を下、Fill を上に重ねます。メトリクスが同じなのでぴたりと合い、文字は編集できたままです。",
+    a_t: "このプロジェクト",
+    a_b2: "変換スクリプトとフォントとドキュメントはすべてリポジトリにあります。Issue と Pull Request を歓迎します。",
+    a_dev: "開発者向けドキュメント",
+    a_l: "元の .mcm フォントはここのもので、GNU General Public License v3.0 で配布されています。同じライセンスに従い、このリポジトリとその中身も GPL 3.0 です。",
+    u_t: "ウクライナと共に", u_b: "ウクライナ支援の寄付をお願いします。",
+    nSets: "文字セット",
+    x_t: "OSD にはなかったものすべて",
+    x_b: "元のフォントは ASCII とアイコンだけなので、これは移植ではありません。キリル文字、ギリシャ文字、アクセント付きラテン文字、約物、数学記号はすべて新しい文字として描き起こしたもので、どれもそのフォントがすでに持っている形からです。だから太い書体には太い約物が、斜めの書体には斜めのアクセントが付きます。",
+    x_cyr: "キリル文字", x_acc: "アクセント付きラテン文字", x_grk: "ギリシャ文字", x_pun: "約物", x_math: "数学記号と通貨", x_blk: "ブロックと罫線",
+    x_note: "ここでも小文字は大文字になります。OSD 自体はこれを表示できませんが、フォントファイルなら使えます。",
+    x_spellL: "字で綴る文字",
+    x_spell: "いくつかの文字は 12 ピクセルのセルに詰め込むかわりに字で綴ってあります。大文字だけの書体なら結局そうするからです。",
+    s_search: "名前で記号を探す", s_find: "検索", s_group: "グループ", s_more: "もっと見る", s_nores: "その名前の記号はありません",
+    s_name: "名前", s_ref: "記号の一覧",
+    s_lig: "名前をコロンで囲んで打つとアイコンになります。OpenType の合字が使えるアプリ、つまりブラウザ、macOS と Windows の通常テキスト、Adobe と Affinity で動きます。",
+    g_copyName: "名前をコピー",
+    gr_arr: "矢印", gr_batt: "バッテリー", gr_tel: "テレメトリ", gr_gps: "GPS", gr_ah: "水平儀", gr_unit: "単位", gr_time: "時間", gr_prog: "プログレス", gr_stick: "スティック", gr_stat: "ステータス", gr_logo: "ロゴ",
+    notes: { extra_large: "いちばん大きく、セルいっぱいに入る", clarity: "大きく明快でコントラストが高い", bold: "太くて狭い", impact: "太くて少し広い", vision: "impact と同じ大きさで字形が別", betaflight: "斜体でブランドらしい見た目", impact_mini: "impact のコンパクト版", default: "標準の細字でいちばん小さい", large: "小さな文字と背の高い数字", digital: "幅いっぱいのブロックでセグメント表示風" }
+  }
+};
+
+class Component extends DCLogic {
+  state = {
+    lang: null, fontKey: null, text: null, size: null, family: "", format: "otf",
+    dd: null, glyph: 104, copied: false, dl: null, search: false, symMore: 0, symView: false, adv: false, symq: "", symGroup: "gr_arr", fx: null,
+    ls: 0, sx: 100, sy: 100, lh: 1.2, sk: 0, fg: "#ffffff", outline: "#000000", bg: "footage",
+    boot: false, fontBusy: true, allReady: false, menu: false, swap: 0, prevFont: null, pending: null,
+    navL: false, navR: false,
+    vw: typeof window !== "undefined" ? window.innerWidth : 1280,
+    mobile: typeof window !== "undefined" && window.matchMedia ? window.matchMedia("(max-width: 759px)").matches : false
+  };
+
+  _nodes = {};
+  _k = 0;
+  _osdVals = this.osdValues(0);
+
+  componentDidMount() {
+    this._timer = window.setInterval(() => { this.tickOsd(); this.checkSheet(); }, 900);
+    this._mq = window.matchMedia ? window.matchMedia("(max-width: 759px)") : null;
+    this._onMq = () => {
+      const next = this.isMobile();
+      if (next !== this.state.mobile) this.setState({ mobile: next, menu: false });
+    };
+    if (this._mq) {
+      if (this._mq.addEventListener) this._mq.addEventListener("change", this._onMq);
+      else this._mq.addListener(this._onMq);
+    }
+    this._onMq();
+    this._onResize = () => {
+      window.clearTimeout(this._rsz);
+      this._rsz = window.setTimeout(() => {
+        this._onMq();
+        this.updateNav();
+        this.checkSheet();
+        const vw = window.innerWidth;
+        if (Math.abs(vw - this.state.vw) > 8) this.setState({ vw });
+      }, 140);
+    };
+    window.addEventListener("resize", this._onResize);
+    this._onDocDown = (e) => {
+      if (this.state.menu && e.target && e.target.closest && !e.target.closest("header")) this.setState({ menu: false });
+      if (!this.state.dd) return;
+      const host = e.target && e.target.closest ? e.target.closest("[data-dd]") : null;
+      if (!host || host.getAttribute("data-dd") !== this.state.dd) this.setState({ dd: null });
+    };
+    document.addEventListener("pointerdown", this._onDocDown, true);
+    this._onKey = (e) => { if (e.key === "Escape") this.setState({ dd: null, menu: false }); };
+    document.addEventListener("keydown", this._onKey);
+    this._onScroll = () => this.checkSheet();
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+
+    const key = this.state.fontKey || this.props.defaultFont || "clarity";
+    this.applySeo(this.state.lang || this.props.lang || "en");
+    this.loadFont(key);
+    this.loadAllFonts();
+    const done = () => { if (!this.state.boot) this.setState((st) => ({ boot: true, swap: st.swap + 1 })); };
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(() => window.setTimeout(done, 80)).catch(() => done());
+    }
+    this._bootTimer = window.setTimeout(done, 1100);
+  }
+
+  componentWillUnmount() {
+    window.clearInterval(this._fxTimer);
+    window.clearInterval(this._timer);
+    window.clearTimeout(this._rsz);
+    window.clearTimeout(this._navT);
+    window.clearTimeout(this._bootTimer);
+    window.clearTimeout(this._fontTimer);
+    window.clearTimeout(this._allTimer);
+    window.clearTimeout(this._prevTimer);
+    window.clearTimeout(this._dlT);
+    window.removeEventListener("resize", this._onResize);
+    document.removeEventListener("pointerdown", this._onDocDown, true);
+    document.removeEventListener("keydown", this._onKey);
+    window.removeEventListener("scroll", this._onScroll);
+    if (this._mq) {
+      if (this._mq.removeEventListener) this._mq.removeEventListener("change", this._onMq);
+      else this._mq.removeListener(this._onMq);
+    }
+  }
+
+  osdValues(k) {
+        const osc = (a, b, p, ph) => a + (b - a) * (0.5 + 0.5 * Math.sin((k + ph) / p));
+        const volts = Math.max(14.1, 16.4 - k * 0.012);
+        const level = Math.max(0, Math.min(6, Math.round((16.4 - volts) / 0.33)));
+        const secs = 312 + k;
+        const mm = Math.floor(secs / 60);
+        const ss = secs % 60;
+        return {
+          rssi: PUA(0x01) + " " + Math.round(osc(88, 99, 8, 4)),
+          thr: "THR " + Math.round(osc(38, 88, 5, 1)),
+          batt: PUA(0x90 + level) + " " + volts.toFixed(2) + "V",
+          amps: osc(11, 34, 4, 2).toFixed(1) + "A",
+          home: PUA(0x60 + (k % 16)) + " " + Math.round(osc(360, 540, 11, 5)) + "M",
+          timer: (mm < 10 ? "0" : "") + mm + ":" + (ss < 10 ? "0" : "") + ss,
+          lap: "LAP " + (2 + (k % 3)),
+          alt: "ALT " + Math.round(osc(96, 168, 9, 3)) + "M",
+          speed: Math.round(osc(42, 96, 6, 0)) + "KM/H",
+          cross: "+",
+          warn: "LQ " + Math.round(osc(58, 82, 7, 6)),
+          mode: "ANGLE",
+          air: "AIR MODE",
+          mah: Math.round(340 + k * 2.6) + "MAH",
+          sats: PUA(0x1f) + " " + (11 + (k % 3)),
+          lat: "LAT 34.05" + (10 + (k % 40)),
+          lon: "LON -118.22" + (10 + ((k * 3) % 60))
+        };
+  }
+
+  osdRefs() {
+    const keys = ["rssi", "thr", "batt", "amps", "home", "timer", "lap", "alt", "speed", "warn", "mah", "sats", "lat", "lon"];
+    if (!this._refsOut) {
+      this._refsOut = {};
+      keys.forEach((key) => {
+        const nodes = this._nodes[key] = [];
+        this._refsOut[key] = (el) => {
+          if (!el) return;
+          if (nodes.indexOf(el) < 0) nodes.push(el);
+          if (el.textContent !== this._osdVals[key]) el.textContent = this._osdVals[key];
+        };
+      });
+    }
+    return this._refsOut;
+  }
+
+  tickOsd() {
+    this._k += 1;
+    this._osdVals = this.osdValues(this._k);
+    for (const key in this._nodes) {
+      const arr = this._nodes[key] = this._nodes[key].filter((n) => n.isConnected);
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i].textContent !== this._osdVals[key]) arr[i].textContent = this._osdVals[key];
+      }
+    }
+  }
+
+  applySeo(code) {
+    const HTML_LANG = { en: "en", ua: "uk", es: "es", fr: "fr", zh: "zh-Hans", jp: "ja" };
+    const OG_LOCALE = { en: "en_US", ua: "uk_UA", es: "es_ES", fr: "fr_FR", zh: "zh_CN", jp: "ja_JP" };
+    const T = L[code] || L.en;
+    const set = (sel, val) => { const el = document.head.querySelector(sel); if (el && val) el.setAttribute("content", val); };
+    try {
+      document.documentElement.lang = HTML_LANG[code] || "en";
+      if (T.seoTitle) document.title = T.seoTitle;
+      set('meta[name="description"]', T.seoDesc);
+      set('meta[property="og:title"]', T.seoTitle);
+      set('meta[property="og:description"]', T.seoDesc);
+      set('meta[name="twitter:title"]', T.seoTitle);
+      set('meta[name="twitter:description"]', T.seoDesc);
+      set('meta[property="og:locale"]', OG_LOCALE[code] || "en_US");
+      const url = window.location.origin + window.location.pathname;
+      if (window.location.protocol.indexOf("http") === 0) {
+        set('meta[property="og:image"]', OG_IMAGE);
+        set('meta[name="twitter:image"]', OG_IMAGE);
+        const dim = (p, v) => {
+          let el = document.head.querySelector('meta[property="' + p + '"]');
+          if (!el) { el = document.createElement("meta"); el.setAttribute("property", p); document.head.appendChild(el); }
+          el.setAttribute("content", v);
+        };
+        dim("og:image:width", "1200");
+        dim("og:image:height", "630");
+      }
+      if (window.location.protocol.indexOf("http") === 0) {
+        let link = document.head.querySelector('link[rel="canonical"]');
+        if (!link) { link = document.createElement("link"); link.rel = "canonical"; document.head.appendChild(link); }
+        link.href = url;
+        let og = document.head.querySelector('meta[property="og:url"]');
+        if (!og) { og = document.createElement("meta"); og.setAttribute("property", "og:url"); document.head.appendChild(og); }
+        og.setAttribute("content", url);
+      }
+      let ld = document.getElementById("bfosd-ld");
+      if (!ld) { ld = document.createElement("script"); ld.type = "application/ld+json"; ld.id = "bfosd-ld"; document.head.appendChild(ld); }
+      ld.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        name: "Betaflight OSD Fonts",
+        alternateName: "betaflight-designer-fonts",
+        description: T.seoDesc,
+        applicationCategory: "DesignApplication",
+        operatingSystem: "Windows, macOS, Linux, Web",
+        url: url,
+        image: OG_IMAGE,
+        inLanguage: Object.keys(L).map((c) => HTML_LANG[c]),
+        license: "https://www.gnu.org/licenses/gpl-3.0.html",
+        codeRepository: REPO,
+        downloadUrl: REPO + "/archive/refs/heads/main.zip",
+        fileFormat: ["font/otf", "font/ttf", "font/woff", "font/woff2", "image/png"],
+        keywords: "Betaflight, OSD, FPV, font, OTF, TTF, WOFF, WOFF2, colour font, COLR, Cyrillic, Greek",
+        author: { "@type": "Person", name: "Volodymyr Myronenko", url: "https://github.com/volempdoge" },
+        offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+        isBasedOn: "https://github.com/betaflight/betaflight-configurator"
+      });
+    } catch (e) {}
+  }
+
+  componentDidUpdate() {
+    window.clearTimeout(this._navT);
+    this._navT = window.setTimeout(() => this.updateNav(), 60);
+    this.checkSheet();
+    const want = (L[this.state.lang || this.props.lang || "en"] || L.en).seoTitle;
+    if (want && document.title !== want) document.title = want;
+  }
+
+  symRef() {
+    if (!this._symRefFn) this._symRefFn = (el) => { if (el) { this._symEl = el; this.checkSheet(); } };
+    return this._symRefFn;
+  }
+
+  checkSheet() {
+    const el = this._symEl;
+    let vis = false;
+    if (el && this.state.mobile && el.isConnected) {
+      const b = el.getBoundingClientRect();
+      const h = window.innerHeight || 0;
+      vis = Math.min(b.bottom, h - 118) - Math.max(b.top, 62) > 140;
+    }
+    if (vis !== this.state.symView) this.setState({ symView: vis });
+  }
+
+  glyphRef() {
+    if (!this._glyphRef) this._glyphRef = (el) => { this._glyphEl = el; };
+    return this._glyphRef;
+  }
+
+  updateNav() {
+    const el = this._navEl;
+    const over = el ? el.scrollWidth - el.clientWidth : 0;
+    const L = over > 2 && el.scrollLeft > 2;
+    const Rr = over > 2 && el.scrollLeft < over - 2;
+    if (L !== this.state.navL || Rr !== this.state.navR) this.setState({ navL: L, navR: Rr });
+  }
+
+  navRef() {
+    if (!this._navRef) this._navRef = (el) => {
+      this._navEl = el;
+      if (el) window.setTimeout(() => this.updateNav(), 0);
+    };
+    return this._navRef;
+  }
+
+  isMobile() {
+    if (typeof window === "undefined") return false;
+    if (window.matchMedia) return window.matchMedia("(max-width: 759px)").matches;
+    return window.innerWidth < 760;
+  }
+
+  loadFont(key) {
+    const rec = KEYS.filter((f) => f.key === key)[0] || KEYS[1];
+    const fams = ["'OSD " + rec.camel + "'", "'OSD " + rec.camel + " Shadow'", "'OSD " + rec.camel + " Fill'"];
+    const t0 = Date.now();
+    const gen = this._gen = (this._gen || 0) + 1;
+    window.clearTimeout(this._fontTimer);
+    this.setState({ fontBusy: true });
+    const job = (document.fonts && document.fonts.load)
+      ? Promise.all(fams.map((f) => document.fonts.load("24px " + f, "ABC").catch(() => null)))
+      : Promise.resolve();
+    job.catch(() => null).then(() => {
+      if (gen !== this._gen) return;
+      const wait = Math.max(0, 120 - (Date.now() - t0));
+      this._fontTimer = window.setTimeout(() => {
+        if (gen === this._gen) this.setState({ fontBusy: false });
+      }, wait);
+    });
+  }
+
+  loadAllFonts() {
+    const done = () => { if (!this.state.allReady) this.setState({ allReady: true }); };
+    if (!(document.fonts && document.fonts.load)) { done(); return; }
+    Promise.all(KEYS.map((f) => document.fonts.load("24px 'OSD " + f.camel + "'", "ABC").catch(() => null)))
+      .catch(() => null)
+      .then(done);
+    this._allTimer = window.setTimeout(done, 6000);
+  }
+
+  pickFont(key) {
+    const from = this.state.fontKey || this.props.defaultFont || "clarity";
+    if (from === key) { this.setState({ dd: null, pending: null }); return; }
+    const gen = this._pick = (this._pick || 0) + 1;
+    let done = false;
+    const commit = () => {
+      if (done || gen !== this._pick) return;
+      done = true;
+      this.setState((st) => ({ fontKey: key, dd: null, pending: null, prevFont: from, swap: st.swap + 1 }));
+      window.clearTimeout(this._prevTimer);
+      this._prevTimer = window.setTimeout(() => this.setState({ prevFont: null }), 760);
+    };
+    this.setState({ dd: null, pending: key });
+    const rec = KEYS.filter((f) => f.key === key)[0];
+    const fams = ["'OSD " + rec.camel + "'", "'OSD " + rec.camel + " Shadow'", "'OSD " + rec.camel + " Fill'"];
+    if (document.fonts && document.fonts.load) {
+      Promise.all(fams.map((f) => document.fonts.load("24px " + f, "ABC").catch(() => null))).catch(() => null).then(commit);
+      window.setTimeout(commit, 2500);
+    } else commit();
+  }
+
+  setLang(code) {
+    const prev = this.state.lang || this.props.lang || "en";
+    if (prev === code) return;
+    let anchor = null;
+    const list = document.querySelectorAll("section");
+    for (let i = 0; i < list.length; i++) {
+      const r = list[i].getBoundingClientRect();
+      if (r.bottom > 0) { anchor = { el: list[i], top: r.top }; break; }
+    }
+    this.setState({ lang: code, fx: { from: prev, p: 0 } });
+    pushLangUrl(code);
+    this.applySeo(code);
+    if (anchor) {
+      const hold = () => {
+        const d = anchor.el.getBoundingClientRect().top - anchor.top;
+        if (Math.abs(d) > 1) window.scrollBy(0, d);
+      };
+      window.requestAnimationFrame(() => { hold(); window.requestAnimationFrame(hold); });
+    }
+    const t0 = Date.now();
+    window.clearInterval(this._fxTimer);
+    this._fxTimer = window.setInterval(() => {
+      const p = Math.min(1, (Date.now() - t0) / 520);
+      if (p >= 1) { window.clearInterval(this._fxTimer); this.setState({ fx: null }); }
+      else this.setState({ fx: { from: prev, p } });
+    }, 55);
+  }
+
+  grab(url, name, tag, e) {
+    if (e && e.preventDefault) e.preventDefault();
+    if (this.state.dl) return;
+    this.setState({ dl: tag });
+    const clear = () => { window.clearTimeout(this._dlT); this._dlT = window.setTimeout(() => this.setState({ dl: null }), 250); };
+    window.fetch(url).then((r) => { if (!r.ok) throw new Error("http"); return r.blob(); }).then((blob) => {
+      const u = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = u;
+      a.download = name;
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      window.setTimeout(() => { a.remove(); URL.revokeObjectURL(u); }, 4000);
+      clear();
+    }).catch(() => { clear(); window.open(url, "_blank", "noopener"); });
+  }
+
+  toggleDD(name) {
+    this.setState((s) => ({ dd: s.dd === name ? null : name }));
+  }
+
+  copyGlyph(ch, tag) {
+    try { if (navigator.clipboard) navigator.clipboard.writeText(ch); } catch (e) {}
+    this.setState({ copied: tag || "ch" });
+    window.setTimeout(() => this.setState({ copied: false }), 1600);
+  }
+
+  dropdown(name, value, items) {
+    const open = this.state.dd === name;
+    return { open, value, caret: open ? "▴" : "▾", btnBg: open ? "#e8e3d3" : "#ffffff", toggle: () => this.toggleDD(name), items };
+  }
+
+  renderVals() {
+    const lang = this.state.lang || this.props.lang || "en";
+    const baseT = L[lang] || L.en;
+    const fx = this.state.fx;
+    const t = fx && L[fx.from] ? fxDict(L[fx.from], baseT, fx.p) : baseT;
+    const text = (this.state.text !== null ? this.state.text : (this.props.demoText || "I LOVE FPV")).toUpperCase();
+    const fontKey = this.state.fontKey || this.props.defaultFont || "clarity";
+    const cur = KEYS.filter((f) => f.key === fontKey)[0] || KEYS[1];
+    const fam = this.state.family;
+    const fmt = this.state.format;
+    const famLabels = { "": t.fam1, Shadow: t.fam2, Fill: t.fam3 };
+    const file = "BetaflightOSD" + cur.camel + fam + "." + fmt;
+    const gi = this.state.glyph;
+    const alias = ALIAS[gi] || "";
+    const nm = NAME[gi] || "";
+    const ascii = gi >= 0x20 && gi <= 0x7e && !(gi >= 0x61 && gi <= 0x7a) && gi !== 0x24 && gi !== 0x60 && gi !== 0x7e;
+    const typeAs = alias || (ascii ? String.fromCharCode(gi) : "");
+
+    const m = this.state.mobile;
+    const sizeMax = m ? 108 : 180;
+    const autoFit = Math.max(18, Math.min(sizeMax, Math.floor(((this.state.vw || 390) - 34) / Math.max(3, text.length) / 0.7 / 18) * 18));
+    const rawSize = this.state.size !== null ? this.state.size : (m ? autoFit : (this.props.defaultSize || 72));
+    const size = Math.max(18, Math.min(sizeMax, Math.round(rawSize / 18) * 18));
+    const swapAnim = (this.state.swap % 2 ? "bf-swapB" : "bf-swapA") + " 620ms cubic-bezier(.16,.84,.26,1) both";
+    const fadeAnim = (this.state.swap % 2 ? "bf-fadeB" : "bf-fadeA") + " 620ms cubic-bezier(.16,.84,.26,1) both";
+
+    const booting = !this.state.boot;
+    const fontLoading = booting;
+    const vw = this.state.vw || 1280;
+    const heroColW = m ? vw : (vw >= 660 ? vw / 2 : vw);
+    const fitFs = (heroColW * 0.94) / 15;
+    const osdFs = fitFs >= 30 ? 27 : 18;
+    const prevRec = this.state.prevFont ? KEYS.filter((f) => f.key === this.state.prevFont)[0] : null;
+
+    const q = this.state.symq.trim().toLowerCase().split(":").join("").split(" ").join("_");
+    const grp = this.state.symGroup;
+    const pool = q
+      ? Object.keys(NAME).map(Number).filter((i) => NAME[i].indexOf(q) >= 0)
+      : (SYM_GROUPS.filter((g) => g.g === grp)[0] || SYM_GROUPS[0]).items.map((p) => p[0]);
+    const capped = Math.min(96, pool.length);
+    const shown = Math.min(capped, (m ? 12 : 24) * (1 + this.state.symMore));
+
+    const item = (label, active, pick) => ({
+      label,
+      bg: active ? "#b20d30" : "#ffffff",
+      fg: active ? "#ffffff" : "#000000",
+      mark: active ? "✓" : "",
+      pick
+    });
+
+    return {
+      t, text, size, m, d: !m, osdAnim: swapAnim, pageOp: booting ? 0 : 1, sizeMult: Math.round(size / 18) + "×",
+      ui: {
+        hero: m ? "1fr" : "repeat(auto-fit, minmax(330px, 1fr))",
+        half: m ? "1fr" : "repeat(auto-fit, minmax(300px, 1fr))",
+        third: m ? "1fr" : "repeat(auto-fit, minmax(290px, 1fr))",
+        ctrl: m ? "1fr" : "repeat(auto-fit, minmax(200px, 1fr))",
+        adv: m ? "1fr" : "repeat(auto-fit, minmax(190px, 1fr))",
+        setFs: m ? "18px" : "27px",
+        symTop: "minmax(0, 1fr) auto",
+        symCols: m ? "repeat(2, 1fr)" : "repeat(auto-fill, minmax(116px, 1fr))",
+        vSep: m ? "0" : "1px solid #000",
+        hSep: m ? "1px solid #000" : "0",
+        heroMin: m ? "296px" : "380px",
+        mark: vw >= 1000 ? "BETAFLIGHT FONTS" : "BF FONTS",
+        markFs: vw >= 1000 ? "27px" : "18px",
+        osdFs: osdFs + "px",
+        symLayout: m ? "1fr" : "minmax(0, 1fr) minmax(250px, 300px)",
+        stick: m ? "static" : "sticky",
+        demoH: m ? "132px" : "150px",
+        h2: m ? "22px" : "26px",
+        charset: m ? "18px" : "27px",
+        bigFs: m ? "64px" : "108px",
+        bigMin: m ? "124px" : "180px",
+        lbl: m ? "11px" : "10px",
+        lbl2: m ? "10px" : "9px",
+        tap: m ? "46px" : "auto",
+        ctaFlex: m ? "1 1 100%" : "0 0 auto",
+        sizeMax
+      },
+      pv: {
+        fs: size,
+        anim: fadeAnim,
+        outAnim: (this.state.swap % 2 ? "bf-outB" : "bf-outA") + " 620ms cubic-bezier(.4,0,.6,1) both",
+        hasPrev: !!prevRec,
+        prevKey: prevRec ? prevRec.key : "",
+        prevCss: prevRec ? "'OSD " + prevRec.camel + "', monospace" : "monospace",
+        prevShadow: prevRec ? "'OSD " + prevRec.camel + " Shadow', monospace" : "monospace",
+        prevFill: prevRec ? "'OSD " + prevRec.camel + " Fill', monospace" : "monospace",
+        fg: this.state.fg,
+        ol: this.state.outline,
+        fgSolid: this.state.fg,
+        olSolid: this.state.outline
+      },
+      menu: {
+        hidden: !this.state.menu,
+        tf: this.state.menu ? "translateY(0)" : "translateY(-14px)",
+        itf: this.state.menu ? "translateY(0)" : "translateY(-12px)",
+        o: this.state.menu ? 1 : 0,
+        pe: this.state.menu ? "auto" : "none"
+      },
+      menuOpen: this.state.menu,
+      menuBg: this.state.menu ? "#b20d30" : "#000000",
+      menuFg: "#ffffff",
+      onMenu: () => this.setState((s) => ({ menu: !s.menu })),
+      closeMenu: () => this.setState({ menu: false }),
+      ribbon: ["OTF", "TTF", "WOFF", "WOFF2", "PNG", "COLR/CPAL", "SHADOW + FILL", "10 FONTS", "FPV OVERLAYS"].join(" ★ ") + " ★ ",
+      onText: (e) => this.setState({ text: e.target.value }),
+      onSize: (e) => this.setState({ size: Number(e.target.value) }),
+      onCopy: () => this.copyGlyph(PUA(gi), "ch"),
+      copyLabel: this.state.copied === "ch" ? t.g_copied : t.g_copy,
+      copyBg: this.state.copied === "ch" ? "#000000" : "#e8e3d3",
+      copyFg: this.state.copied === "ch" ? "#e8e3d3" : "#000000",
+      onCopyName: () => this.copyGlyph(":" + nm + ":", "nm"),
+      copyNameLabel: this.state.copied === "nm" ? t.g_copied : t.g_copyName,
+      hasName: !!nm,
+      sets: SETS.map((s) => ({ label: t[s.t], num: s.n, s: s.s })),
+      symq: this.state.symq,
+      onSymq: (e) => this.setState({ symq: e.target.value, symMore: 0 }),
+      symEmpty: pool.length === 0,
+      ddGrp: this.dropdown("grp", t[grp], SYM_GROUPS.map((g) => {
+        const it = item(t[g.g], g.g === grp && !q, () => this.setState({ symGroup: g.g, symq: "", symMore: 0, dd: null }));
+        it.n = g.items.length;
+        it.nc = it.mark ? "#ffffff" : "#b20d30";
+        return it;
+      })),
+      showMore: capped > shown,
+      symRest: capped - shown,
+      onMore: () => this.setState((st) => ({ symMore: st.symMore + 1 })),
+      searchOpen: this.state.search,
+      searchBg: this.state.search ? "#b20d30" : "#ffffff",
+      searchFg: this.state.search ? "#ffffff" : "#000000",
+      onSearch: () => this.setState((st) => ({ search: !st.search, symq: st.search ? "" : st.symq, symMore: 0 })),
+      sheetTf: this.state.symView ? "translateY(0)" : "translateY(112%)",
+      sheetOp: this.state.symView ? 1 : 0,
+      sheetPe: this.state.symView ? "auto" : "none",
+      sheetHidden: !this.state.symView,
+      sheetCols: nm ? "1fr 1fr 1fr" : "1fr 1fr",
+      burger: {
+        a: this.state.menu ? "translateY(-1px) rotate(45deg)" : "translateY(-8px)",
+        b: this.state.menu ? "translateY(-1px) scaleX(0.4)" : "translateY(-1px)",
+        c: this.state.menu ? "translateY(-1px) rotate(-45deg)" : "translateY(6px)",
+        o: this.state.menu ? 0 : 1
+      },
+      symbols: pool.slice(0, shown).map((i) => ({
+        ch: PUA(i),
+        name: ":" + NAME[i] + ":",
+        bg: GRP[i] === "gr_logo" ? (i === gi ? "#e8e3d3" : "#74776b") : (i === gi ? "#b20d30" : "#000000"),
+        nameColor: GRP[i] === "gr_logo" ? "#000000" : "#e8e3d3",
+        pick: () => this.setState({ glyph: i, copied: false })
+      })),
+      langs: Object.keys(L).map((code) => ({
+        label: L[code].label,
+        bg: code === lang ? "#b20d30" : "#000000",
+        fg: code === lang ? "#ffffff" : "#74776b",
+        pick: () => this.setLang(code),
+        pickClose: () => { this.setLang(code); this.setState({ menu: false }); }
+      })),
+      ddFont: this.dropdown("font", cur.key, KEYS.map((f) => {
+        const it = item(f.key, f.key === (this.state.pending || fontKey), () => this.pickFont(f.key));
+        it.css = "'OSD " + f.camel + "', monospace";
+        it.tbg = "transparent";
+        return it;
+      })),
+      ddFam: this.dropdown("fam", famLabels[fam], ["", "Shadow", "Fill"].map((v) =>
+        item(famLabels[v], v === fam, () => this.setState({ family: v, dd: null })))),
+      ddFmt: this.dropdown("fmt", fmt.toUpperCase(), FMT.map((v) =>
+        item(v.toUpperCase(), v === fmt, () => this.setState({ format: v, dd: null })))),
+      onAdv: () => this.setState((st) => ({ adv: !st.adv })),
+      advLabel: this.state.adv ? t.p_hide : t.p_show,
+      advCaret: this.state.adv ? "▴" : "▾",
+      advBg: this.state.adv ? "#e8e3d3" : "#ffffff",
+      adv: {
+        open: this.state.adv,
+        ls: this.state.ls,
+        sx: this.state.sx,
+        sy: this.state.sy,
+        lh: this.state.lh,
+        sk: this.state.sk,
+        tf: "scale(" + this.state.sx / 100 + ", " + this.state.sy / 100 + ") skewX(" + -this.state.sk + "deg)",
+        fg: this.state.fg,
+        outline: this.state.outline,
+        bg: this.state.bg === "footage" ? "#1a1a18" : this.state.bg,
+        footage: this.state.bg === "footage",
+        onLs: (e) => this.setState({ ls: Number(e.target.value) }),
+        onSx: (e) => this.setState({ sx: Number(e.target.value) }),
+        onSy: (e) => this.setState({ sy: Number(e.target.value) }),
+        onLh: (e) => this.setState({ lh: Number(e.target.value) }),
+        onSk: (e) => this.setState({ sk: Number(e.target.value) }),
+        fgs: ["#ffffff", "#e8e3d3", "#b20d30", "#000000"].map((v) => ({
+          value: v,
+          ring: this.state.fg === v ? "2px solid #b20d30" : "0",
+          pick: () => this.setState({ fg: v })
+        })),
+        outlines: ["#000000", "#b20d30", "#ffffff", "#74776b"].map((v) => ({
+          value: v,
+          ring: this.state.outline === v ? "2px solid #b20d30" : "0",
+          pick: () => this.setState({ outline: v })
+        })),
+        bgs: [
+          { v: "#000000", title: "black", image: "none" },
+          { v: "#74776b", title: "slate", image: "none" },
+          { v: "#e8e3d3", title: "sand", image: "none" },
+          { v: "#ffffff", title: "white", image: "none" },
+          { v: "footage", title: "footage", image: FRAME_BG }
+        ].map((o) => ({
+          value: o.v === "footage" ? "#1a1a18" : o.v,
+          image: o.image,
+          title: o.title,
+          ring: this.state.bg === o.v ? "2px solid #b20d30" : "0",
+          pick: () => this.setState({ bg: o.v })
+        }))
+      },
+      frameBg: FRAME_BG,
+      current: {
+        key: cur.key,
+        cap: cur.cap,
+        note: t.notes[cur.key],
+        css: "'OSD " + cur.camel + "', monospace",
+        shadow: "'OSD " + cur.camel + " Shadow', monospace",
+        fill: "'OSD " + cur.camel + " Fill', monospace",
+        folder: REPO + "/tree/main/output/" + cur.key,
+        sheet: REPO + "/blob/main/output/" + cur.key + "/" + cur.key + "_sheet.png",
+        json: REPO + "/blob/main/output/" + cur.key + "/" + cur.key + ".json",
+        symbols: REPO + "/blob/main/docs/SYMBOLS" + (lang === "ua" ? "_UA" : "") + ".md"
+      },
+      osd: this._osdVals,
+      osdRef: this.osdRefs(),
+      sel: {
+        ch: PUA(gi),
+        dec: gi,
+        hex: hex2(gi),
+        cp: "U+E0" + ("0" + gi.toString(16).toUpperCase()).slice(-2),
+        typeAs: typeAs ? typeAs : t.g_none,
+        typeColor: typeAs ? "#000000" : "#5f6257",
+        name: nm ? ":" + nm + ":" : t.g_none,
+        nameColor: nm ? "#000000" : "#5f6257",
+        ground: GRP[gi] === "gr_logo" ? "#74776b" : "#000000",
+        chip: GRP[gi] === "gr_logo" ? "#74776b" : "transparent",
+        chipPad: GRP[gi] === "gr_logo" ? "4px 7px" : "0",
+        pngName: pad3(gi) + ".png",
+        pngHref: RAW + "/output/" + cur.key + "/png/" + pad3(gi) + ".png"
+      },
+      navMask: this.state.navL && this.state.navR
+        ? "linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%)"
+        : this.state.navR ? "linear-gradient(to right, #000 calc(100% - 20px), transparent 100%)"
+        : this.state.navL ? "linear-gradient(to right, transparent 0, #000 20px)" : "none",
+      navRef: this.navRef(),
+      glyphRef: this.glyphRef(),
+      symRef: this.symRef(),
+      onNavScroll: () => this.updateNav(),
+      dlMark: this.state.dl ? "\u00b7\u00b7\u00b7" : "\u2193",
+      onGrabFont: (e) => this.grab(RAW + "/output/" + cur.key + "/fonts/" + fmt + "/" + file, file, "font", e),
+      onGrabPng: (e) => this.grab(RAW + "/output/" + cur.key + "/png/" + pad3(gi) + ".png", cur.key + "-" + pad3(gi) + ".png", "png", e),
+      downloadName: file,
+      downloadHref: RAW + "/output/" + cur.key + "/fonts/" + fmt + "/" + file
+    };
+  }
+}
+
+</script>
+</body>
+</html>

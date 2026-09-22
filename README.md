@@ -1,4 +1,4 @@
-[Українська](README_UA.md) · [Symbol reference](docs/SYMBOLS.md) · [Developer docs](docs/DEVELOPERS.md)
+[Try the fonts](https://volempdoge.github.io/betaflight-designer-fonts/) · [Українська](README_UA.md) · [Symbol reference](docs/SYMBOLS.md) · [Developer docs](docs/DEVELOPERS.md)
 
 # Betaflight OSD fonts for designers
 
@@ -55,7 +55,7 @@ own stroke weight, stem positions and slant:
 | --- | --- |
 | Accented Latin | `Latin-1` and the common `Latin Extended-A`: ÄÖÜ ÁÉÍÓÚ ÀÈÊ ÅØ ÑÇ ŁĄĆĘŃŚŹŻ ČŠŽŘĎŤŇĚŮ ĂÎȘȚ ĞİŞ ÐÞ |
 | Greek | the full run of capitals, ΑΒΓΔ through ΧΨΩ |
-| Punctuation | – — … « » ‹ › “ ” ‘ ’ „ • · ¿ ¡ ° ′ ″ § -- and `{ } $ ~` \`, which the source fonts spend on icons |
+| Punctuation | – — … « » ‹ › “ ” ‘ ’ „ • · ¿ ¡ ° ′ ″ § -- and `$ ~` \`, which the source fonts spend on icons, plus `{ }` |
 | Maths and currency | ± × ÷ − ≠ ≈ ≤ ≥ ∞ µ · € £ ¥ ¢ ₴ ₽ |
 | Blocks | ─ │ ┼ ═ ║ ╬ and the rest of box drawing, █ ▓ ▒ ░, ▲ ▼ ◀ ▶ ● ○ ◆ ■ ★ ✓ ✗ |
 

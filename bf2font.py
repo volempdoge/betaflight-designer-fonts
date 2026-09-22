@@ -77,8 +77,6 @@ CHARS = 256
 BYTES_PER_CHAR = 64  # 54 bytes of pixel data + 10 bytes of padding
 PIXEL_BYTES = CHAR_W * CHAR_H * 2 // 8  # 54
 
-BLACK, WHITE, TRANSPARENT = "black", "white", None
-
 # --- font metrics ------------------------------------------------------------
 
 PX = 100  # font units per OSD pixel
@@ -129,7 +127,7 @@ class Glyph:
 
 
 def parse_mcm(path: Path) -> list[Glyph]:
-    lines = path.read_text().splitlines()
+    lines = path.read_text(encoding="utf-8").splitlines()
     if not lines or lines[0].strip() != "MAX7456":
         raise ValueError(f"{path}: missing MAX7456 header")
 
@@ -274,6 +272,21 @@ def latin_shapes(glyphs: list[Glyph]) -> dict[str, list[list[int]]]:
     return {chr(i): glyphs[i].pixels for i in range(0x20, 0x7F)}
 
 
+def cap_height(glyphs: list[Glyph]) -> int:
+    """OS/2 sCapHeight in font units, measured off the font's own H.
+
+    The white core is the letter itself; the black cells around it are the
+    outline the OSD draws for contrast, and are not part of the cap height.
+    Ten faces run from 7 to 14 pixels, so this cannot be a constant. A font
+    that has blanked its H keeps the value clarity measures.
+    """
+    core = glyphs[ord("H")].cells(value=2)
+    if not core:
+        return 13 * PX
+    ys = [y for _, y in core]
+    return (max(ys) - min(ys) + 1) * PX
+
+
 def composed_glyphs(
     glyphs: list[Glyph], sets: Sequence[str] = DEFAULT_SETS
 ) -> dict[int, Glyph]:
@@ -281,7 +294,16 @@ def composed_glyphs(
     latin = latin_shapes(glyphs)
     out: dict[int, Glyph] = {}
     for name in sets:
-        for codepoint, pixels in SETS[name].glyphs(latin).items():
+        try:
+            made = SETS[name].glyphs(latin)
+        except (ValueError, IndexError, KeyError) as exc:
+            raise ValueError(
+                f"cannot compose the {name!r} set: {type(exc).__name__}: {exc}. "
+                "The composed sets are traced off the font's own ASCII capitals, "
+                "so a font that overwrites those slots with icons has nothing to "
+                'trace -- re-run with --sets "" to convert it as is'
+            ) from exc
+        for codepoint, pixels in made.items():
             out[codepoint] = Glyph(index=codepoint, pixels=pixels)
     return out
 
@@ -369,6 +391,11 @@ def build_font(
         cmap[codepoint] = unicode_name(codepoint)
 
     fb = FontBuilder(UPM, isTTF=ttf)
+    # fontTools packs GSUB with harfbuzz's repacker when uharfbuzz happens to
+    # be importable, and with its own packer otherwise. Both produce the same
+    # table, the same size, byte for byte differently -- which would make the
+    # committed output/ depend on whether a dev extra is installed. Pin it.
+    fb.font.cfg["fontTools.ttLib.tables.otBase:USE_HARFBUZZ_REPACKER"] = False
     fb.setupGlyphOrder(order)
     fb.setupCharacterMap(cmap)
 
@@ -422,14 +449,17 @@ def build_font(
             "licenseInfoURL": "https://www.gnu.org/licenses/gpl-3.0.html",
         }
     )
+    caps = cap_height(glyphs)
     fb.setupOS2(
         sTypoAscender=ASCENT,
         sTypoDescender=-DESCENT,
         sTypoLineGap=0,
         usWinAscent=ASCENT,
         usWinDescent=DESCENT,
-        sCapHeight=13 * PX,
-        sxHeight=9 * PX,
+        sCapHeight=caps,
+        # There is no lowercase in any script here: a-z fold onto the capitals,
+        # so the x-height a renderer should use is the cap height.
+        sxHeight=caps,
         achVendID="BFDF",
         panose={
             "bFamilyType": 2,  # latin text
@@ -559,7 +589,8 @@ def convert(
                     for set_name, made in composed.items()
                 },
                 "spelled": {
-                    f"U+{cp:04X}": text for cp, text in sorted(folds(sets).items())
+                    f"U+{cp:04X}": text
+                    for cp, text in sorted(folds(sets).items() if ascii_cmap else [])
                 },
                 "symbols": [
                     {
@@ -590,7 +621,9 @@ def convert(
             indent=2,
             ensure_ascii=False,
         )
-        + "\n"
+        + "\n",
+        encoding="utf-8",
+        newline="\n",
     )
 
     needs_ttf = {"ttf", "woff", "woff2"} & set(formats)
@@ -661,7 +694,8 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--no-ascii-cmap",
         action="store_true",
-        help="map characters only to U+E000+index, not to ASCII",
+        help="drop the ASCII cmap and the name ligatures; the composed "
+        "sets keep their own codepoints",
     )
     parser.add_argument(
         "--literal-ascii",
@@ -690,6 +724,8 @@ def main(argv: list[str] | None = None) -> int:
     unknown = set(formats) - {"otf", "ttf", "woff", "woff2"}
     if unknown:
         parser.error(f"unknown format(s): {', '.join(sorted(unknown))}")
+    if not formats:
+        parser.error("--formats needs at least one of otf,ttf,woff,woff2")
     sets = [s.strip().lower() for s in args.sets.split(",") if s.strip()]
     unknown = set(sets) - set(DEFAULT_SETS)
     if unknown:
@@ -699,20 +735,25 @@ def main(argv: list[str] | None = None) -> int:
     if args.family and len(args.sources) > 1:
         parser.error("--family can only be used with a single source file")
 
+    failed = 0
     for source in args.sources:
-        convert(
-            source,
-            args.output,
-            scale=args.scale,
-            family_prefix=args.family_prefix,
-            family=args.family,
-            no_ascii=args.no_ascii_cmap,
-            literal_ascii=args.literal_ascii,
-            layer_fonts=args.layer_fonts,
-            sets=sets,
-            formats=formats,
-        )
-    return 0
+        try:
+            convert(
+                source,
+                args.output,
+                scale=args.scale,
+                family_prefix=args.family_prefix,
+                family=args.family,
+                no_ascii=args.no_ascii_cmap,
+                literal_ascii=args.literal_ascii,
+                layer_fonts=args.layer_fonts,
+                sets=sets,
+                formats=formats,
+            )
+        except (OSError, ValueError, UnicodeDecodeError) as exc:
+            print(f"{source}: {exc}", file=sys.stderr)
+            failed += 1
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":

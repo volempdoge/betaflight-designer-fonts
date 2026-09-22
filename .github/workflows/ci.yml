@@ -56,6 +56,9 @@ jobs:
       - uses: astral-sh/setup-uv@v10.1.0
         with:
           enable-cache: true
+          # output/ is compared byte for byte, so pin the interpreter
+          # rather than inherit whatever the runner defaults to.
+          python-version: "3.14"
       - run: uv sync --frozen --no-dev
       - name: Convert every bundled font
         run: uv run bf2font.py original_fonts/*.mcm -o build

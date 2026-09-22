@@ -37,7 +37,8 @@ class Language:
 
 ENGLISH = Language(
     file="SYMBOLS.md",
-    header="""[← README](../README.md) · [Українською](SYMBOLS_UA.md)
+    header="""[← README](../README.md) · [Developer docs](DEVELOPERS.md) """
+    """· [Українською](SYMBOLS_UA.md)
 
 # OSD symbols
 
@@ -74,7 +75,8 @@ own weight.
 
 UKRAINIAN = Language(
     file="SYMBOLS_UA.md",
-    header="""[← README](../README_UA.md) · [In English](SYMBOLS.md)
+    header="""[← README](../README_UA.md) """
+    """· [Нотатки для розробників](DEVELOPERS_UA.md) · [In English](SYMBOLS.md)
 
 # Символи OSD
 
@@ -169,7 +171,7 @@ def main(argv: list[str] | None = None) -> int:
     written = []
     for language in LANGUAGES:
         path = args.output / language.file
-        path.write_text(document(language))
+        path.write_text(document(language), encoding="utf-8", newline="\n")
         written.append(path)
     logo_strip().save(args.output / "logo.png")
     written.append(args.output / "logo.png")

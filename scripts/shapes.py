@@ -186,9 +186,6 @@ class Geometry:
     def rows(self, ch: str, ys: list[int]) -> Core:
         return {(x, y) for x, y in self.core(ch) if y in ys}
 
-    def cols(self, ch: str, xs: list[int]) -> Core:
-        return {(x, y) for x, y in self.core(ch) if x in xs}
-
     def at(self, y: int) -> int:
         """The measured slant offset on row `y`, clamped to the cap box."""
         return self.step[min(max(y, self.top), self.bottom)]

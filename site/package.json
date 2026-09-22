@@ -1,0 +1,20 @@
+{
+  "name": "betaflight-designer-fonts-site",
+  "private": true,
+  "type": "module",
+  "description": "Static build of the Betaflight OSD fonts landing page, prerendered for crawlers",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "node build.mjs && node prerender.mjs",
+    "build:html": "node build.mjs",
+    "prerender": "node prerender.mjs",
+    "og-card": "node og-card.mjs",
+    "serve": "node server.mjs"
+  },
+  "devDependencies": {
+    "puppeteer": "^25.11.0"
+  }
+}

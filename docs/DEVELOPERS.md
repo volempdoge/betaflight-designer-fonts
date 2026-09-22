@@ -89,9 +89,9 @@ lives in `scripts/`; `bf2font.py` at the root is the only entry point.
 | --- | --- |
 | `scripts/shapes.py` | the primitives: `Geometry`, `render`, `box`, `ring`, `line`, `chevron`, `triangle`, `wave` |
 | `scripts/cyrillic.py` | 37 Cyrillic capitals |
-| `scripts/accents.py` | 70 accented Latin capitals, plus Ð Đ Ø Ł Þ |
+| `scripts/accents.py` | 67 accented Latin capitals, plus Ð Đ Ø Ł Þ |
 | `scripts/greek.py` | 24 Greek capitals |
-| `scripts/punctuation.py` | dashes, quotes, angle quotes, maths, currency, and the four ASCII slots the source font spends on icons |
+| `scripts/punctuation.py` | dashes, quotes, angle quotes, maths, currency, and the five ASCII slots the source font leaves to icons or blanks |
 | `scripts/blocks.py` | box drawing, half blocks, shades, markers |
 
 Each module exposes the same two entry points, which is all `bf2font.py` knows
@@ -176,8 +176,9 @@ black-only shapes. Abutting fills of different colours leave anti-aliasing
 hairlines along the seam; overlapping them does not.
 
 Apps that cannot read `COLR` draw the base glyph instead, which is why Figma
-shows flat single-colour letters. For those, `--layer-fonts` is on by default
-and each font also ships as two flat families: `Shadow` carries the silhouette
+shows flat single-colour letters. For those, the flat families are built by
+default (`--no-layer-fonts` skips them) and each font also ships as two flat
+families: `Shadow` carries the silhouette
 in every glyph, `Fill` carries only the white pixels. They are built from the
 same outlines and metrics as the colour font, so stacking them as two text
 layers reproduces it exactly.
@@ -235,7 +236,7 @@ Two features are built with `feaLib`:
 | `ccmp` | the spelled-out characters expand |
 
 Ligature components come from the cmap of the characters actually typed, so
-`:sat:` works whether `a-z` are folded or literal, and the rules never fire on
+`:sat_left:` works whether `a-z` are folded or literal, and the rules never fire on
 text like `12:30:45` because every one of them starts and ends with a colon.
 `--no-ascii-cmap` builds no features at all: without ASCII there is no colon
 to type.
@@ -246,6 +247,10 @@ to type.
 uv run tools/symbol_index.py   # docs/SYMBOLS.md, docs/SYMBOLS_UA.md, docs/logo.png
 uv run tools/specimen.py       # docs/sets.png
 ```
+
+`docs/social-preview.png` is not generated. It is the image uploaded by hand
+under Settings -> General -> Social preview, kept here so the repository keeps
+a copy of what it shows.
 
 ## Working on the script
 

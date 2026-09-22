@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>og-card 1200x630</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  @font-face { font-family: 'OSD Clarity'; src: url('../../output/clarity/fonts/woff2/BetaflightOSDClarity.woff2') format('woff2'); font-display: block; }
+  @font-face { font-family: 'OSD Clarity Shadow'; src: url('../../output/clarity/fonts/woff2/BetaflightOSDClarityShadow.woff2') format('woff2'); font-display: block; }
+  @font-face { font-family: 'OSD Clarity Fill'; src: url('../../output/clarity/fonts/woff2/BetaflightOSDClarityFill.woff2') format('woff2'); font-display: block; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #2a2a28; }
+</style>
+</head>
+<body>
+<div id="card" style="position: relative; width: 1200px; height: 630px; overflow: hidden; background: #1a1a18; font-family: 'Space Mono', ui-monospace, monospace">
+
+  <div style="position: absolute; inset: -3%; background-image: url('fpv-frame.webp'); background-size: cover; background-position: center; filter: blur(9px) saturate(1.05) brightness(0.74)"></div>
+
+  <div style="position: absolute; top: 44px; left: 56px; display: flex; align-items: center; gap: 12px; color: #fff">
+    <span style="font-family: 'OSD Clarity', monospace; font-size: 38px; line-height: 1">#</span>
+    <span style="font-family: 'OSD Clarity', monospace; font-size: 38px; line-height: 1.2">BETAFLIGHT FONTS</span>
+  </div>
+
+  <div style="position: absolute; top: 46px; right: 56px; display: flex; align-items: center; gap: 10px">
+    <span style="display: block; width: 46px; height: 30px; border: 1px solid #000; overflow: hidden">
+      <span style="display: block; height: 15px; background: #0057b7"></span>
+      <span style="display: block; height: 15px; background: #ffd700"></span>
+    </span>
+    <span style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #fff">Made in Ukraine</span>
+  </div>
+
+  <div style="position: absolute; left: 56px; top: 196px; display: grid; font-size: 164px; line-height: 0.96">
+    <span style="grid-area: 1 / 1; font-family: 'OSD Clarity Shadow', monospace; color: #000">OSD FONTS</span>
+    <span style="grid-area: 1 / 1; font-family: 'OSD Clarity Fill', monospace; color: #fff">OSD FONTS</span>
+  </div>
+
+  <div style="position: absolute; left: 58px; top: 390px; display: flex; flex-direction: column; gap: 14px">
+    <span style="font-size: 25px; font-weight: 700; letter-spacing: 0.02em; color: #fff">10 fonts</span>
+    <span style="font-size: 20px; letter-spacing: 0.02em; color: #cfd0c8">Full Cyrillic, Greek and accented Latin</span>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; display: flex; align-items: stretch; gap: 2px; background: #000">
+    <div style="flex: 1 1 auto; display: flex; align-items: center; gap: 30px; background: #b20d30; padding: 0 56px; height: 92px">
+      <span style="font-size: 25px; font-weight: 700; letter-spacing: 0.2em; color: #fff">OTF</span>
+      <span style="font-size: 25px; font-weight: 700; letter-spacing: 0.2em; color: #fff">TTF</span>
+      <span style="font-size: 25px; font-weight: 700; letter-spacing: 0.2em; color: #fff">WOFF</span>
+      <span style="font-size: 25px; font-weight: 700; letter-spacing: 0.2em; color: #fff">WOFF2</span>
+      <span style="font-size: 25px; font-weight: 700; letter-spacing: 0.2em; color: #fff">PNG</span>
+    </div>
+    <div style="flex: 0 0 auto; display: flex; align-items: center; background: #e8e3d3; padding: 0 40px; height: 92px">
+      <span style="font-size: 20px; font-weight: 700; letter-spacing: 0.1em; color: #000">GPL 3.0 &middot; FREE</span>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
