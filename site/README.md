@@ -23,6 +23,7 @@ finished text; a browser gets the same interactivity on top.
 | `server.mjs` | static server over a directory, used by the prerender, the card and `npm run serve` |
 | `og-card.mjs` | renders `assets/og-card.html` to `assets/og-card.jpg` |
 | `assets/og-card.html` | the 1200x630 social card. An input to the build, not something the site serves |
+| `public/` | copied to the root of `dist/` verbatim, under the same names |
 
 The page loads two images. `assets/fpv-frame.webp` is the hero frame: it came
 from the design project as a 883 KB PNG, fully opaque and blurred 7px in CSS, so

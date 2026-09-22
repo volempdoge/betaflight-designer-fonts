@@ -122,6 +122,14 @@ async function copyRuntimeAssets() {
   await cp(join(ROOT, icon), join(DIST, icon));
 }
 
+async function copyPublicRoot() {
+  try {
+    await cp(join(HERE, "public"), DIST, { recursive: true });
+  } catch (err) {
+    if (err.code !== "ENOENT") throw err;
+  }
+}
+
 async function main() {
   const source = await readFile(join(HERE, "index.dc.html"), "utf8");
 
@@ -140,6 +148,7 @@ async function main() {
   await rm(DIST, { recursive: true, force: true });
   await mkdir(DIST, { recursive: true });
   await copyRuntimeAssets();
+  await copyPublicRoot();
 
   for (const locale of LOCALES) {
     const dir = join(DIST, locale.dir);
