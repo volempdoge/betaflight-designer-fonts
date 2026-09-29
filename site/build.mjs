@@ -8,7 +8,7 @@ import { execFileSync } from "node:child_process";
 import { cp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 
-import { DIST, HERE, LOCALES, ROOT, SITE, localeUrl } from "./config.mjs";
+import { DIST, HERE, LOCALES, RAW, REPO, ROOT, SITE, localeUrl } from "./config.mjs";
 
 // Font families the page declares in @font-face, by output directory and the
 // CamelCase stem bf2font.py gives the files.
@@ -58,6 +58,9 @@ function headTags(locale) {
     `<link rel="canonical" href="${localeUrl(locale)}">`,
     `<meta property="og:url" content="${localeUrl(locale)}">`,
     ...alternates,
+    // The same content as plain Markdown, for LLMs and anything else that would
+    // rather not pick text out of a rendered component. English only.
+    `<link rel="alternate" type="text/markdown" href="${SITE}/index.md" title="Markdown">`,
   ].join("\n");
 }
 
@@ -149,6 +152,21 @@ async function copyPublicRoot() {
   }
 }
 
+// llms.txt (https://llmstxt.org) and the Markdown copy of the page it points at.
+// Written by hand in llms/, with {{SITE}}, {{REPO}} and {{RAW}} filled in here
+// so a local build links to itself, like everything else.
+async function writeLlmsFiles() {
+  const vars = { SITE, REPO, RAW };
+  for (const name of ["llms.txt", "index.md"]) {
+    const source = await readFile(join(HERE, "llms", name), "utf8");
+    const out = source.replace(/\{\{(\w+)\}\}/g, (match, key) => {
+      if (!(key in vars)) throw new Error(`llms/${name}: unknown placeholder ${match}`);
+      return vars[key];
+    });
+    await writeFile(join(DIST, name), out);
+  }
+}
+
 async function main() {
   const source = await readFile(join(HERE, "index.dc.html"), "utf8");
 
@@ -177,6 +195,7 @@ async function main() {
 
   await writeFile(join(DIST, "sitemap.xml"), sitemap());
   await writeFile(join(DIST, "robots.txt"), robots());
+  await writeLlmsFiles();
   // Keeps Pages from putting the content through Jekyll if the site is ever
   // served from a branch. upload-pages-artifact v4+ strips dotfiles, so the
   // Actions deployment below never sees this file -- and never needs to.

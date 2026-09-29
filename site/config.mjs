@@ -22,6 +22,11 @@ export const LOCALES = [
   { key: "jp", dir: "ja", hreflang: "ja", htmlLang: "ja" },
 ];
 
+// The repository, and raw file URLs off its main branch. The page has its own
+// copies of both; these are for llms.txt and index.md.
+export const REPO = "https://github.com/volempdoge/betaflight-designer-fonts";
+export const RAW = "https://raw.githubusercontent.com/volempdoge/betaflight-designer-fonts/main";
+
 export const localeUrl = (locale) => `${SITE}/${locale.dir ? locale.dir + "/" : ""}`;
 
 export const HERE = dirname(fileURLToPath(import.meta.url));

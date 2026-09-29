@@ -8,8 +8,8 @@
 <body>
 <x-dc>
 <helmet>
-<title>Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays</title>
-<meta name="description" content="Ten Betaflight OSD fonts as colour OTF, TTF, WOFF and WOFF2, plus every character as a transparent PNG. Cyrillic, Greek and accented Latin included. Free under GPL 3.0.">
+<title>Betaflight OSD Fonts</title>
+<meta name="description" content="Betaflight fonts for design: all ten Betaflight OSD fonts as colour OTF, TTF, WOFF2 and transparent PNG, with Cyrillic, Greek and accents. Free, GPL 3.0.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Volodymyr Myronenko">
 <meta name="theme-color" content="#000000">
@@ -28,6 +28,8 @@
 <meta name="twitter:description" content="Ten Betaflight OSD fonts as colour OTF, TTF, WOFF and WOFF2, plus every character as a transparent PNG.">
 <meta name="twitter:image" content="assets/og-card.jpg">
 <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon.png">
+<link rel="icon" sizes="16x16 32x32 48x48" href="assets/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
 <link rel="preload" as="font" type="font/woff2" href="output/clarity/fonts/woff2/BetaflightOSDClarity.woff2" crossorigin="">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
@@ -867,11 +869,11 @@ const hex2 = (n) => "0x" + ("0" + n.toString(16).toUpperCase()).slice(-2);
 
 const L = {
   en: {
-    seoTitle: "Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays", seoDesc: "Ten Betaflight OSD fonts as colour OTF, TTF, WOFF and WOFF2, plus every character as a transparent PNG. Cyrillic, Greek and accented Latin included. Free under GPL 3.0.",
+    seoTitle: "Betaflight OSD Fonts", shareTitle: "Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays", seoDesc: "Betaflight fonts for design: all ten Betaflight OSD fonts as colour OTF, TTF, WOFF2 and transparent PNG, with Cyrillic, Greek and accents. Free, GPL 3.0.",
     label: "EN", menu: "Menu",
     nTry: "Try it", nSym: "Symbols", nAbout: "About", nRepo: "GitHub",
-    ht: "Betaflight OSD type, out of the goggles.",
-    hb: "Install the OTF or TTF, drop the WOFF and WOFF2 into a page, or take any of the 256 characters as a transparent PNG. These are colour fonts, so every white glyph carries its own black outline and stays readable over any footage. Full Cyrillic, Greek and accented Latin come with them, composed from each font’s own shapes.",
+    ht: "Betaflight OSD fonts, out of the goggles.",
+    hb: "All ten fonts that come with Betaflight Configurator. Install the OTF or TTF, drop the WOFF and WOFF2 into a page, or take any of the 256 characters as a transparent PNG. These are colour fonts, so every white glyph carries its own black outline and stays readable over any footage. Full Cyrillic, Greek and accented Latin come with them, composed from each font’s own shapes.",
     c1: "Download all (.zip)", c2: "Pick a font",
     p_t: "Pick a font", p_font: "Font", p_text: "Sample text", p_size: "Size", p_cap: "Cap height",
     p_adv: "Text options", p_show: "Show", p_hide: "Hide",
@@ -914,11 +916,11 @@ const L = {
     notes: { extra_large: "The biggest one, fills the whole cell", clarity: "Large and clean with high contrast", bold: "Heavy and narrow", impact: "Heavy and a bit wider", vision: "The size of impact with its own letterforms", betaflight: "Slanted, the branded look", impact_mini: "A compact take on impact", default: "The thin stock font, smallest of all", large: "Small letters with tall digits", digital: "Wide blocks like a segment display" }
   },
   ua: {
-    seoTitle: "Шрифти Betaflight OSD — OTF, TTF, WOFF і PNG для FPV", seoDesc: "Десять шрифтів Betaflight OSD у кольорових OTF, TTF, WOFF і WOFF2, а кожен символ ще й прозорим PNG. З повною кирилицею, грекою та діакритикою. Безкоштовно, GPL 3.0.",
+    seoTitle: "Шрифти Betaflight OSD", shareTitle: "Шрифти Betaflight OSD — OTF, TTF, WOFF і PNG для FPV", seoDesc: "Шрифти Betaflight для дизайну: усі десять шрифтів Betaflight OSD у кольорових OTF, TTF, WOFF2 і прозорих PNG, з кирилицею та грекою. Безкоштовно, GPL 3.0.",
     label: "UA", menu: "Меню",
     nTry: "Спробувати", nSym: "Символи", nAbout: "Про проєкт", nRepo: "GitHub",
-    ht: "Betaflight OSD type, out of the goggles.",
-    hb: "OTF і TTF можна встановити, WOFF і WOFF2 підключити на сторінку, а будь-який з 256 символів узяти прозорим PNG. Шрифти кольорові, тож біла літера несе власний чорний контур і не губиться на жодному кадрі. Разом з ними йдуть повна кирилиця, грека й латиниця з діакритикою, складені з форм того самого шрифту.",
+    ht: "Betaflight OSD fonts, out of the goggles.",
+    hb: "Усі десять шрифтів, що йдуть із Betaflight Configurator. OTF і TTF можна встановити, WOFF і WOFF2 підключити на сторінку, а будь-який з 256 символів узяти прозорим PNG. Шрифти кольорові, тож біла літера несе власний чорний контур і не губиться на жодному кадрі. Разом з ними йдуть повна кирилиця, грека й латиниця з діакритикою, складені з форм того самого шрифту.",
     c1: "Завантажити все (.zip)", c2: "Вибрати шрифт",
     p_t: "Вибери шрифт", p_font: "Шрифт", p_text: "Зразок тексту", p_size: "Кегль", p_cap: "Висота великих літер",
     p_adv: "Налаштування тексту", p_show: "Показати", p_hide: "Згорнути",
@@ -961,11 +963,11 @@ const L = {
     notes: { extra_large: "Найбільший, заповнює всю клітинку", clarity: "Великий і чистий, високий контраст", bold: "Жирний і вузький", impact: "Жирний і трохи ширший", vision: "Розмір як в impact, але інші літери", betaflight: "Похилий, брендовий вигляд", impact_mini: "Компактна версія impact", default: "Тонкий стоковий, найменший з усіх", large: "Дрібні літери й високі цифри", digital: "Широкі блоки, як сегментний дисплей" }
   },
   es: {
-    seoTitle: "Fuentes Betaflight OSD — OTF, TTF, WOFF y PNG para FPV", seoDesc: "Diez fuentes Betaflight OSD en OTF, TTF, WOFF y WOFF2 de color, y cada carácter como PNG con transparencia. Con cirílico, griego y latín acentuado. Gratis, GPL 3.0.",
+    seoTitle: "Fuentes Betaflight OSD", shareTitle: "Fuentes Betaflight OSD — OTF, TTF, WOFF y PNG para FPV", seoDesc: "Fuentes Betaflight para diseño: las diez fuentes Betaflight OSD en OTF, TTF y WOFF2 de color y PNG transparente, con cirílico y griego. Gratis, GPL 3.0.",
     label: "ES", menu: "Menú",
     nTry: "Probar", nSym: "Símbolos", nAbout: "Proyecto", nRepo: "GitHub",
-    ht: "Betaflight OSD type, out of the goggles.",
-    hb: "El OTF y el TTF se instalan, el WOFF y el WOFF2 van en una página y cualquiera de los 256 caracteres se puede tomar como PNG con transparencia. Son fuentes de color, así que cada glifo blanco lleva su propio contorno negro y se lee sobre cualquier imagen. Vienen además el cirílico completo, el griego y el latín con acentos, compuestos con las formas de cada fuente.",
+    ht: "Betaflight OSD fonts, out of the goggles.",
+    hb: "Las diez fuentes que trae Betaflight Configurator. El OTF y el TTF se instalan, el WOFF y el WOFF2 van en una página y cualquiera de los 256 caracteres se puede tomar como PNG con transparencia. Son fuentes de color, así que cada glifo blanco lleva su propio contorno negro y se lee sobre cualquier imagen. Vienen además el cirílico completo, el griego y el latín con acentos, compuestos con las formas de cada fuente.",
     c1: "Descargar todo (.zip)", c2: "Elegir fuente",
     p_t: "Elige una fuente", p_font: "Fuente", p_text: "Texto de prueba", p_size: "Cuerpo", p_cap: "Altura de mayúsculas",
     p_adv: "Ajustes de texto", p_show: "Mostrar", p_hide: "Ocultar",
@@ -1008,11 +1010,11 @@ const L = {
     notes: { extra_large: "La más grande, llena toda la celda", clarity: "Grande y limpia, con mucho contraste", bold: "Gruesa y estrecha", impact: "Gruesa y algo más ancha", vision: "Del tamaño de impact con su propio dibujo", betaflight: "Inclinada, la imagen de la marca", impact_mini: "Una versión compacta de impact", default: "La fina de serie, la más ligera", large: "Letras pequeñas y cifras altas", digital: "Bloques anchos como un display de segmentos" }
   },
   fr: {
-    seoTitle: "Polices Betaflight OSD — OTF, TTF, WOFF et PNG pour le FPV", seoDesc: "Dix polices Betaflight OSD en OTF, TTF, WOFF et WOFF2 couleur, et chaque caractère en PNG transparent. Cyrillique, grec et latin accentué inclus. Gratuit, GPL 3.0.",
+    seoTitle: "Polices Betaflight OSD", shareTitle: "Polices Betaflight OSD — OTF, TTF, WOFF et PNG pour le FPV", seoDesc: "Polices Betaflight pour le design : les dix polices Betaflight OSD en OTF, TTF, WOFF2 couleur et PNG transparent, avec cyrillique et grec. Gratuit, GPL 3.0.",
     label: "FR", menu: "Menu",
     nTry: "Essayer", nSym: "Symboles", nAbout: "Le projet", nRepo: "GitHub",
-    ht: "Betaflight OSD type, out of the goggles.",
-    hb: "L'OTF et le TTF s'installent, le WOFF et le WOFF2 se posent sur une page, et chacun des 256 caractères existe en PNG transparent. Ce sont des polices en couleur, donc chaque glyphe blanc porte son propre contour noir et reste lisible sur n'importe quelle image. S'y ajoutent le cyrillique complet, le grec et le latin accentué, composés à partir des formes propres à chaque police.",
+    ht: "Betaflight OSD fonts, out of the goggles.",
+    hb: "Les dix polices livrées avec Betaflight Configurator. L'OTF et le TTF s'installent, le WOFF et le WOFF2 se posent sur une page, et chacun des 256 caractères existe en PNG transparent. Ce sont des polices en couleur, donc chaque glyphe blanc porte son propre contour noir et reste lisible sur n'importe quelle image. S'y ajoutent le cyrillique complet, le grec et le latin accentué, composés à partir des formes propres à chaque police.",
     c1: "Tout télécharger (.zip)", c2: "Choisir une police",
     p_t: "Choisissez une police", p_font: "Police", p_text: "Texte d'essai", p_size: "Corps", p_cap: "Hauteur de capitale",
     p_adv: "Réglages du texte", p_show: "Afficher", p_hide: "Masquer",
@@ -1055,11 +1057,11 @@ const L = {
     notes: { extra_large: "La plus grande, elle remplit la cellule", clarity: "Grande et nette, très contrastée", bold: "Grasse et étroite", impact: "Grasse et un peu plus large", vision: "La taille d'impact avec son propre dessin", betaflight: "Inclinée, l'allure de la marque", impact_mini: "Une version compacte d'impact", default: "La fine d'origine, la plus légère", large: "Petites lettres et chiffres hauts", digital: "Blocs larges comme un afficheur à segments" }
   },
   zh: {
-    seoTitle: "Betaflight OSD 字体 — OTF、TTF、WOFF 与 PNG", seoDesc: "十款 Betaflight OSD 彩色字体，提供 OTF、TTF、WOFF 和 WOFF2，每个字符还有透明 PNG。附完整西里尔字母、希腊字母与带重音拉丁字母。免费，GPL 3.0。",
+    seoTitle: "Betaflight OSD 字体", shareTitle: "Betaflight OSD 字体 — OTF、TTF、WOFF 与 PNG", seoDesc: "Betaflight 字体：全部十款 Betaflight OSD 彩色字体，提供 OTF、TTF、WOFF2 和透明 PNG，含西里尔字母与希腊字母。免费，GPL 3.0。",
     label: "中文", menu: "菜单",
     nTry: "试用", nSym: "符号", nAbout: "关于", nRepo: "GitHub",
-    ht: "Betaflight OSD type, out of the goggles.",
-    hb: "OTF 和 TTF 可以直接安装，WOFF 与 WOFF2 用在网页上，256 个字符里的任何一个都能拿到透明 PNG。这些都是彩色字体，白色字形自带黑色描边，压在任何画面上都看得清。还附带完整的西里尔字母、希腊字母和带重音的拉丁字母，都用各款字体自己的形状拼出来。",
+    ht: "Betaflight OSD fonts, out of the goggles.",
+    hb: "Betaflight Configurator 自带的全部十款字体。OTF 和 TTF 可以直接安装，WOFF 与 WOFF2 用在网页上，256 个字符里的任何一个都能拿到透明 PNG。这些都是彩色字体，白色字形自带黑色描边，压在任何画面上都看得清。还附带完整的西里尔字母、希腊字母和带重音的拉丁字母，都用各款字体自己的形状拼出来。",
     c1: "打包下载 (.zip)", c2: "挑一款字体",
     p_t: "挑一款字体", p_font: "字体", p_text: "示例文字", p_size: "字号", p_cap: "大写高度",
     p_adv: "文字设置", p_show: "展开", p_hide: "收起",
@@ -1102,11 +1104,11 @@ const L = {
     notes: { extra_large: "最大的一款，占满整个字符格", clarity: "大而清晰，对比很强", bold: "粗而窄", impact: "粗而稍宽", vision: "与 impact 同尺寸，字形不同", betaflight: "斜体，品牌的样子", impact_mini: "impact 的紧凑版", default: "原厂细体，最省空间", large: "字母小，数字高", digital: "宽块状，像分段显示器" }
   },
   jp: {
-    seoTitle: "Betaflight OSD フォント — OTF, TTF, WOFF, PNG", seoDesc: "Betaflight OSD のカラーフォント 10 種を OTF・TTF・WOFF・WOFF2 で、全文字を透過 PNG でも配布。キリル文字・ギリシャ文字・アクセント付きラテン文字つき。無料、GPL 3.0。",
+    seoTitle: "Betaflight OSD フォント", shareTitle: "Betaflight OSD フォント — OTF, TTF, WOFF, PNG", seoDesc: "Betaflight フォント：Betaflight OSD のカラーフォント全 10 種を OTF・TTF・WOFF2 と透過 PNG で配布。キリル文字・ギリシャ文字つき。無料、GPL 3.0。",
     label: "日本語", menu: "メニュー",
     nTry: "試す", nSym: "記号", nAbout: "このプロジェクト", nRepo: "GitHub",
-    ht: "Betaflight OSD type, out of the goggles.",
-    hb: "OTF と TTF はそのままインストールでき、WOFF と WOFF2 は Web に置けます。256 文字のどれでも透過 PNG で取り出せます。カラーフォントなので白い字形が黒い縁取りを自分で持っていて、どんな映像の上でも読めます。さらに完全なキリル文字、ギリシャ文字、アクセント付きラテン文字が付いていて、どれもそのフォント自身の形から組み立てられています。",
+    ht: "Betaflight OSD fonts, out of the goggles.",
+    hb: "Betaflight Configurator に入っている 10 種のフォントすべて。OTF と TTF はそのままインストールでき、WOFF と WOFF2 は Web に置けます。256 文字のどれでも透過 PNG で取り出せます。カラーフォントなので白い字形が黒い縁取りを自分で持っていて、どんな映像の上でも読めます。さらに完全なキリル文字、ギリシャ文字、アクセント付きラテン文字が付いていて、どれもそのフォント自身の形から組み立てられています。",
     c1: "まとめてダウンロード (.zip)", c2: "フォントを選ぶ",
     p_t: "フォントを選ぶ", p_font: "フォント", p_text: "サンプル文字", p_size: "サイズ", p_cap: "キャップハイト",
     p_adv: "文字の設定", p_show: "開く", p_hide: "閉じる",
@@ -1295,9 +1297,9 @@ class Component extends DCLogic {
       document.documentElement.lang = HTML_LANG[code] || "en";
       if (T.seoTitle) document.title = T.seoTitle;
       set('meta[name="description"]', T.seoDesc);
-      set('meta[property="og:title"]', T.seoTitle);
+      set('meta[property="og:title"]', T.shareTitle || T.seoTitle);
       set('meta[property="og:description"]', T.seoDesc);
-      set('meta[name="twitter:title"]', T.seoTitle);
+      set('meta[name="twitter:title"]', T.shareTitle || T.seoTitle);
       set('meta[name="twitter:description"]', T.seoDesc);
       set('meta[property="og:locale"]', OG_LOCALE[code] || "en_US");
       const url = window.location.origin + window.location.pathname;
@@ -1326,7 +1328,7 @@ class Component extends DCLogic {
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         name: "Betaflight OSD Fonts",
-        alternateName: "betaflight-designer-fonts",
+        alternateName: ["Betaflight Fonts", "betaflight-designer-fonts"],
         description: T.seoDesc,
         applicationCategory: "DesignApplication",
         operatingSystem: "Windows, macOS, Linux, Web",
@@ -1337,10 +1339,11 @@ class Component extends DCLogic {
         codeRepository: REPO,
         downloadUrl: REPO + "/archive/refs/heads/main.zip",
         fileFormat: ["font/otf", "font/ttf", "font/woff", "font/woff2", "image/png"],
-        keywords: "Betaflight, OSD, FPV, font, OTF, TTF, WOFF, WOFF2, colour font, COLR, Cyrillic, Greek",
+        keywords: "Betaflight fonts, Betaflight OSD fonts, Betaflight Configurator, OSD, FPV, MCM, font, OTF, TTF, WOFF, WOFF2, PNG, colour font, COLR, Cyrillic, Greek",
         author: { "@type": "Person", name: "Volodymyr Myronenko", url: "https://github.com/volempdoge" },
         offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-        isBasedOn: "https://github.com/betaflight/betaflight-configurator"
+        sameAs: [REPO],
+        isBasedOn: { "@type": "SoftwareApplication", name: "Betaflight Configurator", url: "https://github.com/betaflight/betaflight-configurator" }
       });
     } catch (e) {}
   }

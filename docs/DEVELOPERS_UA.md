@@ -238,11 +238,12 @@ TrueType позиціонує гліфи саме за `lsb`, тож глухи�
 ```bash
 uv run tools/symbol_index.py   # docs/SYMBOLS.md, docs/SYMBOLS_UA.md, docs/logo.png
 uv run tools/specimen.py       # docs/sets.png
-uv run tools/favicon.py        # site/assets/favicon.png
+uv run tools/favicon.py        # site/assets/favicon.{png,ico}, apple-touch-icon.png
 ```
 
 Фавіконка — це квадратний виріз із `#`, а не сам PNG символу: PNG-и це комірки
-12x18, і браузер втискає таку картинку в квадратне гніздо.
+12x18, і браузер втискає таку картинку в квадратне гніздо. Інші розміри
+масштабують OSD-піксель лише в цілу кількість разів, тож жоден не розмитий.
 
 `docs/social-preview.png` не генерується. Це картинка, яку завантажують руками
 в Settings -> General -> Social preview; вона лежить тут, щоб у репозиторії

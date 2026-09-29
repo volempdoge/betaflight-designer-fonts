@@ -246,11 +246,12 @@ to type.
 ```bash
 uv run tools/symbol_index.py   # docs/SYMBOLS.md, docs/SYMBOLS_UA.md, docs/logo.png
 uv run tools/specimen.py       # docs/sets.png
-uv run tools/favicon.py        # site/assets/favicon.png
+uv run tools/favicon.py        # site/assets/favicon.{png,ico}, apple-touch-icon.png
 ```
 
 The favicon is a square crop of `#` rather than the character PNG itself: the
-PNGs are 12x18 cells, and a browser squeezes one into a square slot.
+PNGs are 12x18 cells, and a browser squeezes one into a square slot. The other
+sizes scale the OSD pixel by whole numbers only, so none of them is blurred.
 
 `docs/social-preview.png` is not generated. It is the image uploaded by hand
 under Settings -> General -> Social preview, kept here so the repository keeps

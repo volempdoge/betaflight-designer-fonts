@@ -18,13 +18,14 @@ finished text; a browser gets the same interactivity on top.
 | `index.dc.html` | the page itself: template, styles and component, all six languages |
 | `support.js` | the design runtime that boots the component. Generated; do not edit |
 | `config.mjs` | the site URL and the language table, shared by the build steps |
-| `build.mjs` | writes the six language pages, the fonts, `robots.txt` and `sitemap.xml` into `dist/` |
+| `build.mjs` | writes the six language pages, the fonts, `robots.txt`, `sitemap.xml`, `llms.txt` and `index.md` into `dist/` |
 | `prerender.mjs` | renders each page in Chrome and bakes the markup back in |
 | `server.mjs` | static server over a directory, used by the prerender, the card and `npm run serve` |
 | `og-card.mjs` | renders `assets/og-card.html` to `assets/og-card.jpg` |
 | `assets/og-card.html` | the 1200x630 social card. An input to the build, not something the site serves |
 | `public/` | copied to the root of `dist/` verbatim, under the same names |
-| `assets/favicon.png` | the tab icon, cut square from `#` by `tools/favicon.py` |
+| `assets/favicon.*`, `assets/apple-touch-icon.png` | the icons, cut square from `#` by `tools/favicon.py` |
+| `llms/` | `llms.txt` and `index.md`, the Markdown copy of the page. Written by hand; see below |
 
 The page loads two images. `assets/fpv-frame.webp` is the hero frame: it came
 from the design project as a 883 KB PNG, fully opaque and blurred 7px in CSS, so
@@ -82,6 +83,34 @@ Both `FRAME_SRC` and `OG_SRC` are resolved to absolute URLs once at boot for tha
 reason: after the address moves, a bare relative path would be measured from the
 new directory.
 
+## llms.txt and index.md
+
+`llms/llms.txt` follows <https://llmstxt.org>: a short Markdown summary at the
+site root with links to the rest. `llms/index.md` is the page itself as plain
+Markdown, which `llms.txt` points at and every language page links as
+`rel="alternate" type="text/markdown"`. The build fills in `{{SITE}}`,
+`{{REPO}}` and `{{RAW}}` and writes both to the root of `dist/`.
+
+Unlike everything else on the page these are a second copy of the text, in
+English only, so a change to what the page says wants the same change here.
+
+## Search copy
+
+The page is written for the search "betaflight fonts", and a few strings carry
+that on purpose:
+
+- `seoTitle` is the `<title>`: just the name, short enough for a browser tab
+  and for the roughly 60 characters Google shows. The longer `shareTitle`, with
+  the formats in it, goes in `og:title` and `twitter:title`, where a card has
+  room.
+- `seoDesc` opens with the phrase itself and stays under about 155 characters,
+  where Google cuts a snippet.
+- `ht`, the one `<h1>`, says "fonts" rather than "type", and `hb` names
+  Betaflight Configurator, which is where people know these fonts from.
+
+These were edited here, not in the design project, so carry them back there
+before the next import or it will undo them.
+
 ## robots.txt
 
 `robots.txt` only counts at the root of a host. On a project Pages site the root
@@ -89,3 +118,12 @@ is `volempdoge.github.io`, which belongs to a different repository, so the
 `robots.txt` this build writes is never read and the `Sitemap:` line in it does
 nothing. Submit `sitemap.xml` in Search Console instead, or move the site to a
 custom domain, where both start working on their own.
+
+## The favicon in Google
+
+Google Search keeps one favicon per host, and reads it off the host's home page.
+For this site that is `https://volempdoge.github.io/`, which is the user site
+repository `volempdoge/volempdoge.github.io`, not this one. While that page is
+missing Google shows its generic globe here, whatever this page links. The
+user site needs its own `<link rel="icon">`, and its `robots.txt` is also the
+place where the `Sitemap:` line finally counts.

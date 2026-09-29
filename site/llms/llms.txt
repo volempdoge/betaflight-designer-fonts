@@ -1,0 +1,39 @@
+# Betaflight OSD Fonts
+
+> Betaflight fonts for design: the ten stock Betaflight OSD fonts that come with Betaflight Configurator (the on-screen display type FPV drone pilots see in their goggles), converted for use outside the goggles: installable OTF and TTF, web WOFF and WOFF2, and all 256 characters of each font as transparent PNG files. Free and open source under GPL 3.0.
+
+- They are colour (COLR) fonts: every white glyph carries its own black outline, so text stays readable over video with no layer effects. Apps without colour font support, such as Figma, get two flat families, `Shadow` and `Fill`, to stack instead.
+- Full Cyrillic, Greek, accented Latin, typographic punctuation, maths, currency and box drawing were drawn for every font from its own shapes. The source fonts only have ASCII and icons.
+- The fonts are all capitals: lowercase types as capitals.
+- The OSD icons (arrows, battery, RSSI, GPS, flight modes, logo tiles) sit at `U+E000 + index`, and also type by name as OpenType ligatures, e.g. `:battery:`, `:home:`, `:arrow_n:`.
+- The fonts: extra_large, clarity, bold, impact, vision, betaflight, impact_mini, default, large, digital.
+- Typical uses: FPV video thumbnails, stream overlays, video titles, and designs that should look like a real drone OSD.
+
+## Docs
+
+- [The landing page as Markdown]({{SITE}}/index.md): what is in the fonts, every font with its look, file layout, direct download URLs, typing and app support
+- [Symbol reference]({{RAW}}/docs/SYMBOLS.md): every OSD icon with its index, codepoint and ligature name
+- [README]({{RAW}}/README.md): overview of the fonts, sets and downloads
+- [Developer docs]({{RAW}}/docs/DEVELOPERS.md): how `bf2font.py` converts a MAX7456 `.mcm` font, and how to convert your own
+
+## Downloads
+
+- [All fonts, all formats (.zip)]({{REPO}}/archive/refs/heads/main.zip): the whole repository, `output/<font>/` holds each font
+- [Character index for clarity (JSON)]({{RAW}}/output/clarity/clarity.json): every character, set and symbol with its codepoint; each font has the same file at `output/<font>/<font>.json`
+- [Character sheet for clarity (PNG)]({{RAW}}/output/clarity/clarity_sheet.png): all 256 characters as one 16×16 sheet
+
+## Other languages
+
+- [English]({{SITE}}/)
+- [Українська]({{SITE}}/uk/)
+- [Español]({{SITE}}/es/)
+- [Français]({{SITE}}/fr/)
+- [中文]({{SITE}}/zh/)
+- [日本語]({{SITE}}/ja/)
+
+## Optional
+
+- [Source repository]({{REPO}}): the fonts, the conversion script and the docs
+- [Ukrainian README]({{RAW}}/README_UA.md)
+- [Original .mcm fonts](https://github.com/betaflight/betaflight-configurator): betaflight-configurator, where the source fonts come from
+- [Licence, GPL 3.0]({{RAW}}/LICENSE)
