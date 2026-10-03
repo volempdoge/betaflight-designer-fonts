@@ -9,7 +9,7 @@
 <x-dc>
 <helmet>
 <title>Betaflight OSD Fonts</title>
-<meta name="description" content="Betaflight fonts for design: all ten Betaflight OSD fonts as colour OTF, TTF, WOFF2 and transparent PNG, with Cyrillic, Greek and accents. Free, GPL 3.0.">
+<meta name="description" content="Download Betaflight fonts free: all ten Betaflight OSD fonts as colour OTF, TTF, WOFF2 and PNG, plus the original .mcm files. Cyrillic and Greek included.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="author" content="Volodymyr Myronenko">
 <meta name="theme-color" content="#000000">
@@ -481,9 +481,12 @@
         </sc-if>
       </div>
       <a href="{{ downloadHref }}" download="" onClick="{{ onGrabFont }}" style="display: flex; align-items: center; justify-content: center; gap: 9px; height: 52px; background: #b20d30; color: #fff; padding: 0 18px; font-family: 'Space Mono', monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap" style-hover="background: #000; color: #e8e3d3; text-decoration: none"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">{{ dlMark }}</span>{{ t.p_dl }}</a>
-      <div style="display: flex; flex-direction: column; justify-content: center; gap: 5px; min-height: 52px; font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.04em; min-width: 0">
-        <span style="color: #5f6257; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ downloadName }}</span>
-        <a href="{{ current.folder }}" style="display: inline-flex; align-items: center; gap: 6px; min-height: {{ ui.tap }}; white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>{{ t.p_all }}</a>
+      <div style="display: flex; flex-direction: column; gap: 7px; min-width: 0">
+        <span style="font-family: 'Space Mono', monospace; font-size: {{ ui.lbl }}; letter-spacing: 0.04em; color: #5f6257; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{ downloadName }}</span>
+        <div style="display: flex; height: 52px; border: 1px solid #000; background: #fff">
+          <a href="{{ current.folder }}" style="flex: 1 1 auto; display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 0; padding: 0 12px; color: #000; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap; overflow: hidden" style-hover="background: #e8e3d3; text-decoration: none"><span style="flex: 0 0 auto; color: #b20d30; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span><span style="overflow: hidden; text-overflow: ellipsis">{{ t.p_all }}</span></a>
+          <a href="{{ mcmHref }}" download="" onClick="{{ onGrabMcm }}" title="{{ t.p_mcmT }}" aria-label="{{ t.p_mcmT }}" style="flex: 0 0 auto; border-left: 1px solid #000; display: flex; align-items: center; justify-content: center; gap: 8px; min-width: 0; padding: 0 12px; color: #000; font-family: 'Space Mono', monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; white-space: nowrap" style-hover="background: #e8e3d3; text-decoration: none"><span style="flex: 0 0 auto; color: #b20d30; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↓</span>.mcm</a>
+        </div>
       </div>
     </div>
   </section>
@@ -726,7 +729,7 @@
 
   <sc-if value="{{ d }}" hint-placeholder-val="{{ true }}">
     <footer style="display: flex; flex-wrap: wrap; gap: 10px 20px; justify-content: space-between; align-items: center; background: #000; color: #74776b; padding: 18px clamp(16px, 2.4vw, 34px); font-family: 'Space Mono', monospace; font-size: 11px; letter-spacing: 0.06em">
-      <span>GNU GPL v3.0</span>
+      <span style="display: inline-flex; align-items: center; gap: 20px">GNU GPL v3.0<a href="{{ mdHref }}" type="text/markdown" style="color: #e8e3d3; display: inline-flex; align-items: center; gap: 5px"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>index.md</a></span>
       <span style="color: #fff">Created by Volodymyr Myronenko · <a href="https://github.com/volempdoge" style="color: #e8e3d3; display: inline-flex; align-items: center; gap: 5px"><span style="flex: 0 0 auto; font-family: 'Space Mono', monospace; font-size: 1em; line-height: 1">↗</span>@volempdoge</a></span>
     </footer>
   </sc-if>
@@ -739,6 +742,7 @@
       <div style="display: flex; flex-direction: column; gap: 1px; background: #74776b">
         <a href="https://github.com/volempdoge/betaflight-designer-fonts" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; padding: 0 16px; background: #000; color: #e8e3d3; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase">{{ t.nRepo }}<span style="flex: 0 0 auto; color: #b20d30">↗</span></a>
         <a href="https://github.com/volempdoge" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; padding: 0 16px; background: #000; color: #e8e3d3; font-size: 12px; font-weight: 700; letter-spacing: 0.08em">@volempdoge<span style="flex: 0 0 auto; color: #b20d30">↗</span></a>
+        <a href="{{ mdHref }}" type="text/markdown" style="display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 52px; padding: 0 16px; background: #000; color: #e8e3d3; font-size: 12px; font-weight: 700; letter-spacing: 0.08em">index.md<span style="flex: 0 0 auto; color: #b20d30">↗</span></a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 7px; padding: 20px 16px 28px; font-size: 11px; line-height: 1.5; letter-spacing: 0.06em">
         <span style="color: #fff">Created by Volodymyr Myronenko</span>
@@ -752,17 +756,19 @@
 <script type="text/x-dc" data-dc-script data-props="{&quot;lang&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;en&quot;,&quot;options&quot;:[&quot;en&quot;,&quot;ua&quot;,&quot;es&quot;,&quot;fr&quot;,&quot;zh&quot;,&quot;jp&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;defaultFont&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;clarity&quot;,&quot;options&quot;:[&quot;extra_large&quot;,&quot;clarity&quot;,&quot;bold&quot;,&quot;impact&quot;,&quot;vision&quot;,&quot;betaflight&quot;,&quot;impact_mini&quot;,&quot;default&quot;,&quot;large&quot;,&quot;digital&quot;],&quot;tsType&quot;:&quot;string&quot;},&quot;demoText&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;I LOVE FPV&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;defaultSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:72,&quot;min&quot;:18,&quot;max&quot;:180,&quot;step&quot;:18,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;}}">
 const REPO = "https://github.com/volempdoge/betaflight-designer-fonts";
 
-// Six languages, six URLs. Both paths below stay site-relative so the prerender
-// build can retarget them per language directory, and both are resolved once at
+// Six languages, six URLs. The paths below stay site-relative so the prerender
+// build can retarget them per language directory, and all are resolved once at
 // boot: switching language rewrites the address with history.replaceState, and a
 // bare relative URL would afterwards be measured from the new directory.
 const FRAME_SRC = "assets/fpv-frame.webp";
 const OG_SRC = "assets/og-card.jpg";
+const MD_SRC = "index.md";
 const siteUrl = (path) => {
   try { return new URL(path, document.baseURI).href; } catch (e) { return path; }
 };
 const FRAME_BG = "url('" + siteUrl(FRAME_SRC) + "')";
 const OG_IMAGE = siteUrl(OG_SRC);
+const MD_HREF = siteUrl(MD_SRC);
 
 // Language code to directory. "" is the root, which serves English.
 const LANG_DIR = { en: "", ua: "uk", es: "es", fr: "fr", zh: "zh", jp: "ja" };
@@ -869,7 +875,7 @@ const hex2 = (n) => "0x" + ("0" + n.toString(16).toUpperCase()).slice(-2);
 
 const L = {
   en: {
-    seoTitle: "Betaflight OSD Fonts", shareTitle: "Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays", seoDesc: "Betaflight fonts for design: all ten Betaflight OSD fonts as colour OTF, TTF, WOFF2 and transparent PNG, with Cyrillic, Greek and accents. Free, GPL 3.0.",
+    seoTitle: "Betaflight OSD Fonts", shareTitle: "Betaflight OSD Fonts — OTF, TTF, WOFF, PNG for FPV overlays", seoDesc: "Download Betaflight fonts free: all ten Betaflight OSD fonts as colour OTF, TTF, WOFF2 and PNG, plus the original .mcm files. Cyrillic and Greek included.",
     label: "EN", menu: "Menu",
     nTry: "Try it", nSym: "Symbols", nAbout: "About", nRepo: "GitHub",
     ht: "Betaflight OSD fonts, out of the goggles.",
@@ -880,7 +886,7 @@ const L = {
     gSpace: "Spacing", gShape: "Shape", gColor: "Colour",
     p_ls: "Letter spacing", p_lh: "Line height", p_w: "Width", p_h: "Height", p_sk: "Slant",
     p_fg: "Text colour", p_ol: "Outline colour", p_bg: "Background",
-    p_fam: "Family", p_fmt: "Format", p_dl: "Download", p_all: "All files for this font",
+    p_fam: "Family", p_fmt: "Format", p_dl: "Download", p_all: "All files", p_mcmT: "Original .mcm for Betaflight Configurator",
     fam1: "Colour", fam2: "Shadow (flat)", fam3: "Fill (flat)",
     s_t: "Not just letters",
     s_b: "Every character also lives at U+E000 plus its index, which is where the arrows, the battery and signal icons, the GPS and flight mode marks and the logo tiles are.",
@@ -916,7 +922,7 @@ const L = {
     notes: { extra_large: "The biggest one, fills the whole cell", clarity: "Large and clean with high contrast", bold: "Heavy and narrow", impact: "Heavy and a bit wider", vision: "The size of impact with its own letterforms", betaflight: "Slanted, the branded look", impact_mini: "A compact take on impact", default: "The thin stock font, smallest of all", large: "Small letters with tall digits", digital: "Wide blocks like a segment display" }
   },
   ua: {
-    seoTitle: "Шрифти Betaflight OSD", shareTitle: "Шрифти Betaflight OSD — OTF, TTF, WOFF і PNG для FPV", seoDesc: "Шрифти Betaflight для дизайну: усі десять шрифтів Betaflight OSD у кольорових OTF, TTF, WOFF2 і прозорих PNG, з кирилицею та грекою. Безкоштовно, GPL 3.0.",
+    seoTitle: "Шрифти Betaflight OSD", shareTitle: "Шрифти Betaflight OSD — OTF, TTF, WOFF і PNG для FPV", seoDesc: "Завантажте шрифти Betaflight безкоштовно: усі десять шрифтів Betaflight OSD у кольорових OTF, TTF, WOFF2 і PNG, а також оригінальні .mcm. З кирилицею.",
     label: "UA", menu: "Меню",
     nTry: "Спробувати", nSym: "Символи", nAbout: "Про проєкт", nRepo: "GitHub",
     ht: "Betaflight OSD fonts, out of the goggles.",
@@ -927,7 +933,7 @@ const L = {
     gSpace: "Відступи", gShape: "Форма", gColor: "Колір",
     p_ls: "Трекінг", p_lh: "Інтерліньяж", p_w: "Ширина", p_h: "Висота", p_sk: "Нахил",
     p_fg: "Колір літер", p_ol: "Колір контуру", p_bg: "Тло",
-    p_fam: "Гарнітура", p_fmt: "Формат", p_dl: "Завантажити", p_all: "Усі файли цього шрифту",
+    p_fam: "Гарнітура", p_fmt: "Формат", p_dl: "Завантажити", p_all: "Усі файли", p_mcmT: "Оригінальний .mcm для Betaflight Configurator",
     fam1: "Кольорова", fam2: "Shadow (плоска)", fam3: "Fill (плоска)",
     s_t: "Не лише літери",
     s_b: "Кожен символ ще лежить за адресою U+E000 плюс індекс, і саме там стрілки, іконки батареї та сигналу, позначки GPS і режимів польоту, плитки логотипа.",
@@ -963,7 +969,7 @@ const L = {
     notes: { extra_large: "Найбільший, заповнює всю клітинку", clarity: "Великий і чистий, високий контраст", bold: "Жирний і вузький", impact: "Жирний і трохи ширший", vision: "Розмір як в impact, але інші літери", betaflight: "Похилий, брендовий вигляд", impact_mini: "Компактна версія impact", default: "Тонкий стоковий, найменший з усіх", large: "Дрібні літери й високі цифри", digital: "Широкі блоки, як сегментний дисплей" }
   },
   es: {
-    seoTitle: "Fuentes Betaflight OSD", shareTitle: "Fuentes Betaflight OSD — OTF, TTF, WOFF y PNG para FPV", seoDesc: "Fuentes Betaflight para diseño: las diez fuentes Betaflight OSD en OTF, TTF y WOFF2 de color y PNG transparente, con cirílico y griego. Gratis, GPL 3.0.",
+    seoTitle: "Fuentes Betaflight OSD", shareTitle: "Fuentes Betaflight OSD — OTF, TTF, WOFF y PNG para FPV", seoDesc: "Descarga gratis las fuentes Betaflight: las diez fuentes Betaflight OSD en OTF, TTF, WOFF2 y PNG de color, más los .mcm originales. Con cirílico y griego.",
     label: "ES", menu: "Menú",
     nTry: "Probar", nSym: "Símbolos", nAbout: "Proyecto", nRepo: "GitHub",
     ht: "Betaflight OSD fonts, out of the goggles.",
@@ -974,7 +980,7 @@ const L = {
     gSpace: "Espaciado", gShape: "Forma", gColor: "Color",
     p_ls: "Tracking", p_lh: "Interlineado", p_w: "Ancho", p_h: "Alto", p_sk: "Inclinación",
     p_fg: "Color de letra", p_ol: "Color del contorno", p_bg: "Fondo",
-    p_fam: "Familia", p_fmt: "Formato", p_dl: "Descargar", p_all: "Todos los archivos de esta fuente",
+    p_fam: "Familia", p_fmt: "Formato", p_dl: "Descargar", p_all: "Archivos", p_mcmT: "El .mcm original para Betaflight Configurator",
     fam1: "Color", fam2: "Shadow (plana)", fam3: "Fill (plana)",
     s_t: "No solo letras",
     s_b: "Cada carácter está además en U+E000 más su índice, y ahí viven las flechas, los iconos de batería y señal, las marcas de GPS y modo de vuelo y las piezas del logotipo.",
@@ -1010,7 +1016,7 @@ const L = {
     notes: { extra_large: "La más grande, llena toda la celda", clarity: "Grande y limpia, con mucho contraste", bold: "Gruesa y estrecha", impact: "Gruesa y algo más ancha", vision: "Del tamaño de impact con su propio dibujo", betaflight: "Inclinada, la imagen de la marca", impact_mini: "Una versión compacta de impact", default: "La fina de serie, la más ligera", large: "Letras pequeñas y cifras altas", digital: "Bloques anchos como un display de segmentos" }
   },
   fr: {
-    seoTitle: "Polices Betaflight OSD", shareTitle: "Polices Betaflight OSD — OTF, TTF, WOFF et PNG pour le FPV", seoDesc: "Polices Betaflight pour le design : les dix polices Betaflight OSD en OTF, TTF, WOFF2 couleur et PNG transparent, avec cyrillique et grec. Gratuit, GPL 3.0.",
+    seoTitle: "Polices Betaflight OSD", shareTitle: "Polices Betaflight OSD — OTF, TTF, WOFF et PNG pour le FPV", seoDesc: "Téléchargez les polices Betaflight gratuitement : les dix polices Betaflight OSD en OTF, TTF, WOFF2 et PNG couleur, plus les .mcm d'origine.",
     label: "FR", menu: "Menu",
     nTry: "Essayer", nSym: "Symboles", nAbout: "Le projet", nRepo: "GitHub",
     ht: "Betaflight OSD fonts, out of the goggles.",
@@ -1021,7 +1027,7 @@ const L = {
     gSpace: "Espacement", gShape: "Forme", gColor: "Couleur",
     p_ls: "Approche", p_lh: "Interligne", p_w: "Largeur", p_h: "Hauteur", p_sk: "Inclinaison",
     p_fg: "Couleur des lettres", p_ol: "Couleur du contour", p_bg: "Fond",
-    p_fam: "Famille", p_fmt: "Format", p_dl: "Télécharger", p_all: "Tous les fichiers de cette police",
+    p_fam: "Famille", p_fmt: "Format", p_dl: "Télécharger", p_all: "Fichiers", p_mcmT: "Le .mcm d'origine pour Betaflight Configurator",
     fam1: "Couleur", fam2: "Shadow (plat)", fam3: "Fill (plat)",
     s_t: "Pas que des lettres",
     s_b: "Chaque caractère se trouve aussi à U+E000 plus son index, et c'est là que sont les flèches, les icônes de batterie et de signal, les repères GPS et modes de vol, et les tuiles du logo.",
@@ -1057,7 +1063,7 @@ const L = {
     notes: { extra_large: "La plus grande, elle remplit la cellule", clarity: "Grande et nette, très contrastée", bold: "Grasse et étroite", impact: "Grasse et un peu plus large", vision: "La taille d'impact avec son propre dessin", betaflight: "Inclinée, l'allure de la marque", impact_mini: "Une version compacte d'impact", default: "La fine d'origine, la plus légère", large: "Petites lettres et chiffres hauts", digital: "Blocs larges comme un afficheur à segments" }
   },
   zh: {
-    seoTitle: "Betaflight OSD 字体", shareTitle: "Betaflight OSD 字体 — OTF、TTF、WOFF 与 PNG", seoDesc: "Betaflight 字体：全部十款 Betaflight OSD 彩色字体，提供 OTF、TTF、WOFF2 和透明 PNG，含西里尔字母与希腊字母。免费，GPL 3.0。",
+    seoTitle: "Betaflight OSD 字体", shareTitle: "Betaflight OSD 字体 — OTF、TTF、WOFF 与 PNG", seoDesc: "免费下载 Betaflight 字体：全部十款 Betaflight OSD 彩色字体，提供 OTF、TTF、WOFF2 和透明 PNG，以及原版 .mcm 文件。含西里尔与希腊字母。",
     label: "中文", menu: "菜单",
     nTry: "试用", nSym: "符号", nAbout: "关于", nRepo: "GitHub",
     ht: "Betaflight OSD fonts, out of the goggles.",
@@ -1068,7 +1074,7 @@ const L = {
     gSpace: "间距", gShape: "形状", gColor: "颜色",
     p_ls: "字距", p_lh: "行高", p_w: "宽度", p_h: "高度", p_sk: "倾斜",
     p_fg: "文字颜色", p_ol: "描边颜色", p_bg: "背景",
-    p_fam: "字族", p_fmt: "格式", p_dl: "下载", p_all: "这款字体的所有文件",
+    p_fam: "字族", p_fmt: "格式", p_dl: "下载", p_all: "全部文件", p_mcmT: "Betaflight Configurator 用的原版 .mcm",
     fam1: "彩色", fam2: "Shadow（单色）", fam3: "Fill（单色）",
     s_t: "不只是字母",
     s_b: "每个字符还位于 U+E000 加上索引的位置，箭头、电池与信号图标、GPS 和飞行模式符号以及 logo 拼块都在那里。",
@@ -1104,7 +1110,7 @@ const L = {
     notes: { extra_large: "最大的一款，占满整个字符格", clarity: "大而清晰，对比很强", bold: "粗而窄", impact: "粗而稍宽", vision: "与 impact 同尺寸，字形不同", betaflight: "斜体，品牌的样子", impact_mini: "impact 的紧凑版", default: "原厂细体，最省空间", large: "字母小，数字高", digital: "宽块状，像分段显示器" }
   },
   jp: {
-    seoTitle: "Betaflight OSD フォント", shareTitle: "Betaflight OSD フォント — OTF, TTF, WOFF, PNG", seoDesc: "Betaflight フォント：Betaflight OSD のカラーフォント全 10 種を OTF・TTF・WOFF2 と透過 PNG で配布。キリル文字・ギリシャ文字つき。無料、GPL 3.0。",
+    seoTitle: "Betaflight OSD フォント", shareTitle: "Betaflight OSD フォント — OTF, TTF, WOFF, PNG", seoDesc: "Betaflight フォントを無料ダウンロード：Betaflight OSD のカラーフォント全 10 種を OTF・TTF・WOFF2・PNG で、オリジナルの .mcm も。キリル・ギリシャ文字つき。",
     label: "日本語", menu: "メニュー",
     nTry: "試す", nSym: "記号", nAbout: "このプロジェクト", nRepo: "GitHub",
     ht: "Betaflight OSD fonts, out of the goggles.",
@@ -1115,7 +1121,7 @@ const L = {
     gSpace: "アキ", gShape: "かたち", gColor: "色",
     p_ls: "字送り", p_lh: "行送り", p_w: "幅", p_h: "高さ", p_sk: "傾き",
     p_fg: "文字の色", p_ol: "縁の色", p_bg: "背景",
-    p_fam: "ファミリー", p_fmt: "フォーマット", p_dl: "ダウンロード", p_all: "このフォントの全ファイル",
+    p_fam: "ファミリー", p_fmt: "フォーマット", p_dl: "ダウンロード", p_all: "全ファイル", p_mcmT: "Betaflight Configurator 用のオリジナル .mcm",
     fam1: "カラー", fam2: "Shadow（単色）", fam3: "Fill（単色）",
     s_t: "アルファベットだけではありません",
     s_b: "Betaflight に小文字はないので、小文字を打っても同じ大文字になります。どの文字も U+E000 に索引を足した位置にもあり、矢印、バッテリーや信号のアイコン、GPS とフライトモードの記号、ロゴのタイルはそこにあります。",
@@ -1763,6 +1769,11 @@ class Component extends DCLogic {
       dlMark: this.state.dl ? "\u00b7\u00b7\u00b7" : "\u2193",
       onGrabFont: (e) => this.grab(RAW + "/output/" + cur.key + "/fonts/" + fmt + "/" + file, file, "font", e),
       onGrabPng: (e) => this.grab(RAW + "/output/" + cur.key + "/png/" + pad3(gi) + ".png", cur.key + "-" + pad3(gi) + ".png", "png", e),
+      // The untouched source font, the file Betaflight Configurator's font
+      // manager uploads to the flight controller.
+      mdHref: MD_HREF,
+      mcmHref: RAW + "/original_fonts/" + cur.key + ".mcm",
+      onGrabMcm: (e) => this.grab(RAW + "/original_fonts/" + cur.key + ".mcm", cur.key + ".mcm", "mcm", e),
       downloadName: file,
       downloadHref: RAW + "/output/" + cur.key + "/fonts/" + fmt + "/" + file
     };

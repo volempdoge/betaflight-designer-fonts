@@ -19,6 +19,7 @@
 ## Downloads
 
 - [All fonts, all formats (.zip)]({{REPO}}/archive/refs/heads/main.zip): the whole repository, `output/<font>/` holds each font
+- [Original .mcm fonts]({{REPO}}/tree/main/original_fonts): the ten stock fonts exactly as Betaflight Configurator ships them, one `<font>.mcm` each, for the font manager and the flight controller; direct file at `{{RAW}}/original_fonts/<font>.mcm`
 - [Character index for clarity (JSON)]({{RAW}}/output/clarity/clarity.json): every character, set and symbol with its codepoint; each font has the same file at `output/<font>/<font>.json`
 - [Character sheet for clarity (PNG)]({{RAW}}/output/clarity/clarity_sheet.png): all 256 characters as one 16×16 sheet
 

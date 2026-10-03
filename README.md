@@ -97,6 +97,9 @@ or open `output/<font>/`:
 Each format folder holds three families: the colour font, plus the flat
 `Shadow` and `Fill` pair for apps that cannot read colour fonts.
 
+The untouched source fonts are in [`original_fonts/`](original_fonts/), one
+`.mcm` each, for the Font Manager in Betaflight Configurator.
+
 ## The black outline is part of the font
 
 Type over video and the outline is already there, no layer styles.

@@ -9,25 +9,36 @@ real drone OSD. Free under GPL 3.0.
 
 - Website: {{SITE}}/
 - Download everything (.zip): {{REPO}}/archive/refs/heads/main.zip
+- Original .mcm fonts for Betaflight Configurator: {{REPO}}/tree/main/original_fonts
 - Source: {{REPO}}
 
 ## The fonts
 
 Cap height is in OSD pixels, out of an 18 pixel character cell. Each font is
-also available as WOFF; swap the extension in any link below.
+also available as WOFF; swap the extension in any link below. MCM is the
+original Betaflight font file, unchanged.
 
 | Font | Family name | Cap height | Look | Download |
 | --- | --- | --- | --- | --- |
-| `extra_large` | Betaflight OSD Extra Large | 16 | The biggest one, fills the whole cell | [OTF]({{RAW}}/output/extra_large/fonts/otf/BetaflightOSDExtraLarge.otf) · [TTF]({{RAW}}/output/extra_large/fonts/ttf/BetaflightOSDExtraLarge.ttf) · [WOFF2]({{RAW}}/output/extra_large/fonts/woff2/BetaflightOSDExtraLarge.woff2) |
-| `clarity` | Betaflight OSD Clarity | 15 | Large and clean with high contrast | [OTF]({{RAW}}/output/clarity/fonts/otf/BetaflightOSDClarity.otf) · [TTF]({{RAW}}/output/clarity/fonts/ttf/BetaflightOSDClarity.ttf) · [WOFF2]({{RAW}}/output/clarity/fonts/woff2/BetaflightOSDClarity.woff2) |
-| `bold` | Betaflight OSD Bold | 12 | Heavy and narrow | [OTF]({{RAW}}/output/bold/fonts/otf/BetaflightOSDBold.otf) · [TTF]({{RAW}}/output/bold/fonts/ttf/BetaflightOSDBold.ttf) · [WOFF2]({{RAW}}/output/bold/fonts/woff2/BetaflightOSDBold.woff2) |
-| `impact` | Betaflight OSD Impact | 12 | Heavy and a bit wider | [OTF]({{RAW}}/output/impact/fonts/otf/BetaflightOSDImpact.otf) · [TTF]({{RAW}}/output/impact/fonts/ttf/BetaflightOSDImpact.ttf) · [WOFF2]({{RAW}}/output/impact/fonts/woff2/BetaflightOSDImpact.woff2) |
-| `vision` | Betaflight OSD Vision | 12 | The size of impact with its own letterforms | [OTF]({{RAW}}/output/vision/fonts/otf/BetaflightOSDVision.otf) · [TTF]({{RAW}}/output/vision/fonts/ttf/BetaflightOSDVision.ttf) · [WOFF2]({{RAW}}/output/vision/fonts/woff2/BetaflightOSDVision.woff2) |
-| `betaflight` | Betaflight OSD Betaflight | 10 | Slanted, the branded look | [OTF]({{RAW}}/output/betaflight/fonts/otf/BetaflightOSDBetaflight.otf) · [TTF]({{RAW}}/output/betaflight/fonts/ttf/BetaflightOSDBetaflight.ttf) · [WOFF2]({{RAW}}/output/betaflight/fonts/woff2/BetaflightOSDBetaflight.woff2) |
-| `impact_mini` | Betaflight OSD Impact Mini | 10 | A compact take on impact | [OTF]({{RAW}}/output/impact_mini/fonts/otf/BetaflightOSDImpactMini.otf) · [TTF]({{RAW}}/output/impact_mini/fonts/ttf/BetaflightOSDImpactMini.ttf) · [WOFF2]({{RAW}}/output/impact_mini/fonts/woff2/BetaflightOSDImpactMini.woff2) |
-| `default` | Betaflight OSD Default | 10 | The thin stock font, smallest of all | [OTF]({{RAW}}/output/default/fonts/otf/BetaflightOSDDefault.otf) · [TTF]({{RAW}}/output/default/fonts/ttf/BetaflightOSDDefault.ttf) · [WOFF2]({{RAW}}/output/default/fonts/woff2/BetaflightOSDDefault.woff2) |
-| `large` | Betaflight OSD Large | 10 | Small letters with tall 15 pixel digits | [OTF]({{RAW}}/output/large/fonts/otf/BetaflightOSDLarge.otf) · [TTF]({{RAW}}/output/large/fonts/ttf/BetaflightOSDLarge.ttf) · [WOFF2]({{RAW}}/output/large/fonts/woff2/BetaflightOSDLarge.woff2) |
-| `digital` | Betaflight OSD Digital | 9 | Wide blocks like a segment display | [OTF]({{RAW}}/output/digital/fonts/otf/BetaflightOSDDigital.otf) · [TTF]({{RAW}}/output/digital/fonts/ttf/BetaflightOSDDigital.ttf) · [WOFF2]({{RAW}}/output/digital/fonts/woff2/BetaflightOSDDigital.woff2) |
+| `extra_large` | Betaflight OSD Extra Large | 16 | The biggest one, fills the whole cell | [OTF]({{RAW}}/output/extra_large/fonts/otf/BetaflightOSDExtraLarge.otf) · [TTF]({{RAW}}/output/extra_large/fonts/ttf/BetaflightOSDExtraLarge.ttf) · [WOFF2]({{RAW}}/output/extra_large/fonts/woff2/BetaflightOSDExtraLarge.woff2) · [MCM]({{RAW}}/original_fonts/extra_large.mcm) |
+| `clarity` | Betaflight OSD Clarity | 15 | Large and clean with high contrast | [OTF]({{RAW}}/output/clarity/fonts/otf/BetaflightOSDClarity.otf) · [TTF]({{RAW}}/output/clarity/fonts/ttf/BetaflightOSDClarity.ttf) · [WOFF2]({{RAW}}/output/clarity/fonts/woff2/BetaflightOSDClarity.woff2) · [MCM]({{RAW}}/original_fonts/clarity.mcm) |
+| `bold` | Betaflight OSD Bold | 12 | Heavy and narrow | [OTF]({{RAW}}/output/bold/fonts/otf/BetaflightOSDBold.otf) · [TTF]({{RAW}}/output/bold/fonts/ttf/BetaflightOSDBold.ttf) · [WOFF2]({{RAW}}/output/bold/fonts/woff2/BetaflightOSDBold.woff2) · [MCM]({{RAW}}/original_fonts/bold.mcm) |
+| `impact` | Betaflight OSD Impact | 12 | Heavy and a bit wider | [OTF]({{RAW}}/output/impact/fonts/otf/BetaflightOSDImpact.otf) · [TTF]({{RAW}}/output/impact/fonts/ttf/BetaflightOSDImpact.ttf) · [WOFF2]({{RAW}}/output/impact/fonts/woff2/BetaflightOSDImpact.woff2) · [MCM]({{RAW}}/original_fonts/impact.mcm) |
+| `vision` | Betaflight OSD Vision | 12 | The size of impact with its own letterforms | [OTF]({{RAW}}/output/vision/fonts/otf/BetaflightOSDVision.otf) · [TTF]({{RAW}}/output/vision/fonts/ttf/BetaflightOSDVision.ttf) · [WOFF2]({{RAW}}/output/vision/fonts/woff2/BetaflightOSDVision.woff2) · [MCM]({{RAW}}/original_fonts/vision.mcm) |
+| `betaflight` | Betaflight OSD Betaflight | 10 | Slanted, the branded look | [OTF]({{RAW}}/output/betaflight/fonts/otf/BetaflightOSDBetaflight.otf) · [TTF]({{RAW}}/output/betaflight/fonts/ttf/BetaflightOSDBetaflight.ttf) · [WOFF2]({{RAW}}/output/betaflight/fonts/woff2/BetaflightOSDBetaflight.woff2) · [MCM]({{RAW}}/original_fonts/betaflight.mcm) |
+| `impact_mini` | Betaflight OSD Impact Mini | 10 | A compact take on impact | [OTF]({{RAW}}/output/impact_mini/fonts/otf/BetaflightOSDImpactMini.otf) · [TTF]({{RAW}}/output/impact_mini/fonts/ttf/BetaflightOSDImpactMini.ttf) · [WOFF2]({{RAW}}/output/impact_mini/fonts/woff2/BetaflightOSDImpactMini.woff2) · [MCM]({{RAW}}/original_fonts/impact_mini.mcm) |
+| `default` | Betaflight OSD Default | 10 | The thin stock font, smallest of all | [OTF]({{RAW}}/output/default/fonts/otf/BetaflightOSDDefault.otf) · [TTF]({{RAW}}/output/default/fonts/ttf/BetaflightOSDDefault.ttf) · [WOFF2]({{RAW}}/output/default/fonts/woff2/BetaflightOSDDefault.woff2) · [MCM]({{RAW}}/original_fonts/default.mcm) |
+| `large` | Betaflight OSD Large | 10 | Small letters with tall 15 pixel digits | [OTF]({{RAW}}/output/large/fonts/otf/BetaflightOSDLarge.otf) · [TTF]({{RAW}}/output/large/fonts/ttf/BetaflightOSDLarge.ttf) · [WOFF2]({{RAW}}/output/large/fonts/woff2/BetaflightOSDLarge.woff2) · [MCM]({{RAW}}/original_fonts/large.mcm) |
+| `digital` | Betaflight OSD Digital | 9 | Wide blocks like a segment display | [OTF]({{RAW}}/output/digital/fonts/otf/BetaflightOSDDigital.otf) · [TTF]({{RAW}}/output/digital/fonts/ttf/BetaflightOSDDigital.ttf) · [WOFF2]({{RAW}}/output/digital/fonts/woff2/BetaflightOSDDigital.woff2) · [MCM]({{RAW}}/original_fonts/digital.mcm) |
+
+## The original .mcm files
+
+`original_fonts/<font>.mcm` in the repository is each font exactly as it ships
+with Betaflight Configurator, in the MAX7456 `.mcm` format the flight controller
+takes. To put one on an analog OSD, open it from the Font Manager on the OSD
+tab of Betaflight Configurator and upload it. These are the stock fonts; the
+Cyrillic, Greek and other added characters exist only in the OTF, TTF, WOFF and
+PNG files, because the OSD has no room for them.
 
 ## What is in each font's folder
 

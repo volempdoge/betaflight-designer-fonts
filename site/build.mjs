@@ -25,12 +25,13 @@ const FONTS = [
   ["digital", "Digital"],
 ];
 
-// Everything a language directory loads sits one level up. Only rewrite paths at
-// the start of a URL -- `RAW + "/output/..."` and the GitHub blob links are
-// absolute and must stay untouched, and those always have a slash in front.
+// Everything a language directory loads sits one level up, and so does the
+// Markdown copy of the page the footer links. Only rewrite paths at the start of
+// a URL -- `RAW + "/output/..."` and the GitHub blob links are absolute and must
+// stay untouched, and those always have a slash in front.
 function retargetToSubdirectory(html) {
   const out = html
-    .replace(/(["'(])(assets\/|output\/)/g, "$1../$2")
+    .replace(/(["'(])(assets\/|output\/|index\.md")/g, "$1../$2")
     .replace(/(["'(])\.\/support\.js/g, "$1../support.js");
   if (out === html) throw new Error("subdirectory rewrite matched nothing");
   return out;

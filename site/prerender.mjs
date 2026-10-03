@@ -70,11 +70,33 @@ const SHIM = `<script>
 })();
 </script>`;
 
-function bake(rendered, template) {
+// Every external script the page itself declares. Anything else with a src in
+// the captured markup was added by support.js while it booted -- React and
+// ReactDOM off the CDN -- and must not be baked in: support.js only skips its
+// own load when window.React already exists, which these tags settle in a race
+// with it, so React arrives twice and hooks reach for the copy that never
+// rendered ("Cannot read properties of null (reading 'useState')").
+function declaredScripts(html) {
+  return new Set([...html.matchAll(/<script\b[^>]*\bsrc="([^"]*)"/g)].map((m) => m[1]));
+}
+
+function dropInjectedScripts(html, declared) {
+  let dropped = 0;
+  const out = html.replace(/<script\b[^>]*\bsrc="([^"]*)"[^>]*><\/script>/g, (tag, src) => {
+    if (declared.has(src)) return tag;
+    dropped++;
+    return "";
+  });
+  if (/<script\b[^>]*\bsrc="https?:/.test(out)) throw new Error("a runtime script survived the bake");
+  return { html: out, dropped };
+}
+
+function bake(rendered, template, declared) {
   // applySeo resolves the canonical, og:url, og:image and the hero background
   // against wherever the page is loaded from, and the capture freezes that in.
   // Here that is the prerender server, so put the real base back.
-  let html = rendered.replaceAll(ORIGIN, SITE);
+  let html = dropInjectedScripts(rendered, declared).html;
+  html = html.replaceAll(ORIGIN, SITE);
   if (SITE !== ORIGIN && html.includes(ORIGIN)) {
     throw new Error("prerender origin left in the markup");
   }
@@ -110,7 +132,9 @@ function bake(rendered, template) {
 
 async function render(browser, locale) {
   const file = join(DIST, locale.dir, "index.html");
-  const template = extractTemplate(await readFile(file, "utf8"));
+  const source = await readFile(file, "utf8");
+  const template = extractTemplate(source);
+  const declared = declaredScripts(source);
 
   const page = await browser.newPage();
   await page.setViewport(VIEWPORT);
@@ -151,7 +175,7 @@ async function render(browser, locale) {
   const rendered = await page.evaluate(() => document.documentElement.outerHTML);
   await page.close();
 
-  const baked = bake(rendered, template);
+  const baked = bake(rendered, template, declared);
   await writeFile(file, baked);
   return { title, textLength, bytes: Buffer.byteLength(baked), failures };
 }
